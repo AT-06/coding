@@ -4,6 +4,7 @@ apply plugin: 'idea'
 apply plugin: 'eclipse'
 apply plugin: 'checkstyle'
 apply plugin: 'pmd'
+apply plugin: 'findbugs'
 apply plugin: 'jacoco'
 
 // In this section you declare where to find the dependencies of your project
@@ -19,6 +20,17 @@ dependencies {
 // Checkstyle configuration
 checkstyle {
     toolVersion = '8.8'
+}
+
+// FindBugs configuration
+findbugs {
+    toolVersion = '3.0.1'
+}
+tasks.withType(FindBugs) {
+    reports {
+        xml.enabled = false
+        html.enabled = true
+    }
 }
 
 // PMD configuration
