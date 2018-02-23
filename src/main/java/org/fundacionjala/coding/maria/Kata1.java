@@ -17,8 +17,6 @@ public class Kata1 {
         String[] wordsList;
         wordsList = auxString.split(" ");
         auxString = "";
-
-
         StringBuffer buf = new StringBuffer();
         for (String word : wordsList) {
             if (word.length() >= TAM) {
