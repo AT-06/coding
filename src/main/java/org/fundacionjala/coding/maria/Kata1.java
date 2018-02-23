@@ -7,6 +7,7 @@ package org.fundacionjala.coding.maria;
  */
 public class Kata1 {
     private static final int TAM = 5;
+
     /**
      * @param words This is the sentence
      * @return words A new inverted sentence
@@ -18,17 +19,16 @@ public class Kata1 {
         auxString = "";
 
 
+        StringBuffer buf = new StringBuffer();
         for (String word : wordsList) {
-            StringBuffer buf = new StringBuffer();
             if (word.length() >= TAM) {
                 StringBuilder rev = new StringBuilder(word);
                 word = rev.reverse().toString();
             }
-            //word = word + " ";
-            buf.append(word+" ");
-            auxString = auxString + buf.toString();;
+            buf.append(word);
+            buf.append(' ');
+            auxString = buf.toString();
         }
-
         words = auxString.substring(0, auxString.length() - 1);
         return words;
     }
