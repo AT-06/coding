@@ -18,9 +18,7 @@ addons:
     token:
       secure: $SONAR_TOKEN
     github_token:
-      secure: JEF8KAxca1AkUr9P7CyHsZyFrZtbJy9jiV2DRLDytHDT4ZQLfsq2EWbig0iucFx9FiOoL/skfjkRy14bv9FIVt+5yjPA1Ww8Va7NgaGGuFWqRP/1sxASDEx3RoccvP+JcKMUYlPsWBe0IFUgDCYuiDt0TtptDYpV/wHNR/z9USRYtb1BRRDCb8WJ87DJMaFSoskIzr2awBd0e70LrQubrzZvN9dovsIPVZ4pztnacdycbm99/xNjh2SXNkWqkQsJE+711l2J3+9tPGbnUGyq2D20nyDmWlvgvsQFzB5y4H6YdD48KQ0/hDzlFSmyfr3kb3C1kYRYvnTo/Ao7x5QCkhsWr2vqsmTSfA6fiV/2PQn9vLAqNi2jRbckIDIPT8kkTx0cPg5hoSryx0ofU7Q2oEYEKeDI6tk5ufv7EXPCranX7WFC4N5sQZ3lUExuRgZvinscqiSZzwQmcNJ+5D8xCiBHHsyFxXovC4jWIhsZQbgn4Kq3MKERa8I+CK0vnOebKXHMHQEyQU8RdvNo26szyXkWFxYm2RFizt+leQMOVPSH8JLXMNHfE7nwxSKQLfu4MQ0hXU94o7QANH2bBDkGWAKspML9k90h+bRzH8zElKEAZucgy08FJtLRwK/2eeLmm+GXyGybPfYw8JQzpPG8dWhUdWUW78QVIwAybzjtE7A=
-    branches:
-    - develop
+      secure: $GITHUB_TOKEN
 script:
 - gradle check
 - sonar-scanner
