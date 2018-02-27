@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Unittest of Kata2 check 4.
+ * Unittest of Kata2 check 4..
  */
 public class Katas2Test {
     /**
