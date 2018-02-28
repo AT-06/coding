@@ -11,14 +11,16 @@ import java.util.StringJoiner;
  */
 public class Kata2 {
 
+    private static final String BLANK_SPACE = " ";
+
     /**
      * @param words contains words for sort the inner content of every word of a string in descending order.
      * @return result
      */
     public String sortInDescendingOrder(String words) {
 
-        String[] wordsForSort = words.split(" ");
-        StringJoiner buffer = new StringJoiner(" ");
+        String[] wordsForSort = words.split(BLANK_SPACE);
+        StringJoiner buffer = new StringJoiner(BLANK_SPACE);
 
         for (String word : wordsForSort) {
 
