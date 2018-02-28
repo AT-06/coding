@@ -1,5 +1,8 @@
 package org.fundacionjala.coding.jimmy;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 /**
  * This class contains a method which is going to spin a string whether is greater than 5 in length.
  */
@@ -12,18 +15,8 @@ public class Kata1 {
      * @return a word spinned if is greater than 5 in length.
      */
     public String spinWords(String wordsToSpin) {
-        String[] arrayWords = wordsToSpin.split(" ");
-        String string; String space = " ";
-        StringBuffer buffer = new StringBuffer();
-        for (String eachWord : arrayWords) {
-            if (eachWord.length() >= THRESHOLD) {
-                buffer.append(new StringBuilder(eachWord).reverse());
-            } else {
-                buffer.append(eachWord);
-            }
-            buffer.append(space);
-        }
-        string = buffer.toString();
-        return string.trim();
+        return Arrays.stream(wordsToSpin.split(" "))
+                .map(i -> i.length() >= THRESHOLD ? new StringBuilder(i).reverse() : i)
+                .collect(Collectors.joining(" "));
     }
 }
