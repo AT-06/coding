@@ -12,7 +12,18 @@ before_script:
   - export GRADLE_HOME=$PWD/gradle-4.5.1
   - export PATH=$GRADLE_HOME/bin:$PATH
 
-script: gradle check
+addons:
+  sonarcloud:
+    organization: "carledriss-github"
+    token:
+      secure: $SONAR_TOKEN
+    github_token:
+      secure: $GITHUB_TOKEN
+    branches:
+    - develop
+script:
+- gradle check
+- sonar-scanner
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
