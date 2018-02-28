@@ -5,7 +5,7 @@ import java.util.Arrays;
 import static java.util.Collections.reverseOrder;
 
 /**
- * Kata2__Ariel Gonzales Vargas.
+ * Kata2__Ariel Gonzales Vargas..
  */
 public class Katas2 {
     private String text;
