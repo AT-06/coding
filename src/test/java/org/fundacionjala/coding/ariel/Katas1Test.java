@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 
 
 /**
- * That test check the method rot.
+ * That test check the method rot..
  */
 public class Katas1Test {
     /**

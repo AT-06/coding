@@ -2,7 +2,7 @@ package org.fundacionjala.coding.ariel;
 
 
 /**
- * That class change.
+ * That class change..
  */
 public class Katas1 {
 
