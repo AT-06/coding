@@ -17,7 +17,7 @@ public class Kata1Test {
      * spinWords( "This is another test" )=> returns "This is rehtona test".
      */
     @Test
-    public void ifMoreThatOneWordIsPresentItCanBeSpinWords() {
+    public void testSpinWordsIfMoreThatOneWordIsPresent() {
         Kata1 words = new Kata1();
         assertEquals("Hey wollef sroirraw", words.spinWords("Hey fellow warriors"));
         assertEquals("This is a test", words.spinWords("This is a test"));

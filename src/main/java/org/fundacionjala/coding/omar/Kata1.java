@@ -1,5 +1,7 @@
 package org.fundacionjala.coding.omar;
 
+import java.util.StringJoiner;
+
 /**
  * Powered by Omar Limbert Huanca Sanchez - AT06
  * This class contains a method that takes in a string of one or more words,
@@ -8,20 +10,20 @@ package org.fundacionjala.coding.omar;
 public class Kata1 {
 
     private static final int LIMIT = 5;
+    private static final String BLANK_SPACE = " ";
 
     /**
      * @param words this is words for Spin Words
      * @return result
      */
     public String spinWords(String words) {
-        String result = "";
-        String[] splitWords = words.split(" ");
+        StringJoiner result = new StringJoiner(BLANK_SPACE);
+        String[] splitWords = words.split(BLANK_SPACE);
 
         for (String word : splitWords) {
-            result += word.length() >= LIMIT ? new StringBuilder(word).reverse() + " " : word + " ";
+            result.add(word.length() >= LIMIT ? new StringBuilder(word).reverse() : word);
         }
 
-        System.out.println(words + " : " + result);
-        return result.trim();
+        return result.toString();
     }
 }
