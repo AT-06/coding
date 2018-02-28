@@ -3,7 +3,6 @@ package org.fundacionjala.coding.omar;
 import java.util.StringJoiner;
 
 /**
- * Powered by Omar Limbert Huanca Sanchez - AT06
  * This class contains a method that takes in a string of one or more words,
  * and returns the same string, but with all five or more letter words reversed.
  */
