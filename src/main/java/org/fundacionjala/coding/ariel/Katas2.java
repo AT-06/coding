@@ -5,7 +5,7 @@ import java.util.Arrays;
 import static java.util.Collections.reverseOrder;
 
 /**
- * Kata2__Ariel Gonzales Vargas..
+ * Kata2__Ariel Gonzales Vargas.
  */
 public class Katas2 {
     private String text;
@@ -19,7 +19,7 @@ public class Katas2 {
     }
     /**
      * @return Return a String but the inner content
-     * of a word change in descending order...
+     * of a word change in descending order.
      */
     public String changeWord() {
         textos = text.split(" ");
