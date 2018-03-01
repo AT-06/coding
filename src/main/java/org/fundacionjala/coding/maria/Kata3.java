@@ -14,10 +14,11 @@ public class Kata3 {
 
         int cont = 0;
         while (num / LIM > 0) {
-            int[] digits = Integer.toString(num).chars().map(c -> c -= '0').toArray();
+            String stringNum = Integer.toString(num);
+            int[] digits = stringNum.chars().map(Character::getNumericValue).toArray();
             num = 1;
             for (int tam : digits) {
-                num = num * tam;
+                num *= tam;
             }
             cont++;
         }
