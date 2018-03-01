@@ -8,30 +8,28 @@ import static org.junit.Assert.assertEquals;
  * It test check five conditions..
  */
 public class Kata3Test {
-
-    public static final int R1 = 3;
-    public static final int R2 = 0;
-    public static final int R3 = 2;
-    public static final int R4 = 4;
-    public static final int R5 = 3;
-    public static final int INPUT1 = 39;
-    public static final int INPUT2 = 4;
-    public static final int INPUT3 = 25;
-    public static final int INPUT4 = 999;
-    public static final int INPUT5 = 444;
-
     /**
      * It test made the five conditions.
      */
     @Test
     public void basicTests() {
-        System.out.println("****** Basic Tests ******");
         Kata3 katita = new Kata3();
-        assertEquals(R1, katita.persistentBurgger(INPUT1));
-        assertEquals(R2, katita.persistentBurgger(INPUT2));
-        assertEquals(R3, katita.persistentBurgger(INPUT3));
-        assertEquals(R4, katita.persistentBurgger(INPUT4));
-        assertEquals(R5, katita.persistentBurgger(INPUT5));
+
+        final int r1 = 3;
+        final int input1 = 39;
+        assertEquals(r1, katita.persistentBurgger(input1));
+        final int r2 = 0;
+        final int input2 = 4;
+        assertEquals(r2, katita.persistentBurgger(input2));
+        final int r3 = 2;
+        final int input3 = 25;
+        assertEquals(r3, katita.persistentBurgger(input3));
+        final int r4 = 4;
+        final int input4 = 999;
+        assertEquals(r4, katita.persistentBurgger(input4));
+        final int r5 = 3;
+        final int input5 = 444;
+        assertEquals(r5, katita.persistentBurgger(input5));
     }
 
 }

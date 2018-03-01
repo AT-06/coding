@@ -9,19 +9,16 @@ public class Kata3 {
      * @return A int num, but apply the persistentBurgger..
      */
     public int persistentBurgger(int num) {
-        int product = 1;
-        int i = 0;
-        String numText = String.valueOf(num);
-        String[] numbers = numText.split("");
+        int cont = 0;
+        String[] numbers = String.valueOf(num).split("");
         while (numbers.length != 1) {
+            int product = 1;
             for (String n : numbers) {
-                product = product * Integer.parseInt(n);
+                product *= Integer.parseInt(n);
             }
-            numText = String.valueOf(product);
-            product = 1;
-            numbers = numText.split("");
-            i++;
+            numbers = String.valueOf(product).split("");
+            cont++;
         }
-        return i;
+        return cont;
     }
 }
