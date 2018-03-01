@@ -10,16 +10,8 @@ public class Kata4 {
      * continue reducing in this way until a single-digit number is produced.
      * This is only applicable to the natural numbers.
      */
-
     private static final int MAX_DIGIT = 9;
     private static final int MOD_DIV_NUMBER = 10;
-
-    /**
-     * Default constructor.
-     */
-    public Kata4() {
-    }
-
     /**
      * Method to calculate digital_root.
      * @param number .
