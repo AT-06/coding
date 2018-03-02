@@ -9,18 +9,10 @@ import static org.junit.Assert.assertEquals;
  */
 public class Kata5Test {
     /**
-     * Test testComplementaryDNA.
-     */
-    @Test
-    public void testComplementaryDNA() {
-        Kata5 dna = new Kata5();
-        assertEquals("TAACG", dna.makeComplement("ATTGC"));
-    }
-    /**
      * Test test01.
      */
     @Test
-    public void test01() {
+    public void testOne() {
         Kata5 dna = new Kata5();
         assertEquals("TTTT", dna.makeComplement("AAAA"));
     }
@@ -28,7 +20,7 @@ public class Kata5Test {
      * Test test02.
      */
     @Test
-    public void test02() {
+    public void testTwo() {
         Kata5 dna = new Kata5();
         assertEquals("TAACG", dna.makeComplement("ATTGC"));
     }
@@ -36,7 +28,7 @@ public class Kata5Test {
      * Test test03.
      */
     @Test
-    public void test03() {
+    public void testThree() {
         Kata5 dna = new Kata5();
         assertEquals("CATA", dna.makeComplement("GTAT"));
     }
@@ -44,7 +36,7 @@ public class Kata5Test {
      * Test test04.
      */
     @Test
-    public void test04() {
+    public void testFour() {
         Kata5 dna = new Kata5();
         assertEquals("TTCC", dna.makeComplement("AAGG"));
     }
@@ -52,7 +44,7 @@ public class Kata5Test {
      * Test test05.
      */
     @Test
-    public void test05() {
+    public void testFive() {
         Kata5 dna = new Kata5();
         assertEquals("GCGC", dna.makeComplement("CGCG"));
     }
@@ -60,7 +52,7 @@ public class Kata5Test {
      * Test test06.
      */
     @Test
-    public void test06() {
+    public void testSix() {
         Kata5 dna = new Kata5();
         assertEquals("TAACG", dna.makeComplement("ATTGC"));
     }
@@ -68,7 +60,7 @@ public class Kata5Test {
      * Test test07.
      */
     @Test
-    public void test07() {
+    public void testSeven() {
         String expected = "CATAGCTAGCTAGCTAGCTAATATAAAAGCTGCTCTAAATTTATATATATATATGCTCTCTTATGTCTATCTGTCTAAT";
         String dnaCase = "GTATCGATCGATCGATCGATTATATTTTCGACGAGATTTAAATATATATATATACGAGAGAATACAGATAGACAGATTA";
 

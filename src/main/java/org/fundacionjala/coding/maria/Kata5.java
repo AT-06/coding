@@ -14,7 +14,8 @@ public class Kata5 {
      * @return complement to DNA
      */
     public String makeComplement(String dna) { //ATTGC   -> TAACG
-        Map<String, String> comp = new HashMap<String, String>();
+        Map<String, String> comp = new HashMap<>();
+
         comp.put("A", "T");
         comp.put("C", "G");
         comp.put("G", "C");
