@@ -1,5 +1,7 @@
 package org.fundacionjala.coding.omar;
 
+import java.util.Arrays;
+
 /**
  * Powered by Omar Limbert Huanca Sanchez - AT06.
  * This class contains method for takes in a positive parameter
@@ -10,6 +12,9 @@ package org.fundacionjala.coding.omar;
 public class Kata3 {
 
     private static final int DIV = 10;
+    private static final int CONSTANT = 1;
+    private static final String EMPTY_STRING = "";
+    private static final int ZERO = 0;
 
     /**
      * @param number for check pessitence.
@@ -17,13 +22,13 @@ public class Kata3 {
      */
     public int persistence(int number) {
 
-        int count = 0;
-        while (number >= DIV) {
-            number = Long.toString(number).chars().reduce(1, (r, i) -> r * (i - '0'));
-            count++;
-        }
-        return count;
+        final int newN = Arrays.stream(String.valueOf(number).split(EMPTY_STRING))
+                                    .mapToInt(Integer::valueOf)
+                                    .reduce(CONSTANT, (x, y) -> x * y);
 
-
+        return (number < DIV)  ? ZERO : persistence(newN) + CONSTANT;
     }
+
+
+
 }
