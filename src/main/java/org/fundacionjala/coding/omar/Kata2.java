@@ -13,6 +13,7 @@ public class Kata2 {
 
     private static final String BLANK_SPACE = " ";
     private static final String EMPTY_STRING = "";
+    private static final int ONE = 1;
 
     /**
      * @param words contains words for sort the inner content of every word of a string in descending order.
@@ -26,8 +27,8 @@ public class Kata2 {
         for (String word : wordsForSort) {
 
             String[] aux = word.split(EMPTY_STRING);
-            if (aux.length != 1) {
-                Arrays.sort(aux, 1, aux.length - 1, Collections.reverseOrder());
+            if (aux.length != ONE) {
+                Arrays.sort(aux, ONE, aux.length - ONE, Collections.reverseOrder());
             }
             buffer.add(String.join(EMPTY_STRING, aux));
 
