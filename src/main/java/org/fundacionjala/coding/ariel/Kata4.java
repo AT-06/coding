@@ -3,7 +3,7 @@ package org.fundacionjala.coding.ariel;
 /**
  * Kata4.
  * Ariel Gonzales Vargas.
- * Digital root function.
+ * Digital root function..
  */
 public class Kata4 {
     private static final int CONDITION = 9;

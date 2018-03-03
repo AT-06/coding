@@ -4,7 +4,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Unittest for check the conditions.
+ * Unittest for check the conditions..
  */
 public class Kata4Test {
     /**
