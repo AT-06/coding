@@ -5,13 +5,14 @@ import java.util.Collections;
 import java.util.StringJoiner;
 
 /**
- * Powered by Omar Limbert Huanca Sanchez - AT06
+ * Powered by Omar Limbert Huanca Sanchez - AT06.
  * This class contains method for sort the inner content of every word of a string in descending order.
  * The inner content is the content of a word without first and the last char.
  */
 public class Kata2 {
 
     private static final String BLANK_SPACE = " ";
+    private static final String EMPTY_STRING = "";
 
     /**
      * @param words contains words for sort the inner content of every word of a string in descending order.
@@ -24,11 +25,11 @@ public class Kata2 {
 
         for (String word : wordsForSort) {
 
-            String[] aux = word.split("");
+            String[] aux = word.split(EMPTY_STRING);
             if (aux.length != 1) {
                 Arrays.sort(aux, 1, aux.length - 1, Collections.reverseOrder());
             }
-            buffer.add(String.join("", aux));
+            buffer.add(String.join(EMPTY_STRING, aux));
 
         }
 
