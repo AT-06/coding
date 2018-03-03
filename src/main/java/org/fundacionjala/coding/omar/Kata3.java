@@ -23,12 +23,11 @@ public class Kata3 {
     public int persistence(int number) {
 
         final int newN = Arrays.stream(String.valueOf(number).split(EMPTY_STRING))
-                                    .mapToInt(Integer::valueOf)
-                                    .reduce(CONSTANT, (x, y) -> x * y);
+                .mapToInt(Integer::valueOf)
+                .reduce(CONSTANT, (x, y) -> x * y);
 
-        return (number < DIV)  ? ZERO : persistence(newN) + CONSTANT;
+        return number < DIV ? ZERO : persistence(newN) + CONSTANT;
     }
-
 
 
 }
