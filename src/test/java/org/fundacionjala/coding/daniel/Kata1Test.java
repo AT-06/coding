@@ -1,5 +1,6 @@
 package org.fundacionjala.coding.daniel;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -9,12 +10,23 @@ import static org.junit.Assert.assertEquals;
  */
 public class Kata1Test {
 
+
+    private Kata1 kata;
+
+    /**
+     * Initializes variable kata.
+     */
+    @Before
+    public void initialize() {
+        kata = new Kata1();
+    }
+
     /**
      * Tests if the word has more than five characters.
      */
     @Test
     public void theWordIsTheReverseStringIfItHasMoreThanFiveCharacters() {
-        assertEquals("emocleW", new Kata1().spinWords("Welcome"));
+        assertEquals("emocleW", kata.spinWords("Welcome"));
     }
 
     /**
@@ -22,7 +34,7 @@ public class Kata1Test {
      */
     @Test
     public void theSentenceIsTheSameIfTheWordsLengthAreLessThanFive() {
-        assertEquals("This is a test", new Kata1().spinWords("This is a test"));
+        assertEquals("This is a test", kata.spinWords("This is a test"));
     }
 
     /**
@@ -30,6 +42,6 @@ public class Kata1Test {
      */
     @Test
     public void theSentenceIsNotTheSameIfTheSentenceHasWordsWithCharactersMoreThanFive() {
-        assertEquals("This is rehtona test", new Kata1().spinWords("This is another test"));
+        assertEquals("This is rehtona test", kata.spinWords("This is another test"));
     }
 }
