@@ -5,6 +5,7 @@ package org.fundacionjala.coding.daniel;
  */
 public class Kata1 {
     private static final int WORD_SIZE = 5;
+    public static final String BLANK_SPACE = " ";
 
     /**
      * @param sentence A string with one or more words.
@@ -12,7 +13,7 @@ public class Kata1 {
      */
 
     public String spinWords(String sentence) {
-        String[] words = sentence.split(" ");
+        String[] words = sentence.split(BLANK_SPACE);
         for (int i = 0; i < words.length; i++) {
             if (words[i].length() >= WORD_SIZE) {
                 words[i] = new StringBuilder(words[i]).reverse().toString();
