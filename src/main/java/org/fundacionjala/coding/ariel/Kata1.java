@@ -1,8 +1,7 @@
 package org.fundacionjala.coding.ariel;
 
 /**
- * Kata 1.
- * Ariel Gonzales.
+ * Kata Ariel Gonzales.
  */
 public class Kata1 {
     private static final int CONDITION = 5;
