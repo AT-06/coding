@@ -7,17 +7,10 @@ import java.util.stream.Collectors;
 /**
  * A class which contains a sortInnerContent method.
  */
-class Kata2 {
-
+public class Kata2 {
     private static final String BLANK_SPACE = " ";
     private static final String EMPTY = "";
     private static final int WORD_LENGTH = 3;
-
-    /**
-     * Constructor for class Kata2.
-     */
-    Kata2() {
-    }
 
     /**
      * @param sentence A string that contains one or more words.
