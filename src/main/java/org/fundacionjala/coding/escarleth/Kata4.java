@@ -14,15 +14,14 @@ public class Kata4 {
      * @return result
      */
     public int digitalRoot(int numberToSum) {
-        int digitsSum = 0;
         if (numberToSum < DIVDIGIT) {
             return numberToSum;
-        } else {
-            while (numberToSum != LIMIT) {
-                digitsSum += numberToSum % DIVDIGIT;
-                numberToSum /= DIVDIGIT;
-            }
-            return digitalRoot(digitsSum);
         }
+        int digitsSum = 0;
+        while (numberToSum != LIMIT) {
+            digitsSum += numberToSum % DIVDIGIT;
+            numberToSum /= DIVDIGIT;
+        }
+        return digitalRoot(digitsSum);
     }
 }
