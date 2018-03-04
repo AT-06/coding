@@ -12,6 +12,15 @@ import org.junit.Test;
  */
 public class Kata6Test {
     private Kata6 kata;
+    private static final Integer[] EXPECTED_1 = {1, 2, 7, 4, 5, 6, 3, 8, 9};
+    private static final Integer[] ARRAY_1 = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    private static final Integer[] EXPECTED_2 = {12, 14, 13};
+    private static final Integer[] ARRAY_2 = {12, 13, 14};
+    private static final Integer[] EXPECTED_3 = {2, 7, 4, 3, 9};
+    private static final Integer[] ARRAY_3 = {9, 2, 4, 7, 3};
+    private static final Integer[] ARRAY = {9, 2, 4, 7, 3};
+    private static final Integer[] ARRAY_COPY = {9, 2, 4, 7, 3};
+    private static final Integer[] EXPECTED = {2, 7, 4, 3, 9};
 
     /**
      * Initializes variable kata.
@@ -26,16 +35,9 @@ public class Kata6Test {
      */
     @Test
     public void testBasicTests() {
-        final Integer[] expected1 = {1, 2, 7, 4, 5, 6, 3, 8, 9};
-        final Integer[] array1 = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-        final Integer[] expected2 = {12, 14, 13};
-        final Integer[] array2 = {12, 13, 14};
-        final Integer[] expected3 = {2, 7, 4, 3, 9};
-        final Integer[] array3 = {9, 2, 4, 7, 3};
-
-        assertEquals(Arrays.toString(expected1), Arrays.toString(kata.sortTwisted37(array1)));
-        assertEquals(Arrays.toString(expected2), Arrays.toString(kata.sortTwisted37(array2)));
-        assertEquals(Arrays.toString(expected3), Arrays.toString(kata.sortTwisted37(array3)));
+        assertEquals(Arrays.toString(EXPECTED_1), Arrays.toString(kata.sortTwisted37(ARRAY_1)));
+        assertEquals(Arrays.toString(EXPECTED_2), Arrays.toString(kata.sortTwisted37(ARRAY_2)));
+        assertEquals(Arrays.toString(EXPECTED_3), Arrays.toString(kata.sortTwisted37(ARRAY_3)));
     }
 
     /**
@@ -43,10 +45,7 @@ public class Kata6Test {
      */
     @Test
     public void testUnchangedArray() {
-        final Integer[] array = {9, 2, 4, 7, 3};
-        final Integer[] arrayCopy = {9, 2, 4, 7, 3};
-        final Integer[] expected = {2, 7, 4, 3, 9};
-        assertEquals(Arrays.toString(expected), Arrays.toString(kata.sortTwisted37(array)));
-        assertEquals("You should not modify the input array!", Arrays.toString(arrayCopy), Arrays.toString(array));
+        assertEquals(Arrays.toString(EXPECTED), Arrays.toString(kata.sortTwisted37(ARRAY)));
+        assertEquals(Arrays.toString(ARRAY_COPY), Arrays.toString(ARRAY));
     }
 }
