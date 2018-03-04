@@ -2,7 +2,7 @@ package org.fundacionjala.coding.escarleth;
 
 /**
  * Powered by Escarleth Ledezma Q.
- * Kata4 is a class that contains a digitalRoot method
+ * Kata4 is a class that contains a digitalRoot method.
  */
 public class Kata4 {
 
