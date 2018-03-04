@@ -5,7 +5,7 @@ package org.fundacionjala.coding.daniel;
  */
 public class Kata1 {
     private static final int WORD_SIZE = 5;
-    public static final String BLANK_SPACE = " ";
+    private static final String BLANK_SPACE = " ";
 
     /**
      * @param sentence A string with one or more words.
@@ -19,6 +19,6 @@ public class Kata1 {
                 words[i] = new StringBuilder(words[i]).reverse().toString();
             }
         }
-        return String.join(" ", words);
+        return String.join(BLANK_SPACE, words);
     }
 }
