@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
  */
 public class Kata1 {
 
-    public static final int THRESHOLD = 5;
+      private static final int THRESHOLD = 5;
 
     /**
      * @param wordsToSpin is a method for spin a word greater than 5 in length.
