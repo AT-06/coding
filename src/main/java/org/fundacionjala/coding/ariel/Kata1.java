@@ -7,7 +7,7 @@ package org.fundacionjala.coding.ariel;
  */
 public class Kata1 {
 
-    public static final int CONDITION = 5;
+    private static final int CONDITION = 5;
 
     /**
      * @param text Any String Text.
