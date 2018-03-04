@@ -1,5 +1,6 @@
 package org.fundacionjala.coding.jimmy;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -9,13 +10,21 @@ import static org.junit.Assert.assertEquals;
  */
 public class Kata1Test {
 
+    private Kata1 kata1;
+
+    /**
+     * This method initializes the kata1 variable.
+     */
+    @Before
+    public void initialize() {
+        kata1 = new Kata1();
+    }
+
     /**
      * This test verifies the spinWords method.
      */
     @Test
     public void test1() {
-        Kata1 kata1 = new Kata1();
-
         String word = "Hey fellow warriors";
         assertEquals("Hey wollef sroirraw", kata1.spinWords(word));
     }
@@ -25,8 +34,6 @@ public class Kata1Test {
      */
     @Test
     public void test2() {
-        Kata1 kata1 = new Kata1();
-
         String word = "This is a test";
         assertEquals("This is a test", kata1.spinWords(word));
     }
@@ -36,8 +43,6 @@ public class Kata1Test {
      */
     @Test
     public void test3() {
-        Kata1 kata1 = new Kata1();
-
         String word = "This is another test";
         assertEquals("This is rehtona test", kata1.spinWords(word));
     }
