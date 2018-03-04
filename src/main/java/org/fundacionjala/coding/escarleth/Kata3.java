@@ -16,14 +16,13 @@ public class Kata3 {
      */
     public int persistentBugger(int numberToPersist) {
         String[] numbers = String.valueOf(numberToPersist).split("");
-        int valueMultiplied = 1;
         if (numbers.length == LIMIT) {
             return 0;
-        } else {
-            for (String number : numbers) {
-                valueMultiplied *= Integer.parseInt(number);
-            }
-            return SUM + persistentBugger(valueMultiplied);
         }
+        int valueMultiplied = 1;
+        for (String number : numbers) {
+            valueMultiplied *= Integer.parseInt(number);
+        }
+        return SUM + persistentBugger(valueMultiplied);
     }
 }
