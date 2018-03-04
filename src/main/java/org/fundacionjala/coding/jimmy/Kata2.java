@@ -14,14 +14,14 @@ public final class Kata2 {
     private Kata2() {
     }
 
-    private static final int MINIMUN_LENGTH_OF_WORD = 2;
+    private static final int MINIMUM_LENGTH_OF_WORD = 2;
 
     /**
      * @param stringWords is the complete string which is going to change its inner.
      * @return the inner of the word sorted.
      */
     public static String sortInnerContent(String stringWords) {
-        return Arrays.stream(stringWords.split(" ")).map(w -> sortWord(w)).collect(Collectors.joining(" "));
+        return Arrays.stream(stringWords.split(" ")).map(Kata2::sortWord).collect(Collectors.joining(" "));
     }
 
     /**
@@ -29,7 +29,7 @@ public final class Kata2 {
      * @return a word with its inner changed.
      */
     private static String sortWord(String word) {
-        if (word.length() < MINIMUN_LENGTH_OF_WORD) {
+        if (word.length() < MINIMUM_LENGTH_OF_WORD) {
             return word;
         } else {
             char[] innerWord = word.substring(1, word.length() - 1).toCharArray();
