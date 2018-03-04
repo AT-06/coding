@@ -17,8 +17,8 @@ public class Kata1 {
         String word = "";
         String[] texts = text.split(" ");
         for (String t : texts) {
-            String wordLessFive = String.join(" ", word, new StringBuilder(t).reverse());
-            word = t.length() >= CONDITION ? wordLessFive : String.join(" ", word, t);
+            String wordMoreFive = String.join(" ", word, new StringBuilder(t).reverse());
+            word = t.length() >= CONDITION ? wordMoreFive : String.join(" ", word, t);
         }
         return word.trim();
     }
