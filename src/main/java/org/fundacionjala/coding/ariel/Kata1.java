@@ -3,7 +3,8 @@ package org.fundacionjala.coding.ariel;
 import java.util.StringJoiner;
 
 /**
- * Kata Ariel Gonzales.
+ * Kata1.
+ * Ariel Gonzales V.
  */
 public class Kata1 {
     private static final int CONDITION = 5;
