@@ -2,6 +2,7 @@ package org.fundacionjala.coding.maria;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.StringJoiner;
 
 /**
  * Kata 2.
@@ -9,6 +10,7 @@ import java.util.Collections;
  */
 public class Kata2 {
     private static final int TAM = 4;
+    private static final String BLANK_SPACE = " ";
 
     /**
      * Metodo sortInnerContent.
@@ -17,23 +19,22 @@ public class Kata2 {
      * @return sorted string
      */
     public String sortInnerContent(String sentence) {
-        String[] wordsList;
-        wordsList = sentence.split(" ");
-        StringBuilder stringBuilder = new StringBuilder();
 
-        for (String word : wordsList) {
+        StringJoiner stringJoiner = new StringJoiner(BLANK_SPACE);
+
+        for (String word : sentence.split(" ")) {
             String[] arrString = word.split("");
             if (word.length() >= TAM) {
                 Arrays.sort(arrString, 1, arrString.length - 1, Collections.reverseOrder());
+                StringBuilder stringBuilder = new StringBuilder();
                 for (String letter : arrString) {
                     stringBuilder.append(letter);
                 }
-            } else {
-                stringBuilder.append(word);
+                word = stringBuilder.toString();
             }
-            stringBuilder.append(' ');
+            stringJoiner.add(word);
+            sentence = stringJoiner.toString();
         }
-        sentence = stringBuilder.toString();
-        return sentence.substring(0, sentence.length() - 1);
+        return sentence;
     }
 }
