@@ -1,5 +1,7 @@
 package org.fundacionjala.coding.ariel;
 
+import java.util.StringJoiner;
+
 /**
  * Kata Ariel Gonzales.
  */
@@ -11,12 +13,12 @@ public class Kata1 {
      * @return String.
      */
     public String rotReverseWord(String text) {
-        String word = "";
+        StringJoiner word = new StringJoiner(" ");
         String[] texts = text.split(" ");
         for (String t : texts) {
-            String wordMoreFive = String.join(" ", word, new StringBuilder(t).reverse());
-            word = t.length() >= CONDITION ? wordMoreFive : String.join(" ", word, t);
+
+            word = t.length() >= CONDITION ? word.add(new StringBuilder(t).reverse()) : word.add(t);
         }
-        return word.trim();
+        return word.toString();
     }
 }
