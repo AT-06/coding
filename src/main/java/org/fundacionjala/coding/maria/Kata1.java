@@ -17,7 +17,7 @@ public class Kata1 {
      */
     public String spinWords(String words) {
         StringJoiner buf = new StringJoiner(BLANK_SPACE);
-        for (String word : words.split(" ")) {
+        for (String word : words.split(BLANK_SPACE)) {
             if (word.length() >= TAM) {
                 StringBuilder rev = new StringBuilder(word);
                 word = rev.reverse().toString();
