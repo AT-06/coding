@@ -16,7 +16,9 @@ public final class Kata2 {
      * @return the inner of the word sorted.
      */
     public String sortInnerContent(String stringWords) {
-        return Arrays.stream(stringWords.split(BLANK_SPACE)).map(w -> sortWord(w)).collect(Collectors.joining(" "));
+        return Arrays.stream(stringWords.split(BLANK_SPACE))
+                .map(this::sortWord)
+                .collect(Collectors.joining(" "));
     }
 
     /**
