@@ -75,16 +75,6 @@ public class Kata5Test {
      */
     @Test
     public void test06() {
-        final String dnaString = "ATTGC";
-        final String expected = "TAACG";
-        assertEquals(expected, kata5.makeComplement(dnaString));
-    }
-
-    /**
-     * Unit test for testing makeComplement method.
-     */
-    @Test
-    public void test07() {
         final String dnaString = "GTATCGATCGATCGATCGATTATATTTTCGACGAGATTTAAATATATATATATACGAGAGAATACAGATAGACAGATTA";
         final String expected = "CATAGCTAGCTAGCTAGCTAATATAAAAGCTGCTCTAAATTTATATATATATATGCTCTCTTATGTCTATCTGTCTAAT";
         assertEquals(expected, kata5.makeComplement(dnaString));
