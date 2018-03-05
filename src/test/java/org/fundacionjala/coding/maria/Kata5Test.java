@@ -13,48 +13,40 @@ public class Kata5Test {
      */
     @Test
     public void testOne() {
-        Kata5 dna = new Kata5();
-        assertEquals("TTTT", dna.makeComplement("AAAA"));
-    }
-    /**
-     * Test test02.
-     */
-    @Test
-    public void testTwo() {
-        Kata5 dna = new Kata5();
-        assertEquals("TAACG", dna.makeComplement("ATTGC"));
+        Kata5 dnaOne = new Kata5();
+        assertEquals("TTTT", dnaOne.makeComplement("AAAA"));
     }
     /**
      * Test test03.
      */
     @Test
     public void testThree() {
-        Kata5 dna = new Kata5();
-        assertEquals("CATA", dna.makeComplement("GTAT"));
+        Kata5 dnaThree = new Kata5();
+        assertEquals("CATA", dnaThree.makeComplement("GTAT"));
     }
     /**
      * Test test04.
      */
     @Test
     public void testFour() {
-        Kata5 dna = new Kata5();
-        assertEquals("TTCC", dna.makeComplement("AAGG"));
+        Kata5 dnaFour = new Kata5();
+        assertEquals("TTCC", dnaFour.makeComplement("AAGG"));
     }
     /**
      * Test test05.
      */
     @Test
     public void testFive() {
-        Kata5 dna = new Kata5();
-        assertEquals("GCGC", dna.makeComplement("CGCG"));
+        Kata5 dnaFive = new Kata5();
+        assertEquals("GCGC", dnaFive.makeComplement("CGCG"));
     }
     /**
      * Test test06.
      */
     @Test
     public void testSix() {
-        Kata5 dna = new Kata5();
-        assertEquals("TAACG", dna.makeComplement("ATTGC"));
+        Kata5 dnaSix = new Kata5();
+        assertEquals("TAACG", dnaSix.makeComplement("ATTGC"));
     }
     /**
      * Test test07.
@@ -64,7 +56,7 @@ public class Kata5Test {
         String expected = "CATAGCTAGCTAGCTAGCTAATATAAAAGCTGCTCTAAATTTATATATATATATGCTCTCTTATGTCTATCTGTCTAAT";
         String dnaCase = "GTATCGATCGATCGATCGATTATATTTTCGACGAGATTTAAATATATATATATACGAGAGAATACAGATAGACAGATTA";
 
-        Kata5 dna = new Kata5();
-        assertEquals(expected, dna.makeComplement(dnaCase));
+        Kata5 dnaSeven = new Kata5();
+        assertEquals(expected, dnaSeven.makeComplement(dnaCase));
     }
 }
