@@ -13,7 +13,7 @@ public final class Kata2 {
 
     /**
      * @param stringWords is the complete string which is going to change its inner.
-     * @return the inner of the word sorted.
+     * @return returns the inner of the word sorted.
      */
     public String sortInnerContent(String stringWords) {
         return Arrays.stream(stringWords.split(BLANK_SPACE))
