@@ -28,7 +28,7 @@ public class Kata2 {
                 joiner.add(letter);
             }
             if (i < wordsList.length - 1) {
-                StringJoiner add = joiner.add(" ");
+                joiner.add(" ");
             }
         }
         return joiner.toString();
