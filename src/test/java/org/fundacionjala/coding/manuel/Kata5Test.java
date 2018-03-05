@@ -72,4 +72,13 @@ public class Kata5Test {
         String param = "GTATCGATCGATCGATCGATTATATTTTCGACGAGATTTAAATATATATATATACGAGAGAATACAGATAGACAGATTA";
         assertEquals(expected, dnaStrand.makeComplement(param));
     }
+
+    /**
+     * Eight test method makeComplement.
+     */
+    @Test
+    public void test8MakeComplementKata5() {
+        Kata5 dnaStrand = new Kata5();
+        assertEquals("TAACGX", dnaStrand.makeComplement("ATTGCX"));
+    }
 }
