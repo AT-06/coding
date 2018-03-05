@@ -1,5 +1,7 @@
 package org.fundacionjala.coding.maria;
 
+import java.util.StringJoiner;
+
 /**
  * kata 1 Spin Words.
  * Inverted String that have more of 5 letters
@@ -7,27 +9,22 @@ package org.fundacionjala.coding.maria;
  */
 public class Kata1 {
     private static final int TAM = 5;
+    private static final String BLANK_SPACE = " ";
 
     /**
      * @param words This is the sentence
      * @return words A new inverted sentence
      */
     public String spinWords(String words) {
-        String auxString = words;
-        String[] wordsList;
-        wordsList = auxString.split(" ");
-        auxString = "";
-        StringBuffer buf = new StringBuffer();
-        for (String word : wordsList) {
+        StringJoiner buf = new StringJoiner(BLANK_SPACE);
+        for (String word : words.split(" ")) {
             if (word.length() >= TAM) {
                 StringBuilder rev = new StringBuilder(word);
                 word = rev.reverse().toString();
             }
-            buf.append(word);
-            buf.append(' ');
-            auxString = buf.toString();
+            buf.add(word);
         }
-        words = auxString.substring(0, auxString.length() - 1);
-        return words;
+        return buf.toString();
+
     }
 }
