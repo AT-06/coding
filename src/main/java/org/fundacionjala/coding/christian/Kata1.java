@@ -1,5 +1,7 @@
 package org.fundacionjala.coding.christian;
 
+import java.util.StringJoiner;
+
 /**
  * Powered by Christian.
  */
@@ -14,23 +16,20 @@ public class Kata1 {
      */
     public String spinWords(String words) {
 
-        StringBuffer buffer = new StringBuffer();
+        StringJoiner join = new StringJoiner(" ");
         String[] arr = words.split(" ");
-        String space = " ";
         for (String c : arr) {
 
             if (c.length() >= LIMIT) {
-                buffer.append(new StringBuilder(c).reverse());
+                join.add(new StringBuilder(c).reverse());
 
             } else {
-                buffer.append(c);
-
+                join.add(c);
             }
-            buffer.append(space);
         }
 
-        System.out.println(buffer);
-        return buffer.toString().trim();
+        System.out.println(join);
+        return join.toString();
 
     }
 }

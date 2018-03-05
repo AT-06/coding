@@ -10,9 +10,19 @@ public class Kata1Test {
      *
      */
     @Test
-    public void allWordsCantBeReversed() {
+    public void testAllWordsCantBeReversed() {
         Kata1 words = new Kata1();
         assertEquals("This is a test", words.spinWords("This is a test"));
+
+    }
+
+    /**
+     *
+     */
+    @Test
+    public void testSomeWordsCanBeReversed() {
+        Kata1 words = new Kata1();
+        assertEquals("Hey wollef sroirraw", words.spinWords("Hey fellow warriors"));
 
     }
 }
