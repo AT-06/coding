@@ -13,33 +13,14 @@ public class Katas2Test {
      */
     @Test
     public void sortInnerContentTest1() {
-        Katas2 text = new Katas2("sort the inner content in descending order");
-        assertEquals("srot the inner ctonnet in dsnnieedcg oredr", text.changeWord());
-    }
-
-    /**
-     * Test to check the second condition o.
-     */
-    @Test
-    public void sortInnerContentTest2() {
-        Katas2 text = new Katas2("wait for me");
-        assertEquals("wiat for me", text.changeWord());
-    }
-
-    /**
-     * Test to check the third condition.
-     */
-    @Test
-    public void sortInnerContentTest3() {
-        Katas2 text = new Katas2("this kata is easy");
-        assertEquals("tihs ktaa is esay", text.changeWord());
-    }
-    /**
-     * Test to check the fourth condition.
-     */
-    @Test
-    public void sortInnerContentTest4() {
-        Katas2 text = new Katas2("I am");
-        assertEquals("I am", text.changeWord());
+        Katas2 text = new Katas2();
+        String resp1 = "srot the inner ctonnet in dsnnieedcg oredr";
+        String input1 = "sort the inner content in descending order";
+        assertEquals(resp1, text.changeWord(input1));
+        assertEquals("wiat for me", text.changeWord("wait for me"));
+        assertEquals("tihs ktaa is esay", text.changeWord("this kata is easy"));
+        assertEquals("I am", text.changeWord("I am"));
     }
 }
+
+

@@ -1,6 +1,7 @@
 package org.fundacionjala.coding.ariel;
 
 import java.util.Arrays;
+import java.util.StringJoiner;
 
 import static java.util.Collections.reverseOrder;
 
@@ -8,45 +9,34 @@ import static java.util.Collections.reverseOrder;
  * Kata2__Ariel Gonzales Vargas.
  */
 public class Katas2 {
-    private String text;
-    private String[] textos;
 
     /**
-     * @param text The input is a String
+     * @param text Any String.
+     * @return A sort String.
      */
-    public Katas2(String text) {
-        this.text = text;
-    }
-    /**
-     * @return Return a String but the inner content
-     * of a word change in descending order.
-     */
-    public String changeWord() {
+    public String changeWord(String text) {
+        String[] textos;
         textos = text.split(" ");
-        String result;
-        String result1 = "";
-        String ult = "";
+        String resultSubstring = "";
+        StringJoiner ult = new StringJoiner(" ");
         for (String word : textos) {
-
             if (word.length() >= 2) {
-
                 String another = word.substring(1, word.length() - 1);
                 String[] anothers = another.split("");
                 Arrays.sort(anothers, reverseOrder());
                 for (String t : anothers) {
-
-                    result1 = String.join("", result1, t);
+                    resultSubstring = String.join("", resultSubstring, t);
                 }
-                result = result1;
                 String t1 = String.valueOf(word.charAt(0));
                 String t2 = String.valueOf(word.charAt(word.length() - 1));
-                result = String.join("", t1, result, t2);
-                ult = String.join(" ", ult, result);
-                result1 = "";
+                String result = String.join("", t1, resultSubstring, t2);
+                resultSubstring = "";
+                ult.add(result);
+
             } else {
-                ult = String.join(" ", ult, word);
+                ult.add(word);
             }
         }
-        return ult.trim();
+        return ult.toString();
     }
 }
