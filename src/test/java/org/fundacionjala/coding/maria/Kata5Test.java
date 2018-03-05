@@ -47,16 +47,8 @@ public class Kata5Test {
     public void testSix() {
         Kata5 dnaSix = new Kata5();
         assertEquals("TAACG", dnaSix.makeComplement("ATTGC"));
-    }
-    /**
-     * Test test07.
-     */
-    @Test
-    public void testSeven() {
         String expected = "CATAGCTAGCTAGCTAGCTAATATAAAAGCTGCTCTAAATTTATATATATATATGCTCTCTTATGTCTATCTGTCTAAT";
         String dnaCase = "GTATCGATCGATCGATCGATTATATTTTCGACGAGATTTAAATATATATATATACGAGAGAATACAGATAGACAGATTA";
-
-        Kata5 dnaSeven = new Kata5();
-        assertEquals(expected, dnaSeven.makeComplement(dnaCase));
+        assertEquals(expected, dnaSix.makeComplement(dnaCase));
     }
 }
