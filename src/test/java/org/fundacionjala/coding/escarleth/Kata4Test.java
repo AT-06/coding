@@ -8,12 +8,12 @@ import static org.junit.Assert.assertEquals;
  * This class contains UnitTests for Kata4.
  */
 public class Kata4Test {
+  
     /**
      * This method is for testing a digitalRoot number.
      */
     @Test
     public void testDigitalRoot() {
-
         final int number1 = 16;
         final int number2 = 942;
         final int number3 = 493193;
@@ -27,4 +27,5 @@ public class Kata4Test {
         assertEquals(expected3, kata4.digitalRoot(number3));
     }
 }
+
 
