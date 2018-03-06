@@ -1,5 +1,6 @@
 package org.fundacionjala.coding.maria;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -8,14 +9,21 @@ import static org.junit.Assert.assertEquals;
  * Kata 2 test.
  */
 public class Kata2Test {
+    private Kata2 kata2;
+    /**
+     * initialize kata2.
+     */
+    @Before
+    public void initialize() {
+        kata2 = new Kata2();
+    }
     /**
      * test returnStringWithSortInnerContent.
      */
     @Test
     public void returnStringWithSortInnerContentLarge() {
         String sentence = "srot the inner ctonnet in dsnnieedcg oredr";
-        Kata2 words = new Kata2();
-        assertEquals(sentence, words.sortInnerContent("sort the inner content in descending order"));
+        assertEquals(sentence, kata2.sortInnerContent("sort the inner content in descending order"));
     }
     /**
      * test returnStringWithSortInnerContentShort.
@@ -23,8 +31,7 @@ public class Kata2Test {
     @Test
     public void returnStringWithSortInnerContentShort() {
         String sentence = "wiat for me";
-        Kata2 words = new Kata2();
-        assertEquals(sentence, words.sortInnerContent("wait for me"));
+        assertEquals(sentence, kata2.sortInnerContent("wait for me"));
     }
     /**
      * test returnStringWithSortInnerContentShortTwo.
@@ -32,8 +39,7 @@ public class Kata2Test {
     @Test
     public void returnStringWithSortInnerContentShortTwo() {
         String sentence = "tihs ktaa is esay";
-        Kata2 words = new Kata2();
-        assertEquals(sentence, words.sortInnerContent("this kata is easy"));
+        assertEquals(sentence, kata2.sortInnerContent("this kata is easy"));
     }
     /**
      * test returnStringWithSortInnerContentShortThree.
@@ -41,7 +47,6 @@ public class Kata2Test {
     @Test
     public void returnStringWithSortInnerContentShortThree() {
         String sentence = "I am";
-        Kata2 words = new Kata2();
-        assertEquals(sentence, words.sortInnerContent("I am"));
+        assertEquals(sentence, kata2.sortInnerContent("I am"));
     }
 }
