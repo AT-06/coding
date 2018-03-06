@@ -22,7 +22,6 @@ public class Kata3Test {
     @Test
     public void testPersistenceKata3() {
         Kata3 kata3 = new Kata3();
-        System.out.println("****** Basic Tests ******");
         assertEquals(TEST_NUMBER_3, kata3.persistence(TEST_NUMBER_39));
         assertEquals(TEST_NUMBER_0, kata3.persistence(TEST_NUMBER_4));
         assertEquals(TEST_NUMBER_2, kata3.persistence(TEST_NUMBER_25));
