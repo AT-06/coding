@@ -21,7 +21,6 @@ public class Kata2 {
     public String sortInnerContent(String sentence) {
 
         StringJoiner stringJoiner = new StringJoiner(BLANK_SPACE);
-
         for (String word : sentence.split(BLANK_SPACE)) {
             String[] arrString = word.split("");
             if (word.length() >= TAM) {

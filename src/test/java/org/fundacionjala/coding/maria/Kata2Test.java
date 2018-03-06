@@ -44,5 +44,4 @@ public class Kata2Test {
         Kata2 words = new Kata2();
         assertEquals(sentence, words.sortInnerContent("I am"));
     }
-
 }
