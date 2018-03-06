@@ -15,7 +15,6 @@ public class Kata5 {
      */
     public String makeComplement(String dna) { //ATTGC   -> TAACG
         Map<String, String> comp = new HashMap<>();
-
         comp.put("A", "T");
         comp.put("C", "G");
         comp.put("G", "C");

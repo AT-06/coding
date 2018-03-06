@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class Kata5Test {
     /**
      * Test test01.
-     */
+     */ 
     @Test
     public void testOne() {
         Kata5 dnaOne = new Kata5();
