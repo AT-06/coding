@@ -18,11 +18,7 @@ public class Kata1 {
         StringJoiner reverseWord = new StringJoiner(" ");
         String[] partsString = words.split(" ");
         for (String word : partsString) {
-            if (word.length() >= TAM) {
-                reverseWord.add(new StringBuilder(word).reverse());
-            } else {
-                reverseWord.add(word);
-            }
+            reverseWord.add(word.length() >= TAM ? new StringBuilder(word).reverse() : word);
         }
         return reverseWord.toString();
     }
