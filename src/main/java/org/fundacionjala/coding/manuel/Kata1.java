@@ -1,12 +1,14 @@
 package org.fundacionjala.coding.manuel;
 
+import java.util.StringJoiner;
+
 /**
  * Created by Administrator on 2/22/2018.
  */
 public class Kata1 {
     private String sentence;
     private static final int MAX_SIZE = 5;
-
+    private static final String SPACE =  " ";
     /**
      *@param w Constructor by default.
      */
@@ -20,22 +22,24 @@ public class Kata1 {
         String[] words = sentence.split(" ");
         String newSentece = "";
         StringBuilder newWord;
-        StringBuffer buffer = new StringBuffer();
+        //StringBuffer buffer = new StringBuffer();
+
+        StringJoiner j = new StringJoiner(SPACE);
+
         for (String singleWord : words) {
             newWord = new StringBuilder(singleWord);
 
             if (singleWord.length() >= MAX_SIZE) {
-                buffer.append(newWord.reverse());
-                //newSentece = newSentece + ;
+                j.add(newWord.reverse());
+                //buffer.append(newWord.reverse());
             } else {
-                buffer.append(singleWord);
-                //newSentece = newSentece + ;
+                j.add(singleWord);
+                //buffer.append(singleWord);
             }
-            buffer.append(' ');
-            //newSentece = newSentece + " ";
+            //buffer.append(' ');
         }
-        newSentece = buffer.toString();
-        newSentece = newSentece.trim();
+        newSentece = j.toString();
+        //newSentece = newSentece.trim();
         return newSentece;
     }
 }
