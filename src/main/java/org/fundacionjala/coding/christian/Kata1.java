@@ -19,13 +19,8 @@ public class Kata1 {
         StringJoiner join = new StringJoiner(" ");
         String[] arr = words.split(" ");
         for (String c : arr) {
-
-            if (c.length() >= LIMIT) {
-                join.add(new StringBuilder(c).reverse());
-
-            } else {
-                join.add(c);
-            }
+            join = c.length() >= LIMIT
+                    ? join.add(new StringBuilder(c).reverse()) : join.add(c);
         }
 
         System.out.println(join);
