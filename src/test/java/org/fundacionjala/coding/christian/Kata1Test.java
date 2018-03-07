@@ -20,7 +20,7 @@ public class Kata1Test {
      *
      */
     @Test
-    public void testSomeWordsCanBeReversed() {
+    public void testCanBeReversedSomeWords() {
         Kata1 words = new Kata1();
         assertEquals("Hey fellow warriors", words.spinWords("Hey wollef sroirraw"));
 
@@ -30,7 +30,7 @@ public class Kata1Test {
      *
      */
     @Test
-    public  void testWordsMiddleChange() {
+    public  void testMiddleChangeWords() {
         Kata1 words = new Kata1();
         assertEquals("This is another test", words.spinWords("This is rehtona test"));
     }
