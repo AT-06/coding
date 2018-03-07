@@ -7,26 +7,25 @@ import static org.junit.Assert.assertEquals;
  */
 public class Kata3Test {
 
-    private static final int TEST_NUMBER_0 = 0;
-    private static final int TEST_NUMBER_2 = 2;
-    private static final int TEST_NUMBER_3 = 3;
-    private static final int TEST_NUMBER_4 = 4;
-    private static final int TEST_NUMBER_25 = 25;
-    private static final int TEST_NUMBER_39 = 39;
-    private static final int TEST_NUMBER_444 = 444;
-    private static final int TEST_NUMBER_999 = 999;
-
     /**
      * test the persitance method..
      */
     @Test
     public void testPersistenceKata3() {
+        final int testNumber0 = 0;
+        final int testNumber2 = 2;
+        final int testNumber3 = 3;
+        final int testNumber4 = 4;
+        final int testNumber25 = 25;
+        final int testNumber39 = 39;
+        final int testNumber444 = 444;
+        final int testNumber999 = 999;
         Kata3 kata3 = new Kata3();
-        assertEquals(TEST_NUMBER_3, kata3.persistence(TEST_NUMBER_39));
-        assertEquals(TEST_NUMBER_0, kata3.persistence(TEST_NUMBER_4));
-        assertEquals(TEST_NUMBER_2, kata3.persistence(TEST_NUMBER_25));
-        assertEquals(TEST_NUMBER_4, kata3.persistence(TEST_NUMBER_999));
-        assertEquals(TEST_NUMBER_3, kata3.persistence(TEST_NUMBER_444));
+        assertEquals(testNumber3, kata3.persistence(testNumber39));
+        assertEquals(testNumber0, kata3.persistence(testNumber4));
+        assertEquals(testNumber2, kata3.persistence(testNumber25));
+        assertEquals(testNumber4, kata3.persistence(testNumber999));
+        assertEquals(testNumber3, kata3.persistence(testNumber444));
     }
 
 }

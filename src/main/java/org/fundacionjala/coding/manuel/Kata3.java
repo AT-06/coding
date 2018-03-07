@@ -13,17 +13,16 @@ public class Kata3 {
      * @return returns the amount of persistance.
      */
     public int persistence(int number) {
-        int copiedNumber = number;
-        int multipliedNumber;
+
         int count = 0;
-        while (copiedNumber > MAX_DIGITS) {
-            multipliedNumber = 1;
-            while (copiedNumber > MAX_DIGITS) {
-                multipliedNumber *= copiedNumber % MOD_NUMBER;
-                copiedNumber /= MOD_NUMBER;
+        while (number > MAX_DIGITS) {
+            int multipliedNumber = 1;
+            while (number > MAX_DIGITS) {
+                multipliedNumber *= number % MOD_NUMBER;
+                number /= MOD_NUMBER;
             }
-            multipliedNumber *= copiedNumber;
-            copiedNumber = multipliedNumber;
+            multipliedNumber *= number;
+            number = multipliedNumber;
             count++;
         }
         return count;
