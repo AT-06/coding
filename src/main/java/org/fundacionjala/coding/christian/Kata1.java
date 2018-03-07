@@ -23,7 +23,6 @@ public class Kata1 {
                     ? join.add(new StringBuilder(c).reverse()) : join.add(c);
         }
 
-        System.out.println(join);
         return join.toString();
 
     }
