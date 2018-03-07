@@ -2,45 +2,38 @@ package org.fundacionjala.coding.manuel;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.StringJoiner;
 
 
 /**
  * Created by Administrator on 2/23/2018.
  */
 public class Kata2 {
-    private String sentence;
+
     private static final int MAX_LENGHT = 3;
 
     /**
-     * Created by Administrator on 2/23/2018.
-     * @param sentence es la oracion original.
-     */
-    public Kata2(String sentence) {
-        this.sentence = sentence;
-    }
-
-    /**
      * @return string que es la oracion ordenada.
+     * @param sentence .
      */
-    public String sortInnerContent() {
+    public String sortInnerContent(String sentence) {
         String[] words = sentence.split(" ");
-        StringBuffer newSentece = new StringBuffer();
+        StringJoiner join;
+        StringJoiner joinWord = new StringJoiner(" ");
 
         for (String singleWord : words) {
             String[] letters = singleWord.split("");
             if (singleWord.length() > MAX_LENGHT) {
+                join = new StringJoiner("");
                 Arrays.sort(letters, 1, singleWord.length() - 1, Collections.reverseOrder());
                 for (String let : letters) {
-                    newSentece.append(let);
+                    join.add(let);
                 }
-            } else {
-                newSentece.append(singleWord);
+                singleWord = join.toString();
             }
-            newSentece.append(' ');
+            joinWord.add(singleWord);
         }
-        String returnSentence = newSentece.toString();
-        returnSentence = returnSentence.trim();
-        return  returnSentence;
+        return  joinWord.toString();
     }
 }
 

@@ -1,5 +1,6 @@
 package org.fundacionjala.coding.manuel;
 
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
@@ -7,13 +8,22 @@ import static org.junit.Assert.assertEquals;
  * Created by Administrator on 2/23/2018.
  */
 public class Kata2Test {
+    private Kata2 kata2;
+
+
+    /**
+     * Initialize method.
+     */
+    @Before public void initialize() {
+        kata2 = new Kata2();
+    }
     /**
      * Verificar que las palabras de una oracion hayan sido ordenadas.
      */
     @Test
     public void aStringInnerContentIsSort1() {
-        Kata2 kata2 = new Kata2("sort the inner content in descending order");
-        assertEquals("srot the inner ctonnet in dsnnieedcg oredr", kata2.sortInnerContent());
+        final String param = "sort the inner content in descending order";
+        assertEquals("srot the inner ctonnet in dsnnieedcg oredr", kata2.sortInnerContent(param));
     }
 
     /**
@@ -21,8 +31,7 @@ public class Kata2Test {
      */
     @Test
     public void aStringInnerContentIsSort2() {
-        Kata2 kata2 = new Kata2("wait for me");
-        assertEquals("wiat for me", kata2.sortInnerContent());
+        assertEquals("wiat for me", kata2.sortInnerContent("wait for me"));
     }
 
     /**
@@ -30,8 +39,7 @@ public class Kata2Test {
      */
     @Test
     public void aStringInnerContentIsSort3() {
-        Kata2 kata2 = new Kata2("this kata is easy");
-        assertEquals("tihs ktaa is esay", kata2.sortInnerContent());
+        assertEquals("tihs ktaa is esay", kata2.sortInnerContent("this kata is easy"));
     }
 
     /**
@@ -39,8 +47,7 @@ public class Kata2Test {
      */
     @Test
     public void aStringInnerContentIsSort4() {
-        Kata2 kata2 = new Kata2("I am");
-        assertEquals("I am", kata2.sortInnerContent());
+        assertEquals("I am", kata2.sortInnerContent("I am"));
     }
 
 }
