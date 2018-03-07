@@ -1,8 +1,5 @@
 package org.fundacionjala.coding.jimmy;
 
-import java.util.Arrays;
-import java.util.stream.Collectors;
-
 /**
  * Class for implementing makeComplement method.
  */
