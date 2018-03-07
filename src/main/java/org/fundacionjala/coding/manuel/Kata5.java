@@ -13,7 +13,7 @@ public class Kata5 {
      * @return newword .
      */
     public String makeComplement(String s) {
-        Map<String, String> complementaries = new HashMap<String, String>();
+        Map<String, String> complementaries = new HashMap<>();
         complementaries.put("A", "T");
         complementaries.put("T", "A");
         complementaries.put("C", "G");
