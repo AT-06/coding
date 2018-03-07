@@ -16,8 +16,7 @@ public class Kata6Test {
     /**
      * Method to inizialice object.
      */
-    @Before
-    public void initialize() {
+    @Before public void initialize() {
         kata6 = new Kata6();
     }
 
