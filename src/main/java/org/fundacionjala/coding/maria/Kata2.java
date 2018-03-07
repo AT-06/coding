@@ -32,8 +32,7 @@ public class Kata2 {
                 word = stringBuilder.toString();
             }
             stringJoiner.add(word);
-            sentence = stringJoiner.toString();
         }
-        return sentence;
+        return stringJoiner.toString();
     }
 }
