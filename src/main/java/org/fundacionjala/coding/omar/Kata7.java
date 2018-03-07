@@ -20,8 +20,10 @@ public class Kata7 {
      */
     public String isFizzBuzzNumer(int number) {
 
-        return number % NUMBER_15 == ZERO
-                ? "FizzBuzz" : number % NUMBER_3 == ZERO
+        if(number % NUMBER_15 == ZERO){
+            return "FizzBuzz";
+        }
+        return number % NUMBER_3 == ZERO
                 ? "Fizz" : number % NUMBER_5 == ZERO
                 ? "Buzz" : String.valueOf(number);
     }
