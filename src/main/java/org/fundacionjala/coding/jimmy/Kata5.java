@@ -16,13 +16,11 @@ public class Kata5 {
      * @return the complementary change.
      */
     public String makeComplement(String dnaString) {
-        return Arrays.stream(dnaString.split(""))
-                .map(dnaChain -> dnaChain.replace("A", "Y")
-                        .replace("C", "Z")
-                        .replace("T", "A")
-                        .replace("G", "C")
-                        .replace("Y", "T")
-                        .replace("Z", "G"))
-                .collect(Collectors.joining());
+        return dnaString.replaceAll("A", "Y")
+                .replaceAll("C", "Z")
+                .replaceAll("T", "A")
+                .replaceAll("G", "C")
+                .replaceAll("Y", "T")
+                .replaceAll("Z", "G");
     }
 }
