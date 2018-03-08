@@ -24,4 +24,5 @@ public class Kata7 {
         }
         return String.valueOf(number);
     }
+
 }
