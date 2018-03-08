@@ -13,7 +13,7 @@ public class Kata7Test {
      * Conditions.
      */
     @Test
-    public void fizzBuzzNumber() {
+    public void testFizzBuzzNumber() {
         Kata7 katita = new Kata7();
         assertEquals("8", katita.fizzBuzz("8"));
         assertEquals("FizzBuzz", katita.fizzBuzz("15"));

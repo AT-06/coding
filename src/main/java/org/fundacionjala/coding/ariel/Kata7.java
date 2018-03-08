@@ -11,20 +11,20 @@ public class Kata7 {
      */
     public String fizzBuzz(String num) {
         int number = Integer.parseInt(num);
-        final int cond1 = 15;
-        final int cond2 = 5;
-        final int cond3 = 3;
+        final int div15 = 15;
+        final int div5 = 5;
+        final int div3 = 3;
 
-        if (number % cond1 == 0) {
+        if (number % div15 == 0) {
             return "FizzBuzz";
         }
 
-        if (number % cond2 == 0 || num.indexOf('5') != -1) {
+        if (number % div5 == 0 || num.contains("5")) {
 
             return "Buzz";
         }
 
-        if (number % cond3 == 0 || num.indexOf('3') != -1) {
+        if (number % div3 == 0 || num.contains("3")) {
             return "Fizz";
         }
 
