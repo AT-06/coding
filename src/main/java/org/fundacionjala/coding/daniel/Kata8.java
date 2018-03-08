@@ -15,12 +15,9 @@ public class Kata8 {
     private static final int ELEVEN = 11;
     private static final List<String> ACCOUNT = new ArrayList<>();
     private static final String QUESTION_MARK = "?";
-
-    public static final String UNDERSCORE = "_";
-
-    public static final String PIPE = "|";
-    public static final String PIPES = PIPE + " |";
-
+    private static final String UNDERSCORE = "_";
+    private static final String PIPE = "|";
+    private static final String PIPES = PIPE + " |";
     public static final String BLANK_SPACE = " ";
 
     static {
