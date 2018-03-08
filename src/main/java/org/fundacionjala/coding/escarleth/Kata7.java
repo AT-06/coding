@@ -12,17 +12,20 @@ public class Kata7 {
 
     /**
      * @param number is any number
-     * @return a number change to  Fizz or Buzz or FizzBuzz
+     * @return a number changed to  Fizz or Buzz or FizzBuzz
      */
     public String fizzBuzz(int number) {
+        String valueNumber = String.valueOf(number);
         if (number % MULTIPLE15 == 0) {
             return "FizzBuzz";
-        } else if (number % MULTIPLE5 == 0 || String.valueOf(number).contains("5")) {
+        }
+        if (number % MULTIPLE5 == 0 || valueNumber.contains("5")) {
             return "Buzz";
-        } else if (number % MULTIPLE3 == 0 || String.valueOf(number).contains("3")) {
+        }
+        if (number % MULTIPLE3 == 0 || valueNumber.contains("3")) {
             return "Fizz";
         }
-        return String.valueOf(number);
+        return valueNumber;
     }
 
 }
