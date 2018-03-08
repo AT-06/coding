@@ -75,7 +75,8 @@ public class Kata8 {
     public boolean checkSum(String accountNumber) {
         final String[] numberPosition = accountNumber.split("");
         int checksum = ZERO;
-        int i = ZERO, j = NINE;
+        int i = ZERO;
+        int j = NINE;
         final int numberPositionLength = numberPosition.length;
 
         while (i < numberPositionLength && j > ZERO) {
@@ -91,7 +92,10 @@ public class Kata8 {
      * @return whether the account number is valid.
      */
     public String finding(String accountNumber) {
-        return accountNumber.contains(QUESTION_MARK) ? String.format("%s ILL", accountNumber)
-            : !checkSum(accountNumber) ? String.format("%s ERR", accountNumber) : accountNumber;
+        if (accountNumber.contains(QUESTION_MARK)) {
+            return String.format("%s ILL", accountNumber);
+        } else {
+            return !checkSum(accountNumber) ? String.format("%s ERR", accountNumber) : accountNumber;
+        }
     }
 }

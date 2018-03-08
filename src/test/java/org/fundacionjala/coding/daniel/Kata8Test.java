@@ -14,6 +14,9 @@ import static org.junit.Assert.assertTrue;
  * Class for Testing Kata8 class.
  */
 public class Kata8Test {
+    private static final String UNDERSCORES = "    _  _     _  _  _  _  _ ";
+    private static final String PIPES_UNDERSCORES = "  | _| _||_||_ |_   ||_||_|";
+    private static final String UNDERSCORES_PIPES = "  ||_  _|  | _||_|  ||_| _|";
     private Kata8 kata;
 
     /**
@@ -31,9 +34,9 @@ public class Kata8Test {
     @Test
     public void testMapEntryOCRToNumber() {
         List<String> lines = new ArrayList<>();
-        lines.add("    _  _     _  _  _  _  _ ");
-        lines.add("  | _| _||_||_ |_   ||_||_|");
-        lines.add("  ||_  _|  | _||_|  ||_| _|");
+        lines.add(UNDERSCORES);
+        lines.add(PIPES_UNDERSCORES);
+        lines.add(UNDERSCORES_PIPES);
         final String actualResult = kata.mapEntryOCRToNumber(lines);
         final String expectedResult = "123456789";
         assertEquals(expectedResult, actualResult);
@@ -63,11 +66,11 @@ public class Kata8Test {
      * This method test Finding result of a Legible account number.
      */
     @Test
-    public void testFindingLegibleAccountNumber() {
+    public void testMapEntryOCRToNumber2() {
         List<String> lines = new ArrayList<>();
-        lines.add("    _  _     _  _  _  _  _ ");
-        lines.add("  | _| _||_||_ |_   ||_||_|");
-        lines.add("  ||_  _|  | _||_|  ||_| _|");
+        lines.add(UNDERSCORES);
+        lines.add(PIPES_UNDERSCORES);
+        lines.add(UNDERSCORES_PIPES);
 
         final String actualResult = kata.mapEntryOCRToNumber(lines);
         final String expectedResult = "123456789";
@@ -81,8 +84,8 @@ public class Kata8Test {
     public void testFindingChecksumErrorAccountNumber() {
         List<String> lines = new ArrayList<>();
         lines.add("    _  _     _  _     _  _ ");
-        lines.add("  | _| _||_||_ |_   ||_||_|");
-        lines.add("  ||_  _|  | _||_|  ||_| _|");
+        lines.add(PIPES_UNDERSCORES);
+        lines.add(UNDERSCORES_PIPES);
         final String actualResult = kata.finding(kata.mapEntryOCRToNumber(lines));
         final String expectedResult = "123456189 ERR";
         assertEquals(expectedResult, actualResult);
@@ -94,7 +97,7 @@ public class Kata8Test {
     @Test
     public void testFindingIllegibleAccountNumber() {
         List<String> lines = new ArrayList<>();
-        lines.add("    _  _     _  _  _  _  _ ");
+        lines.add(UNDERSCORES);
         lines.add("  | _| _||_| _  _    |_||_|");
         lines.add("|_ |_  _|  | _||_|  ||_| _|");
         final String actualResult = kata.finding(kata.mapEntryOCRToNumber(lines));
