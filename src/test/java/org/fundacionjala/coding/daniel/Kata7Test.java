@@ -29,8 +29,8 @@ public class Kata7Test {
      */
     @Test
     public void testTheNumberIsBuzz() {
-        assertEquals("Buzz", kata.fizzBuzz(NUMBER_3));
-        assertEquals("Buzz", kata.fizzBuzz(NUMBER_32));
+        assertEquals("Buzz", kata.fizzBuzz(NUMBER_05));
+        assertEquals("Buzz", kata.fizzBuzz(NUMBER_25));
     }
 
     /**
@@ -38,8 +38,8 @@ public class Kata7Test {
      */
     @Test
     public void testTheNumberIsFizz() {
-        assertEquals("Fizz", kata.fizzBuzz(NUMBER_25));
-        assertEquals("Fizz", kata.fizzBuzz(NUMBER_05));
+        assertEquals("Fizz", kata.fizzBuzz(NUMBER_3));
+        assertEquals("Fizz", kata.fizzBuzz(NUMBER_32));
     }
 
     /**

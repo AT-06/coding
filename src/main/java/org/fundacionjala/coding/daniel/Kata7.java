@@ -14,9 +14,18 @@ public class Kata7 {
      */
     public String fizzBuzz(int number) {
         final String value = String.valueOf(number);
-        return number % FIZZ == 0 || value.contains("3")
-            ? number % BUZZ == 0
-            ? "FizzBuzz" : "Buzz" : number % BUZZ == 0 || value.contains("5")
-            ? "Fizz" : value;
+        if (number % FIZZ == 0 && number % BUZZ == 0) {
+            return "FizzBuzz";
+        }
+        if (number % FIZZ == 0 || value.contains("3")) {
+            return "Fizz";
+        }
+        if (number % BUZZ == 0 || value.contains("5")) {
+            return "Buzz";
+        }
+        return value;
     }
 }
+
+
+
