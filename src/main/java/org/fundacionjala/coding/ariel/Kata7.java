@@ -1,7 +1,7 @@
 package org.fundacionjala.coding.ariel;
 
 /**
- * Ariel Gonzales Vargas..
+ * Ariel Gonzales Vargas.
  */
 public class Kata7 {
 

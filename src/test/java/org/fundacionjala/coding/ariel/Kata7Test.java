@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Ariel Gonzales V.
+ * Ariel Gonzales V..
  * Test to check the FizzBuzzNumber method.
  */
 public class Kata7Test {
