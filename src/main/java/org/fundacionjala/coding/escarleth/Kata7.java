@@ -17,12 +17,11 @@ public class Kata7 {
     public String fizzBuzz(int number) {
         if (number % MULTIPLE15 == 0) {
             return "FizzBuzz";
-        } else if (number % MULTIPLE5 == 0) {
+        } else if (number % MULTIPLE5 == 0 || String.valueOf(number).contains("5")) {
             return "Buzz";
-        } else if (number % MULTIPLE3 == 0) {
+        } else if (number % MULTIPLE3 == 0 || String.valueOf(number).contains("3")) {
             return "Fizz";
         }
         return String.valueOf(number);
     }
-
 }
