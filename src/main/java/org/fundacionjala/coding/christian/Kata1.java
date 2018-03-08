@@ -17,10 +17,8 @@ public class Kata1 {
     public String spinWords(String words) {
 
         StringJoiner join = new StringJoiner(" ");
-        String[] arr = words.split(" ");
-        for (String c : arr) {
-            join = c.length() >= LIMIT
-                    ? join.add(new StringBuilder(c).reverse()) : join.add(c);
+        for (String c : words.split(" ")) {
+            join = c.length() >= LIMIT ? join.add(new StringBuilder(c).reverse()) : join.add(c);
         }
 
         return join.toString();
