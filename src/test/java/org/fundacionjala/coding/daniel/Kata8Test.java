@@ -66,7 +66,7 @@ public class Kata8Test {
      * This method test Finding result of a Legible account number.
      */
     @Test
-    public void testMapEntryOCRToNumber2() {
+    public void testMapEntryOCRNumber() {
         List<String> lines = new ArrayList<>();
         lines.add(UNDERSCORES);
         lines.add(PIPES_UNDERSCORES);
