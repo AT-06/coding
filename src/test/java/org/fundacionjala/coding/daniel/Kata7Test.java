@@ -51,6 +51,9 @@ public class Kata7Test {
         assertEquals("FizzBuzz", kata.fizzBuzz(NUMBER_15));
     }
 
+    /**
+     * Testing if a number is not "Fizz", "Buzz" or "FizzBuzz".
+     */
     @Test
     public void testTheNumberIsNotFizzBuzz() {
         assertEquals("17", kata.fizzBuzz(NUMBER_17));
