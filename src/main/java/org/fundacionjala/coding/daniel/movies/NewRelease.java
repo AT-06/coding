@@ -21,7 +21,7 @@ public class NewRelease extends Movie {
      */
     @Override
     double calculateAmount(int daysRented) {
-        return daysRented * AMOUNT_FACTOR;
+        return (double) daysRented * AMOUNT_FACTOR;
     }
 
     /**
