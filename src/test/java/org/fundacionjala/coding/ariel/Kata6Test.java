@@ -12,7 +12,7 @@ import static org.junit.Assert.assertEquals;
 public class Kata6Test {
 
     /**
-     * Condition1_BasicTests.
+     * Condition1_BasicTests..
      */
     @Test
     public void basicTests() {
