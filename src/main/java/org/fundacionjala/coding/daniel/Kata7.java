@@ -7,6 +7,7 @@ public class Kata7 {
 
     private static final int FIZZ = 3;
     private static final int BUZZ = 5;
+    private static final int FIZZBUZZ = 15;
 
     /**
      * @param number a integer.
@@ -14,7 +15,7 @@ public class Kata7 {
      */
     public String fizzBuzz(int number) {
         final String value = String.valueOf(number);
-        if (number % FIZZ == 0 && number % BUZZ == 0) {
+        if (number % FIZZBUZZ == 0) {
             return "FizzBuzz";
         }
         if (number % FIZZ == 0 || value.contains("3")) {

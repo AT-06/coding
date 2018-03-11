@@ -12,9 +12,11 @@ public class Kata7Test {
     private static final int NUMBER_3 = 3;
     private static final int NUMBER_32 = 32;
     private static final int NUMBER_25 = 25;
-    private static final int NUMBER_05 = 05;
+    private static final int NUMBER_151 = 151;
     private static final int NUMBER_15 = 15;
     private static final int NUMBER_17 = 17;
+    private static final int NUMBER_45 = 45;
+    private static final int NUMBER_91 = 91;
     private Kata7 kata;
 
     /**
@@ -30,8 +32,8 @@ public class Kata7Test {
      */
     @Test
     public void testTheNumberIsBuzz() {
-        assertEquals("Buzz", kata.fizzBuzz(NUMBER_05));
         assertEquals("Buzz", kata.fizzBuzz(NUMBER_25));
+        assertEquals("Buzz", kata.fizzBuzz(NUMBER_151));
     }
 
     /**
@@ -49,6 +51,7 @@ public class Kata7Test {
     @Test
     public void testTheNumberIsFizzBuzz() {
         assertEquals("FizzBuzz", kata.fizzBuzz(NUMBER_15));
+        assertEquals("FizzBuzz", kata.fizzBuzz(NUMBER_45));
     }
 
     /**
@@ -57,5 +60,6 @@ public class Kata7Test {
     @Test
     public void testTheNumberIsNotFizzBuzz() {
         assertEquals("17", kata.fizzBuzz(NUMBER_17));
+        assertEquals("91", kata.fizzBuzz(NUMBER_91));
     }
 }
