@@ -14,6 +14,7 @@ public class Kata7Test {
     private static final int NUMBER_25 = 25;
     private static final int NUMBER_05 = 05;
     private static final int NUMBER_15 = 15;
+    private static final int NUMBER_17 = 17;
     private Kata7 kata;
 
     /**
@@ -48,5 +49,10 @@ public class Kata7Test {
     @Test
     public void testTheNumberIsFizzBuzz() {
         assertEquals("FizzBuzz", kata.fizzBuzz(NUMBER_15));
+    }
+
+    @Test
+    public void testTheNumberIsNotFizzBuzz() {
+        assertEquals("17", kata.fizzBuzz(NUMBER_17));
     }
 }
