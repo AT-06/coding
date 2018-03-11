@@ -18,18 +18,14 @@ public class Kata2 {
      */
     public String sortInnerContent(String sentence) {
         String[] words = sentence.split(" ");
-        StringJoiner join;
+
         StringJoiner joinWord = new StringJoiner(" ");
 
         for (String singleWord : words) {
             String[] letters = singleWord.split("");
             if (singleWord.length() > MAX_LENGHT) {
-                join = new StringJoiner("");
                 Arrays.sort(letters, 1, singleWord.length() - 1, Collections.reverseOrder());
-                for (String let : letters) {
-                    join.add(let);
-                }
-                singleWord = join.toString();
+                singleWord  = String.join("", letters);
             }
             joinWord.add(singleWord);
         }
