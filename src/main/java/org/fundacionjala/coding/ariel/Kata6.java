@@ -10,10 +10,10 @@ public class Kata6 {
 
     /**
      * @param numbers An integer array.
-     * @return An changed sortTwisted37 array..
+     * @return An changed sortTwisted37 array.
      */
     public Integer[] sortTwisted37(Integer[] numbers) {
-        TreeMap<Integer, Integer> series = new TreeMap<Integer, Integer>();
+        TreeMap<Integer, Integer> series = new TreeMap<>();
         Integer[] result = new Integer[numbers.length];
 
         for (int i = 0; i < numbers.length; i++) {
