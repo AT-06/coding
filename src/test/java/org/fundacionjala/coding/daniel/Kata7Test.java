@@ -9,14 +9,6 @@ import org.junit.Test;
  * A class for testing Kata7.
  */
 public class Kata7Test {
-    private static final int NUMBER_3 = 3;
-    private static final int NUMBER_32 = 32;
-    private static final int NUMBER_25 = 25;
-    private static final int NUMBER_151 = 151;
-    private static final int NUMBER_15 = 15;
-    private static final int NUMBER_17 = 17;
-    private static final int NUMBER_45 = 45;
-    private static final int NUMBER_91 = 91;
     private Kata7 kata;
 
     /**
@@ -32,8 +24,10 @@ public class Kata7Test {
      */
     @Test
     public void testTheNumberIsBuzz() {
-        assertEquals("Buzz", kata.fizzBuzz(NUMBER_25));
-        assertEquals("Buzz", kata.fizzBuzz(NUMBER_151));
+        final int number = 25;
+        final int number1 = 151;
+        assertEquals("Buzz", kata.fizzBuzz(number));
+        assertEquals("Buzz", kata.fizzBuzz(number1));
     }
 
     /**
@@ -41,8 +35,10 @@ public class Kata7Test {
      */
     @Test
     public void testTheNumberIsFizz() {
-        assertEquals("Fizz", kata.fizzBuzz(NUMBER_3));
-        assertEquals("Fizz", kata.fizzBuzz(NUMBER_32));
+        final int number = 3;
+        final int number1 = 32;
+        assertEquals("Fizz", kata.fizzBuzz(number));
+        assertEquals("Fizz", kata.fizzBuzz(number1));
     }
 
     /**
@@ -50,8 +46,10 @@ public class Kata7Test {
      */
     @Test
     public void testTheNumberIsFizzBuzz() {
-        assertEquals("FizzBuzz", kata.fizzBuzz(NUMBER_15));
-        assertEquals("FizzBuzz", kata.fizzBuzz(NUMBER_45));
+        final int number = 15;
+        final int number1 = 45;
+        assertEquals("FizzBuzz", kata.fizzBuzz(number));
+        assertEquals("FizzBuzz", kata.fizzBuzz(number1));
     }
 
     /**
@@ -59,7 +57,9 @@ public class Kata7Test {
      */
     @Test
     public void testTheNumberIsNotFizzBuzz() {
-        assertEquals("17", kata.fizzBuzz(NUMBER_17));
-        assertEquals("91", kata.fizzBuzz(NUMBER_91));
+        final int number = 17;
+        final int number1 = 91;
+        assertEquals("17", kata.fizzBuzz(number));
+        assertEquals("91", kata.fizzBuzz(number1));
     }
 }
