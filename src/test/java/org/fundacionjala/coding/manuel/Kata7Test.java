@@ -44,4 +44,15 @@ public class Kata7Test {
         }
     }
 
+    /**
+     * Third Test fizzBuzz method.
+     */
+    @Test
+    public void test3FizzBuzzKata7() {
+        final String[] expectedResult = new String[]{"49", BUZZ, BUZZ, BUZZ};
+        final String[] initialSequence = new String[]{"49", "50", "51", "52"};
+        for (int i = 0; i < expectedResult.length; i++) {
+            assertEquals(expectedResult[i], kata7.fizzBuzz(initialSequence[i]));
+        }
+    }
 }
