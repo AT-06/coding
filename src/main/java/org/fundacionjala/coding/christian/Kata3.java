@@ -15,7 +15,7 @@ public class Kata3 {
     public  int persistence(int num) {
         int cont = 0;
         while (num / LIM > 0) {
-            int[] digits = Integer.toString(num).chars().map(f -> f -= '0').toArray();
+            int[] digits = Integer.toString(num).chars().map(Character::getNumericValue).toArray();
             num = 1;
             num *= Arrays.stream(digits).reduce(1, (a, b) -> a * b);
             cont++;
