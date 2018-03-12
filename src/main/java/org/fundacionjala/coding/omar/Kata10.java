@@ -22,6 +22,6 @@ public class Kata10 {
                 .sorted()
                 .boxed()
                 .toArray(Integer[]::new);
-        return String.format("%s %s",sorted[sorted.length - 1].toString(),sorted[0]);
+        return String.format("%s %s", sorted[sorted.length - 1].toString(), sorted[0]);
     }
 }

@@ -14,10 +14,11 @@ public class Kata10Test {
     private Kata10 highestAndLowest;
 
     @Before
-    public void Kata10Test(){
+    public void Kata10Test() {
 
         highestAndLowest = new Kata10();
     }
+
     /**
      * UnitTest for test method highestAndLowest(number).
      * HighAndLow("4 5 29 54 4 0 -214 542 -64 1 -3 6 -6") // return "542 -214".
