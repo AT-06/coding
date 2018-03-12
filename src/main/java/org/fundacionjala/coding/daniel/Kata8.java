@@ -91,8 +91,8 @@ public class Kata8 {
     public String finding(String accountNumber) {
         if (accountNumber.contains(QUESTION_MARK)) {
             return String.format("%s ILL", accountNumber);
-        } else {
-            return !checkSum(accountNumber) ? String.format("%s ERR", accountNumber) : accountNumber;
         }
+        return !checkSum(accountNumber) ? String.format("%s ERR", accountNumber) : accountNumber;
     }
 }
+
