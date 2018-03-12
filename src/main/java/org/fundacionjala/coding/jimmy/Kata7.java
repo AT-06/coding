@@ -17,18 +17,17 @@ public class Kata7 {
      */
     public String giveFizzBuzzNumbers(int numberFizzBuzz) {
 
-        String fizzBuzzResult = String.valueOf(numberFizzBuzz);
         String value = String.valueOf(numberFizzBuzz);
 
-        if (numberFizzBuzz % MULTIPLE_OF_THREE == 0 || value.contains("3")) {
-            fizzBuzzResult = "Fizz";
+        if (numberFizzBuzz % MULTIPLE_OF_THREE_AND_FIVE == 0) {
+            return "FizzBuzz";
         }
         if (numberFizzBuzz % MULTIPLE_OF_FIVE == 0 || value.contains("5")) {
-            fizzBuzzResult = "Buzz";
+            return "Buzz";
         }
-        if (numberFizzBuzz % MULTIPLE_OF_THREE_AND_FIVE == 0) {
-            fizzBuzzResult = "FizzBuzz";
+        if (numberFizzBuzz % MULTIPLE_OF_THREE == 0 || value.contains("3")) {
+            return "Fizz";
         }
-        return fizzBuzzResult;
+        return String.valueOf(numberFizzBuzz);
     }
 }
