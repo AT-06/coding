@@ -5,9 +5,6 @@ import java.util.Map;
 
 /**
  * This class contains a method that prints the numbers greater to 0.
- * But for multiples of three print 'Fizz' instead of the number.
- * and for the multiples of five print 'Buzz'.
- * For numbers which are multiples of both three and five print 'FizzBuzz'.
  */
 public class Kata8 {
 
