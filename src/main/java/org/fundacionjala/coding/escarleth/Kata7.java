@@ -15,10 +15,10 @@ public class Kata7 {
      * @return a number changed to  Fizz or Buzz or FizzBuzz
      */
     public String fizzBuzz(int number) {
-        String valueNumber = String.valueOf(number);
         if (number % MULTIPLE15 == 0) {
             return "FizzBuzz";
         }
+        String valueNumber = String.valueOf(number);
         if (number % MULTIPLE5 == 0 || valueNumber.contains("5")) {
             return "Buzz";
         }
