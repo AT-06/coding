@@ -2,9 +2,9 @@ package org.fundacionjala.coding.omar;
 
 /**
  * This class contains a method that prints the numbers greater to 0.
- * But for multiples of three print “Fizz” instead of the number
- * and for the multiples of five print “Buzz”.
- * For numbers which are multiples of both three and five print “FizzBuzz “.
+ * But for multiples of three print 'Fizz' instead of the number.
+ * and for the multiples of five print 'Buzz'.
+ * For numbers which are multiples of both three and five print 'FizzBuzz'.
  */
 public class Kata7 {
 
@@ -18,16 +18,16 @@ public class Kata7 {
      * @param number this is words for Spin Words
      * @return result
      */
-    public String isFizzBuzzNumer(int number) {
+    public String isFizzBuzzNumber(int number) {
+
 
         if (number % NUMBER_15 == ZERO) {
             return "FizzBuzz";
         }
-        if (number % NUMBER_3 == ZERO) {
+        if (number % NUMBER_3 == ZERO || String.valueOf(number).contains("3")) {
             return "Fizz";
         }
-        return number % NUMBER_5 == ZERO ? "Buzz" : String.valueOf(number);
-
+        return number % NUMBER_5 == ZERO || String.valueOf(number).contains("5") ? "Buzz" : String.valueOf(number);
 
 
     }
