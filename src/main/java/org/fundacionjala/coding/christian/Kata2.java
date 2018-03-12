@@ -12,7 +12,6 @@ import java.util.StringJoiner;
  */
 public class Kata2 {
     private static final int LIST_LENGTH = 3;
-
     /**
      * @param words this is for Word
      * @return tag for 'words'
@@ -21,13 +20,11 @@ public class Kata2 {
         String[] wordsList = words.split(" ");
         StringJoiner joiner = new StringJoiner(" ");
         for (String aWordsList : wordsList) {
-
             if (aWordsList.length() > LIST_LENGTH) {
                 String[] changedPosition = aWordsList.split("");
                 Arrays.sort(changedPosition, 1, changedPosition.length - 1, Collections.reverseOrder());
                 joiner.add(String.join("", changedPosition));
-            }
-            else {
+            } else {
                 joiner.add(aWordsList);
             }
         }
