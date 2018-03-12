@@ -49,8 +49,8 @@ public class Kata7Test {
      * testFizzBuzzContainsThree using 23.
      */
     @Test
-    public void testFizzBuzzContainsThree() {
-        final int caso = 23;
+    public void testFizzBuzzContainsTrece() {
+        final int caso = 13;
         assertEquals("Fizz", kata7.fizzBuzz(caso));
     }
 
@@ -61,5 +61,13 @@ public class Kata7Test {
     public void testFizzBuzzContainsFive() {
         final int caso = 52;
         assertEquals("Buzz", kata7.fizzBuzz(caso));
+    }
+    /**
+     * testFizzBuzzContainsThree using 23.
+     */
+    @Test
+    public void testFizzBuzzContainsAnything() {
+        final int caso = 8;
+        assertEquals("8", kata7.fizzBuzz(caso));
     }
 }
