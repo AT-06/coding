@@ -12,7 +12,7 @@ public class MovieRegular extends AbstractMovie {
 
     /**
      * Constructor for MovieRegular.
-     * @param title Title of regular movie.
+     * @param title Title of regular movie
      */
     public MovieRegular(String title) {
         super(title);
@@ -20,7 +20,7 @@ public class MovieRegular extends AbstractMovie {
 
     /**
      * @param daysRented This Method returns Total Amount of Regular Movie.
-     * @return totalAmount.
+     * @return totalAmount Total amount of regular movie.
      */
     double getAmount(int daysRented) {
         double totalAmount = NUMBER_0;
@@ -33,7 +33,7 @@ public class MovieRegular extends AbstractMovie {
 
     /**
      * @param daysRented This Method returns Frequent Renter Points of Regular Movie.
-     * @return points.
+     * @return points Total points of regular movie.
      */
     int getFrequentRenterPoints(int daysRented) {
         return NUMBER_1;
