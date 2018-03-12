@@ -1,5 +1,6 @@
 package org.fundacionjala.coding.omar.movies;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -18,8 +19,17 @@ public class CustomerTest {
     private static final int NUMBER_30 = 30;
     private static final double NUMBER_1_5 = 1.5;
     private static final int CAPACITY = 100;
-    private Customer customer = new Customer("Pepito Perez");
+    private static final String BLACK_PANTHER = "Black Panther";
+    private Customer customer;
 
+    /**
+     * This method is for test overViewNoRentedMovies().
+     */
+    @Before
+    public void customerTestInit() {
+        customer = new Customer("Pepito Perez");
+
+    }
 
     /**
      * This method is for test overViewNoRentedMovies().
@@ -53,7 +63,7 @@ public class CustomerTest {
      */
     @Test
     public void testAddRentalMovieNewForTenDays() {
-        MovieNew newReleaseMovie = new MovieNew("Black Panther");
+        MovieNew newReleaseMovie = new MovieNew(BLACK_PANTHER);
         Rental rental = new Rental(newReleaseMovie, NUMBER_10);
 
         customer.addRental(rental);
@@ -80,11 +90,10 @@ public class CustomerTest {
     @Test
     public void testAddRentalMixMovies() {
 
-        Customer customer = new Customer("Pepito Perez");
         MovieChildren childrensMovie = new MovieChildren("The Minions");
         customer.addRental(new Rental(childrensMovie, NUMBER_2));
 
-        MovieNew newReleaseMovie1 = new MovieNew("Black Panther");
+        MovieNew newReleaseMovie1 = new MovieNew(BLACK_PANTHER);
         customer.addRental(new Rental(newReleaseMovie1, NUMBER_10));
 
         MovieNew newReleaseMovie2 = new MovieNew("Avengers: Infinity War");
@@ -99,7 +108,7 @@ public class CustomerTest {
         MovieRegular regularMovie3 = new MovieRegular("Captain America: Civil War");
         customer.addRental(new Rental(regularMovie3, NUMBER_5));
 
-        MovieRegular regularMovie4 = new MovieRegular("Black Panther");
+        MovieRegular regularMovie4 = new MovieRegular(BLACK_PANTHER);
         customer.addRental(new Rental(regularMovie4, NUMBER_7));
 
 

@@ -10,8 +10,9 @@ public class Customer {
     private static final int ZERO = 0;
     private static final String NEW_LINE = "\n";
     private static final int CAPACITY = 100;
-    private final String customerName;
-    private final List<Rental> rentalsList = new ArrayList<>();
+    private static final String VAR = "%s %s";
+    private String customerName;
+    private List<Rental> rentalsList;
 
     /**
      * Constructor for Customer.
@@ -19,7 +20,9 @@ public class Customer {
      * @param name customer name.
      */
     public Customer(String name) {
+
         this.customerName = name;
+        this.rentalsList = new ArrayList<>();
     }
 
     /**
@@ -37,19 +40,19 @@ public class Customer {
     public String getRentalOverview() {
         StringBuilder overviewBuilder = new StringBuilder(CAPACITY);
 
-        overviewBuilder.append(String.format("%s %s", "Customer:", customerName))
+        overviewBuilder.append(String.format(VAR, "Customer:", customerName))
                 .append(NEW_LINE);
 
         for (Rental rental : rentalsList) {
-            overviewBuilder.append(String.format("%s %s", rental.getMovieTitle(), rental.getAmount()))
+            overviewBuilder.append(String.format(VAR, rental.getMovieTitle(), rental.getAmount()))
                     .append(NEW_LINE);
         }
 
         overviewBuilder.append("=====================================\n")
-                .append(String.format("%s %s", "Total", getTotalAmount()))
+                .append(String.format(VAR, "Total", getTotalAmount()))
                 .append(NEW_LINE)
                 .append(String.format(
-                "%s %s %s", "You earned", getFrequentRenterPoints(), "frequent renter point(s)"));
+                        "%s %s %s", "You earned", getFrequentRenterPoints(), "frequent renter point(s)"));
 
         return overviewBuilder.toString();
     }
