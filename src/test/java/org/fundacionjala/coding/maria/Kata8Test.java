@@ -24,9 +24,9 @@ public class Kata8Test {
      */
     @Test
     public void testBankOCRNormal() {
-        final String filaUno =  "    _  _     _  _  _  _  _ ";
-        final String filaDos =  "  | _| _||_||_ |_   ||_||_|";
-        final String filaTres = "  ||_  _|  | _||_|  ||_| _|";
+        String filaUno =  "    _  _     _  _  _  _  _ ";
+        String filaDos =  "  | _| _||_||_ |_   ||_||_|";
+        String filaTres = "  ||_  _|  | _||_|  ||_| _|";
 
         assertEquals("123456789", kata8.bankOCR(filaUno, filaDos, filaTres));
     }
@@ -36,9 +36,9 @@ public class Kata8Test {
      */
     @Test
     public void testBankOCRErr() {
-        final String filaUno =  " _  _     _  _        _  _ ";
-        final String filaDos =  "|_ |_ |_| _|  |  ||_||_||_ ";
-        final String filaTres = "|_||_|  | _|  |  |  | _| _|";
+        String filaUno =  " _  _     _  _        _  _ ";
+        String filaDos =  "|_ |_ |_| _|  |  ||_||_||_ ";
+        String filaTres = "|_||_|  | _|  |  |  | _| _|";
 
         assertEquals("664371495 ERR", kata8.bankOCR(filaUno, filaDos, filaTres));
     }
