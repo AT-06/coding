@@ -1,6 +1,6 @@
 package org.fundacionjala.coding.daniel;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -13,31 +13,29 @@ public class Kata8 {
     private static final int THREE = 3;
     private static final int NINE = 9;
     private static final int ELEVEN = 11;
-    private static final List<String> ACCOUNT = new ArrayList<>();
-    private static final String QUESTION_MARK = "?";
-    private static final String UNDERSCORE = "_";
-    private static final String PIPE = "|";
-    private static final String PIPES = PIPE + " |";
-    public static final String BLANK_SPACE = " ";
+    private static final List<String> ACCOUNT = Arrays.asList(
+        " _ | ||_|",
+        "     |  |",
+        " _  _||_ ",
+        " _  _| _|",
+        "   |_|  |",
+        " _ |_  _|",
+        " _ |_ |_|",
+        " _   |  |",
+        " _ |_||_|",
+        " _ |_| _|",
+        " _ | ||_|",
+        "     |  |",
+        " _  _||_ ",
+        " _  _| _|",
+        "   |_|  |",
+        " _ |_  _|",
+        " _ |_ |_|",
+        " _   |  |",
+        " _ |_||_|",
+        " _ |_| _|");
 
-    static {
-        ACCOUNT.add(BLANK_SPACE + UNDERSCORE + BLANK_SPACE + PIPES + PIPE + UNDERSCORE + PIPE);
-        ACCOUNT.add("   " + "  " + PIPE + "  " + PIPE);
-        ACCOUNT.add(BLANK_SPACE + UNDERSCORE + BLANK_SPACE + BLANK_SPACE
-            + UNDERSCORE + PIPE + PIPE + UNDERSCORE + BLANK_SPACE);
-        ACCOUNT.add(BLANK_SPACE + UNDERSCORE + BLANK_SPACE
-            + BLANK_SPACE + UNDERSCORE + PIPE + BLANK_SPACE + UNDERSCORE + PIPE);
-        ACCOUNT.add("   " + PIPE + UNDERSCORE + PIPE + "  " + PIPE);
-        ACCOUNT.add(BLANK_SPACE + UNDERSCORE + BLANK_SPACE
-            + PIPE + UNDERSCORE + BLANK_SPACE + BLANK_SPACE + UNDERSCORE + PIPE);
-        ACCOUNT.add(BLANK_SPACE + UNDERSCORE
-            + BLANK_SPACE + PIPE + UNDERSCORE + BLANK_SPACE + PIPE + UNDERSCORE + PIPE);
-        ACCOUNT.add(BLANK_SPACE + UNDERSCORE + BLANK_SPACE + "  " + PIPE + "  " + PIPE);
-        ACCOUNT.add(BLANK_SPACE + UNDERSCORE
-            + BLANK_SPACE + PIPE + UNDERSCORE + PIPE + PIPE + UNDERSCORE + PIPE);
-        ACCOUNT.add(BLANK_SPACE + UNDERSCORE + BLANK_SPACE
-            + PIPE + UNDERSCORE + PIPE + BLANK_SPACE + UNDERSCORE + PIPE);
-    }
+    private static final String QUESTION_MARK = "?";
 
     /**
      * @param number is formed by pipes and underscores.
@@ -77,9 +75,8 @@ public class Kata8 {
         int checksum = ZERO;
         int i = ZERO;
         int j = NINE;
-        final int numberPositionLength = numberPosition.length;
 
-        while (i < numberPositionLength && j > ZERO) {
+        while (i < numberPosition.length) {
             checksum += Integer.parseInt(numberPosition[i]) * j;
             i++;
             j--;
