@@ -1,6 +1,7 @@
 package org.fundacionjala.coding.omar;
 
 import java.util.stream.Stream;
+
 /**
  * Powered by Omar Limbert Huanca Sanchez - AT06.
  * In this little assignment you are given a string
@@ -22,6 +23,6 @@ public class Kata10 {
                 .boxed()
                 .toArray(Integer[]::new);
 
-        return sorted[sorted.length - 1]  + BLACK_SPACE + sorted[0];
+        return sorted[sorted.length - 1] + BLACK_SPACE + sorted[0];
     }
 }
