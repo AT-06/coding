@@ -89,4 +89,18 @@ public class Kata8Test {
         final String expectedResult = "?234???89 ILL";
         assertEquals(expectedResult, actualResult);
     }
+
+    /**
+     * This method test Finding result of an false checksum account number.
+     */
+    @Test
+    public void testFindingChecksumAccountNumber() {
+        List<String> lines = new ArrayList<>();
+        lines.add(UNDERSCORES);
+        lines.add(PIPES_UNDERSCORES);
+        lines.add(UNDERSCORES_PIPES);
+        final String actualResult = kata.finding(kata.mapEntryOCRToNumber(lines));
+        final String expectedResult = "123456789";
+        assertEquals(expectedResult, actualResult);
+    }
 }
