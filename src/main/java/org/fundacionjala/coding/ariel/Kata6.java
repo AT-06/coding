@@ -14,26 +14,17 @@ public class Kata6 {
      */
     public Integer[] sortTwisted37(Integer[] numbers) {
         TreeMap<Integer, Integer> series = new TreeMap<>();
-        Integer[] result = new Integer[numbers.length];
-
-        for (int i = 0; i < numbers.length; i++) {
-            String condition = String.valueOf(numbers[i]);
+        for (Integer number : numbers) {
+            String condition = String.valueOf(number);
+            int key = number;
             if (condition.contains("3") || condition.contains("7")) {
-                int key = Integer.parseInt(condition.replace('3', '0').replace('7', '3').replace('0', '7'));
-                series.put(key, numbers[i]);
-            } else {
-                series.put(numbers[i], numbers[i]);
+                 key = Integer.parseInt(condition.replace('3', '0')
+                         .replace('7', '3')
+                         .replace('0', '7'));
             }
+            series.put(key, number);
         }
-
-        Integer[] claves = series.keySet().toArray(new Integer[0]);
-        int i = 0;
-        for (Integer key : claves) {
-            result[i] = series.get(key);
-            i++;
-        }
-
-        return result;
+        return series.values().toArray(new Integer[series.size()]);
     }
 }
 
