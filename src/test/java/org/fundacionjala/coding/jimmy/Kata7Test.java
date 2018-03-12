@@ -21,30 +21,30 @@ public class Kata7Test {
     }
 
     /**
-     * Test for testing the method's expected and actual results.
+     * Test for testing the method whether three is Fizz number.
      */
     @Test
-    public void testFizzBuzz1() {
+    public void testFizzBuzzThreeIsFizz() {
         final int numberFizzBuzz = 3;
 
         assertEquals("Fizz", kata7.giveFizzBuzzNumbers(numberFizzBuzz));
     }
 
     /**
-     * Test for testing the method's expected and actual results.
+     * Test for testing the method whether five is Buzz number.
      */
     @Test
-    public void testFizzBuzz2() {
+    public void testFizzBuzzFiveIsBuzz() {
         final int numberFizzBuzz = 5;
 
         assertEquals("Buzz", kata7.giveFizzBuzzNumbers(numberFizzBuzz));
     }
 
     /**
-     * Test for testing the method's expected and actual results.
+     * Test for testing the method whether a number 1 is number 1.
      */
     @Test
-    public void testFizzBuzz3() {
+    public void testFizzBuzzNumberOneIsOne() {
         final int numberFizzBuzz = 1;
 
         final String expected = "1";
@@ -52,10 +52,10 @@ public class Kata7Test {
     }
 
     /**
-     * Test for testing the method's expected and actual results.
+     * Test for testing the method whether number 7 is 7.
      */
     @Test
-    public void testFizzBuzz4() {
+    public void testFizzBuzzNumberSevenIsSeven() {
         final int numberFizzBuzz = 7;
 
         final String expected = "7";
@@ -63,21 +63,21 @@ public class Kata7Test {
     }
 
     /**
-     * Test for testing the method's expected and actual results.
+     * Test for testing the method whether a number multiple of 3 is Fizz.
      */
     @Test
-    public void testFizzBuzz5() {
-        final  int numberFizzBuzz = 12;
+    public void testFizzBuzzTwelveMultipleOfThreeIsFizz() {
+        final int numberFizzBuzz = 12;
 
         final String expected = "Fizz";
         assertEquals(expected, kata7.giveFizzBuzzNumbers(numberFizzBuzz));
     }
 
     /**
-     * Test for testing the method's expected and actual results.
+     * Test for testing the method whether a number contains three is Fizz.
      */
     @Test
-    public void testFizzBuzz6() {
+    public void testFizzBuzzThirteenIsFizz() {
         final int numberFizzBuzz = 13;
 
         final String expected = "Fizz";
@@ -85,21 +85,21 @@ public class Kata7Test {
     }
 
     /**
-     * Test for testing the method's expected and actual results.
+     * Test for testing the method whether fifteen is FizzBuzz number.
      */
     @Test
-    public void testFizzBuzz7() {
-        final  int numberFizzBuzz = 15;
+    public void testFizzBuzzFifteenIsFizzBuzz() {
+        final int numberFizzBuzz = 15;
 
         final String expected = "FizzBuzz";
         assertEquals(expected, kata7.giveFizzBuzzNumbers(numberFizzBuzz));
     }
 
     /**
-     * Test for testing the method's expected and actual results.
+     * Test for testing the method whether a number multiple of 5 is Buzz.
      */
     @Test
-    public void testFizzBuzz8() {
+    public void testFizzBuzzTwentyMultipleOfBuzz() {
         final int numberFizzBuzz = 20;
 
         final String expected = "Buzz";
@@ -107,10 +107,10 @@ public class Kata7Test {
     }
 
     /**
-     * Test for testing the method's expected and actual results.
+     * Test for testing the method whether thirty is FizzBuzz number.
      */
     @Test
-    public void testFizzBuzz9() {
+    public void testFizzBuzzThirtyIsFizzBuzz() {
         final int numberFizzBuzz = 30;
 
         final String expected = "FizzBuzz";
@@ -118,10 +118,10 @@ public class Kata7Test {
     }
 
     /**
-     * Test for testing the method's expected and actual results.
+     * Test for testing the method whether a number contains five is Buzz.
      */
     @Test
-    public void testFizzBuzz10() {
+    public void testFizzBuzzFiftyFourIsBuzz() {
         final int numberFizzBuzz = 54;
 
         final String expected = "Buzz";

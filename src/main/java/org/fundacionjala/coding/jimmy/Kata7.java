@@ -5,9 +5,9 @@ package org.fundacionjala.coding.jimmy;
  */
 public class Kata7 {
 
-    public static final int MULTIPLEOFTHREE = 3;
-    public static final int MULTIPLEOFFIVE = 5;
-    public static final int MULTIPLEOFTHREEANDFIVE = 15;
+    private static final int MULTIPLE_OF_THREE = 3;
+    private static final int MULTIPLE_OF_FIVE = 5;
+    private static final int MULTIPLE_OF_THREE_AND_FIVE = 15;
 
     /**
      * This method is for knowing whether a number is Fizz, Buzz or FizzBuzz.
@@ -20,13 +20,13 @@ public class Kata7 {
         String fizzBuzzResult = String.valueOf(numberFizzBuzz);
         String value = String.valueOf(numberFizzBuzz);
 
-        if (numberFizzBuzz % MULTIPLEOFTHREE == 0 || value.contains("3")) {
+        if (numberFizzBuzz % MULTIPLE_OF_THREE == 0 || value.contains("3")) {
             fizzBuzzResult = "Fizz";
         }
-        if (numberFizzBuzz % MULTIPLEOFFIVE == 0 || value.contains("5")) {
+        if (numberFizzBuzz % MULTIPLE_OF_FIVE == 0 || value.contains("5")) {
             fizzBuzzResult = "Buzz";
         }
-        if (numberFizzBuzz % MULTIPLEOFTHREEANDFIVE == 0) {
+        if (numberFizzBuzz % MULTIPLE_OF_THREE_AND_FIVE == 0) {
             fizzBuzzResult = "FizzBuzz";
         }
         return fizzBuzzResult;
