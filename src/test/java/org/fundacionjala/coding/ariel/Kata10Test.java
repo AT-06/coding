@@ -1,5 +1,6 @@
 package org.fundacionjala.coding.ariel;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -8,12 +9,22 @@ import static org.junit.Assert.assertEquals;
  * Unittests.
  */
 public class Kata10Test {
+
+    private Kata10 katita;
+
+    /**
+     * Init the object class Kata10.
+     */
+    @Before
+    public void init() {
+        katita = new Kata10();
+    }
+
     /**
      * Chechk the someTest..
      */
     @Test
     public void someTest() {
-        Kata10 katita = new Kata10();
         assertEquals("542 -214", katita.highAndLow("4 5 29 54 4 0 -214 542 -64 1 -3 6 -6"));
     }
 
@@ -22,7 +33,6 @@ public class Kata10Test {
      */
     @Test
     public void plusMinusTest() {
-        Kata10 katita = new Kata10();
         assertEquals("1 -1", katita.highAndLow("1 -1"));
     }
 
@@ -31,7 +41,6 @@ public class Kata10Test {
      */
     @Test
     public void plusPlusTest() {
-        Kata10 katita = new Kata10();
         assertEquals("1 1", katita.highAndLow("1 1"));
     }
 
@@ -40,7 +49,6 @@ public class Kata10Test {
      */
     @Test
     public void minusMinusTest() {
-        Kata10 katita = new Kata10();
         assertEquals("-1 -1", katita.highAndLow("-1 -1"));
     }
 
@@ -49,7 +57,6 @@ public class Kata10Test {
      */
     @Test
     public void plusMinusZeroTest() {
-        Kata10 katita = new Kata10();
         assertEquals("1 -1", katita.highAndLow("1 -1 0"));
     }
 
@@ -59,7 +66,6 @@ public class Kata10Test {
      */
     @Test
     public void plusPlusZeroTest() {
-        Kata10 katita = new Kata10();
         assertEquals("1 0", katita.highAndLow("1 1 0"));
     }
 
@@ -68,7 +74,6 @@ public class Kata10Test {
      */
     @Test
     public void minusMinusZeroTest() {
-        Kata10 katita = new Kata10();
         assertEquals("0 -1", katita.highAndLow("-1 -1 0"));
     }
 
@@ -78,7 +83,6 @@ public class Kata10Test {
      */
     @Test
     public void singleTest() {
-        Kata10 katita = new Kata10();
         assertEquals("42 42", katita.highAndLow("42"));
     }
 

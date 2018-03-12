@@ -1,7 +1,7 @@
 package org.fundacionjala.coding.ariel;
 
 import java.util.Arrays;
-import java.util.StringJoiner;
+
 
 /**
  * Kata 10.
@@ -13,7 +13,6 @@ public class Kata10 {
      * @return An string that contains the High and low numbers.
      */
     public String highAndLow(String serie) {
-        StringJoiner resp = new StringJoiner(" ");
         String[] numbers = serie.split(" ");
         int[] order = new int[numbers.length];
 
@@ -21,8 +20,8 @@ public class Kata10 {
             order[i] = Integer.parseInt(numbers[i]);
         }
         Arrays.sort(order);
-        resp.add(String.valueOf(order[order.length - 1])).add(String.valueOf(order[0]));
-        return resp.toString();
+        return String.format("%s %s", String.valueOf(order[order.length - 1]), String.valueOf(order[0]));
+
     }
 
 }
