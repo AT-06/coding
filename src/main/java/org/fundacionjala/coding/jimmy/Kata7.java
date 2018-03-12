@@ -17,11 +17,11 @@ public class Kata7 {
      */
     public String giveFizzBuzzNumbers(int numberFizzBuzz) {
 
-        String value = String.valueOf(numberFizzBuzz);
 
         if (numberFizzBuzz % MULTIPLE_OF_THREE_AND_FIVE == 0) {
             return "FizzBuzz";
         }
+        String value = String.valueOf(numberFizzBuzz);
         if (numberFizzBuzz % MULTIPLE_OF_FIVE == 0 || value.contains("5")) {
             return "Buzz";
         }
