@@ -1,5 +1,6 @@
 package org.fundacionjala.coding.omar;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -10,14 +11,20 @@ import static org.junit.Assert.assertEquals;
  */
 public class Kata10Test {
 
+    private Kata10 highestAndLowest;
 
+    @Before
+    public void Kata10Test(){
+
+        highestAndLowest = new Kata10();
+    }
     /**
      * UnitTest for test method highestAndLowest(number).
      * HighAndLow("4 5 29 54 4 0 -214 542 -64 1 -3 6 -6") // return "542 -214".
      */
     @Test
     public void testHighestAndLowestSomeTest() {
-        Kata10 highestAndLowest = new Kata10();
+
         assertEquals("542 -214", highestAndLowest.highAndLow("4 5 29 54 4 0 -214 542 -64 1 -3 6 -6"));
 
     }
@@ -28,7 +35,7 @@ public class Kata10Test {
      */
     @Test
     public void testHighestAndLowestPlusMinusTest() {
-        Kata10 highestAndLowest = new Kata10();
+
         assertEquals("1 -1", highestAndLowest.highAndLow("1 -1"));
 
     }
@@ -39,7 +46,7 @@ public class Kata10Test {
      */
     @Test
     public void testHighestAndLowestPlusPlusTest() {
-        Kata10 highestAndLowest = new Kata10();
+
         assertEquals("1 1", highestAndLowest.highAndLow("1 1"));
 
     }
@@ -50,7 +57,7 @@ public class Kata10Test {
      */
     @Test
     public void testHighestAndLowestMinusMinusTest() {
-        Kata10 highestAndLowest = new Kata10();
+
         assertEquals("-1 -1", highestAndLowest.highAndLow("-1 -1"));
 
     }
@@ -61,7 +68,7 @@ public class Kata10Test {
      */
     @Test
     public void testHighestAndLowestPlusMinusZeroTest() {
-        Kata10 highestAndLowest = new Kata10();
+
         assertEquals("1 -1", highestAndLowest.highAndLow("1 -1 0"));
 
     }
@@ -72,7 +79,7 @@ public class Kata10Test {
      */
     @Test
     public void testHighestAndLowestPlusPlusZeroTest() {
-        Kata10 highestAndLowest = new Kata10();
+
         assertEquals("1 0", highestAndLowest.highAndLow("1 1 0"));
 
     }
@@ -83,7 +90,7 @@ public class Kata10Test {
      */
     @Test
     public void testHighestAndLowestMinusMinusZeroTest() {
-        Kata10 highestAndLowest = new Kata10();
+
         assertEquals("0 -1", highestAndLowest.highAndLow("-1 -1 0"));
 
     }
@@ -94,7 +101,7 @@ public class Kata10Test {
      */
     @Test
     public void testHighestAndLowestSingleTest() {
-        Kata10 highestAndLowest = new Kata10();
+
         assertEquals("42 42", highestAndLowest.highAndLow("42"));
 
     }
