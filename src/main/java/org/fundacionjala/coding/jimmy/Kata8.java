@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Class Account number that manages the parse, line of ocr digit, the account number.
+ * Class Account number that manages the parse, line of OCR digit, the account number.
  */
 class Kata8 {
 

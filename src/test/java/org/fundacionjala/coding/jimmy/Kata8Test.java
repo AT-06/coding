@@ -12,7 +12,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Class to test the numbers and digits of ocr Bank.
+ * Class to test the numbers and digits of OCR Bank.
  */
 public class Kata8Test {
 
