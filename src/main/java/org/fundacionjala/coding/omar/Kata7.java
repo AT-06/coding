@@ -16,7 +16,7 @@ public class Kata7 {
 
     /**
      * @param number this is words for Spin Words
-     * @return result
+     * @return result FizzBuzz.
      */
     public String isFizzBuzzNumber(int number) {
 
