@@ -14,7 +14,6 @@ public class Kata5 {
      */
     public String makeComplement(String dna) {
 
-
         StringBuilder builder = new StringBuilder();
         Map<String, String> dnaMap = new HashMap<>();
         dnaMap.put("A", "T");
@@ -27,6 +26,5 @@ public class Kata5 {
         }
          return builder.toString();
      }
-
 
 }
