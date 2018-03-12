@@ -1,5 +1,8 @@
 package org.fundacionjala.coding.christian;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Develop by Christian.
  */
@@ -10,28 +13,20 @@ public class Kata5 {
      * @return tag for 'dna'
      */
     public String makeComplement(String dna) {
-        char[] chars = dna.toCharArray();
-        final String t = "T";
-        final String a = "A";
-        final String g = "G";
-        final String c = "C";
+
 
         StringBuilder builder = new StringBuilder();
-        for (char w : chars) {
-            switch  (w) {
-                case 'A':  builder.append(t);
-                    break;
-                case 'T':  builder.append(a);
-                    break;
-                case 'C':  builder.append(g);
-                    break;
-                case 'G':  builder.append(c);
-                    break;
-                default:
-                    break;
-            }
+        Map<String, String> dnaMap = new HashMap<>();
+        dnaMap.put("A", "T");
+        dnaMap.put("T", "A");
+        dnaMap.put("G", "C");
+        dnaMap.put("C", "G");
+        String[] letters = dna.split("");
+        for (String  letter : letters) {
+            builder.append(dnaMap.get(letter));
         }
+         return builder.toString();
+     }
 
-        return builder.toString();
-    }
+
 }

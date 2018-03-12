@@ -1,14 +1,21 @@
 package org.fundacionjala.coding.christian;
 
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
-
-
 /**
  * test Kata5.
  */
 public class Kata5Test {
-    private Kata5 dnaStrand = new Kata5();
+    private Kata5 dnaStrand;
+
+    /**
+     *
+     */
+    @Before
+    public  void setup() {
+        dnaStrand = new Kata5();
+    }
 
     /**
      *
