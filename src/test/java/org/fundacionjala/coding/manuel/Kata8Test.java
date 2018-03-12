@@ -13,6 +13,7 @@ public class Kata8Test {
     private static final String COMMON_LINE2 = "|_||_||_||_||_||_||_||_||_|";
     private static final String COMMON_LINE3 = "  |  |  |  |  |  |  |  |  |";
     private static final String COMMON_LINE4 = " _| _| _| _| _| _| _| _| _|";
+    private static final String COMMON_LINE5 = "|_ |_ |_ |_ |_ |_ |_ |_ |_ ";
     /**
      * Method to initialize.
      */
@@ -44,8 +45,7 @@ public class Kata8Test {
      */
     @Test
     public void test3BankKata8() {
-        String thirdRow =  "|_ |_ |_ |_ |_ |_ |_ |_ |_ ";
-        assertEquals("222222222 ERR", kata8.bank(COMMON_LINE1, COMMON_LINE4, thirdRow));
+        assertEquals("222222222 ERR", kata8.bank(COMMON_LINE1, COMMON_LINE4, COMMON_LINE5));
     }
 
     /**
@@ -70,8 +70,7 @@ public class Kata8Test {
      */
     @Test
     public void test6BankKata8() {
-        String secondRow = "|_ |_ |_ |_ |_ |_ |_ |_ |_ ";
-        assertEquals("555555555 ERR", kata8.bank(COMMON_LINE1, secondRow, COMMON_LINE4));
+        assertEquals("555555555 ERR", kata8.bank(COMMON_LINE1, COMMON_LINE5, COMMON_LINE4));
     }
 
     /**
@@ -79,8 +78,7 @@ public class Kata8Test {
      */
     @Test
     public void test7BankKata8() {
-        String secondRow = "|_ |_ |_ |_ |_ |_ |_ |_ |_ ";
-        assertEquals("666666666 ERR", kata8.bank(COMMON_LINE1, secondRow, COMMON_LINE2));
+        assertEquals("666666666 ERR", kata8.bank(COMMON_LINE1, COMMON_LINE5, COMMON_LINE2));
     }
 
     /**
