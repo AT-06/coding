@@ -1,6 +1,7 @@
 package org.fundacionjala.coding.ariel;
 
 import java.util.Arrays;
+
 import java.util.StringJoiner;
 
 import static java.util.Collections.reverseOrder;
@@ -15,28 +16,19 @@ public class Katas2 {
      * @return A sort String.
      */
     public String changeWord(String text) {
-        String[] textos;
-        textos = text.split(" ");
-        String resultSubstring = "";
+        String[] words = text.split(" ");
         StringJoiner ult = new StringJoiner(" ");
-        for (String word : textos) {
-            if (word.length() >= 2) {
-                String another = word.substring(1, word.length() - 1);
-                String[] anothers = another.split("");
-                Arrays.sort(anothers, reverseOrder());
-                for (String t : anothers) {
-                    resultSubstring = String.join("", resultSubstring, t);
-                }
-                String t1 = String.valueOf(word.charAt(0));
-                String t2 = String.valueOf(word.charAt(word.length() - 1));
-                String result = String.join("", t1, resultSubstring, t2);
-                resultSubstring = "";
-                ult.add(result);
 
+        for (String w : words) {
+            String[] subw = w.split("");
+            if (w.length() >= 2) {
+                Arrays.sort(subw, 1, w.length() - 1, reverseOrder());
+                ult.add(String.join("", subw));
             } else {
-                ult.add(word);
+                ult.add(w);
             }
         }
+
         return ult.toString();
     }
 }

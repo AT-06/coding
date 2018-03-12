@@ -5,11 +5,11 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Unittest of Kata2 check 4..
+ * Unittest of Kata2 check 4.
  */
 public class Katas2Test {
     /**
-     * Test to check the first condition.
+     * Test to check the conditions.
      */
     @Test
     public void sortInnerContentTest1() {
