@@ -17,7 +17,6 @@ public class Kata7 {
      */
     public String giveFizzBuzzNumbers(int numberFizzBuzz) {
 
-
         if (numberFizzBuzz % MULTIPLE_OF_THREE_AND_FIVE == 0) {
             return "FizzBuzz";
         }
