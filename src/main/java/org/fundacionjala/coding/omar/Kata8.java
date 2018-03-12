@@ -47,6 +47,10 @@ public class Kata8 {
 
     private static final int NUMBER_9 = 9;
 
+    private static final int NUMBER_0 = 0;
+
+    private static final int NUMBER_11 = 11;
+
     static {
         NUMBERS_MAP = new HashMap<>();
         NUMBERS_MAP.put(ONE, NUMBER_1);
@@ -92,6 +96,25 @@ public class Kata8 {
         }
 
         return scannedCharacters.toString();
+    }
+    /**
+     * @param accountNumber is formed by 9 numbers.
+     * @return if the account number is valid or not.
+     */
+    public boolean checkSum(String accountNumber) {
+        final String[] numberPosition = accountNumber.split("");
+        int checksum = NUMBER_0;
+        int i = NUMBER_0;
+        int j = NUMBER_9;
+        final int numberPositionLength = numberPosition.length;
+
+        while (i < numberPositionLength && j > NUMBER_0) {
+            checksum += Integer.parseInt(numberPosition[i]) * j;
+            i++;
+            j--;
+        }
+        return checksum % NUMBER_11 == NUMBER_0;
+
     }
 
 
