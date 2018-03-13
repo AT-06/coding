@@ -17,7 +17,7 @@ package org.fundacionjala.coding.omar;
 
 public class Kata12 {
 
-    private static final int ZERO = 0;
+    private static final int NUMBER_50 = 50;
 
     /**
      * This method return score of number.
@@ -25,11 +25,13 @@ public class Kata12 {
      * @param number .
      * @return result final score of number.
      */
-    public long getScore(int number) {
+    public long getScore(long number) {
 
-        final int number50 = 50;
-        final int number1 = 1;
-
-        return number > ZERO ? number50 * number + getScore(number - number1) : ZERO;
+        long result = NUMBER_50;
+        for (int i = 2; i <= number; ++i) {
+            result += i * NUMBER_50;
+        }
+        return result;
     }
+
 }
