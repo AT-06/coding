@@ -22,8 +22,8 @@ public class Kata2 {
 
         StringJoiner stringJoiner = new StringJoiner(BLANK_SPACE);
         for (String word : sentence.split(BLANK_SPACE)) {
-            String[] arrString = word.split("");
             if (word.length() >= TAM) {
+                String[] arrString = word.split("");
                 Arrays.sort(arrString, 1, arrString.length - 1, Collections.reverseOrder());
                 word = String.join("", arrString);
             }
