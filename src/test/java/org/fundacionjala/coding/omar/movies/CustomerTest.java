@@ -10,14 +10,7 @@ import static org.junit.Assert.assertEquals;
  * This class contains UnitTests for Movies App.
  */
 public class CustomerTest {
-    private static final int NUMBER_7 = 7;
-    private static final int NUMBER_5 = 5;
-    private static final int NUMBER_10 = 10;
-    private static final int NUMBER_2 = 2;
-    private static final double NUMBER_6_5 = 6.5;
-    private static final int NUMBER_1 = 1;
-    private static final int NUMBER_30 = 30;
-    private static final double NUMBER_1_5 = 1.5;
+
     private static final int CAPACITY = 100;
     private static final String BLACK_PANTHER = "Black Panther";
     private Customer customer;
@@ -50,12 +43,17 @@ public class CustomerTest {
      */
     @Test
     public void testAddRentalChildrenChildrenForTwoDays() {
+
+        final int number2 = 2;
+        final int number1 = 1;
+        final double number1point5 = 1.5;
+
         MovieChildren childrensMovie = new MovieChildren("The Minions");
-        Rental rental = new Rental(childrensMovie, NUMBER_2);
+        Rental rental = new Rental(childrensMovie, number2);
 
         customer.addRental(rental);
 
-        assertRentalOverview(childrensMovie, NUMBER_1_5, NUMBER_1);
+        assertRentalOverview(childrensMovie, number1point5, number1);
     }
 
     /**
@@ -63,12 +61,17 @@ public class CustomerTest {
      */
     @Test
     public void testAddRentalMovieNewForTenDays() {
+
+        final int number10 = 10;
+        final int number2 = 2;
+        final int number30 = 30;
+
         MovieNew newReleaseMovie = new MovieNew(BLACK_PANTHER);
-        Rental rental = new Rental(newReleaseMovie, NUMBER_10);
+        Rental rental = new Rental(newReleaseMovie, number10);
 
         customer.addRental(rental);
 
-        assertRentalOverview(newReleaseMovie, NUMBER_30, NUMBER_2);
+        assertRentalOverview(newReleaseMovie, number30, number2);
     }
 
     /**
@@ -76,12 +79,17 @@ public class CustomerTest {
      */
     @Test
     public void testAddRentalMovieRegultarForFiveDays() {
+
+        final int number5 = 5;
+        final double number6point5 = 6.5;
+        final int number1 = 1;
+
         MovieRegular regularMovie = new MovieRegular("Captain America: Civil War");
-        Rental rental = new Rental(regularMovie, NUMBER_5);
+        Rental rental = new Rental(regularMovie, number5);
 
         customer.addRental(rental);
 
-        assertRentalOverview(regularMovie, NUMBER_6_5, NUMBER_1);
+        assertRentalOverview(regularMovie, number6point5, number1);
     }
 
     /**
@@ -90,26 +98,32 @@ public class CustomerTest {
     @Test
     public void testAddRentalMixMovies() {
 
+        final int number7 = 7;
+        final int number5 = 5;
+        final int number10 = 10;
+        final int number2 = 2;
+
+
         MovieChildren childrensMovie = new MovieChildren("The Minions");
-        customer.addRental(new Rental(childrensMovie, NUMBER_2));
+        customer.addRental(new Rental(childrensMovie, number2));
 
         MovieNew newReleaseMovie1 = new MovieNew(BLACK_PANTHER);
-        customer.addRental(new Rental(newReleaseMovie1, NUMBER_10));
+        customer.addRental(new Rental(newReleaseMovie1, number10));
 
         MovieNew newReleaseMovie2 = new MovieNew("Avengers: Infinity War");
-        customer.addRental(new Rental(newReleaseMovie2, NUMBER_10));
+        customer.addRental(new Rental(newReleaseMovie2, number10));
 
         MovieRegular regularMovie1 = new MovieRegular("The Avengers");
-        customer.addRental(new Rental(regularMovie1, NUMBER_7));
+        customer.addRental(new Rental(regularMovie1, number7));
 
         MovieRegular regularMovie2 = new MovieRegular("Avengers: Age of Ultron");
-        customer.addRental(new Rental(regularMovie2, NUMBER_10));
+        customer.addRental(new Rental(regularMovie2, number10));
 
         MovieRegular regularMovie3 = new MovieRegular("Captain America: Civil War");
-        customer.addRental(new Rental(regularMovie3, NUMBER_5));
+        customer.addRental(new Rental(regularMovie3, number5));
 
         MovieRegular regularMovie4 = new MovieRegular(BLACK_PANTHER);
-        customer.addRental(new Rental(regularMovie4, NUMBER_7));
+        customer.addRental(new Rental(regularMovie4, number7));
 
 
         StringBuilder expectedOverviewBuilder = new StringBuilder(CAPACITY);
