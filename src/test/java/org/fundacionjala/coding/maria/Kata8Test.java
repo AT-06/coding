@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
  */
 public class Kata8Test {
     private Kata8 kata8;
-    private static String COMMONLINE1 =  " _  _     _  _        _  _ ";
+    private static final String COMMONLINE1 =  " _  _     _  _        _  _ ";
 
     /**
      * initialize kata8.
