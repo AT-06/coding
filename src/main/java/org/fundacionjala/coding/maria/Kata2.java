@@ -25,11 +25,7 @@ public class Kata2 {
             String[] arrString = word.split("");
             if (word.length() >= TAM) {
                 Arrays.sort(arrString, 1, arrString.length - 1, Collections.reverseOrder());
-                StringBuilder stringBuilder = new StringBuilder();
-                for (String letter : arrString) {
-                    stringBuilder.append(letter);
-                }
-                word = stringBuilder.toString();
+                word = String.join("", arrString);
             }
             stringJoiner.add(word);
         }
