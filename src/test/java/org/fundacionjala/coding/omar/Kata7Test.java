@@ -18,45 +18,111 @@ public class Kata7Test {
     private static final int NUMBER_151 = 151;
     private static final int NUMBER_13 = 13;
     private Kata7 fizzBuzz;
+
     /**
-     * This method is for init Kata7.
+     * This method initializes kata7.
      */
     @Before
-    public void init() {
-        fizzBuzz = new Kata7();
-
+    public void initialize() {
+        this.fizzBuzz = new Kata7();
     }
 
     /**
-     * This method is for test fizzBuzz method.
-     * isFizzBuzzNumber( 3 ) => returns "Fizz".
-     * isFizzBuzzNumber( 5 ) => returns "Buzz".
-     * isFizzBuzzNumber( 15 )=> returns "FizzBuzz".
-     * isFizzBuzzNumber( 16 )=> returns "16".
+     * Test for testing the method whether three is Fizz number.
      */
     @Test
-    public void testIsFizzBuzzNumberBasicTestFizzBuzz() {
+    public void testFizzBuzzThreeIsFizz() {
+        final int numberFizzBuzz = 3;
 
-        assertEquals("Fizz", fizzBuzz.isFizzBuzzNumber(NUMBER_3));
-        assertEquals("Buzz", fizzBuzz.isFizzBuzzNumber(NUMBER_5));
-        assertEquals("FizzBuzz", fizzBuzz.isFizzBuzzNumber(NUMBER_15));
-        assertEquals("16", fizzBuzz.isFizzBuzzNumber(NUMBER_16));
-
-
+        assertEquals("Fizz", fizzBuzz.isFizzBuzzNumber(numberFizzBuzz));
     }
 
     /**
-     * This method is for test fizzBuzz method is contains 3 or 5.
-     * isFizzBuzzNumber( 151 ) => returns "Buzz".
-     * isFizzBuzzNumber( 13 ) => returns "Fizz".
+     * Test for testing the method whether five is Buzz number.
      */
     @Test
-    public void testIsFizzBuzzNumberAndContainsFiveOrThree() {
+    public void testFizzBuzzFiveIsBuzz() {
+        final int numberFizzBuzz = 5;
 
-        assertEquals("Buzz", fizzBuzz.isFizzBuzzNumber(NUMBER_151));
-        assertEquals("Fizz", fizzBuzz.isFizzBuzzNumber(NUMBER_13));
-
-
+        assertEquals("Buzz", fizzBuzz.isFizzBuzzNumber((numberFizzBuzz)));
     }
+
+    /**
+     * Test for testing the method whether a number 1 is number 1.
+     */
+    @Test
+    public void testFizzBuzzNumberOneIsOne() {
+        final int numberFizzBuzz = 1;
+
+        final String expected = "1";
+        assertEquals(expected, fizzBuzz.isFizzBuzzNumber((numberFizzBuzz)));
+    }
+
+    /**
+     * Test for testing the method whether number 7 is 7.
+     */
+    @Test
+    public void testFizzBuzzNumberSevenIsSeven() {
+        final int numberFizzBuzz = 7;
+
+        final String expected = "7";
+        assertEquals(expected, fizzBuzz.isFizzBuzzNumber((numberFizzBuzz)));
+    }
+
+    /**
+     * Test for testing the method whether a number multiple of 3 is Fizz.
+     */
+    @Test
+    public void testFizzBuzzTwelveMultipleOfThreeIsFizz() {
+        final int numberFizzBuzz = 12;
+
+        final String expected = "Fizz";
+        assertEquals(expected, fizzBuzz.isFizzBuzzNumber((numberFizzBuzz)));
+    }
+
+    /**
+     * Test for testing the method whether a number contains three is Fizz.
+     */
+    @Test
+    public void testFizzBuzzThirteenIsFizz() {
+        final int numberFizzBuzz = 13;
+
+        final String expected = "Fizz";
+        assertEquals(expected, fizzBuzz.isFizzBuzzNumber((numberFizzBuzz)));
+    }
+
+    /**
+     * Test for testing the method whether fifteen is FizzBuzz number.
+     */
+    @Test
+    public void testFizzBuzzFifteenIsFizzBuzz() {
+        final int numberFizzBuzz = 15;
+
+        final String expected = "FizzBuzz";
+        assertEquals(expected, fizzBuzz.isFizzBuzzNumber((numberFizzBuzz)));
+    }
+
+    /**
+     * Test for testing the method whether a number multiple of 5 is Buzz.
+     */
+    @Test
+    public void testFizzBuzzTwentyMultipleOfBuzz() {
+        final int numberFizzBuzz = 20;
+
+        final String expected = "Buzz";
+        assertEquals(expected, fizzBuzz.isFizzBuzzNumber((numberFizzBuzz)));
+    }
+
+    /**
+     * Test for testing the method whether thirty is FizzBuzz number.
+     */
+    @Test
+    public void testFizzBuzzThirtyIsFizzBuzz() {
+        final int numberFizzBuzz = 30;
+
+        final String expected = "FizzBuzz";
+        assertEquals(expected, fizzBuzz.isFizzBuzzNumber((numberFizzBuzz)));
+    }
+
 
 }
