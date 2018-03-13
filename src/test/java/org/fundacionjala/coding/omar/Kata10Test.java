@@ -14,7 +14,7 @@ public class Kata10Test {
     private Kata10 highestAndLowest;
 
     @Before
-    public void Kata10Test() {
+    public void init() {
 
         highestAndLowest = new Kata10();
     }
