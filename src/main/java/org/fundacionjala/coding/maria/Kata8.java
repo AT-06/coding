@@ -47,12 +47,14 @@ public class Kata8 {
                 modEleven += Integer.parseInt(numberContent) * i;
                 onlyNumber.add(numberContent);
             }
-
             filaUno = filaUno.substring(THREE);
             filaDos = filaDos.substring(THREE);
             filaTres = filaTres.substring(THREE);
         }
+        return detResult(onlyNumber.toString(), modEleven);
+    }
 
+    private String detResult(String onlyNumber, int modEleven) {
         String result = onlyNumber.toString();
         if (onlyNumber.toString().contains("?")) {
             result = onlyNumber.toString().concat(" ILL");
