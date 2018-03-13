@@ -26,11 +26,11 @@ public class Kata8Test {
     @Test
     public void testBankOCRNormal() {
 
-
+        String filaUno =  "    _  _     _  _  _  _  _ ";
         String filaDos =  "  | _| _||_||_ |_   ||_||_|";
         String filaTres = "  ||_  _|  | _||_|  ||_| _|";
 
-        assertEquals("123456789", kata8.bankOCR(COMMONLINE1, filaDos, filaTres));
+        assertEquals("123456789", kata8.bankOCR(filaUno, filaDos, filaTres));
     }
 
     /**
