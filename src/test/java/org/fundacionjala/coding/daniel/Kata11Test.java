@@ -27,15 +27,26 @@ public class Kata11Test {
         final int content = 100;
         final int ten = 10;
         final int expected1 = 22;
-        assertEquals(expected1, kata.evaporator(ten, ten, ten));
         final int expected2 = 29;
-        assertEquals(expected2, kata.evaporator(ten, ten, 5));
+        final int five = 5;
         final int expected3 = 59;
-        assertEquals(expected3, kata.evaporator(content, 5, 5));
-        assertEquals(37, kata.evaporator(50, 12, 1));
-        assertEquals(31, kata.evaporator(47.5, 8, 8));
-        assertEquals(459, kata.evaporator(content, 1, 1));
-        assertEquals(459, kata.evaporator(ten, 1, 1));
-        assertEquals(299, kata.evaporator(content, 1, 5));
+        final int one = 1;
+        final int eight = 8;
+        final int expected4 = 37;
+        final int content1 = 50;
+        final int evapPerDay = 12;
+        final int expected5 = 31;
+        final double content2 = 47.5;
+        final int expected6 = 459;
+        final int expected7 = 299;
+
+        assertEquals(expected1, kata.evaporator(ten, ten, ten));
+        assertEquals(expected2, kata.evaporator(ten, ten, five));
+        assertEquals(expected3, kata.evaporator(content, five, five));
+        assertEquals(expected4, kata.evaporator(content1, evapPerDay, one));
+        assertEquals(expected5, kata.evaporator(content2, eight, eight));
+        assertEquals(expected6, kata.evaporator(content, one, one));
+        assertEquals(expected6, kata.evaporator(ten, one, one));
+        assertEquals(expected7, kata.evaporator(content, one, five));
     }
 }
