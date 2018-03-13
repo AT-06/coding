@@ -10,6 +10,7 @@ import static org.junit.Assert.assertEquals;
  */
 public class Kata8Test {
     private Kata8 kata8;
+    private static String COMMONLINE1 =  " _  _     _  _        _  _ ";
 
     /**
      * initialize kata8.
@@ -24,11 +25,12 @@ public class Kata8Test {
      */
     @Test
     public void testBankOCRNormal() {
-        String filaUno =  "    _  _     _  _  _  _  _ ";
+
+
         String filaDos =  "  | _| _||_||_ |_   ||_||_|";
         String filaTres = "  ||_  _|  | _||_|  ||_| _|";
 
-        assertEquals("123456789", kata8.bankOCR(filaUno, filaDos, filaTres));
+        assertEquals("123456789", kata8.bankOCR(COMMONLINE1, filaDos, filaTres));
     }
 
     /**
@@ -36,11 +38,11 @@ public class Kata8Test {
      */
     @Test
     public void testBankOCRErr() {
-        String filaUno =  " _  _     _  _        _  _ ";
+
         String filaDos =  "|_ |_ |_| _|  |  ||_||_||_ ";
         String filaTres = "|_||_|  | _|  |  |  | _| _|";
 
-        assertEquals("664371495 ERR", kata8.bankOCR(filaUno, filaDos, filaTres));
+        assertEquals("664371495 ERR", kata8.bankOCR(COMMONLINE1, filaDos, filaTres));
     }
 
     /**
