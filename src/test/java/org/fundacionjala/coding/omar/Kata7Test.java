@@ -11,12 +11,6 @@ import static org.junit.Assert.assertEquals;
  */
 public class Kata7Test {
 
-    private static final int NUMBER_3 = 3;
-    private static final int NUMBER_5 = 5;
-    private static final int NUMBER_15 = 15;
-    private static final int NUMBER_16 = 16;
-    private static final int NUMBER_151 = 151;
-    private static final int NUMBER_13 = 13;
     private Kata7 fizzBuzz;
 
     /**
@@ -44,7 +38,7 @@ public class Kata7Test {
     public void testFizzBuzzFiveIsBuzz() {
         final int numberFizzBuzz = 5;
 
-        assertEquals("Buzz", fizzBuzz.isFizzBuzzNumber((numberFizzBuzz)));
+        assertEquals("Buzz", fizzBuzz.isFizzBuzzNumber(numberFizzBuzz));
     }
 
     /**
@@ -55,7 +49,7 @@ public class Kata7Test {
         final int numberFizzBuzz = 1;
 
         final String expected = "1";
-        assertEquals(expected, fizzBuzz.isFizzBuzzNumber((numberFizzBuzz)));
+        assertEquals(expected, fizzBuzz.isFizzBuzzNumber(numberFizzBuzz));
     }
 
     /**
@@ -66,7 +60,7 @@ public class Kata7Test {
         final int numberFizzBuzz = 7;
 
         final String expected = "7";
-        assertEquals(expected, fizzBuzz.isFizzBuzzNumber((numberFizzBuzz)));
+        assertEquals(expected, fizzBuzz.isFizzBuzzNumber(numberFizzBuzz));
     }
 
     /**
@@ -77,7 +71,7 @@ public class Kata7Test {
         final int numberFizzBuzz = 12;
 
         final String expected = "Fizz";
-        assertEquals(expected, fizzBuzz.isFizzBuzzNumber((numberFizzBuzz)));
+        assertEquals(expected, fizzBuzz.isFizzBuzzNumber(numberFizzBuzz));
     }
 
     /**
@@ -88,7 +82,7 @@ public class Kata7Test {
         final int numberFizzBuzz = 13;
 
         final String expected = "Fizz";
-        assertEquals(expected, fizzBuzz.isFizzBuzzNumber((numberFizzBuzz)));
+        assertEquals(expected, fizzBuzz.isFizzBuzzNumber(numberFizzBuzz));
     }
 
     /**
@@ -99,7 +93,7 @@ public class Kata7Test {
         final int numberFizzBuzz = 15;
 
         final String expected = "FizzBuzz";
-        assertEquals(expected, fizzBuzz.isFizzBuzzNumber((numberFizzBuzz)));
+        assertEquals(expected, fizzBuzz.isFizzBuzzNumber(numberFizzBuzz));
     }
 
     /**
@@ -110,7 +104,7 @@ public class Kata7Test {
         final int numberFizzBuzz = 20;
 
         final String expected = "Buzz";
-        assertEquals(expected, fizzBuzz.isFizzBuzzNumber((numberFizzBuzz)));
+        assertEquals(expected, fizzBuzz.isFizzBuzzNumber(numberFizzBuzz));
     }
 
     /**
@@ -121,7 +115,18 @@ public class Kata7Test {
         final int numberFizzBuzz = 30;
 
         final String expected = "FizzBuzz";
-        assertEquals(expected, fizzBuzz.isFizzBuzzNumber((numberFizzBuzz)));
+        assertEquals(expected, fizzBuzz.isFizzBuzzNumber(numberFizzBuzz));
+    }
+
+    /**
+     * Test for testing the method whether a number contains five is Buzz.
+     */
+    @Test
+    public void testFizzBuzzFiftyFourIsBuzz() {
+        final int numberFizzBuzz = 54;
+
+        final String expected = "Buzz";
+        assertEquals(expected, fizzBuzz.isFizzBuzzNumber(numberFizzBuzz));
     }
 
 

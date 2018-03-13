@@ -24,11 +24,10 @@ public class Kata7 {
         if (number % NUMBER_15 == ZERO) {
             return "FizzBuzz";
         }
-        if (number % NUMBER_3 == ZERO || String.valueOf(number).contains("3")) {
-            return "Fizz";
+        if (number % NUMBER_5 == ZERO || String.valueOf(number).contains("5")) {
+            return "Buzz";
         }
-        return number % NUMBER_5 == ZERO || String.valueOf(number).contains("5") ? "Buzz" : String.valueOf(number);
-
+        return number % NUMBER_3 == ZERO || String.valueOf(number).contains("3") ? "Fizz" : String.valueOf(number);
 
     }
 
