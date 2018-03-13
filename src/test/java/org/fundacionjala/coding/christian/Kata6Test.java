@@ -32,7 +32,6 @@ public class Kata6Test {
     private static final Integer[] EARTH_5 = new Integer[]{9, 2, 4, 7, 3};
     private static final Integer[] KEEPER_4 = new Integer[]{2, 7, 4, 3, 9};
 
-
     /**
      *
      */

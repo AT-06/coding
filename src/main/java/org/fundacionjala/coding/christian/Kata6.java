@@ -11,7 +11,6 @@ public class Kata6 {
     private static final int NUMBER_3 = 3;
     private static final int NUMBER_13 = 13;
     private static final int NUMBER_14 = 14;
-
     /**
      * @param number this is for sortTwisted37.
      * @return tag for 'number'.
