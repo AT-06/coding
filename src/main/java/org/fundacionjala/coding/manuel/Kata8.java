@@ -16,7 +16,6 @@ public class Kata8 {
      * static initializer.
      */
     static {
-
         mapedValues.put(" _ | ||_|", "0");
         mapedValues.put("     |  |", "1");
         mapedValues.put(" _  _||_ ", "2");
@@ -40,7 +39,8 @@ public class Kata8 {
         StringJoiner numberValue = new StringJoiner("");
         String concatedNumber;
         while (!firstRow.isEmpty()) {
-            concatedNumber = concatNumber(firstRow, secondRow, thirdRow);
+            concatedNumber = firstRow.substring(0, SUFIX).concat(secondRow.substring(0, SUFIX));
+            concatedNumber = concatedNumber.concat(thirdRow.substring(0, SUFIX));
             numberValue.add(mapedValues.containsKey(concatedNumber) ? mapedValues.get(concatedNumber) : "?");
             firstRow = firstRow.substring(SUFIX);
             secondRow = secondRow.substring(SUFIX);
@@ -62,20 +62,6 @@ public class Kata8 {
             return numberValue.concat(" ERR");
         }
         return numberValue;
-    }
-    /**
-     * Method concatNumber to concat pipes and underscores.
-     * @param firstRow first row of pipes and underscore.
-     * @param secondRow second row of pipes and underscore.
-     * @param thirdRow third row of pipes and underscore.
-     * @return pipes and lines concated for first number.
-     */
-    public String concatNumber(String firstRow, String secondRow, String thirdRow) {
-        StringJoiner join = new StringJoiner("");
-        join.add(firstRow.substring(0, SUFIX));
-        join.add(secondRow.substring(0, SUFIX));
-        join.add(thirdRow.substring(0, SUFIX));
-        return join.toString();
     }
 
     /**
