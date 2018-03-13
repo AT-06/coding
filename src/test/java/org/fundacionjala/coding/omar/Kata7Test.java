@@ -1,5 +1,6 @@
 package org.fundacionjala.coding.omar;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -16,6 +17,15 @@ public class Kata7Test {
     private static final int NUMBER_16 = 16;
     private static final int NUMBER_151 = 151;
     private static final int NUMBER_13 = 13;
+    private Kata7 fizzBuzz;
+    /**
+     * This method is for init Kata7.
+     */
+    @Before
+    public void init() {
+        fizzBuzz = new Kata7();
+
+    }
 
     /**
      * This method is for test fizzBuzz method.
@@ -25,12 +35,24 @@ public class Kata7Test {
      * isFizzBuzzNumber( 16 )=> returns "16".
      */
     @Test
-    public void basicTestFizzBuzz() {
-        Kata7 fizzBuzz = new Kata7();
+    public void testIsFizzBuzzNumberBasicTestFizzBuzz() {
+
         assertEquals("Fizz", fizzBuzz.isFizzBuzzNumber(NUMBER_3));
         assertEquals("Buzz", fizzBuzz.isFizzBuzzNumber(NUMBER_5));
         assertEquals("FizzBuzz", fizzBuzz.isFizzBuzzNumber(NUMBER_15));
         assertEquals("16", fizzBuzz.isFizzBuzzNumber(NUMBER_16));
+
+
+    }
+
+    /**
+     * This method is for test fizzBuzz method is contains 3 or 5.
+     * isFizzBuzzNumber( 151 ) => returns "Buzz".
+     * isFizzBuzzNumber( 13 ) => returns "Fizz".
+     */
+    @Test
+    public void testIsFizzBuzzNumberAndContainsFiveOrThree() {
+
         assertEquals("Buzz", fizzBuzz.isFizzBuzzNumber(NUMBER_151));
         assertEquals("Fizz", fizzBuzz.isFizzBuzzNumber(NUMBER_13));
 
