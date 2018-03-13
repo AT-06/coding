@@ -29,9 +29,9 @@ public class Kata11Test {
     @Test
     public void testEvaporatorOne() {
         final int expected = 22;
-        final int NUMBER_10 = 10;
+        final int number10 = 10;
 
-        assertEquals(expected, evaporator.evaporator(NUMBER_10, NUMBER_10, NUMBER_10));
+        assertEquals(expected, evaporator.evaporator(number10, number10, number10));
     }
 
     /**
@@ -40,9 +40,9 @@ public class Kata11Test {
     @Test
     public void testEvaporatorTwo() {
         final int expected = 29;
-        final int NUMBER_10 = 10;
-        final int NUMBER_5 = 5;
-        assertEquals(expected, evaporator.evaporator(NUMBER_10, NUMBER_10, NUMBER_5));
+        final int number10 = 10;
+        final int number5 = 5;
+        assertEquals(expected, evaporator.evaporator(number10, number10, number5));
     }
 
     /**
@@ -51,9 +51,9 @@ public class Kata11Test {
     @Test
     public void testEvaporatorThree() {
         final int expected = 59;
-        final int NUMBER_100 = 100;
-        final int NUMBER_5 = 5;
-        assertEquals(expected, evaporator.evaporator(NUMBER_100, NUMBER_5, NUMBER_5));
+        final int number100 = 100;
+        final int number5 = 5;
+        assertEquals(expected, evaporator.evaporator(number100, number5, number5));
     }
 
     /**
@@ -64,9 +64,9 @@ public class Kata11Test {
         final int expected = 37;
         final double number50 = 50;
         final double number12 = 12;
-        final int NUMBER_1 = 1;
+        final int number1 = 1;
 
-        assertEquals(expected, evaporator.evaporator(number50, number12, NUMBER_1));
+        assertEquals(expected, evaporator.evaporator(number50, number12, number1));
     }
 
     /**
@@ -86,11 +86,11 @@ public class Kata11Test {
     @Test
     public void testEvaporatorSix() {
         final int expected = 459;
-        final int NUMBER_100 = 100;
-        final int NUMBER_1 = 1;
+        final int number100 = 100;
+        final int number1 = 1;
 
 
-        assertEquals(expected, evaporator.evaporator(NUMBER_100, NUMBER_1, NUMBER_1));
+        assertEquals(expected, evaporator.evaporator(number100, number1, number1));
     }
 
     /**
@@ -99,10 +99,10 @@ public class Kata11Test {
     @Test
     public void testEvaporatorSeven() {
         final int expected = 459;
-        final int NUMBER_10 = 10;
-        final int NUMBER_1 = 1;
+        final int number10 = 10;
+        final int number1 = 1;
 
-        assertEquals(expected, evaporator.evaporator(NUMBER_10, NUMBER_1, NUMBER_1));
+        assertEquals(expected, evaporator.evaporator(number10, number1, number1));
     }
 
     /**
@@ -111,10 +111,10 @@ public class Kata11Test {
     @Test
     public void testEvaporatorEight() {
         final int expected = 299;
-        final int NUMBER_100 = 100;
-        final int NUMBER_1 = 1;
-        final int NUMBER_5 = 5;
-        assertEquals(expected, evaporator.evaporator(NUMBER_100, NUMBER_1, NUMBER_5));
+        final int number100 = 100;
+        final int number1 = 1;
+        final int number5 = 5;
+        assertEquals(expected, evaporator.evaporator(number100, number1, number5));
     }
 
 }
