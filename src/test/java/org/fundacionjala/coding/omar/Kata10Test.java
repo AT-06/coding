@@ -13,6 +13,9 @@ public class Kata10Test {
 
     private Kata10 highestAndLowest;
 
+    /**
+     * This method initialize Kata10.
+     */
     @Before
     public void init() {
 
