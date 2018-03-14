@@ -36,6 +36,16 @@ public class Kata8Test {
     }
 
     /**
+     * testBankOCRNormalInt test 1.
+     */
+    @Test
+    public void testBankOCRNormalInt() {
+        String filaDos =  "  | _| _||_||_ |_   ||_| _ ";
+        assertEquals("12345678?", kata8.bankOCR(COMMONLINE2, filaDos, COMMONLINE3));
+    }
+
+
+    /**
      * testBankOCRErr test 2.
      */
     @Test
