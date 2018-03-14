@@ -37,11 +37,11 @@ public class Kata8 {
      */
     public String bank(String firstRow, String secondRow, String thirdRow) {
         StringJoiner numberValue = new StringJoiner("");
-        String concatedNumber;
         while (!firstRow.isEmpty()) {
-            concatedNumber = firstRow.substring(0, SUFIX).concat(secondRow.substring(0, SUFIX));
-            concatedNumber = concatedNumber.concat(thirdRow.substring(0, SUFIX));
-            numberValue.add(mapedValues.containsKey(concatedNumber) ? mapedValues.get(concatedNumber) : "?");
+            String concatenatedNumber = firstRow.substring(0, SUFIX)
+                    .concat(secondRow.substring(0, SUFIX))
+                    .concat(thirdRow.substring(0, SUFIX));
+            numberValue.add(mapedValues.getOrDefault(concatenatedNumber, "?"));
             firstRow = firstRow.substring(SUFIX);
             secondRow = secondRow.substring(SUFIX);
             thirdRow = thirdRow.substring(SUFIX);
