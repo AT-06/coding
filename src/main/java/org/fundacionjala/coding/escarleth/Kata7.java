@@ -27,5 +27,4 @@ public class Kata7 {
         }
         return valueNumber;
     }
-
 }

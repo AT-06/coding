@@ -27,18 +27,17 @@ public class Kata8Test {
      * BankKata test1 expected 123456789.
      */
     @Test
-    public void test11BankKata8() {
-        String firstRow = "    _  _     _  _  _  _  _ ";
+    public void test1BankKata8() {
         String secondRow = "  | _| _||_||_ |_   ||_||_|";
         String thirdRow = "  ||_  _|  | _||_|  ||_| _|";
-        assertEquals("123456789", kata8.bank(firstRow, secondRow, thirdRow));
+        assertEquals("123456789", kata8.bank(COMMON_LINE2, secondRow, thirdRow));
     }
 
     /**
      * BankKata test expected 12345678? ILL.
      */
     @Test
-    public void test12BankKata8() {
+    public void test2BankKata8() {
         String firstRow = "    _  _     _  _  _  _  _ ";
         String secondRow = "  | _| _||_||_ |_   ||_||  ";
         String thirdRow = "  ||_  _|  | _||_|  ||_| _|";
@@ -49,7 +48,7 @@ public class Kata8Test {
      * BankKata test expected 664371495 ERR.
      */
     @Test
-    public void testBankOCRErr() {
+    public void tes3BankKata8() {
 
         String secondRow = "|_ |_ |_| _|  |  ||_||_||_ ";
         String thirdRow = "|_||_|  | _|  |  |  | _| _|";
@@ -61,7 +60,7 @@ public class Kata8Test {
      * BankKata test 1234?678? ILL.
      */
     @Test
-    public void testBankOCRTwoNoNumbers() {
+    public void test4BankKata8() {
         String secondRow = "  | _| _||_| _ |_   ||_||_|";
         String thirdRow = "  ||_  _|  | _||_|  ||_| _ ";
 
@@ -72,7 +71,7 @@ public class Kata8Test {
      * BankKata test 111111111 ERR.
      */
     @Test
-    public void test2BankKata8() {
+    public void test5BankKata8() {
         String firstRow = "                           ";
         assertEquals("111111111 ERR", kata8.bank(firstRow, COMMON_LINE3, COMMON_LINE3));
     }
