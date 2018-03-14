@@ -44,8 +44,8 @@ public class Kata8 {
             if (numberContent == null) {
                 onlyNumber.add("?");
             } else {
-                modEleven += Integer.parseInt(numberContent) * i;
                 onlyNumber.add(numberContent);
+                modEleven += Integer.parseInt(numberContent) * i;
             }
             filaUno = filaUno.substring(THREE);
             filaDos = filaDos.substring(THREE);
