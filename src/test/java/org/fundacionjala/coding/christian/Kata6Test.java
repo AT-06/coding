@@ -21,7 +21,6 @@ public class Kata6Test {
         sort = new Kata6();
     }
 
-
     private static final Integer[] KEEPER_1 = new Integer[]{1, 2, 7, 4, 5, 6, 3, 8, 9};
     private static final Integer[] EARTH_1 = new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
     private static final Integer[] KEEPER_2 = new Integer[]{12, 14, 13};

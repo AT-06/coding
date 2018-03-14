@@ -26,6 +26,7 @@ public class Kata6 {
 
         Integer[] newNumber = number.clone();
         Arrays.sort(newNumber);
+
         for (int i = 0; i < newNumber.length; i++) {
             if (change.containsKey(newNumber[i])) {
                 newNumber[i] = change.get(newNumber[i]);
