@@ -32,7 +32,7 @@ public class Kata8 {
      * @return numero
      */
     public String bankOCR(String filaUno, String filaDos, String filaTres) {
-        int modEleven = 0;
+
         StringJoiner onlyNumber = new StringJoiner("");
         for (int i = NINE; i >= 1; i--) {
             StringJoiner number = new StringJoiner("");
@@ -45,17 +45,29 @@ public class Kata8 {
                 onlyNumber.add("?");
             } else {
                 onlyNumber.add(numberContent);
-                modEleven += Integer.parseInt(numberContent) * i;
             }
             filaUno = filaUno.substring(THREE);
             filaDos = filaDos.substring(THREE);
             filaTres = filaTres.substring(THREE);
         }
-        return detResult(onlyNumber.toString(), modEleven);
+        return detResult(onlyNumber.toString());
     }
 
-    private String detResult(String onlyNumber, int modEleven) {
-        String result = onlyNumber.toString();
+    /**
+     * @param onlyNumber string final
+     * @return string con errores
+     */
+    private String detResult(String onlyNumber) {
+        int modEleven = 0;
+        String[] arrayNumbers = onlyNumber.split("");
+        int count = NINE;
+        for (int i = 0; i < NINE; i++) {
+            if (!arrayNumbers[i].equals("?")) {
+                modEleven += Integer.parseInt(arrayNumbers[i]) * count;
+            }
+            count--;
+        }
+        String result = onlyNumber;
         if (onlyNumber.toString().contains("?")) {
             result = onlyNumber.toString().concat(" ILL");
         } else if (modEleven % ELEVEN != 0) {
