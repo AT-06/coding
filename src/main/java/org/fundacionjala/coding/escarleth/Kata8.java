@@ -86,7 +86,6 @@ public class Kata8 {
      * @return string with a suffix.
      */
     private String addSuffix(String number) {
-
         return number.contains("?") ? String.format("%s %s", number, "ILL") : String.format("%s %s", number, "ERR");
     }
 }

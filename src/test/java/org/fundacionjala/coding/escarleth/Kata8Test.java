@@ -14,6 +14,7 @@ public class Kata8Test {
     private static final String COMMON_LINE1 = " _  _     _  _        _  _ ";
     private static final String COMMON_LINE2 = "    _  _     _  _  _  _  _ ";
     private static final String COMMON_LINE3 = "  |  |  |  |  |  |  |  |  |";
+    private static final String COMMON_LINE4 = "  ||_  _|  | _||_|  ||_| _|";
 
     /**
      * initialize kata8.
@@ -29,8 +30,7 @@ public class Kata8Test {
     @Test
     public void test1BankKata8() {
         String secondRow = "  | _| _||_||_ |_   ||_||_|";
-        String thirdRow = "  ||_  _|  | _||_|  ||_| _|";
-        assertEquals("123456789", kata8.bank(COMMON_LINE2, secondRow, thirdRow));
+        assertEquals("123456789", kata8.bank(COMMON_LINE2, secondRow, COMMON_LINE4));
     }
 
     /**
@@ -38,10 +38,8 @@ public class Kata8Test {
      */
     @Test
     public void test2BankKata8() {
-        String firstRow = "    _  _     _  _  _  _  _ ";
         String secondRow = "  | _| _||_||_ |_   ||_||  ";
-        String thirdRow = "  ||_  _|  | _||_|  ||_| _|";
-        assertEquals("12345678? ILL", kata8.bank(firstRow, secondRow, thirdRow));
+        assertEquals("12345678? ILL", kata8.bank(COMMON_LINE2, secondRow, COMMON_LINE4));
     }
 
     /**
