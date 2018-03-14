@@ -46,20 +46,33 @@ public class Kata8 {
             } else {
                 onlyNumber.add(numberContent);
             }
+
             filaUno = filaUno.substring(THREE);
             filaDos = filaDos.substring(THREE);
             filaTres = filaTres.substring(THREE);
         }
-        return detResult(onlyNumber.toString());
+        return onlyNumber.toString();
+    }
+
+
+    /**
+     * @param number string
+     * @return ill if the string contains ?
+     */
+    public String ill(String number) {
+        if (number.contains("?")) {
+            number = number.concat(" ILL");
+        }
+        return number;
     }
 
     /**
-     * @param onlyNumber string final
-     * @return string con errores
+     * @param number string
+     * @return if the fsum of fields is mod 11
      */
-    private String detResult(String onlyNumber) {
+    public String err(String number) {
         int modEleven = 0;
-        String[] arrayNumbers = onlyNumber.split("");
+        String[] arrayNumbers = number.split("");
         int count = NINE;
         for (int i = 0; i < NINE; i++) {
             if (!arrayNumbers[i].equals("?")) {
@@ -67,12 +80,7 @@ public class Kata8 {
             }
             count--;
         }
-        String result = onlyNumber;
-        if (onlyNumber.toString().contains("?")) {
-            result = onlyNumber.toString().concat(" ILL");
-        } else if (modEleven % ELEVEN != 0) {
-            result = onlyNumber.toString().concat(" ERR");
-        }
-        return result;
+        number = modEleven % ELEVEN != 0 ? number.concat(" ERR") : number;
+        return number;
     }
 }

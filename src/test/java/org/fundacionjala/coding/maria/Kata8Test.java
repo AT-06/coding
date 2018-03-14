@@ -10,7 +10,6 @@ import static org.junit.Assert.assertEquals;
  */
 public class Kata8Test {
     private Kata8 kata8;
-    private static final String COMMONLINE1 =  " _  _     _  _        _  _ ";
     private static final String COMMONLINE2 = "    _  _     _  _  _  _  _ ";
     private static final String COMMONLINE3 = "  ||_  _|  | _||_|  ||_| _|";
 
@@ -42,10 +41,8 @@ public class Kata8Test {
     @Test
     public void testBankOCRErr() {
 
-        String filaDos =  "|_ |_ |_| _|  |  ||_||_||_ ";
-        String filaTres = "|_||_|  | _|  |  |  | _| _|";
 
-        assertEquals("664371495 ERR", kata8.bankOCR(COMMONLINE1, filaDos, filaTres));
+        assertEquals("664371495 ERR", kata8.err("664371495"));
     }
 
     /**
@@ -53,10 +50,8 @@ public class Kata8Test {
      */
     @Test
     public void testBankOCROneNoNumber() {
-        String filaDos = "  | _| _||_||_ |_   ||_||  ";
 
-
-        assertEquals("12345678? ILL", kata8.bankOCR(COMMONLINE2, filaDos, COMMONLINE3));
+        assertEquals("12345678? ILL", kata8.ill("12345678?"));
     }
 
     /**
@@ -65,9 +60,7 @@ public class Kata8Test {
     @Test
     public void testBankOCRTwoNoNumbers() {
 
-        String filaDos = "  | _| _||_| _ |_   ||_||_|";
-        String filaTres = "  ||_  _|  | _||_|  ||_| _ ";
 
-        assertEquals("1234?678? ILL", kata8.bankOCR(COMMONLINE2, filaDos, filaTres));
+        assertEquals("1234?678? ILL", kata8.ill("1234?678?"));
     }
 }
