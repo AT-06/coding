@@ -12,16 +12,6 @@ import static org.junit.Assert.assertEquals;
  */
 public class Kata6Test {
 
-    private static final Integer[] EXPECTED = {1, 2, 7, 4, 5, 6, 3, 8, 9};
-    private static final Integer[] ARRAY_INTEGERS = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-    private static final Integer[] EXPECTED1 = {12, 14, 13};
-    private static final Integer[] ARRAY_INTEGERS1 = {12, 13, 14};
-    private static final Integer[] EXPECTED2 = {2, 7, 4, 3, 9};
-    private static final Integer[] ARRAY_INTEGERS2 = {9, 2, 4, 7, 3};
-    private static final Integer[] ARRAY = {9, 2, 4, 7, 3};
-    private static final Integer[] EXPECTED3 = {2, 7, 4, 3, 9};
-    private static final Integer[] ARRAY_CPY = {9, 2, 4, 7, 3};
-
     private Kata6 kata6;
 
     /**
@@ -37,9 +27,16 @@ public class Kata6Test {
      */
     @Test
     public void testSortTwistedBasicTests() {
-        assertEquals(Arrays.toString(EXPECTED), Arrays.toString(kata6.sortTwisted37(ARRAY_INTEGERS)));
-        assertEquals(Arrays.toString(EXPECTED1), Arrays.toString(kata6.sortTwisted37(ARRAY_INTEGERS1)));
-        assertEquals(Arrays.toString(EXPECTED2), Arrays.toString(kata6.sortTwisted37(ARRAY_INTEGERS2)));
+        final Integer[] expected = {1, 2, 7, 4, 5, 6, 3, 8, 9};
+        final Integer[] arrayIntegers = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        final Integer[] expected1 = {12, 14, 13};
+        final Integer[] arrayIntegers1 = {12, 13, 14};
+        final Integer[] expected2 = {2, 7, 4, 3, 9};
+        final Integer[] arrayIntegers2 = {9, 2, 4, 7, 3};
+
+        assertEquals(Arrays.toString(expected), Arrays.toString(kata6.sortTwisted37(arrayIntegers)));
+        assertEquals(Arrays.toString(expected1), Arrays.toString(kata6.sortTwisted37(arrayIntegers1)));
+        assertEquals(Arrays.toString(expected2), Arrays.toString(kata6.sortTwisted37(arrayIntegers2)));
     }
 
     /**
@@ -47,8 +44,11 @@ public class Kata6Test {
      */
     @Test
     public void testSortTwistedUnChangedArrayTest() {
+        final Integer[] array = {9, 2, 4, 7, 3};
+        final Integer[] expected3 = {2, 7, 4, 3, 9};
+        final Integer[] arrayCpy = {9, 2, 4, 7, 3};
 
-        assertEquals(Arrays.toString(EXPECTED3), Arrays.toString(kata6.sortTwisted37(ARRAY)));
-        assertEquals(Arrays.toString(ARRAY_CPY), Arrays.toString(ARRAY));
+        assertEquals(Arrays.toString(expected3), Arrays.toString(kata6.sortTwisted37(array)));
+        assertEquals(Arrays.toString(arrayCpy), Arrays.toString(array));
     }
 }
