@@ -14,7 +14,7 @@ public class Kata15 {
      * @return result .
      */
     public int mostFrequentItemCount(int[] collection) {
-        if (collection.length == 0 ) {
+        if (collection.length == 0) {
 
             return 0;
 
@@ -37,6 +37,6 @@ public class Kata15 {
 
             }
         }
-        return (Collections.max(map.values()));
+        return Collections.max(map.values());
     }
 }
