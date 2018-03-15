@@ -5,6 +5,9 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 /**
  * This class contains UnitTests for Kata8.
  */
@@ -56,12 +59,30 @@ public class Kata8Test {
     public void testEvaluatingResultToNumberWithERR() {
         assertEquals("664371495 ERR", kata8.evaluatingResult("664371495"));
     }
+
     /**
      * testEvaluatingResultToNumberWithoutSuffix return the same number.
      */
     @Test
     public void testEvaluatingResultToNumberWithoutSuffix() {
         assertEquals("345882865", kata8.evaluatingResult("345882865"));
+    }
+
+    /**
+     * testValidateCheckSumWithValidNumber return true.
+     */
+    @Test
+    public void testValidateCheckSumWithValidNumber() {
+        assertTrue(kata8.isValidCheckSum("123456789"));
+    }
+
+    /**
+     * testValidateCheckSumWithInvalidNumber return false.
+     */
+    @Test
+    public void testValidateCheckSumWithInvalidNumber() {
+
+        assertFalse(kata8.isValidCheckSum("345812865"));
     }
 
 }

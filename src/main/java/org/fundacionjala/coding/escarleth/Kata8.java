@@ -43,7 +43,7 @@ public class Kata8 {
             String number = firstRow.substring(i, i + INCREMENT)
                     .concat(secondRow.substring(i, i + INCREMENT))
                     .concat(thirdRow.substring(i, i + INCREMENT));
-            evaluatedNumber.append(getNumber(number));
+            evaluatedNumber.append(NUMBERS.getOrDefault(number, "?"));
         }
         return evaluatedNumber.toString();
     }
@@ -60,18 +60,10 @@ public class Kata8 {
     }
 
     /**
-     * @param number is the symbols of the number.
-     * @return result a positive number
-     */
-    private String getNumber(String number) {
-        return NUMBERS.getOrDefault(number, "?");
-    }
-
-    /**
      * @param number is a number.
      * @return if the sum%11=0.
      */
-    private boolean isValidCheckSum(String number) {
+    public boolean isValidCheckSum(String number) {
         int sum = 0;
         int cont = 0;
         for (int i = number.length(); i > 0; i--) {
