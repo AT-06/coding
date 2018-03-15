@@ -17,12 +17,14 @@ public class Kata13 {
             .map(i -> Character.getNumericValue((char) i))
             .map(i -> {
                 int result = i * factor;
-                factor = factor == 1 ? 3 : 1;
+                final int multiplier = 3;
+                factor = factor == 1 ? multiplier : 1;
                 return result;
             })
             .sum();
 
-        checksum = (checksum % 10 == 0 ? 0 : (10 - checksum % 10));
+        final int i = 10;
+        checksum = checksum % i == 0 ? 0 : i - checksum % i;
 
         return Character.getNumericValue(eanCode.charAt(eanCode.length() - 1)) == checksum;
     }
