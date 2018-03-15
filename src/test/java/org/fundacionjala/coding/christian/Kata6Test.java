@@ -20,17 +20,15 @@ public class Kata6Test {
         sort = new Kata6();
     }
 
-
-    private final Integer[] KEEPER_1 = new Integer[]{1, 2, 7, 4, 5, 6, 3, 8, 9};
-    private final Integer[] EARTH_1 = new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
-    private final Integer[] KEEPER_2 = new Integer[]{12, 14, 13};
-    private final Integer[] EARTH_2 = new Integer[]{12, 13, 14};
-    private final Integer[] KEEPER_3 = new Integer[]{2, 7, 4, 3, 9};
-    private final Integer[] EARTH_3 = new Integer[]{9, 2, 4, 7, 3};
-    private final Integer[] EARTH_4 = new Integer[]{9, 2, 4, 7, 3};
-    private final Integer[] EARTH_5 = new Integer[]{9, 2, 4, 7, 3};
-    private final Integer[] KEEPER_4 = new Integer[]{2, 7, 4, 3, 9};
-
+    private final Integer[] kepler1 = new Integer[]{1, 2, 7, 4, 5, 6, 3, 8, 9};
+    private final Integer[] earth1 = new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
+    private final Integer[] kepler2 = new Integer[]{12, 14, 13};
+    private final Integer[] earth2 = new Integer[]{12, 13, 14};
+    private final Integer[] kepler3 = new Integer[]{2, 7, 4, 3, 9};
+    private final Integer[] earth3 = new Integer[]{9, 2, 4, 7, 3};
+    private final Integer[] earth4 = new Integer[]{9, 2, 4, 7, 3};
+    private final Integer[] earth5 = new Integer[]{9, 2, 4, 7, 3};
+    private final Integer[] kepler4 = new Integer[]{2, 7, 4, 3, 9};
     /**
      *
      */
@@ -39,14 +37,14 @@ public class Kata6Test {
 
          sort = new Kata6();
 
-        assertEquals(Arrays.toString(KEEPER_1),
-                Arrays.toString(sort.sortTwisted37(EARTH_1)));
+        assertEquals(Arrays.toString(kepler1),
+                Arrays.toString(sort.sortTwisted37(earth1)));
 
-        assertEquals(Arrays.toString(KEEPER_2),
-                Arrays.toString(sort.sortTwisted37(EARTH_2)));
+        assertEquals(Arrays.toString(kepler2),
+                Arrays.toString(sort.sortTwisted37(earth2)));
 
-        assertEquals(Arrays.toString(KEEPER_3),
-                Arrays.toString(sort.sortTwisted37(EARTH_3)));
+        assertEquals(Arrays.toString(kepler3),
+                Arrays.toString(sort.sortTwisted37(earth3)));
     }
 
     /**
@@ -56,9 +54,9 @@ public class Kata6Test {
     public void testSortTwisted37UnChangedArrayTest() {
 
 
-        assertEquals(Arrays.toString(KEEPER_4),
-                Arrays.toString(sort.sortTwisted37(EARTH_4)));
+        assertEquals(Arrays.toString(kepler4),
+                Arrays.toString(sort.sortTwisted37(earth4)));
 
-        assertEquals("You should not modify the input array!", Arrays.toString(EARTH_5), Arrays.toString(EARTH_4));
+        assertEquals("You should not modify the input array!", Arrays.toString(earth5), Arrays.toString(earth4));
     }
 }
