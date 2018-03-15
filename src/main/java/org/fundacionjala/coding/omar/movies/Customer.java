@@ -7,7 +7,6 @@ import java.util.List;
  * Created by Omar Limbert Huanca Sanchez AT06.
  */
 public class Customer {
-    private static final int ZERO = 0;
     private static final String NEW_LINE = "\n";
     private static final int CAPACITY = 100;
     private static final String VAR = "%s %s";
@@ -64,11 +63,9 @@ public class Customer {
      */
 
     private double getTotalAmount() {
-        double totalAmount = ZERO;
-        for (Rental rental : rentalsList) {
-            totalAmount += rental.getAmount();
-        }
-        return totalAmount;
+        return rentalsList.stream()
+                .mapToDouble(Rental::getAmount)
+                .sum();
     }
 
     /**
@@ -77,11 +74,9 @@ public class Customer {
      * @return frequentRenterPoints.
      */
     private int getFrequentRenterPoints() {
-        int frequentRenterPoints = ZERO;
-        for (Rental rental : rentalsList) {
-            frequentRenterPoints += rental.getFrequentRenterPoints();
-        }
-        return frequentRenterPoints;
+        return rentalsList.stream()
+                .mapToInt(Rental::getFrequentRenterPoints)
+                .sum();
     }
 
 }

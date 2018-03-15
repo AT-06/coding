@@ -6,9 +6,7 @@ package org.fundacionjala.coding.omar.movies;
 public class MovieChildren extends AbstractMovie {
 
     private static final double NUMBER_1_5 = 1.5;
-    private static final int NUMBER_0 = 0;
     private static final int NUMBER_3 = 3;
-    private static final int NUMBER_1 = 1;
 
     /**
      * Constructor for MovieChildren.
@@ -19,12 +17,10 @@ public class MovieChildren extends AbstractMovie {
     }
 
     /**
-     * @param daysRented This Method returns Total amount of Children Movie.
-     * @return totalAmount.
+     * {@inheritDoc}
      */
     double getAmount(int daysRented) {
-        double totalAmount = NUMBER_0;
-        totalAmount += NUMBER_1_5;
+        double totalAmount = 1.5;
         if (daysRented > NUMBER_3) {
             totalAmount += (daysRented - NUMBER_3) * NUMBER_1_5;
         }
@@ -36,7 +32,7 @@ public class MovieChildren extends AbstractMovie {
      * @return points.
      */
     int getFrequentRenterPoints(int daysRented) {
-        return NUMBER_1;
+        return DEFAULT_FREQUENT_RENTER_POINT;
     }
 
 }

@@ -5,10 +5,8 @@ package org.fundacionjala.coding.omar.movies;
  */
 public class MovieRegular extends AbstractMovie {
 
-    private static final int NUMBER_0 = 0;
     private static final int NUMBER_2 = 2;
     private static final double NUMBER_1_5 = 1.5;
-    private static final int NUMBER_1 = 1;
 
     /**
      * Constructor for MovieRegular.
@@ -19,12 +17,10 @@ public class MovieRegular extends AbstractMovie {
     }
 
     /**
-     * @param daysRented This Method returns Total Amount of Regular Movie.
-     * @return totalAmount Total amount of regular movie.
+     * {@inheritDoc}
      */
     double getAmount(int daysRented) {
-        double totalAmount = NUMBER_0;
-        totalAmount += NUMBER_2;
+        double totalAmount = 2;
         if (daysRented > NUMBER_2) {
             totalAmount += (daysRented - NUMBER_2) * NUMBER_1_5;
         }
@@ -36,7 +32,7 @@ public class MovieRegular extends AbstractMovie {
      * @return points Total points of regular movie.
      */
     int getFrequentRenterPoints(int daysRented) {
-        return NUMBER_1;
+        return DEFAULT_FREQUENT_RENTER_POINT;
     }
 
 }

@@ -6,7 +6,6 @@ package org.fundacionjala.coding.omar.movies;
 public class MovieNew extends AbstractMovie {
 
     private static final int NUMBER_3 = 3;
-    private static final int NUMBER_0 = 0;
     private static final int NUMBER_1 = 1;
     private static final int NUMBER_2 = 2;
 
@@ -19,13 +18,10 @@ public class MovieNew extends AbstractMovie {
     }
 
     /**
-     * @param daysRented This Method returns Total Amount of New Movie.
-     * @return totalAmount.
+     * {@inheritDoc}
      */
     double getAmount(int daysRented) {
-        double totalAmount = NUMBER_0;
-        totalAmount += daysRented * NUMBER_3;
-        return totalAmount;
+        return daysRented * NUMBER_3;
     }
 
     /**

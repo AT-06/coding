@@ -4,6 +4,7 @@ package org.fundacionjala.coding.omar.movies;
  * Created by Omar Limbert Huanca Sanchez AT06.
  */
 public abstract class AbstractMovie {
+    protected static final int DEFAULT_FREQUENT_RENTER_POINT = 1;
     private String title;
 
     /**
