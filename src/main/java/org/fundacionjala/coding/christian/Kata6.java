@@ -8,10 +8,10 @@ import java.util.Map;
  * Development by Christian.
  */
 public class Kata6 {
-    private static final int NUMBER_7 = 7;
-    private static final int NUMBER_3 = 3;
-    private static final int NUMBER_13 = 13;
-    private static final int NUMBER_14 = 14;
+    public static final int NUMBER_7 = 7;
+    public static final int NUMBER_3 = 3;
+    public static final int NUMBER_13 = 13;
+    public static final int NUMBER_14 = 14;
     /**
      * @param number this is for sortTwisted37.
      * @return tag for 'number'.
