@@ -56,6 +56,14 @@ public class Kata8Test {
     public void testEvaluatingResultToNumberWithERR() {
         assertEquals("664371495 ERR", kata8.evaluatingResult("664371495"));
     }
+    /**
+     * testEvaluatingResultToNumberWithoutSuffix return the same number.
+     */
+    @Test
+    public void testEvaluatingResultToNumberWithoutSuffix() {
+        assertEquals("345882865", kata8.evaluatingResult("345882865"));
+    }
+
 }
 
 

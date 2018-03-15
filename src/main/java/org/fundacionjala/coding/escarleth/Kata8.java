@@ -74,7 +74,7 @@ public class Kata8 {
     private boolean isValidCheckSum(String number) {
         int sum = 0;
         int cont = 0;
-        for (int i = number.length() - 1; i > 0; i--) {
+        for (int i = number.length(); i > 0; i--) {
             sum += Character.getNumericValue(number.charAt(cont)) * i;
             cont++;
         }
