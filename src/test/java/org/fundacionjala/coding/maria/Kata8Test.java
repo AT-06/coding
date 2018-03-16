@@ -12,7 +12,7 @@ public class Kata8Test {
     private Kata8 kata8;
     private static final String COMMONLINE2 = "    _  _     _  _  _  _  _ ";
     private static final String COMMONLINE3 = "  ||_  _|  | _||_|  ||_| _|";
-
+    private static final String COMMONSTRING = "123456789";
 
     /**
      * initialize kata8.
@@ -27,12 +27,8 @@ public class Kata8Test {
      */
     @Test
     public void testBankOCRNormal() {
-
-
         String filaDos =  "  | _| _||_||_ |_   ||_||_|";
-
-
-        assertEquals("123456789", kata8.bankOCR(COMMONLINE2, filaDos, COMMONLINE3));
+        assertEquals(COMMONSTRING, kata8.bankOCR(COMMONLINE2, filaDos, COMMONLINE3));
     }
 
     /**
@@ -56,12 +52,29 @@ public class Kata8Test {
     }
 
     /**
+     * testBankOCRErr test 2.
+     */
+    @Test
+    public void testBankOCRNoErr() {
+        assertEquals(COMMONSTRING, kata8.err(COMMONSTRING));
+    }
+
+    /**
      * testBankOCROneNoNumber test 3.
      */
     @Test
     public void testBankOCROneNoNumber() {
 
         assertEquals("12345678? ILL", kata8.ill("12345678?"));
+    }
+
+    /**
+     * testBankOCROneNumber.
+     */
+    @Test
+    public void testBankOCROneNumber() {
+
+        assertEquals(COMMONSTRING, kata8.ill(COMMONSTRING));
     }
 
     /**
