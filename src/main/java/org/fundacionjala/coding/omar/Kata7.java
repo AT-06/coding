@@ -20,11 +20,11 @@ public class Kata7 {
      */
     public String isFizzBuzzNumber(int number) {
 
-        final String numberToString = String.valueOf(number);
-
         if (number % NUMBER_15 == ZERO) {
             return "FizzBuzz";
         }
+
+        final String numberToString = String.valueOf(number);
         if (number % NUMBER_5 == ZERO || numberToString.contains("5")) {
             return "Buzz";
         }
