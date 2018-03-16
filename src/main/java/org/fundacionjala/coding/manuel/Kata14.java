@@ -6,7 +6,6 @@ import java.util.Arrays;
  * Created by Administrator on 3/16/2018.
  */
 public class Kata14 {
-    //public static final int LENGTH_NUM = 1;
     public static final double DIVISOR = 2.0;
 
     /**
