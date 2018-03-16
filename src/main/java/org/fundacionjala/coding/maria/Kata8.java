@@ -71,16 +71,26 @@ public class Kata8 {
      * @return if the fsum of fields is mod 11
      */
     public String err(String number) {
-        int modEleven = 0;
-        String[] arrayNumbers = number.split("");
-        int count = NINE;
-        for (int i = 0; i < NINE; i++) {
-            if (!arrayNumbers[i].equals("?")) {
-                modEleven += Integer.parseInt(arrayNumbers[i]) * count;
-            }
-            count--;
-        }
+
+
+        int modEleven = modEleven(number);
         number = modEleven % ELEVEN != 0 ? number.concat(" ERR") : number;
         return number;
+    }
+
+    /**
+     * @param number String
+     * @return mod of String
+     */
+    public int modEleven(String number) {
+        int modEleven = 0, count = NINE;
+        String[] arrayNumbers = number.split("");
+        if (!number.contains("?")) {
+            for (int i = 0; i < NINE; i++) {
+                modEleven += Integer.parseInt(arrayNumbers[i]) * count;
+                count--;
+            }
+        }
+        return modEleven;
     }
 }
