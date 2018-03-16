@@ -83,7 +83,8 @@ public class Kata8 {
      * @return mod of String
      */
     public int modEleven(String number) {
-        int modEleven = 0, count = NINE;
+        int modEleven = 0;
+        int count = NINE;
         String[] arrayNumbers = number.split("");
         if (!number.contains("?")) {
             for (int i = 0; i < NINE; i++) {
