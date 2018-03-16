@@ -1,6 +1,7 @@
 package org.fundacionjala.coding.daniel;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -25,9 +26,8 @@ public class Kata13Test {
      */
     @Test
     public void testValidate() {
-        assertEquals(true, kata.validate("4003301018398"));
-        assertEquals(false, kata.validate("4003301018392"));
-        assertEquals(false, kata.validate("400330101839"));
+        assertTrue(kata.validate("9783815820865"));
+        assertFalse(kata.validate("9783815820864"));
+        assertTrue(kata.validate("9783827317100"));
     }
-
 }
