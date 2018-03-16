@@ -13,7 +13,7 @@ public class Kata12 {
     public long getScore(int num) {
         long t = 0;
         for (int i = 1; i <= num; i++) {
-            t = t + (i * INI);
+            t += i * INI;
         }
         return t;
     }
