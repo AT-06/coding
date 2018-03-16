@@ -36,4 +36,12 @@ public class Kata13Test {
     public void testValidateInvalidEANNumber() {
         assertFalse(kata13.validate("4003301018392"));
     }
+
+    /**
+     * It validates a valid EAN number.
+     */
+    @Test
+    public void testValidateEANNumber() {
+        assertTrue(kata13.validate("9783827317100"));
+    }
 }

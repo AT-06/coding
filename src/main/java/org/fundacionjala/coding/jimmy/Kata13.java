@@ -5,8 +5,8 @@ package org.fundacionjala.coding.jimmy;
  */
 public class Kata13 {
 
-    public static final int NUMBER_THREE = 3;
-    public static final int NUMBER_TEN = 10;
+    private static final int NUMBER_THREE = 3;
+    private static final int NUMBER_TEN = 10;
 
     /**
      * It validates a number in order to know whether is a EAN number.
