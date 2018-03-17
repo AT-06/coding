@@ -50,6 +50,7 @@ public class Kata8 {
 
     private static final int NUMBER_0 = 0;
 
+    private static final int NUMBER_11 = 11;
 
 
     static {
@@ -105,24 +106,14 @@ public class Kata8 {
      */
     public boolean checkSum(String accountNumber) {
 
-        
-        return IntStream.range(0, accountNumber.length())
-                .map(i -> accountNumber.charAt(i) * accountNumber.length()-i)
-                .sum() % 11 == 0;
 
+        return IntStream.range(NUMBER_0, NUMBER_9)
+                .map(i -> Character.getNumericValue(accountNumber.charAt(i)) * (accountNumber.length() - i))
+                .sum() % NUMBER_11 == NUMBER_0;
 
-
-      /*  int checkSum = 0;
-        int counter = accountNumber.length();
-        while(counter < accountNumber.length()){
-
-            checkSum += Character.getNumericValue(accountNumber.charAt(counter)) * (accountNumber.length() - counter);
-            counter ++;
-        }
-
-        return checkSum % 11 == 0;*/
 
     }
+
     /**
      * @param account .
      * @return .

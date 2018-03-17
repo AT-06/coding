@@ -17,12 +17,20 @@ import static org.junit.Assert.assertTrue;
  */
 public class Kata8Test {
 
+    private static final String ROW_2 = "  | _| _||_||_ |_   ||_||_|";
+    private static final String ROW_3 = "  ||_  _|  | _||_|  ||_| _|";
+    private static final String ROW_1 = "    _  _     _  _  _  _  _ ";
     private Kata8 entryToNumber;
+
+    /**
+     * This method is for initialize Kata8.
+     */
     @Before
-    public void init(){
+    public void init() {
 
         entryToNumber = new Kata8();
     }
+
     /**
      * This method is for test convertEntryToNumber(entry) method.
      * isFizzBuzzNumber( row1, row2, row3 ) => returns "123456789".
@@ -30,15 +38,12 @@ public class Kata8Test {
     @Test
     public void testConvertValidEntryToNumberHistoryOne() {
 
-        String row1 = "    _  _     _  _  _  _  _ ";
-        String row2 = "  | _| _||_||_ |_   ||_||_|";
-        String row3 = "  ||_  _|  | _||_|  ||_| _|";
 
-
-        assertEquals("123456789", entryToNumber.convertEntryToNumber(row1, row2, row3));
+        assertEquals("123456789", entryToNumber.convertEntryToNumber(ROW_1, ROW_2, ROW_3));
 
 
     }
+
     /**
      * This method is for test convertEntryToNumber(entry) method.
      * isFizzBuzzNumber( row1, row2, row3 ) => returns "123456789".
@@ -46,15 +51,14 @@ public class Kata8Test {
     @Test
     public void testConvertInvalidEntryToNumberHistoryOne() {
 
-        String row1 = "    _  _     _  _  _  _  _ ";
-        String row2 = "  | _| _||_||_ |_   ||_||_|";
-        String row3 = " _||_  _|  | _||_|  ||_| _|";
+        final String row3 = " _||_  _|  | _||_|  ||_| _|";
 
 
-        assertEquals("?23456789", entryToNumber.convertEntryToNumber(row1, row2, row3));
+        assertEquals("?23456789", entryToNumber.convertEntryToNumber(ROW_1, ROW_2, row3));
 
 
     }
+
     /**
      * This method tests when checksum validation of account number is True.
      */
@@ -62,7 +66,6 @@ public class Kata8Test {
     public void testCheckSumAccountNumberIsTrue() {
         String accountNumber = "345882865";
         final boolean actualResult = this.entryToNumber.checkSum(accountNumber);
-        System.out.println(actualResult);
         assertTrue(actualResult);
     }
 
@@ -75,32 +78,30 @@ public class Kata8Test {
         final boolean actualResult = this.entryToNumber.checkSum(accountNumber);
         assertFalse(actualResult);
     }
+
     /**
      * This method test Finding result of an false checksum account number.
      */
     @Test
     public void testFindingChecksumErrorAccountNumber() {
 
-        String row1 = "    _  _     _  _     _  _ ";
-        String row2 = "  | _| _||_||_ |_   ||_||_|";
-        String row3 = "  ||_  _|  | _||_|  ||_| _|";
+        final String row1 = "    _  _     _  _     _  _ ";
 
-
-        final String actualResult = entryToNumber.lookingFor(entryToNumber.convertEntryToNumber(row1,row2,row3));
+        final String actualResult = entryToNumber.lookingFor(entryToNumber.convertEntryToNumber(row1, ROW_2, ROW_3));
         final String expectedResult = "123456189 ERR";
         assertEquals(expectedResult, actualResult);
     }
+
     /**
      * This method test Finding result of an Illegible account number.
      */
     @Test
     public void testFindingIllegibleAccountNumber() {
 
-        String row1 = "    _  _     _  _  _  _  _ ";
-        String row2 = "  | _| _||_| _  _    |_||_|";
-        String row3 = "|_ |_  _|  | _||_|  ||_| _|";
+        final String row2 = "  | _| _||_| _  _    |_||_|";
+        final String row3 = "|_ |_  _|  | _||_|  ||_| _|";
 
-        final String actualResult = entryToNumber.lookingFor(entryToNumber.convertEntryToNumber(row1,row2,row3));
+        final String actualResult = entryToNumber.lookingFor(entryToNumber.convertEntryToNumber(ROW_1, row2, row3));
         final String expectedResult = "?234???89 ILL";
         assertEquals(expectedResult, actualResult);
     }
@@ -110,18 +111,13 @@ public class Kata8Test {
      */
     @Test
     public void testFindingChecksumAccountNumber() {
-        String row1 = "    _  _     _  _  _  _  _ ";
-        String row2 = "  | _| _||_||_ |_   ||_||_|";
-        String row3 = "  ||_  _|  | _||_|  ||_| _|";
 
-        System.out.println(entryToNumber.convertEntryToNumber(row1,row2,row3)+" "+entryToNumber.checkSum(entryToNumber.convertEntryToNumber(row1,row2,row3)));
-        final String actualResult = entryToNumber.lookingFor(entryToNumber.convertEntryToNumber(row1,row2,row3));
+
+        final String actualResult = entryToNumber.lookingFor(entryToNumber.convertEntryToNumber(ROW_1, ROW_2, ROW_3));
         final String expectedResult = "123456789";
 
         assertEquals(expectedResult, actualResult);
     }
-
-
 
 
 }
