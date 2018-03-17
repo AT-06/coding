@@ -10,7 +10,6 @@ import static org.junit.Assert.assertEquals;
  */
 public class Kata10Test {
     private Kata10 kata10;
-
     /**
      * initialize kata10.
      */
