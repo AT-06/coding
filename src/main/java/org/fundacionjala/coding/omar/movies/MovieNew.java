@@ -11,6 +11,7 @@ public class MovieNew extends AbstractMovie {
 
     /**
      * Constructor for MovieNew.
+     *
      * @param title Title of new movie.
      */
     public MovieNew(String title) {

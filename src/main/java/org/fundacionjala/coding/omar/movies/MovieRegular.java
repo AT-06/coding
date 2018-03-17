@@ -10,6 +10,7 @@ public class MovieRegular extends AbstractMovie {
 
     /**
      * Constructor for MovieRegular.
+     *
      * @param title Title of regular movie
      */
     public MovieRegular(String title) {
