@@ -10,6 +10,7 @@ public class MovieChildren extends AbstractMovie {
 
     /**
      * Constructor for MovieChildren.
+     *
      * @param title Title of movie children.
      */
     public MovieChildren(String title) {
@@ -20,7 +21,7 @@ public class MovieChildren extends AbstractMovie {
      * {@inheritDoc}
      */
     double getAmount(int daysRented) {
-        double totalAmount = 1.5;
+        double totalAmount = NUMBER_1_5;
         if (daysRented > NUMBER_3) {
             totalAmount += (daysRented - NUMBER_3) * NUMBER_1_5;
         }

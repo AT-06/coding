@@ -102,16 +102,17 @@ public class CustomerTest {
         final int number5 = 5;
         final int number10 = 10;
         final int number2 = 2;
+        final int number1 = 1;
 
 
-        MovieChildren childrensMovie = new MovieChildren("The Minions");
-        customer.addRental(new Rental(childrensMovie, number2));
+        MovieChildren childrensMovie1 = new MovieChildren("The Minions");
+        customer.addRental(new Rental(childrensMovie1, number2));
 
         MovieNew newReleaseMovie1 = new MovieNew(BLACK_PANTHER);
         customer.addRental(new Rental(newReleaseMovie1, number10));
 
         MovieNew newReleaseMovie2 = new MovieNew("Avengers: Infinity War");
-        customer.addRental(new Rental(newReleaseMovie2, number10));
+        customer.addRental(new Rental(newReleaseMovie2, number1));
 
         MovieRegular regularMovie1 = new MovieRegular("The Avengers");
         customer.addRental(new Rental(regularMovie1, number7));
@@ -120,19 +121,23 @@ public class CustomerTest {
         customer.addRental(new Rental(regularMovie2, number10));
 
         MovieRegular regularMovie3 = new MovieRegular("Captain America: Civil War");
-        customer.addRental(new Rental(regularMovie3, number5));
+        customer.addRental(new Rental(regularMovie3, number1));
 
         MovieRegular regularMovie4 = new MovieRegular(BLACK_PANTHER);
         customer.addRental(new Rental(regularMovie4, number7));
+
+        MovieChildren childrensMovie2 = new MovieChildren("The Minions");
+        customer.addRental(new Rental(childrensMovie2, number5));
 
 
         StringBuilder expectedOverviewBuilder = new StringBuilder(CAPACITY);
         expectedOverviewBuilder.append("Customer: Pepito Perez"
                 + "\nThe Minions 1.5\nBlack Panther 30.0"
-                + "\nAvengers: Infinity War 30.0\nThe Avengers 9.5"
-                + "\nAvengers: Age of Ultron 14.0\nCaptain America: Civil War 6.5\nBlack Panther 9.5\n"
-                + "====================================="
-                + "\nTotal 101.0\nYou earned 9 frequent renter point(s)");
+                + "\nAvengers: Infinity War 3.0\nThe Avengers 9.5"
+                + "\nAvengers: Age of Ultron 14.0\nCaptain America: Civil War 2.0\nBlack Panther 9.5"
+                + "\nThe Minions 4.5"
+                + "\n====================================="
+                + "\nTotal 74.0\nYou earned 9 frequent renter point(s)");
 
 
         assertEquals(expectedOverviewBuilder.toString(), customer.getRentalOverview());
