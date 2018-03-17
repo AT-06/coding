@@ -15,7 +15,7 @@ public class Kata13 {
         int total = 0;
         for (int i = 0; i < numberArray.length - 1; i += 2) {
             total += Integer.parseInt(numberArray[i]);
-            total += i < numberArray.length - 2 ? Integer.parseInt(numberArray[i + 1]) * THREE : 0;
+            total += Integer.parseInt(numberArray[i + 1]) * THREE;
         }
         total = TEN - (total % TEN);
         return total == Integer.parseInt(numberArray[numberArray.length - 1]);
