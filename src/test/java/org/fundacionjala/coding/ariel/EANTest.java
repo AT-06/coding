@@ -1,5 +1,6 @@
 package org.fundacionjala.coding.ariel;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
@@ -9,14 +10,29 @@ import static org.junit.Assert.assertTrue;
  * Unittests.
  */
 public class EANTest {
+    private EAN eanvalidator;
+
     /**
-     * This test verify if the plus number..
-     * is validate for its checksum.
+     * It init the common object.
+     */
+    @Before
+    public void init() {
+        eanvalidator = new EAN();
+    }
+
+    /**
+     * This test cases chek a validate serie.
      */
     @Test
     public void testEanValidate() {
-        EAN eanvalidator = new EAN();
         assertTrue(eanvalidator.validate("4003301018398"));
+    }
+
+    /**
+     * This test cases chek an invalidate serie.
+     */
+    @Test
+    public void testEanInvalidate() {
         assertFalse(eanvalidator.validate("4003301018392"));
     }
 }

@@ -18,11 +18,10 @@ public class EAN {
         String[] numeros = number.split("");
         int condition = Integer.parseInt(numeros[LASTDIGIT]);
         int suma = 0;
-        int checksum = 0;
         for (int i = 0; i < numeros.length - 1; i++) {
             suma = (i % 2 == 0) ? suma + Integer.parseInt(numeros[i]) * 1 : suma + Integer.parseInt(numeros[i]) * PAR;
         }
-        checksum = CHECKSUM1 - (suma % CHECKSUM1);
+        int checksum = CHECKSUM1 - (suma % CHECKSUM1);
         return checksum == condition;
     }
 }
