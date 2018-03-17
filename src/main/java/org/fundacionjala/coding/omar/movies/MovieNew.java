@@ -22,7 +22,7 @@ public class MovieNew extends AbstractMovie {
      * {@inheritDoc}
      */
     double getAmount(int daysRented) {
-        return daysRented * NUMBER_3;
+        return daysRented * (double) NUMBER_3;
     }
 
     /**

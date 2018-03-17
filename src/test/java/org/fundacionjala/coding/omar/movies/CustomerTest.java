@@ -12,7 +12,6 @@ import static org.junit.Assert.assertEquals;
 public class CustomerTest {
 
     private static final int CAPACITY = 100;
-    private static final String BLACK_PANTHER = "Black Panther";
     private Customer customer;
 
     /**
@@ -47,8 +46,9 @@ public class CustomerTest {
         final int number2 = 2;
         final int number1 = 1;
         final double number1point5 = 1.5;
+        final String movie = "The Minions";
 
-        MovieChildren childrensMovie = new MovieChildren("The Minions");
+        MovieChildren childrensMovie = new MovieChildren(movie);
         Rental rental = new Rental(childrensMovie, number2);
 
         customer.addRental(rental);
@@ -65,8 +65,9 @@ public class CustomerTest {
         final int number10 = 10;
         final int number2 = 2;
         final int number30 = 30;
+        final String movie2 = "Black Panther";
 
-        MovieNew newReleaseMovie = new MovieNew(BLACK_PANTHER);
+        MovieNew newReleaseMovie = new MovieNew(movie2);
         Rental rental = new Rental(newReleaseMovie, number10);
 
         customer.addRental(rental);
@@ -83,8 +84,9 @@ public class CustomerTest {
         final int number5 = 5;
         final double number6point5 = 6.5;
         final int number1 = 1;
+        final String movie3 = "Captain America: Civil War";
 
-        MovieRegular regularMovie = new MovieRegular("Captain America: Civil War");
+        MovieRegular regularMovie = new MovieRegular(movie3);
         Rental rental = new Rental(regularMovie, number5);
 
         customer.addRental(rental);
@@ -105,28 +107,35 @@ public class CustomerTest {
         final int number1 = 1;
 
 
-        MovieChildren childrensMovie1 = new MovieChildren("The Minions");
+        final String movie = "The Minions";
+        final String movie2 = "Black Panther";
+        final String movie3 = "Captain America: Civil War";
+        final String movie4 = "Avengers: Age of Ultron";
+        final String movie5 = "Avengers: Infinity War";
+        final String movie6 = "The Avengers";
+
+        MovieChildren childrensMovie1 = new MovieChildren(movie);
         customer.addRental(new Rental(childrensMovie1, number2));
 
-        MovieNew newReleaseMovie1 = new MovieNew(BLACK_PANTHER);
+        MovieNew newReleaseMovie1 = new MovieNew(movie2);
         customer.addRental(new Rental(newReleaseMovie1, number10));
 
-        MovieNew newReleaseMovie2 = new MovieNew("Avengers: Infinity War");
+        MovieNew newReleaseMovie2 = new MovieNew(movie5);
         customer.addRental(new Rental(newReleaseMovie2, number1));
 
-        MovieRegular regularMovie1 = new MovieRegular("The Avengers");
+        MovieRegular regularMovie1 = new MovieRegular(movie6);
         customer.addRental(new Rental(regularMovie1, number7));
 
-        MovieRegular regularMovie2 = new MovieRegular("Avengers: Age of Ultron");
+        MovieRegular regularMovie2 = new MovieRegular(movie4);
         customer.addRental(new Rental(regularMovie2, number10));
 
-        MovieRegular regularMovie3 = new MovieRegular("Captain America: Civil War");
+        MovieRegular regularMovie3 = new MovieRegular(movie3);
         customer.addRental(new Rental(regularMovie3, number1));
 
-        MovieRegular regularMovie4 = new MovieRegular(BLACK_PANTHER);
+        MovieRegular regularMovie4 = new MovieRegular(movie2);
         customer.addRental(new Rental(regularMovie4, number7));
 
-        MovieChildren childrensMovie2 = new MovieChildren("The Minions");
+        MovieChildren childrensMovie2 = new MovieChildren(movie);
         customer.addRental(new Rental(childrensMovie2, number5));
 
 
