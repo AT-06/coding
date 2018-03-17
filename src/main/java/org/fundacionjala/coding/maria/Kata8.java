@@ -66,7 +66,9 @@ public class Kata8 {
      * @return if the fsum of fields is mod 11
      */
     public String err(String number) {
-        number = !modEleven(number) ? number.concat(" ERR") : number;
+        if (!number.contains("?")) {
+            number = !modEleven(number) ? number.concat(" ERR") : number;
+        }
         return number;
     }
 
@@ -78,12 +80,10 @@ public class Kata8 {
         int modEleven = 0;
         int count = NINE;
         String[] arrayNumbers = number.split("");
-        if (!number.contains("?")) {
             for (int i = 0; i < NINE; i++) {
                 modEleven += Integer.parseInt(arrayNumbers[i]) * count;
                 count--;
             }
-        }
         return modEleven % ELEVEN == 0;
     }
 }
