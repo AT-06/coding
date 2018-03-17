@@ -51,12 +51,21 @@ public class Kata8Test {
         assertEquals("664371495 ERR", kata8.err("664371495"));
     }
 
+
     /**
      * testBankOCRErr test 2.
      */
     @Test
     public void testBankOCRNoErr() {
         assertEquals(COMMONSTRING, kata8.err(COMMONSTRING));
+    }
+
+    /**
+     * testBankOCRErr test 2.
+     */
+    @Test
+    public void testBankOCRIntErr() {
+        assertEquals("12345678?", kata8.err("12345678?"));
     }
 
     /**
