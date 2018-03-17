@@ -12,12 +12,7 @@ import static org.junit.Assert.assertEquals;
  */
 public class Kata14Test {
     private static final int TWO = 2;
-    private static final int ONE = 1;
-    private static final int THREE = 3;
-    private static final int FOUR = 4;
-    private static final int FIVE = 5;
-    private static final int TEN = 10;
-    private static final double FFIVE = 4.5;
+
     private Kata14 kata14;
     /**
      * initialize kata7.
@@ -32,13 +27,13 @@ public class Kata14Test {
      */
     @Test
     public void basicTests() {
-        final double[] expected1 = new double[] {TWO, TWO, TWO, TWO};
+        final double[] expected1 = new double[] {2, 2, 2, 2};
         final double[] expected2 = new double[] {0, 0, 0, 0};
-        final double[] expected3 = new double[] {TWO, FOUR, THREE, -FFIVE};
+        final double[] expected3 = new double[] {2, 4, 3, -4.5};
 
-        final int[] case1 = new int[] {TWO, TWO, TWO, TWO, TWO};
-        final int[] case2 = new int[] {TWO, -TWO, TWO, -TWO, TWO};
-        final int[] case3 = new int[] {ONE, THREE, FIVE, ONE, -TEN};
+        final int[] case1 = new int[] {2, 2, 2, 2, 2};
+        final int[] case2 = new int[] {2, -2, 2, -2, 2};
+        final int[] case3 = new int[] {1, 3, 5, 1, -10};
 
         assertEquals(Arrays.toString(expected1), Arrays.toString(kata14.averages(case1)));
         assertEquals(Arrays.toString(expected2), Arrays.toString(kata14.averages(case2)));
