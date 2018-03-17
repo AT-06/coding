@@ -18,15 +18,6 @@ public class Rental {
     }
 
     /**
-     * This method returns days rented.
-     *
-     * @return daysRented.
-     */
-    public int getDaysRented() {
-        return daysRented;
-    }
-
-    /**
      * This method returns total amount.
      *
      * @return totalAmount.
