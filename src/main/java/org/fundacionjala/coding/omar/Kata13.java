@@ -7,7 +7,7 @@ import java.util.stream.IntStream;
  */
 
 public class Kata13 {
-    
+
     /**
      * Method validate.
      *
@@ -21,7 +21,8 @@ public class Kata13 {
         final int dividable = 10;
 
         return IntStream.range(0, numberToCheckSum.length())
-                .map(i -> numberToCheckSum.charAt(i) * (i % 2 == 0 ? multiplied1 : multiplied3))
+                .map(i -> Character.getNumericValue(numberToCheckSum.charAt(i))
+                        * (i % 2 == 0 ? multiplied1 : multiplied3))
                 .sum() % dividable == 0;
 
     }
