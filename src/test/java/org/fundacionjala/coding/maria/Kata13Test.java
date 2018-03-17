@@ -27,5 +27,6 @@ public class Kata13Test {
 
         assertTrue(eanValidator.validate("4003301018398"));
         assertFalse(eanValidator.validate("4003301018392"));
+        assertFalse(eanValidator.validate("40033010183973"));
     }
 }
