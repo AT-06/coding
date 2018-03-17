@@ -2,6 +2,7 @@ package org.fundacionjala.coding.omar;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.IntStream;
 
 /**
  * This class contains a method that prints the numbers greater to 0.
@@ -104,18 +105,22 @@ public class Kata8 {
      */
     public boolean checkSum(String accountNumber) {
 
-        final int number2 = 2;
-        final int number1 = 1;
-        int checkSum = NUMBER_0;
+        
+        return IntStream.range(0, accountNumber.length())
+                .map(i -> accountNumber.charAt(i) * accountNumber.length()-i)
+                .sum() % 11 == 0;
 
-        for (int i = NUMBER_0; i < accountNumber.length(); i++) {
 
-            checkSum += (i + number1) % number2 == NUMBER_0
-                    ? accountNumber.charAt(i) * 2: accountNumber.charAt(i);
 
+      /*  int checkSum = 0;
+        int counter = accountNumber.length();
+        while(counter < accountNumber.length()){
+
+            checkSum += Character.getNumericValue(accountNumber.charAt(counter)) * (accountNumber.length() - counter);
+            counter ++;
         }
 
-        return checkSum % 11 == NUMBER_0;
+        return checkSum % 11 == 0;*/
 
     }
     /**
