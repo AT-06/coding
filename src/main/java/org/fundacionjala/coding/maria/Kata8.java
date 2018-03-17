@@ -40,12 +40,7 @@ public class Kata8 {
                     .add(filaDos.substring(0, THREE))
                     .add(filaTres.substring(0, THREE));
 
-            String numberContent = numberEqui.get(number.toString());
-            if (numberContent == null) {
-                onlyNumber.add("?");
-            } else {
-                onlyNumber.add(numberContent);
-            }
+            onlyNumber.add(numberEqui.getOrDefault(number.toString(), "?"));
 
             filaUno = filaUno.substring(THREE);
             filaDos = filaDos.substring(THREE);
@@ -71,10 +66,7 @@ public class Kata8 {
      * @return if the fsum of fields is mod 11
      */
     public String err(String number) {
-
-
-        int modEleven = modEleven(number);
-        number = modEleven % ELEVEN != 0 ? number.concat(" ERR") : number;
+        number = !modEleven(number) ? number.concat(" ERR") : number;
         return number;
     }
 
@@ -82,7 +74,7 @@ public class Kata8 {
      * @param number String
      * @return mod of String
      */
-    public int modEleven(String number) {
+    public boolean modEleven(String number) {
         int modEleven = 0;
         int count = NINE;
         String[] arrayNumbers = number.split("");
@@ -92,6 +84,6 @@ public class Kata8 {
                 count--;
             }
         }
-        return modEleven;
+        return modEleven % ELEVEN == 0;
     }
 }
