@@ -7,7 +7,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Unittests.
+ * Unittests..
  */
 public class EANTest {
     private EAN eanvalidator;

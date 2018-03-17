@@ -2,7 +2,7 @@ package org.fundacionjala.coding.ariel;
 
 /**
  * Ean checksum.
- * By Ariel Gonzales..
+ * By Ariel Gonzales.
  */
 public class EAN {
 
@@ -16,13 +16,13 @@ public class EAN {
      */
     public boolean validate(String number) {
         String[] numeros = number.split("");
-        int condition = Integer.parseInt(numeros[LASTDIGIT]);
         int suma = 0;
         for (int i = 0; i < numeros.length - 1; i++) {
-            suma = (i % 2 == 0) ? suma + Integer.parseInt(numeros[i]) * 1 : suma + Integer.parseInt(numeros[i]) * PAR;
+            int num = Integer.parseInt(numeros[i]);
+            suma += (i % 2 == 0) ? num : num * PAR;
         }
         int checksum = CHECKSUM1 - (suma % CHECKSUM1);
-        return checksum == condition;
+        return checksum == Integer.parseInt(numeros[LASTDIGIT]);
     }
 }
 
