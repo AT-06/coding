@@ -1,15 +1,13 @@
 package org.fundacionjala.coding.omar;
 
+import java.util.stream.IntStream;
+
 /**
  * Powered by Omar Limbert Huanca Sanchez - AT06.
  */
 
 public class Kata13 {
-
-
-    private static final int ZERO = 0;
-
-
+    
     /**
      * Method validate.
      *
@@ -18,20 +16,13 @@ public class Kata13 {
      */
     public boolean validate(String numberToCheckSum) {
 
-        final int number10 = 10;
-        final int number3 = 3;
-        final int number2 = 2;
-        final int number1 = 1;
-        int checkSum = ZERO;
+        final int multiplied3 = 3;
+        final int multiplied1 = 1;
+        final int dividable = 10;
 
-        for (int i = ZERO; i < numberToCheckSum.length(); i++) {
-
-            checkSum += (i + number1) % number2 == ZERO
-                    ? numberToCheckSum.charAt(i) * number3 : numberToCheckSum.charAt(i);
-
-        }
-
-        return checkSum % number10 == ZERO;
+        return IntStream.range(0, numberToCheckSum.length())
+                .map(i -> numberToCheckSum.charAt(i) * (i % 2 == 0 ? multiplied1 : multiplied3))
+                .sum() % dividable == 0;
 
     }
 }
