@@ -6,7 +6,7 @@ import java.util.StringJoiner;
 
 /**
  * Kata 8.
- * By Ariel Gonzales Vargas.
+ * By Ariel Gonzales Vargas..
  */
 public class Kata8 {
 

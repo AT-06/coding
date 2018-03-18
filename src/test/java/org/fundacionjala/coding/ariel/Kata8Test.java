@@ -77,6 +77,15 @@ public class Kata8Test {
     }
 
     /**
+     * This test check if the serie.
+     * is valid.
+     */
+    @Test
+    public void testValidSerieWithoutSuffix() {
+        assertEquals("345882865", katita.valid("345882865"));
+    }
+
+    /**
      * This test check if sthe serie.
      * is invalid for the checksum.
      */
