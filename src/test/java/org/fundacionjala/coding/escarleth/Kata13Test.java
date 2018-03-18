@@ -29,7 +29,7 @@ public class Kata13Test {
     }
 
     /**
-     * testIsValidEANValidationWithInvalidNumber return FALSE.
+     * testIsValidEANValidationWithInvalidNumber return false.
      */
     @Test
     public void testIsValidEANValidationWithInvalidNumber() {

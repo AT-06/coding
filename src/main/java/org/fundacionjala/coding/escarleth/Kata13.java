@@ -17,10 +17,11 @@ public class Kata13 {
         int sum = 0;
         for (int i = 0; i < TAM_NUMBER; i++) {
             int num = Character.getNumericValue(number.charAt(i));
-            if (i + 1 % 2 == 0) {
+            if ((i + 1) % 2 == 0) {
                 sum += num * THREE_MULTIPLY;
+            } else {
+                sum += num;
             }
-            sum += num;
         }
         sum = sum % TEN;
         int checksum = Character.getNumericValue(number.charAt(TAM_NUMBER));
