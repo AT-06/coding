@@ -9,15 +9,6 @@ import static org.junit.Assert.assertEquals;
  * Performed by Christian.
  */
 public class ChristianKata14Test {
-    private static final int NEGATIVE_TWO = -2;
-    private static final int NEGATIVE_TEN = -10;
-    private static final double NEGATIVE_FOURP = -4.5;
-    private static final int NUMBER_2 = 2;
-    private static final int NUMBER_0 = 0;
-    private static final int NUMBER_4 = 4;
-    private static final int NUMBER_1 = 1;
-    private static final int NUMBER_3 = 3;
-    private static final int NUMBER_5 = 5;
 
     private ChristianKata14 katita;
     /**
@@ -33,16 +24,17 @@ public class ChristianKata14Test {
      */
     @Test
     public void basicTests() {
-        assertEquals(Arrays.toString(new double[]{NUMBER_2, NUMBER_2, NUMBER_2, NUMBER_2 }),
-                Arrays.toString(katita.averages(new int[]{
-                        NUMBER_2, NUMBER_2, NUMBER_2, NUMBER_2, NUMBER_2 })));
-        assertEquals(Arrays.toString(new double[]{
-                NUMBER_0, NUMBER_0, NUMBER_0, NUMBER_0 }),
-                Arrays.toString(katita.averages(new int[]{
-                        NUMBER_2, NEGATIVE_TWO, NUMBER_2, NEGATIVE_TWO, NUMBER_2 })));
-        assertEquals(Arrays.toString(new double[]{NUMBER_2, NUMBER_4, NUMBER_3, NEGATIVE_FOURP }),
-                Arrays.toString(katita.averages(new int[]{
-                        NUMBER_1, NUMBER_3, NUMBER_5, NUMBER_1, NEGATIVE_TEN })));
+        final double[] expected1 = new double[]{2, 2, 2, 2};
+        final double[] expected2 = new double[] {0, 0, 0, 0};
+        final double[] expected3 = new double[] {2, 4, 3, -4.5};
+
+        final int[] case1 = new int[] {2, 2, 2, 2, 2};
+        final int[] case2 = new int[] {2, -2, 2, -2, 2};
+        final int[] case3 = new int[] {1, 3, 5, 1, -10};
+
+        assertEquals(Arrays.toString(expected1), Arrays.toString(katita.averages(case1)));
+        assertEquals(Arrays.toString(expected2), Arrays.toString(katita.averages(case2)));
+        assertEquals(Arrays.toString(expected3), Arrays.toString(katita.averages(case3)));
     }
 
     /**
