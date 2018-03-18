@@ -3,7 +3,7 @@ package org.fundacionjala.coding.christian;
 /**
  * Powered by Christian.
  */
-public class ChristianKata14 {
+public class Kata14 {
 
     /**
      * @param numbers this is for averages

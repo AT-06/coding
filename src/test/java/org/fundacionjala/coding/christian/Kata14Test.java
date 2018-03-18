@@ -8,15 +8,15 @@ import static org.junit.Assert.assertEquals;
 /**
  * Performed by Christian.
  */
-public class ChristianKata14Test {
+public class Kata14Test {
 
-    private ChristianKata14 katita;
+    private Kata14 katita;
     /**
      *
      */
     @Before
     public void setup() {
-        katita = new ChristianKata14();
+        katita = new Kata14();
     }
 
     /**
