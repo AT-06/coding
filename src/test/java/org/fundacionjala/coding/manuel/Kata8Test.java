@@ -11,6 +11,9 @@ public class Kata8Test {
     private Kata8 kata8;
     private static final String COMMON_LINE1 = " _  _  _  _  _  _  _  _  _ ";
     private static final String COMMON_LINE2 = "|_||_||_||_||_||_||_||_||_|";
+    private static final String COMMON_TEST1 = "123456789";
+    private static final String COMMON_TEST2 = "345882865";
+
 
     /**
      * Method to initialize.
@@ -34,10 +37,10 @@ public class Kata8Test {
      */
     @Test
     public void test2BankKata8() {
-        final String firstRow =  "    _  _     _  _  _  _  _ ";
-        final String secondRow = "  | _| _||_||_ |_   ||_||_|";
-        final String thirdRow =  "  ||_  _|  | _||_|  ||_| _|";
-        assertEquals("123456789", kata8.convertEntryToNumber(firstRow, secondRow, thirdRow));
+        String firstRow =  "    _  _     _  _  _  _  _ ";
+        String secondRow = "  | _| _||_||_ |_   ||_||_|";
+        String thirdRow =  "  ||_  _|  | _||_|  ||_| _|";
+        assertEquals(COMMON_TEST1, kata8.convertEntryToNumber(firstRow, secondRow, thirdRow));
     }
 
     /**
@@ -61,7 +64,7 @@ public class Kata8Test {
      */
     @Test
     public void test5BankKata8() {
-        assertEquals("345882865", kata8.calculateCheckSum("345882865"));
+        assertEquals(COMMON_TEST2, kata8.calculateCheckSum(COMMON_TEST2));
     }
 
     /**
@@ -85,7 +88,7 @@ public class Kata8Test {
      */
     @Test
     public void test8BankKata8() {
-        assertEquals("123456789", kata8.addSufixes("123456789"));
+        assertEquals(COMMON_TEST1, kata8.addSufixes(COMMON_TEST1));
     }
 
 }
