@@ -17,7 +17,6 @@ public class Kata10 {
         StringJoiner test = new StringJoiner(BLANK_SPACE);
         int[] array = Arrays.stream(numbers.split(BLANK_SPACE)).mapToInt(Integer::parseInt).toArray();
         Arrays.sort(array);
-        test.add(Integer.toString(array[array.length - 1])).add(Integer.toString(array[0]));
-        return test.toString();
+        return String.format("%s %s", Integer.toString(array[array.length - 1]), Integer.toString(array[0]));
     }
 }
