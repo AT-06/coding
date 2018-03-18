@@ -34,7 +34,7 @@ public class Kata13Test {
      */
     @Test
     public void testIsValidEANValidationWithValidNumber2() {
-        assertTrue(kata13.isValidEANValidation("0000000000017"));
+        assertTrue(kata13.isValidEANValidation("0149600000000"));
     }
 
     /**
@@ -43,7 +43,7 @@ public class Kata13Test {
     @Test
     public void testIsValidEANValidationWithInvalidNumber() {
 
-        assertFalse(kata13.isValidEANValidation("4003301018392"));
+        assertFalse(kata13.isValidEANValidation("0149600000002"));
     }
 
     /**
@@ -51,6 +51,6 @@ public class Kata13Test {
      */
     @Test
     public void testIsValidEANValidationWithInvalidNumber2() {
-        assertFalse(kata13.isValidEANValidation("0000000000010"));
+        assertFalse(kata13.isValidEANValidation("4003301018391"));
     }
 }
