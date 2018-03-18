@@ -63,9 +63,19 @@ public class Kata8Test {
      * pass the checksum condition.
      */
     @Test
-    public void testValidSerie() {
+    public void testValidSerieWithoutChecksum() {
         assertEquals("777777777 ERR", katita.valid("777777777"));
     }
+
+    /**
+     * This test check if the serie.
+     * pass the checksum condition.
+     */
+    @Test
+    public void testValidSerieWithoutChecksum2() {
+        assertEquals("664371495 ERR", katita.valid("664371495"));
+    }
+
 
     /**
      * This test check if the serie.
@@ -83,15 +93,6 @@ public class Kata8Test {
     @Test
     public void testValidSerieWithoutSuffix() {
         assertEquals("345882865", katita.valid("345882865"));
-    }
-
-    /**
-     * This test check another serie.
-     * if it is valid.
-     */
-    @Test
-    public void testValidSerieWithoutSuffix2() {
-        assertEquals("123456789", katita.valid("123456789"));
     }
 
     /**

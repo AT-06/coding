@@ -14,6 +14,7 @@ public class Kata8 {
     public static final int THREE = 3;
     private static final Map<String, String> LIST = new HashMap<>();
     public static final int NUMBER = 9;
+    public static final int LONG = 27;
 
     static {
         LIST.put(" _ | ||_|", "0");
@@ -37,8 +38,8 @@ public class Kata8 {
     public String story1(String file1, String file2, String file3) {
         StringJoiner digitSum = new StringJoiner("");
 
-        for (int i = 0; i < file1.length(); i += THREE) {
-            if (i != file1.length()) {
+        for (int i = 0; i < LONG; i += THREE) {
+            if (i != LONG) {
                 String digit = file1.substring(i, i + THREE)
                         .concat(file2.substring(i, i + THREE))
                         .concat(file3.substring(i, i + THREE));
