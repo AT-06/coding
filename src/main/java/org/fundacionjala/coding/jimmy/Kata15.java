@@ -1,7 +1,7 @@
 package org.fundacionjala.coding.jimmy;
 
 /**
- * Class for developing mostFrequentItemCount method.
+ * Class for developing mostFrequentItemCount method..
  */
 public class Kata15 {
 
