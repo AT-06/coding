@@ -5,11 +5,12 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+
 /**
  * This class contains UnitTests for Kata13.
  */
 public class Kata13Test {
-   private Kata13 kata13;
+    private Kata13 kata13;
 
     /**
      * initialize kata13.
@@ -26,6 +27,14 @@ public class Kata13Test {
     public void testIsValidEANValidationWithValidNumber() {
 
         assertTrue(kata13.isValidEANValidation("4003301018398"));
+    }
+
+    /**
+     * testIsValidEANValidationWithValidNumber return true.
+     */
+    @Test
+    public void testIsValidEANValidationWithValidNumber2() {
+        assertTrue(kata13.isValidEANValidation("9783827317100"));
     }
 
     /**
