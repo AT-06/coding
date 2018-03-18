@@ -98,7 +98,7 @@ public class Kata8Test {
      */
     @Test
     public void test10BankKata8() {
-        assertEquals("345882865", kata8.evaluateAccount("345882865"));
+        assertEquals(COMMON_TEST2, kata8.evaluateAccount(COMMON_TEST2));
     }
 
 }
