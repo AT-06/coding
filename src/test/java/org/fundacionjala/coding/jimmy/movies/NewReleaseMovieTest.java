@@ -44,4 +44,14 @@ public class NewReleaseMovieTest {
         final int daysRented = 4;
         assertEquals(expected, releaseMovie.calculateFrequentRenterPoints(daysRented), DELTA);
     }
+
+    /**
+     * Test to calculate frequent renter points if days are 1.
+     */
+    @Test
+    public void testCalculateFrequentRenterPointsIfPointsAre1() {
+        final double expected = 1;
+        final int daysRented = 1;
+        assertEquals(expected, releaseMovie.calculateFrequentRenterPoints(daysRented), DELTA);
+    }
 }
