@@ -12,7 +12,7 @@ public class Kata15 {
      * @return int
      */
     public int mostFrequentItemCount(int[] collection) {
-        Map<Integer, Integer> counter = new HashMap<Integer, Integer>();
+        Map<Integer, Integer> counter = new HashMap<>();
         int maxCount = 0;
         int count;
         for (int n: collection) {
