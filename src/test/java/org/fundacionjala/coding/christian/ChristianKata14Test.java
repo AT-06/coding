@@ -9,15 +9,15 @@ import static org.junit.Assert.assertEquals;
  * Performed by Christian.
  */
 public class ChristianKata14Test {
-    public static final int NEGATIVE_TWO = -2;
-    public static final int NEGATIVE_TEN = -10;
-    public static final double NEGATIVE_FOURP = -4.5;
-    public static final int NUMBER_2 = 2;
-    public static final int NUMBER_0 = 0;
-    public static final int NUMBER_4 = 4;
-    public static final int NUMBER_1 = 1;
-    public static final int NUMBER_3 = 3;
-    public static final int NUMBER_5 = 5;
+    private static final int NEGATIVE_TWO = -2;
+    private static final int NEGATIVE_TEN = -10;
+    private static final double NEGATIVE_FOURP = -4.5;
+    private static final int NUMBER_2 = 2;
+    private static final int NUMBER_0 = 0;
+    private static final int NUMBER_4 = 4;
+    private static final int NUMBER_1 = 1;
+    private static final int NUMBER_3 = 3;
+    private static final int NUMBER_5 = 5;
 
     private ChristianKata14 katita;
     /**
