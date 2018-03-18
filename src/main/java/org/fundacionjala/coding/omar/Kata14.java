@@ -1,12 +1,14 @@
 package org.fundacionjala.coding.omar;
 
+import java.util.stream.IntStream;
 
 /**
  * Powered by Omar Limbert Huanca Sanchez - AT06.
  */
 public class Kata14 {
 
-    private static final int NUMBER_1 = 1;
+    private static final int ZERO = 0;
+    private static final int ONE = 1;
 
     /**
      * @param numbers this integer array.
@@ -14,21 +16,12 @@ public class Kata14 {
      */
     public double[] averages(int[] numbers) {
 
-        if (numbers != null && numbers.length > NUMBER_1) {
-
-
-            double[] results = new double[numbers.length - NUMBER_1];
-
-
-            for (int i = 0; i < numbers.length - NUMBER_1; i++) {
-
-                results[i] = (numbers[i] + numbers[i + NUMBER_1]) / 2.0;
-
-            }
-            return results;
+        if (numbers == null || numbers.length == ZERO) {
+            return new double[ZERO];
         }
 
-        return new double[0];
+        return IntStream.range(ZERO, numbers.length - ONE)
+                .mapToDouble(i -> (numbers[i] + numbers[i + ONE]) / 2.0).toArray();
 
 
     }
