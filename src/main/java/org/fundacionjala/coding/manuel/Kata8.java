@@ -51,12 +51,24 @@ public class Kata8 {
     }
 
     /**
+     * Method evaluate if the account is ok.
+     * @param numberValue number converted.
+     * @return string value account if ? then ILL, not check sum then ERR.
+     */
+    public String evaluateAccount(String numberValue) {
+        if (numberValue.contains("?")) {
+            return addSufixes(numberValue);
+        }
+        return validCheckSum(numberValue) ? numberValue : addSufixes(numberValue);
+    }
+
+    /**
      * Method addSufixes to add ILL in case ?.
      * @param numberValue number converted.
      * @return string value account if ? then ILL.
      */
     public String addSufixes(String numberValue) {
-        return numberValue.contains("?") ? numberValue.concat(" ILL") : numberValue;
+        return numberValue.contains("?") ? numberValue.concat(" ILL") : numberValue.concat(" ERR");
     }
 
     /**
@@ -64,13 +76,13 @@ public class Kata8 {
      * @param number number converted.
      * @return string value account if not real then concat ERR.
      */
-    public String calculateCheckSum(String number) {
+    public boolean validCheckSum(String number) {
         int sum = 0;
         String numberCopy = number;
         for (int i = numberCopy.length(); i > 0; i--) {
             sum += Integer.parseInt(numberCopy.substring(0, 1)) * i;
             numberCopy = numberCopy.substring(1);
         }
-        return (sum % MOD_NUMBER) == 0 ? number : number.concat(" ERR");
+        return sum % MOD_NUMBER == 0;
     }
 }

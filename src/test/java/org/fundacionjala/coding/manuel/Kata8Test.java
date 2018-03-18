@@ -4,6 +4,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 /**
  * Created by Juan Manuel on 3/11/2018.
  */
@@ -48,7 +50,7 @@ public class Kata8Test {
      */
     @Test
     public void test3BankKata8() {
-        assertEquals("111111111 ERR", kata8.calculateCheckSum("111111111"));
+        assertFalse(kata8.validCheckSum("111111111"));
     }
 
     /**
@@ -56,7 +58,7 @@ public class Kata8Test {
      */
     @Test
     public void test4BankKata8() {
-        assertEquals("222222222 ERR", kata8.calculateCheckSum("222222222"));
+        assertFalse(kata8.validCheckSum("222222222"));
     }
 
     /**
@@ -64,7 +66,7 @@ public class Kata8Test {
      */
     @Test
     public void test5BankKata8() {
-        assertEquals(COMMON_TEST2, kata8.calculateCheckSum(COMMON_TEST2));
+        assertTrue(kata8.validCheckSum(COMMON_TEST2));
     }
 
     /**
@@ -80,15 +82,23 @@ public class Kata8Test {
      */
     @Test
     public void test7BankKata8() {
-        assertEquals("12345?789 ILL", kata8.addSufixes("12345?789"));
+        assertEquals("12345?789 ILL", kata8.evaluateAccount("12345?789"));
     }
 
     /**
-     * Eight test.
+     * Nineth test.
      */
     @Test
-    public void test8BankKata8() {
-        assertEquals(COMMON_TEST1, kata8.addSufixes(COMMON_TEST1));
+    public void test9BankKata8() {
+        assertEquals("222222222 ERR", kata8.evaluateAccount("222222222"));
+    }
+
+    /**
+     * Tenth test.
+     */
+    @Test
+    public void test10BankKata8() {
+        assertEquals("345882865", kata8.evaluateAccount("345882865"));
     }
 
 }
