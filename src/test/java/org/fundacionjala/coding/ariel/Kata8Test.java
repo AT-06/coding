@@ -91,7 +91,7 @@ public class Kata8Test {
      * is valid.
      */
     @Test
-    public void testValidSerieWithoutSuffix() {
+    public void testValidWithoutSuffix() {
         assertEquals("345882865", katita.valid("345882865"));
     }
 
