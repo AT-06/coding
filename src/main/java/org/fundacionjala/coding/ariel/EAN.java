@@ -21,7 +21,7 @@ public class EAN {
             int num = Integer.parseInt(numeros[i]);
             suma += (i % 2 == 0) ? num : num * PAR;
         }
-        int checksum = CHECKSUM1 - (suma % CHECKSUM1);
+        int checksum = (suma % CHECKSUM1 == 0) ? 0 : CHECKSUM1 - (suma % CHECKSUM1);
         return checksum == Integer.parseInt(numeros[LASTDIGIT]);
     }
 }

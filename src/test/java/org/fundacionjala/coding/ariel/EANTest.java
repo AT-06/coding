@@ -21,7 +21,7 @@ public class EANTest {
     }
 
     /**
-     * This test cases chek a validate serie.
+     * This test cases check a validate serie.
      */
     @Test
     public void testEanValidate() {
@@ -34,5 +34,13 @@ public class EANTest {
     @Test
     public void testEanInvalidate() {
         assertFalse(eanvalidator.validate("4003301018392"));
+    }
+
+    /**
+     * This test cases check a validate serie.
+     */
+    @Test
+    public void testEanValidate2() {
+        assertTrue(eanvalidator.validate("1111111111000"));
     }
 }
