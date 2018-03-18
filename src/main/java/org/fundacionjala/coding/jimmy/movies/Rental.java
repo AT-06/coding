@@ -1,4 +1,4 @@
-package org.fundacionjala.movies;
+package org.fundacionjala.coding.jimmy.movies;
 
 /**
  * Class for rental.
@@ -10,11 +10,10 @@ class Rental {
 
     /**
      * Constructor method for Rental movie.
-     *
-     * @param movieRental The movie.
+     *  @param movieRental The movie.
      * @param daysRentedRental  The days rented.
      */
-    public Rental(final Movie movieRental, final int daysRentedRental) {
+    Rental(final Movie movieRental, final int daysRentedRental) {
         this.movie = movieRental;
         this.daysRented = daysRentedRental;
     }

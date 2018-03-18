@@ -1,4 +1,4 @@
-package org.fundacionjala.movies;
+package org.fundacionjala.coding.jimmy.movies;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -41,5 +41,18 @@ public class StatementTest {
     public void testCalculateTheTotalFrequentRentalPointsOfAllMoviesAddedByACustomer() {
         final double expectedResult = 3;
         assertEquals(expectedResult, statement.calculateTotalFrequentRenterPoints(), DELTA);
+    }
+
+    /**
+     * Test to obtain the voucher of a customer.
+     */
+    @Test
+    public void testVoucherObtainedInString() {
+        final String expectedResult = "Rental Record for Jin\n"
+                + "\tPower Rangers\t6.0\n"
+                + "\tBangkok revenge\t2.0\n"
+                + "Amount owed is 8.0\n"
+                + "You earned 3 frequent renter points";
+        assertEquals(expectedResult, statement.obtainVoucher());
     }
 }

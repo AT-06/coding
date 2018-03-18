@@ -1,4 +1,4 @@
-package org.fundacionjala.movies;
+package org.fundacionjala.coding.jimmy.movies;
 
 import org.junit.Before;
 import org.junit.Test;

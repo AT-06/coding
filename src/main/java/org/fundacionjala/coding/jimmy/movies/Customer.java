@@ -1,4 +1,4 @@
-package org.fundacionjala.movies;
+package org.fundacionjala.coding.jimmy.movies;
 
 /**
  * Customer class that manage the data of the customer.
@@ -12,7 +12,7 @@ class Customer {
      *
      * @param nameCustomer The name of the customer.
      */
-    public Customer(final String nameCustomer) {
+    Customer(final String nameCustomer) {
         this.name = nameCustomer;
     }
 

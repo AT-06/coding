@@ -1,4 +1,4 @@
-package org.fundacionjala.movies;
+package org.fundacionjala.coding.jimmy.movies;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,9 +18,9 @@ public class Statement {
      *
      * @param customerStatement The customer object.
      */
-    public Statement(final Customer customerStatement) {
+    Statement(final Customer customerStatement) {
         this.customer = customerStatement;
-        rentals = new ArrayList<Rental>();
+        rentals = new ArrayList<>();
     }
 
     /**
@@ -65,10 +65,9 @@ public class Statement {
      * @return The header of the voucher in string format.
      */
     private String obtainVoucherHeader() {
-        StringBuilder result = new StringBuilder();
-        result.append("Rental Record for ");
-        result.append(customer.getName());
-        result.append(BREAK_LINE);
+        final int capacity = 18;
+        StringBuilder result = new StringBuilder(capacity);
+        result.append("Rental Record for ").append(customer.getName()).append(BREAK_LINE);
         return result.toString();
     }
 
@@ -91,11 +90,10 @@ public class Statement {
      */
     private String obtainMovieDetail(final Rental rental) {
         StringBuilder result = new StringBuilder();
-        result.append(TAB);
-        result.append(rental.getMovie().getTitle());
-        result.append(TAB);
-        result.append(rental.calculateAmount());
-        result.append(BREAK_LINE);
+        result.append(TAB)
+                .append(rental.getMovie().getTitle()).append(TAB)
+                .append(rental.calculateAmount())
+                .append(BREAK_LINE);
         return result.toString();
     }
 
@@ -105,13 +103,14 @@ public class Statement {
      * @return The footer of the voucher in string format.
      */
     private String obtainTotals() {
-        StringBuilder result = new StringBuilder();
-        result.append("Amount owed is ");
-        result.append(calculateTotalAmount());
-        result.append(BREAK_LINE);
-        result.append("You earned ");
-        result.append(calculateTotalFrequentRenterPoints());
-        result.append(" frequent renter points");
+        final int capacity = 49;
+        StringBuilder result = new StringBuilder(capacity);
+        result.append("Amount owed is ")
+                .append(calculateTotalAmount())
+                .append(BREAK_LINE)
+                .append("You earned ")
+                .append(calculateTotalFrequentRenterPoints())
+                .append(" frequent renter points");
         return result.toString();
     }
 }

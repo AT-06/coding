@@ -1,4 +1,4 @@
-package org.fundacionjala.movies;
+package org.fundacionjala.coding.jimmy.movies;
 
 /**
  * Calculates the amount and frequent renter points for regular movies.

@@ -1,4 +1,4 @@
-package org.fundacionjala.movies;
+package org.fundacionjala.coding.jimmy.movies;
 
 /**
  * Calculates the amount and frequent renter points for new release movies.
@@ -13,7 +13,7 @@ class NewReleaseMovie extends Movie {
      *
      * @param title The title of the movie.
      */
-    public NewReleaseMovie(final String title) {
+    NewReleaseMovie(final String title) {
         super(title, THIS_AMOUNT, INCREMENT, DAYS_LIMIT);
     }
 
@@ -31,6 +31,6 @@ class NewReleaseMovie extends Movie {
      */
     @Override
     public int calculateFrequentRenterPoints(final int daysRented) {
-        return (daysRented > 1) ? 2 : 1;
+        return daysRented > 1 ? 2 : 1;
     }
 }
