@@ -20,15 +20,15 @@ public class Kata6Test {
         sort = new Kata6();
     }
 
-    private final Integer[] kepler1 = new Integer[]{1, 2, 7, 4, 5, 6, 3, 8, 9};
-    private final Integer[] earth1 = new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
-    private final Integer[] kepler2 = new Integer[]{12, 14, 13};
-    private final Integer[] earth2 = new Integer[]{12, 13, 14};
-    private final Integer[] kepler3 = new Integer[]{2, 7, 4, 3, 9};
-    private final Integer[] earth3 = new Integer[]{9, 2, 4, 7, 3};
-    private final Integer[] earth4 = new Integer[]{9, 2, 4, 7, 3};
-    private final Integer[] earth5 = new Integer[]{9, 2, 4, 7, 3};
-    private final Integer[] kepler4 = new Integer[]{2, 7, 4, 3, 9};
+    private static final Integer[] kepler1 = new Integer[]{1, 2, 7, 4, 5, 6, 3, 8, 9};
+    private static final Integer[] earth1 = new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
+    private static final Integer[] kepler2 = new Integer[]{12, 14, 13};
+    private static final Integer[] earth2 = new Integer[]{12, 13, 14};
+    private static final Integer[] kepler3 = new Integer[]{2, 7, 4, 3, 9};
+    private static final Integer[] earth3 = new Integer[]{9, 2, 4, 7, 3};
+    private static final Integer[] earth4 = new Integer[]{9, 2, 4, 7, 3};
+    private static final Integer[] earth5 = new Integer[]{9, 2, 4, 7, 3};
+    private static final Integer[] kepler4 = new Integer[]{2, 7, 4, 3, 9};
     /**
      *
      */
