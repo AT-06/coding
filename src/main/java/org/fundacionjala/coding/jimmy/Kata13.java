@@ -15,15 +15,15 @@ public class Kata13 {
      * @return the validation
      */
     public boolean validate(String eanNumber) {
-        int sum = 0;
-        int lastDigit = Integer.parseInt(eanNumber.substring(eanNumber.length() - 1));
+        int checksum = 0;
 
         for (int i = 1; i < eanNumber.length(); i++) {
             int currentIntFromString = Integer.parseInt(eanNumber.substring(i - 1, i));
-            sum += i % 2 == 0 ? NUMBER_THREE * currentIntFromString : currentIntFromString;
+            checksum += i % 2 == 0 ? NUMBER_THREE * currentIntFromString : currentIntFromString;
         }
 
-        sum = sum % NUMBER_TEN == 0 ? 0 : NUMBER_TEN - (sum % NUMBER_TEN);
-        return sum == lastDigit;
+        checksum = checksum % NUMBER_TEN == 0 ? 0 : NUMBER_TEN - (checksum % NUMBER_TEN);
+        int lastDigit = Integer.parseInt(eanNumber.substring(eanNumber.length() - 1));
+        return checksum == lastDigit;
     }
 }
