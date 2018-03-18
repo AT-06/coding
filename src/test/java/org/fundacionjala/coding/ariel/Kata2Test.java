@@ -7,13 +7,13 @@ import static org.junit.Assert.assertEquals;
 /**
  * Unittest of Kata2 check 4.
  */
-public class Katas2Test {
+public class Kata2Test {
     /**
      * Test to check the conditions.
      */
     @Test
     public void sortInnerContentTest1() {
-        Katas2 text = new Katas2();
+        Kata2 text = new Kata2();
         String resp1 = "srot the inner ctonnet in dsnnieedcg oredr";
         String input1 = "sort the inner content in descending order";
         assertEquals(resp1, text.changeWord(input1));

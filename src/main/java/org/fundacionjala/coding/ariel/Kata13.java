@@ -4,11 +4,10 @@ package org.fundacionjala.coding.ariel;
  * Ean checksum.
  * By Ariel Gonzales.
  */
-public class EAN {
+public class Kata13 {
 
-    public static final int LASTDIGIT = 12;
-    public static final int PAR = 3;
-    public static final int CHECKSUM1 = 10;
+    private static final int PAR = 3;
+    private static final int CHECKSUM1 = 10;
 
     /**
      * @param number A string number.
@@ -22,7 +21,7 @@ public class EAN {
             suma += (i % 2 == 0) ? num : num * PAR;
         }
         int checksum = (suma % CHECKSUM1 == 0) ? 0 : CHECKSUM1 - (suma % CHECKSUM1);
-        return checksum == Integer.parseInt(numeros[LASTDIGIT]);
+        return checksum == Integer.parseInt(numeros[numeros.length - 1]);
     }
 }
 

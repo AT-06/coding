@@ -9,7 +9,7 @@ import static java.util.Collections.reverseOrder;
 /**
  * Kata2__Ariel Gonzales Vargas.
  */
-public class Katas2 {
+public class Kata2 {
 
     /**
      * @param text Any String.
