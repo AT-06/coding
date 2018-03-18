@@ -6,8 +6,7 @@ package org.fundacionjala.coding.escarleth;
  */
 public class Kata13 {
     private static final int TEN = 10;
-    private static final int TAM_NUMBER = 12;
-    private static final int THREE_MULTIPLY = 3;
+    private static final int THREE_MULTIPLIER = 3;
 
     /**
      * @param number is a number to verify if comply with the EAN Validation.
@@ -15,17 +14,13 @@ public class Kata13 {
      */
     public boolean isValidEANValidation(String number) {
         int sum = 0;
-        for (int i = 0; i < TAM_NUMBER; i++) {
+        for (int i = 0; i < number.length() - 1; i++) {
             int num = Character.getNumericValue(number.charAt(i));
-            if ((i + 1) % 2 == 0) {
-                sum += num * THREE_MULTIPLY;
-            } else {
-                sum += num;
-            }
+            sum += (i + 1) % 2 == 0 ? num * THREE_MULTIPLIER : num;
         }
-        sum = sum % TEN;
-        int checksum = Character.getNumericValue(number.charAt(TAM_NUMBER));
-        return (sum == 0) ? 0 == checksum : TEN - sum == checksum;
+        int checkSum = sum % TEN == 0 ? 0 : TEN - sum % TEN;
+        int lastDigit = Character.getNumericValue(number.charAt(number.length() - 1));
+        return checkSum == lastDigit;
     }
 }
 
