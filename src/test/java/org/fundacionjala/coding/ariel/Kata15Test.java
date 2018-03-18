@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Unittests.
+ * Unittests..
  */
 public class Kata15Test {
     private Kata15 katita;

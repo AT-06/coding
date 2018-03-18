@@ -2,7 +2,7 @@ package org.fundacionjala.coding.ariel;
 
 /**
  * Kata 15.
- * By Ariel Gonzales Vargas.
+ * By Ariel Gonzales Vargas..
  */
 public class Kata15 {
     /**
