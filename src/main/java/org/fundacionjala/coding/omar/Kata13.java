@@ -8,6 +8,9 @@ import java.util.stream.IntStream;
 
 public class Kata13 {
 
+    private static final int ZERO = 0;
+    private static final int DIVIDABLE = 10;
+
     /**
      * Method validate.
      *
@@ -16,14 +19,18 @@ public class Kata13 {
      */
     public boolean validate(String numberToCheckSum) {
 
-        final int multiplied3 = 3;
-        final int multiplied1 = 1;
-        final int dividable = 10;
+        final int number1 = 1;
+        final int number2 = 2;
 
-        return IntStream.range(0, numberToCheckSum.length())
-                .map(i -> Character.getNumericValue(numberToCheckSum.charAt(i))
-                        * (i % 2 == 0 ? multiplied1 : multiplied3))
-                .sum() % dividable == 0;
 
+        final int sum = IntStream
+                .range(ZERO, numberToCheckSum.length() - 1)
+                .reduce(ZERO, (n, i)
+                        -> n + Character.getNumericValue(numberToCheckSum.charAt(i))
+                        * (number1 + number2 * (i % number2)));
+
+        final int checksum = sum % DIVIDABLE == ZERO ? ZERO : DIVIDABLE - (sum % DIVIDABLE);
+
+        return Character.getNumericValue(numberToCheckSum.charAt(numberToCheckSum.length() - 1)) == checksum;
     }
 }
