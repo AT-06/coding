@@ -10,12 +10,12 @@ import static org.junit.Assert.assertEquals;
 
 public class Kata7Test {
     private Kata7 kataSeven;
-    static final int NUMBER = 25;
-    static final int NUMBER_1 = 151;
-    static final int NUMBER_2 = 3;
-    static final int NUMBER_3 = 32;
-    static final int NUMBER_4 = 15;
-    static final int NUMBER_5 = 26;
+    private static final int NUMBER = 25;
+    private static final int NUMBER_1 = 151;
+    private static final int NUMBER_2 = 3;
+    private static final int NUMBER_3 = 32;
+    private static final int NUMBER_4 = 15;
+    private static final int NUMBER_5 = 26;
 
     /**
      *

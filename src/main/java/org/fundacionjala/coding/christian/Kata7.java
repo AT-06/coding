@@ -13,10 +13,10 @@ public class Kata7 {
  * @return tag for 'digits'
  */
     public String fizzBuzz(int digits) {
-    final String value = String.valueOf(digits);
         if (digits % FIZZBUZZ == 0) {
             return "FizzBuzz";
         }
+        final String value = String.valueOf(digits);
         if (digits % FIZZ == 0 || value.contains("3")) {
             return "Fizz";
         }
