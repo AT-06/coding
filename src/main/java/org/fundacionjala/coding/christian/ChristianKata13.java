@@ -4,9 +4,9 @@ package org.fundacionjala.coding.christian;
  * Performed by Christian.
  */
 public class ChristianKata13 {
-    static final int NUMBER_12 = 12;
-    static final int NUMBER_3 = 3;
-    static final int NUMBER_10 = 10;
+    private static final int NUMBER_12 = 12;
+    private static final int NUMBER_3 = 3;
+    private static final int NUMBER_10 = 10;
 
 
     /**
