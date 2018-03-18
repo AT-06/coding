@@ -10,7 +10,6 @@ public class Kata14 {
      * @return averages of the numbers
      */
     public double[] averages(int[] numberArray) {
-        
         if (numberArray == null || numberArray.length == 0) {
             return new double[]{};
         }
