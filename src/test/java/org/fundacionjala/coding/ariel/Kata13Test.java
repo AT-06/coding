@@ -9,15 +9,15 @@ import static org.junit.Assert.assertTrue;
 /**
  * Unittests..
  */
-public class EANTest {
-    private EAN eanvalidator;
+public class Kata13Test {
+    private Kata13 eanvalidator;
 
     /**
      * It init the common object.
      */
     @Before
     public void init() {
-        eanvalidator = new EAN();
+        eanvalidator = new Kata13();
     }
 
     /**
