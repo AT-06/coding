@@ -28,8 +28,8 @@ public class Kata8Test {
     public void testStory1Serie() {
         final String underscores = "    _  _     _  _  _  _  _ ";
         final String pipesUnderscores = "  | _| _||_||_ |_   ||_||_|";
-        final String underscoresPipes = "  ||_  _|  | _||_|  ||_| _|";
-        assertEquals("123456789", katita.story1(underscores, pipesUnderscores, underscoresPipes));
+        final String underscoresPipes = "  ||_  _|  | _||_|  ||_||_|";
+        assertEquals("123456788", katita.story1(underscores, pipesUnderscores, underscoresPipes));
 
     }
 
@@ -51,9 +51,9 @@ public class Kata8Test {
      */
     @Test
     public void testStory1Serie3() {
-        String commonLine1 = "    _  _     _  _  _  _  _ ";
-        String commonLine2 = "  | _| _||_||_ |_   ||_||  ";
-        String commonLine3 = "  ||_  _|  | _||_|  ||_| _|";
+        final String commonLine1 = "    _  _     _  _  _  _  _ ";
+        final String commonLine2 = "  | _| _||_||_ |_   ||_||  ";
+        final String commonLine3 = "  ||_  _|  | _||_|  ||_| _|";
         assertEquals("12345678?", katita.story1(commonLine1, commonLine2, commonLine3));
     }
 
@@ -83,6 +83,15 @@ public class Kata8Test {
     @Test
     public void testValidSerieWithoutSuffix() {
         assertEquals("345882865", katita.valid("345882865"));
+    }
+
+    /**
+     * This test check another serie.
+     * if it is valid.
+     */
+    @Test
+    public void testValidSerieWithoutSuffix2() {
+        assertEquals("123456789", katita.valid("123456789"));
     }
 
     /**
