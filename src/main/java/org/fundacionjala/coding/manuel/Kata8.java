@@ -12,6 +12,7 @@ public class Kata8 {
     private static final int SUFIX = 3;
     private static final int MOD_NUMBER = 11;
     private static Map<String, String> mapedValues = new HashMap<>();
+
     /**
      * static initializer.
      */
@@ -35,7 +36,7 @@ public class Kata8 {
      * @param thirdRow third row of pipes and underscore.
      * @return numberValue converted.
      */
-    public String bank(String firstRow, String secondRow, String thirdRow) {
+    public String convertEntryToNumber(String firstRow, String secondRow, String thirdRow) {
         StringJoiner numberValue = new StringJoiner("");
         while (!firstRow.isEmpty()) {
             String concatenatedNumber = firstRow.substring(0, SUFIX)
@@ -46,35 +47,30 @@ public class Kata8 {
             secondRow = secondRow.substring(SUFIX);
             thirdRow = thirdRow.substring(SUFIX);
         }
-        return addSufixes(numberValue.toString());
+        return numberValue.toString();
     }
 
     /**
-     * Method defineSufixes to concat sufixes or not to account.
-     * @param numberValue value with the account and ?.
-     * @return account with ILL or ERR or valid account.
+     * Method addSufixes to add ILL in case ?.
+     * @param numberValue number converted.
+     * @return string value account if ? then ILL.
      */
     public String addSufixes(String numberValue) {
-        if (numberValue.contains("?")) {
-            return numberValue.concat(" ILL");
-        }
-        if (!calculateCheckSum(numberValue)) {
-            return numberValue.concat(" ERR");
-        }
-        return numberValue;
+        return numberValue.contains("?") ? numberValue.concat(" ILL") : numberValue;
     }
 
     /**
      * Method calculateCheckSum to check if it is a valid account.
      * @param number number converted.
-     * @return boolean value if the account is real.
+     * @return string value account if not real then concat ERR.
      */
-    public boolean calculateCheckSum(String number) {
+    public String calculateCheckSum(String number) {
         int sum = 0;
-        for (int i = number.length(); i > 0; i--) {
-            sum += Integer.parseInt(number.substring(0, 1)) * i;
-            number = number.substring(1);
+        String numberCopy = number;
+        for (int i = numberCopy.length(); i > 0; i--) {
+            sum += Integer.parseInt(numberCopy.substring(0, 1)) * i;
+            numberCopy = numberCopy.substring(1);
         }
-        return sum % MOD_NUMBER == 0;
+        return (sum % MOD_NUMBER) == 0 ? number : number.concat(" ERR");
     }
 }
