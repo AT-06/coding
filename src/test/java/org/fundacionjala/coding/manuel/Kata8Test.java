@@ -34,9 +34,9 @@ public class Kata8Test {
      */
     @Test
     public void test2BankKata8() {
-        String firstRow =  "    _  _     _  _  _  _  _ ";
-        String secondRow = "  | _| _||_||_ |_   ||_||_|";
-        String thirdRow =  "  ||_  _|  | _||_|  ||_| _|";
+        final String firstRow =  "    _  _     _  _  _  _  _ ";
+        final String secondRow = "  | _| _||_||_ |_   ||_||_|";
+        final String thirdRow =  "  ||_  _|  | _||_|  ||_| _|";
         assertEquals("123456789", kata8.convertEntryToNumber(firstRow, secondRow, thirdRow));
     }
 
