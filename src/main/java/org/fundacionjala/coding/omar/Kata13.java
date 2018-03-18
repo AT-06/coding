@@ -22,15 +22,15 @@ public class Kata13 {
         final int number1 = 1;
         final int number2 = 2;
 
-
         final int sum = IntStream
-                .range(ZERO, numberToCheckSum.length() - 1)
+                .range(ZERO, numberToCheckSum.length() - number1)
                 .reduce(ZERO, (n, i)
                         -> n + Character.getNumericValue(numberToCheckSum.charAt(i))
                         * (number1 + number2 * (i % number2)));
 
-        final int checksum = sum % DIVIDABLE == ZERO ? ZERO : DIVIDABLE - (sum % DIVIDABLE);
+        final int result = sum % DIVIDABLE == ZERO ? ZERO : DIVIDABLE - (sum % DIVIDABLE);
+        final int expected = Character.getNumericValue(numberToCheckSum.charAt(numberToCheckSum.length() - number1));
 
-        return Character.getNumericValue(numberToCheckSum.charAt(numberToCheckSum.length() - 1)) == checksum;
+        return expected == result;
     }
 }
