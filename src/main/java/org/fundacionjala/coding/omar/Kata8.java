@@ -28,23 +28,13 @@ public class Kata8 {
 
     private static final String NINE = " _ |_| _|";
 
-    private static final Map<String, Integer> NUMBERS_MAP;
+    private static final Map<String, String> NUMBERS_MAP;
 
     private static final int NUMBER_1 = 1;
 
     private static final int NUMBER_2 = 2;
 
     private static final int NUMBER_3 = 3;
-
-    private static final int NUMBER_4 = 4;
-
-    private static final int NUMBER_5 = 5;
-
-    private static final int NUMBER_6 = 6;
-
-    private static final int NUMBER_7 = 7;
-
-    private static final int NUMBER_8 = 8;
 
     private static final int NUMBER_9 = 9;
 
@@ -55,15 +45,16 @@ public class Kata8 {
 
     static {
         NUMBERS_MAP = new HashMap<>();
-        NUMBERS_MAP.put(ONE, NUMBER_1);
-        NUMBERS_MAP.put(TWO, NUMBER_2);
-        NUMBERS_MAP.put(THREE, NUMBER_3);
-        NUMBERS_MAP.put(FOUR, NUMBER_4);
-        NUMBERS_MAP.put(FIVE, NUMBER_5);
-        NUMBERS_MAP.put(SIX, NUMBER_6);
-        NUMBERS_MAP.put(SEVEN, NUMBER_7);
-        NUMBERS_MAP.put(EIGHT, NUMBER_8);
-        NUMBERS_MAP.put(NINE, NUMBER_9);
+        NUMBERS_MAP.put(ONE, "1");
+        NUMBERS_MAP.put(TWO, "2");
+        NUMBERS_MAP.put(THREE, "3");
+        NUMBERS_MAP.put(FOUR, "4");
+        NUMBERS_MAP.put(FIVE, "5");
+        NUMBERS_MAP.put(SIX, "6");
+        NUMBERS_MAP.put(SEVEN, "7");
+        NUMBERS_MAP.put(EIGHT, "8");
+        NUMBERS_MAP.put(NINE, "9");
+
     }
 
     /**
@@ -72,9 +63,7 @@ public class Kata8 {
      */
     public String parseSingleCharacter(String characterToScan) {
 
-        Integer result = NUMBERS_MAP.get(characterToScan);
-
-        return result == null ? "?" : result.toString();
+        return NUMBERS_MAP.getOrDefault(characterToScan, "?");
     }
 
     /**
@@ -106,11 +95,9 @@ public class Kata8 {
      */
     public boolean checkSum(String accountNumber) {
 
-
         return IntStream.range(NUMBER_0, NUMBER_9)
                 .map(i -> Character.getNumericValue(accountNumber.charAt(i)) * (accountNumber.length() - i))
                 .sum() % NUMBER_11 == NUMBER_0;
-
 
     }
 
