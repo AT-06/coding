@@ -40,11 +40,11 @@ public class Kata8 {
     }
 
     /**
-     * @param characterToScan .
+     * @param character .
      * @return String.
      */
-    public String parseSingleCharacter(String characterToScan) {
-        return STRING_STRING_MAP.getOrDefault(characterToScan, "?");
+    public String singleCharacter(String character) {
+        return STRING_STRING_MAP.getOrDefault(character, "?");
     }
     /**
      * @param line .
@@ -59,7 +59,7 @@ public class Kata8 {
             String character = lines[0].substring(i, i + NUMBER3)
                     .concat(lines[NUMBER1].substring(i, i + NUMBER3))
                     .concat(lines[NUMBER2].substring(i, i + NUMBER3));
-            String parsedCharacter = parseSingleCharacter(character);
+            String parsedCharacter = singleCharacter(character);
             scannedCharacters.append(parsedCharacter);
         }
 
