@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class Customer {
     private static final int QUANTITY = 50;
-    private final String customer;
+    private final String customername;
     private List<Rental> rentals;
     private static final char SLASH = '\n';
 
@@ -18,7 +18,7 @@ public class Customer {
      * @param customer Init the class.
      */
     public Customer(String customer) {
-        this.customer = customer;
+        this.customername = customer;
         rentals = new ArrayList<>();
     }
 
@@ -64,8 +64,8 @@ public class Customer {
      * @return a summary of rentals.
      */
     public String statement() {
-        StringBuffer result = new StringBuffer(QUANTITY);
-        result.append("Rental Record for ").append(customer).append(SLASH);
+        StringBuilder result = new StringBuilder(QUANTITY);
+        result.append("Rental Record for ").append(customername).append(SLASH);
         for (Rental rental : rentals) {
             result.append(rental.rentalStatement())
                     .append(SLASH);
