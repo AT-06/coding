@@ -17,6 +17,6 @@ public class Kata10 {
 
         int[] array = Arrays.stream(numbers.split(BLANK_SPACE)).mapToInt(Integer::parseInt).toArray();
         Arrays.sort(array);
-        return String.format("%d %d", Integer.toString(array[array.length - 1]), Integer.toString(array[0]));
+        String.format("%s %s", String.valueOf(array[array.length - 1]), String.valueOf(array[0]));
     }
 }
