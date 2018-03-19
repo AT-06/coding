@@ -17,7 +17,6 @@ public class Kata15Test {
     public void initialize() {
         kata15 = new Kata15();
     }
-
     /**
      * test basicTests.
      */

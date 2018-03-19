@@ -9,6 +9,7 @@ public class Kata15 {
      * @return return the number of repeticions of the most frecuent number
      */
     public int mostFrequentItemCount(int[] arrayNumber) {
+        
         int mostFqNumber = 0;
         for (int i = 0; i < arrayNumber.length; i++) {
             int count = 0;
