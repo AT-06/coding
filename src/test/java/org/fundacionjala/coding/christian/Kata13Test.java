@@ -10,7 +10,6 @@ import static org.junit.Assert.assertFalse;
  * Performed by christian.
  */
 public class Kata13Test {
-
     private Kata13 validator;
 
     /**
