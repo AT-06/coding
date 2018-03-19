@@ -23,10 +23,6 @@ public class ChildrenMovie extends Movie {
      */
     @Override
     public double calculateAmount(int daysRented) {
-        if (daysRented > THREE) {
-            return MULTIPLY + ((daysRented - THREE) * MULTIPLY);
-        }
-        return MULTIPLY;
-
+        return daysRented > THREE ? MULTIPLY + ((daysRented - THREE) * MULTIPLY) : MULTIPLY;
     }
 }

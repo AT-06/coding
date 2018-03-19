@@ -22,9 +22,6 @@ public class RegularMovie extends Movie {
      */
     @Override
     public double calculateAmount(int daysRented) {
-        if (daysRented > 2) {
-            return 2 + ((daysRented - 2) * MULTIPLY);
-        }
-        return 2;
+        return daysRented > 2 ? 2 + ((daysRented - 2) * MULTIPLY) : 2;
     }
 }

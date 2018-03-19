@@ -46,11 +46,9 @@ public class Customer {
         StringBuilder result =  new StringBuilder(BUILDER);
         result.append(String.format("%s %s%s", "Rental Record for", getName(), "\n"));
         for (Rental each : rentals) {
-            //show figures for this rental
             result.append(String.format("%s%s%s", "\t", each.getMovie().getTitle(), "\t"))
                     .append(String.format("%s%s", String.valueOf(each.calculateAmountFromMovie()), "\n"));
         }
-        //add footer lines
         result.append(String.format("%s %s%s", "Amount owed is", String.valueOf(getTotalAmount()), "\n"))
                 .append(String.format("%s %s", "You earned", String.valueOf(getFrequentRenterPoints())))
                 .append(" frequent renter points");
@@ -74,7 +72,6 @@ public class Customer {
      * @return frequent points.
      */
     public int getFrequentRenterPoints() {
-        // add frequent renter points
         int frequentRenterPoints = 0;
         for (Rental each : rentals) {
             frequentRenterPoints += each.calculateFrequentRenterPointsForMovie();

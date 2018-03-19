@@ -42,7 +42,6 @@ public abstract class Movie {
      * @return frequency .
      */
     public int calculateFrequentRenterPoints(int daysRented) {
-        // add bonus for a two day new release rental
         if (this.priceCode == NEW_RELEASE
                 &&
                 daysRented > 1) {
