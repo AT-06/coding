@@ -4,7 +4,7 @@ package org.fundacionjala.coding.christian.movies;
  * Developer by Christian.
  */
 public abstract class Movie {
-    protected final String titleMovie;
+    private final String titleMovie;
 
     /**
      * @param title .

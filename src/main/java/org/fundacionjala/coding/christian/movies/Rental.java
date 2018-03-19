@@ -4,44 +4,39 @@ package org.fundacionjala.coding.christian.movies;
  * Developer by Christian.
  */
 public class Rental {
-    private Movie movie;
-    private int daysRented;
+    private Movie movieRented;
+    private int Rented;
 
     /**
-     * This is the constructor of Rental Class.
-     *
-     * @param movie      is an Movie object type.
-     * @param daysRented is the quantityof rented days.
+
+     * @param movie      .
+     * @param daysRented .
      */
     public Rental(Movie movie, int daysRented) {
-        this.movie = movie;
-        this.daysRented = daysRented;
+        this.movieRented = movie;
+        this.Rented = daysRented;
     }
 
     /**
-     * This method calculates the amount of the Movie.
-     *
-     * @return amount based on days rented.
+
+     * @return double.
      */
     public double calculateAmount() {
-        return movie.calculateAmount(daysRented);
+        return movieRented.calculateAmount(Rented);
     }
 
     /**
-     * This method calculates the frequent renter points of the Movie.
-     *
-     * @return requent renter points based on days rented.
+     * @return int.
      */
     public int calculateFrequentRenterPoints() {
-        return movie.calculateFrequentRenterPoints(daysRented);
+        return movieRented.calculateFrequentRenterPoints(Rented);
     }
 
     /**
-     * This method shows the rental summary.
-     *
-     * @return statement of rental summary.
+
+     * @return String.
      */
     public String rentalStatement() {
-        return movie.rentalFigure(daysRented);
+        return movieRented.rentalFigure(Rented);
     }
 }
