@@ -5,7 +5,7 @@ package org.fundacionjala.coding.christian.movies;
  */
 public class Rental {
     private Movie movieRented;
-    private int Rented;
+    private int rented;
 
     /**
 
@@ -14,7 +14,7 @@ public class Rental {
      */
     public Rental(Movie movie, int daysRented) {
         this.movieRented = movie;
-        this.Rented = daysRented;
+        this.rented = daysRented;
     }
 
     /**
@@ -22,14 +22,14 @@ public class Rental {
      * @return double.
      */
     public double calculateAmount() {
-        return movieRented.calculateAmount(Rented);
+        return movieRented.calculateAmount(rented);
     }
 
     /**
      * @return int.
      */
     public int calculateFrequentRenterPoints() {
-        return movieRented.calculateFrequentRenterPoints(Rented);
+        return movieRented.calculateFrequentRenterPoints(rented);
     }
 
     /**
@@ -37,6 +37,6 @@ public class Rental {
      * @return String.
      */
     public String rentalStatement() {
-        return movieRented.rentalFigure(Rented);
+        return movieRented.rentalFigure(rented);
     }
 }
