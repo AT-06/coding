@@ -38,6 +38,26 @@ public class RegularTest {
      *
      */
     @Test
+    public void testRentalFigure() {
+        final String actualResult = movie.rentalFigure(4);
+        final String expectedResult = "X-men\t3.0";
+        assertEquals(expectedResult, actualResult);
+    }
+
+    /**
+     *
+     */
+    @Test
+    public void testCalculateDaysRentedLessThanTwo() {
+        final double actualResult = movie.calculateAmount(1);
+        final double expectedResult = 2;
+        assertEquals(expectedResult, actualResult, 0);
+    }
+
+    /**
+     *
+     */
+    @Test
     public void testCalculateDaysRentedMovieChildrenGreaterThanThree() {
         final double actualResult = movieChildren.calculateAmount(5);
         final double expectedResult = 3;
@@ -54,16 +74,16 @@ public class RegularTest {
         assertEquals(expectedResult, actualResult, 0);
     }
 
-
     /**
      *
      */
     @Test
-    public void testCalculateDaysRentedLessThanTwo() {
-        final double actualResult = movie.calculateAmount(1);
-        final double expectedResult = 2;
-        assertEquals(expectedResult, actualResult, 0);
+    public void testRentalChildrenFigure() {
+        final String actualResult = movieChildren.rentalFigure(4);
+        final String expectedResult = "King Lion\t1.5";
+        assertEquals(expectedResult, actualResult);
     }
+
 
     /**
      *
@@ -73,6 +93,16 @@ public class RegularTest {
         final double actualResult = movieNew.calculateAmount(3);
         final double expectedResult = 9;
         assertEquals(expectedResult, actualResult, 0);
+    }
+
+    /**
+     *
+     */
+    @Test
+    public void testRentalNewFigure() {
+        final String actualResult = movieNew.rentalFigure(4);
+        final String expectedResult = "Men in Black\t12.0";
+        assertEquals(expectedResult, actualResult);
     }
 
 }
