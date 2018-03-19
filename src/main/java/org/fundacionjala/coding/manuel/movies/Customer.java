@@ -9,6 +9,7 @@ import java.util.List;
  * Created by Juan Manuel on 3/18/2018.
  */
 public class Customer {
+    private static final int BUILDER = 200;
     private String name;
     private List<Rental> rentals;
 
@@ -42,17 +43,18 @@ public class Customer {
      * @return result .
      */
     public String statement() {
-        String result = String.format("%s %s%s", "Rental Record for", getName(), "\n");
+        StringBuilder result =  new StringBuilder(BUILDER);
+        result.append(String.format("%s %s%s", "Rental Record for", getName(), "\n"));
         for (Rental each : rentals) {
             //show figures for this rental
-            result = result.concat(String.format("%s%s%s", "\t", each.getMovie().getTitle(), "\t"));
-            result = result.concat(String.format("%s%s", String.valueOf(each.calculateAmountFromMovie()), "\n"));
+            result.append(String.format("%s%s%s", "\t", each.getMovie().getTitle(), "\t"))
+                    .append(String.format("%s%s", String.valueOf(each.calculateAmountFromMovie()), "\n"));
         }
         //add footer lines
-        result = result.concat(String.format("%s %s%s", "Amount owed is", String.valueOf(getTotalAmount()), "\n"));
-        result = result.concat(String.format("%s %s", "You earned", String.valueOf(getFrequentRenterPoints())));
-        result = result.concat(" frequent renter points");
-        return result;
+        result.append(String.format("%s %s%s", "Amount owed is", String.valueOf(getTotalAmount()), "\n"))
+                .append(String.format("%s %s", "You earned", String.valueOf(getFrequentRenterPoints())))
+                .append(" frequent renter points");
+        return result.toString();
     }
 
     /**
