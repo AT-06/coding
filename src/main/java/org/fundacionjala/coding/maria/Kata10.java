@@ -2,7 +2,6 @@ package org.fundacionjala.coding.maria;
 
 import java.util.Arrays;
 
-
 /**
  * kata 10.
  */
