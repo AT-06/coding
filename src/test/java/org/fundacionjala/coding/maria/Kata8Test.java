@@ -46,10 +46,10 @@ public class Kata8Test {
      * testBankOCRErr test 2.
      */
     @Test
-    public void testBankOCRErr() {
+    public void testBankOCRisValidChecksumErr() {
 
 
-        assertEquals("664371495 ERR", kata8.err("664371495"));
+        assertEquals("664371495 ERR", kata8.errIll("664371495"));
     }
 
 
@@ -58,33 +58,25 @@ public class Kata8Test {
      */
     @Test
     public void testBankOCRNoErr() {
-        assertEquals(COMMONSTRING, kata8.err(COMMONSTRING));
+        assertEquals(COMMONSTRING, kata8.errIll(COMMONSTRING));
     }
 
-    /**
-     * testBankOCRIntErr test 2.
-     */
-    @Test
-    public void testBankOCRIntErr() {
-        assertEquals(COMMONSTRINGINT, kata8.err(COMMONSTRINGINT));
-    }
-
-    /**
+     /**
      * testBankOCROneNoNumber test 3.
      */
     @Test
-    public void testBankOCROneNoNumber() {
+    public void testBankOCRisOneNoNumber() {
 
-        assertEquals(COMMONSTRINGINT.concat(" ILL"), kata8.ill(COMMONSTRINGINT));
+        assertEquals(COMMONSTRINGINT.concat(" ILL"), kata8.errIll(COMMONSTRINGINT));
     }
 
     /**
      * testBankOCROneNumber.
      */
     @Test
-    public void testBankOCROneNumber() {
+    public void testBankOCRsumOneNumber() {
 
-        assertEquals(COMMONSTRING, kata8.ill(COMMONSTRING));
+        assertEquals(COMMONSTRING, kata8.errIll(COMMONSTRING));
     }
 
     /**
@@ -94,6 +86,6 @@ public class Kata8Test {
     public void testBankOCRTwoNoNumbers() {
 
 
-        assertEquals("1234?678? ILL", kata8.ill("1234?678?"));
+        assertEquals("1234?678? ILL", kata8.errIll("1234?678?"));
     }
 }

@@ -50,24 +50,16 @@ public class Kata8 {
     }
 
 
-    /**
-     * @param number string
-     * @return ill if the string contains ?
-     */
-    public String ill(String number) {
-        if (number.contains("?")) {
-            number = number.concat(" ILL");
-        }
-        return number;
-    }
 
     /**
      * @param number string
-     * @return if the fsum of fields is mod 11
+     * @return if the sum of fields is mod 11
      */
-    public String err(String number) {
+    public String errIll(String number) {
         if (!number.contains("?")) {
-            number = !modEleven(number) ? number.concat(" ERR") : number;
+            number = !isValidChecksum(number) ? number.concat(" ERR") : number;
+        } else {
+            number = number.concat(" ILL");
         }
         return number;
     }
@@ -76,7 +68,7 @@ public class Kata8 {
      * @param number String
      * @return mod of String
      */
-    public boolean modEleven(String number) {
+    public boolean isValidChecksum(String number) {
         int modEleven = 0;
         int count = NINE;
         String[] arrayNumbers = number.split("");
