@@ -27,7 +27,6 @@ public class Kata11Test {
         final int content = 10;
         assertEquals(extected, kata11.evaporator(content, content, content));
     }
-
     /**
      * Test testEvaporatorTwo.
      */
