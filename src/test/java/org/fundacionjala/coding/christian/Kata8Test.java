@@ -10,9 +10,9 @@ import static org.junit.Assert.assertFalse;
  * Developer by Christian.
  */
 public class Kata8Test {
-    private static final String ROW1 = "    _  _     _  _  _  _  _ ";
-    private static final String ROW2 = "  | _| _||_||_ |_   ||_||_|";
-    private static final String ROW3 = "  ||_  _|  | _||_|  ||_| _|";
+    private static final String LINE = "    _  _     _  _  _  _  _ ";
+    private static final String LINE2 = "  | _| _||_||_ |_   ||_||_|";
+    private static final String LINE3 = "  ||_  _|  | _||_|  ||_| _|";
     private Kata8 putNumber;
 
     /**
@@ -28,7 +28,7 @@ public class Kata8Test {
      */
     @Test
     public void testConvertValidEntryToNumberHistoryOne() {
-        assertEquals("123456789", putNumber.convertEntryToNumber(ROW1, ROW2, ROW3));
+        assertEquals("123456789", putNumber.convertEntryToNumber(LINE, LINE2, LINE3));
     }
 
     /**
@@ -37,7 +37,7 @@ public class Kata8Test {
     @Test
     public void testConvertInvalidEntryToNumberHistoryOne() {
         final String row3 = " _||_  _|  | _||_|  ||_| _|";
-        assertEquals("?23456789", putNumber.convertEntryToNumber(ROW1, ROW2, row3));
+        assertEquals("?23456789", putNumber.convertEntryToNumber(LINE, LINE2, row3));
     }
 
     /**
@@ -66,20 +66,11 @@ public class Kata8Test {
     @Test
     public void testFindingChecksumErrorAccountNumber() {
         final String row1 = "    _  _     _  _     _  _ ";
-        final String actualResult = putNumber.lookingFor(putNumber.convertEntryToNumber(row1, ROW2, ROW3));
+        final String actualResult = putNumber.lookingFor(putNumber.convertEntryToNumber(row1, LINE2, LINE3));
         final String expectedResult = "123456189 ERR";
         assertEquals(expectedResult, actualResult);
     }
-
-    /**
-     *
-     */
-    @Test
-    public void testFindingChecksumAccountNumber() {
-        final String actualResult = putNumber.lookingFor(putNumber.convertEntryToNumber(ROW1, ROW2, ROW3));
-        final String expectedResult = "123456789";
-        assertEquals(expectedResult, actualResult);
-    }
+    
 
     /**
      *
@@ -88,7 +79,7 @@ public class Kata8Test {
     public void testFindingIllegibleAccountNumber() {
         final String row2 = "  | _| _||_| _  _    |_||_|";
         final String row3 = "|_ |_  _|  | _||_|  ||_| _|";
-        final String actualResult = putNumber.lookingFor(putNumber.convertEntryToNumber(ROW1, row2, row3));
+        final String actualResult = putNumber.lookingFor(putNumber.convertEntryToNumber(LINE, row2, row3));
         final String expectedResult = "?234???89 ILL";
         assertEquals(expectedResult, actualResult);
     }

@@ -15,36 +15,28 @@ public class Kata8 {
     private static final int NUMBER0 = 0;
     private static final int NUMBER11 = 11;
 
-    private static final String ONE = "     |  |";
+    private static final String ONE_STRING = "     |  |";
+    private static final String TWO_STRING = " _  _||_ ";
+    private static final String THREE_STRING = " _  _| _|";
+    private static final String FOUR_STRING = "   |_|  |";
+    private static final String FIVE_STRING = " _ |_  _|";
+    private static final String SIX_STRING = " _ |_ |_|";
+    private static final String SEVEN_STRING = " _   |  |";
+    private static final String EIGHT_STRING = " _ |_||_|";
+    private static final String NINE_STRING = " _ |_| _|";
 
-    private static final String TWO = " _  _||_ ";
-
-    private static final String THREE = " _  _| _|";
-
-    private static final String FOUR = "   |_|  |";
-
-    private static final String FIVE = " _ |_  _|";
-
-    private static final String SIX = " _ |_ |_|";
-
-    private static final String SEVEN = " _   |  |";
-
-    private static final String EIGHT = " _ |_||_|";
-
-    private static final String NINE = " _ |_| _|";
-
-    private static final Map<String, String> NUMBER_MAP;
+    private static final Map<String, String> STRING_STRING_MAP;
     static {
-        NUMBER_MAP = new HashMap<>();
-        NUMBER_MAP.put(ONE, "1");
-        NUMBER_MAP.put(TWO, "2");
-        NUMBER_MAP.put(THREE, "3");
-        NUMBER_MAP.put(FOUR, "4");
-        NUMBER_MAP.put(FIVE, "5");
-        NUMBER_MAP.put(SIX, "6");
-        NUMBER_MAP.put(SEVEN, "7");
-        NUMBER_MAP.put(EIGHT, "8");
-        NUMBER_MAP.put(NINE, "9");
+        STRING_STRING_MAP= new HashMap<>();
+        STRING_STRING_MAP.put(ONE_STRING, "1");
+        STRING_STRING_MAP.put(TWO_STRING, "2");
+        STRING_STRING_MAP.put(THREE_STRING, "3");
+        STRING_STRING_MAP.put(FOUR_STRING, "4");
+        STRING_STRING_MAP.put(FIVE_STRING, "5");
+        STRING_STRING_MAP.put(SIX_STRING, "6");
+        STRING_STRING_MAP.put(SEVEN_STRING, "7");
+        STRING_STRING_MAP.put(EIGHT_STRING, "8");
+        STRING_STRING_MAP.put(NINE_STRING, "9");
 
     }
 
@@ -53,17 +45,17 @@ public class Kata8 {
      * @return String.
      */
     public String parseSingleCharacter(String characterToScan) {
-        return NUMBER_MAP.getOrDefault(characterToScan, "?");
+        return STRING_STRING_MAP.getOrDefault(characterToScan, "?");
     }
 
     /**
-     * @param row1 .
-     * @param row2 .
-     * @param row3 .
+     * @param line .
+     * @param line2 .
+     * @param line3 .
      * @return result.
      */
-    public String convertEntryToNumber(String row1, String row2, String row3) {
-        String[] lines = {row1, row2, row3};
+    public String convertEntryToNumber(String line, String line2, String line3) {
+        String[] lines = {line, line2, line3};
         StringBuilder scannedCharacters = new StringBuilder();
         for (int i = 0; i < lines[0].length(); i += NUMBER3) {
             String character = lines[0].substring(i, i + NUMBER3)
