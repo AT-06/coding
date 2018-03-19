@@ -10,13 +10,12 @@ public class ChristianKata13 {
      * @return tag for 'eanCode'
      */
     public boolean validate(final String eanCode) {
-        final int number12 = 12;
         final int number3 = 3;
         final int number10 = 10;
-        int expected = Character.getNumericValue(eanCode.charAt(number12));
+        int expected = Character.getNumericValue(eanCode.charAt(eanCode.length()));
         int sum = 0;
 
-        for (int i = 0; i < number12; i++) {
+        for (int i = 0; i < eanCode.length(); i++) {
             int digit = Character.getNumericValue(eanCode.charAt(i));
             sum += ((i + 1) % 2 == 0) ? digit * number3 : digit;
         }
