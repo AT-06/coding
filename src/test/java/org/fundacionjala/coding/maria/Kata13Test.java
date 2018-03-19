@@ -29,4 +29,11 @@ public class Kata13Test {
         assertFalse(eanValidator.validate("4003301018392"));
 
     }
+    /**
+     * test eanValidatorTestCase2.
+     */
+    @Test
+    public void eanValidatorTestCase2() {
+        assertTrue(eanValidator.validate("1111111111000"));
+    }
 }

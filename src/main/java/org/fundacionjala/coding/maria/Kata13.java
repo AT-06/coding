@@ -5,7 +5,7 @@ package org.fundacionjala.coding.maria;
  */
 public class Kata13 {
     private static final int TEN = 10;
-    private static final int THREE = 10;
+    private static final int THREE = 3;
     /**
      * @param number string number to validate
      * @return boolean if the number is valid
