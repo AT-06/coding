@@ -8,7 +8,7 @@ import java.util.StringJoiner;
  */
 public class Kata10 {
     private static final String BLANK_SPACE = " ";
-
+ 
     /**
      * @param numbers numbers
      * @return hig and low number
