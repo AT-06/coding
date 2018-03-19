@@ -70,7 +70,7 @@ public class Kata8Test {
         final String expectedResult = "123456189 ERR";
         assertEquals(expectedResult, actualResult);
     }
-    
+
 
     /**
      *

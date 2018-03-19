@@ -8,12 +8,12 @@ import java.util.stream.IntStream;
  * Developer by Christian.
  */
 public class Kata8 {
-    private static final int NUMBER1 = 1;
-    private static final int NUMBER2 = 2;
-    private static final int NUMBER3 = 3;
-    private static final int NUMBER9 = 9;
-    private static final int NUMBER0 = 0;
-    private static final int NUMBER11 = 11;
+    private static final char NUMBER1 = 1;
+    private static final char NUMBER2 = 2;
+    private static final char NUMBER3 = 3;
+    private static final char NUMBER9 = 9;
+    private static final char NUMBER0 = 0;
+    private static final char NUMBER11 = 11;
 
     private static final String ONE_STRING = "     |  |";
     private static final String TWO_STRING = " _  _||_ ";
@@ -37,7 +37,6 @@ public class Kata8 {
         STRING_STRING_MAP.put(SEVEN_STRING, "7");
         STRING_STRING_MAP.put(EIGHT_STRING, "8");
         STRING_STRING_MAP.put(NINE_STRING, "9");
-
     }
 
     /**
@@ -47,7 +46,6 @@ public class Kata8 {
     public String parseSingleCharacter(String characterToScan) {
         return STRING_STRING_MAP.getOrDefault(characterToScan, "?");
     }
-
     /**
      * @param line .
      * @param line2 .
@@ -73,10 +71,17 @@ public class Kata8 {
      * @return .
      */
     public boolean checkSum(String accountNumber) {
-        return IntStream.range(NUMBER0, NUMBER9)
-                .map(i -> Character.getNumericValue(accountNumber.charAt(i)) * (accountNumber.length() - i))
-                .sum() % NUMBER11 == NUMBER0;
+        final String[] numberPosition = accountNumber.split("");
+        int checksum = NUMBER0;
+        int i = NUMBER0;
+        int j = NUMBER9;
 
+        while (i < numberPosition.length) {
+            checksum += Integer.parseInt(numberPosition[i]) * j;
+            i++;
+            j--;
+        }
+        return checksum % NUMBER11 == NUMBER0;
     }
 
     /**
