@@ -2,7 +2,7 @@ package org.fundacionjala.coding.christian;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.IntStream;
+
 
 /**
  * Developer by Christian.
@@ -27,7 +27,7 @@ public class Kata8 {
 
     private static final Map<String, String> STRING_STRING_MAP;
     static {
-        STRING_STRING_MAP= new HashMap<>();
+        STRING_STRING_MAP = new HashMap<>();
         STRING_STRING_MAP.put(ONE_STRING, "1");
         STRING_STRING_MAP.put(TWO_STRING, "2");
         STRING_STRING_MAP.put(THREE_STRING, "3");
