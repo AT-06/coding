@@ -14,7 +14,6 @@ public class Kata10 {
      * @return hig and low number
      */
     public String highAndLow(String numbers) {
-
         int[] array = Arrays.stream(numbers.split(BLANK_SPACE)).mapToInt(Integer::parseInt).toArray();
         Arrays.sort(array);
         return String.format("%s %s", String.valueOf(array[array.length - 1]), String.valueOf(array[0]));
