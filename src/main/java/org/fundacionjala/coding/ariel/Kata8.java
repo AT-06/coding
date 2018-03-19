@@ -39,12 +39,10 @@ public class Kata8 {
         StringJoiner digitSum = new StringJoiner("");
 
         for (int i = 0; i < LONG; i += THREE) {
-            if (i != LONG) {
-                String digit = file1.substring(i, i + THREE)
-                        .concat(file2.substring(i, i + THREE))
-                        .concat(file3.substring(i, i + THREE));
-                digitSum.add(LIST.containsKey(digit) ? LIST.get(digit) : "?");
-            }
+            String digit = file1.substring(i, i + THREE)
+                    .concat(file2.substring(i, i + THREE))
+                    .concat(file3.substring(i, i + THREE));
+            digitSum.add(LIST.containsKey(digit) ? LIST.get(digit) : "?");
         }
 
         return digitSum.toString();

@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
 /**
- * Unittets Kata Bank.
+ * Unittets Kata Bank..
  */
 public class Kata8Test {
     private Kata8 katita;
@@ -63,7 +63,7 @@ public class Kata8Test {
      * pass the checksum condition.
      */
     @Test
-    public void testValidSerieWithoutChecksum() {
+    public void testValidWithoutChecksum() {
         assertEquals("777777777 ERR", katita.valid("777777777"));
     }
 
@@ -72,7 +72,7 @@ public class Kata8Test {
      * pass the checksum condition.
      */
     @Test
-    public void testValidSerieWithoutChecksum2() {
+    public void testValidWithoutChecksum2() {
         assertEquals("664371495 ERR", katita.valid("664371495"));
     }
 
@@ -82,7 +82,7 @@ public class Kata8Test {
      * has a non number.
      */
     @Test
-    public void testInvalidSerie() {
+    public void testInvalid() {
         assertEquals("1234?6789 ILL", katita.valid("1234?6789"));
     }
 
@@ -100,7 +100,7 @@ public class Kata8Test {
      * is invalid for the checksum.
      */
     @Test
-    public void testInvalitChecksum() {
+    public void testInvalidChecksum() {
 
         assertFalse(katita.checkSumCheck("345812865"));
     }
