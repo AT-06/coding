@@ -5,6 +5,7 @@ package org.fundacionjala.coding.escarleth.movies;
  */
 public abstract class Movie {
     private final String title;
+    protected static final int DEFAULT_RENTER_POINT = 1;
 
     /**
      * Constructor Movie Class.
@@ -29,11 +30,8 @@ public abstract class Movie {
     abstract double determineRentalAmount(int daysRented);
 
     /**
-     * @param daysRented is the FrequentRenterPoints.
-     * @return FrequentRenterPoints .
+     * @param daysRented rental days.
+     * @return the total frequent renter points.
      */
-    int determinateFrequentRenterPoints(int daysRented) {
-        return 1;
-    }
-
+    abstract int calculateFrequentRenterPoints(int daysRented);
 }

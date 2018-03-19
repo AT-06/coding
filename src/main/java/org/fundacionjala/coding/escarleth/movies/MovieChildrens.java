@@ -25,4 +25,12 @@ public class MovieChildrens extends Movie {
 
         return daysRented > MAXIM ? (daysRented - MAXIM) * AMOUNT : AMOUNT;
     }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    int calculateFrequentRenterPoints(int daysRented) {
+        return DEFAULT_RENTER_POINT;
+    }
 }

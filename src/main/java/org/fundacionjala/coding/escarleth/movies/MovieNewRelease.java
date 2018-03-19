@@ -4,7 +4,7 @@ package org.fundacionjala.coding.escarleth.movies;
  * Powered by Escarleth L.
  */
 public class MovieNewRelease extends Movie {
-    private static final int AMOUNT = 3;
+    private static final double AMOUNT = 3.0;
 
     /**
      * Constructor for MovieNewRelease.
@@ -15,7 +15,8 @@ public class MovieNewRelease extends Movie {
         super(title);
     }
 
-    /** determineRentalAmount method.
+    /**
+     * determineRentalAmount method.
      * {@inheritDoc}
      */
     @Override
@@ -24,10 +25,10 @@ public class MovieNewRelease extends Movie {
     }
 
     /**
-     * @param daysRented is the quantity of rental days.
-     * @return the total frequent renter points .
+     * {@inheritDoc}
      */
-    int determinateFrequentRenterPoints(int daysRented) {
+    @Override
+    int calculateFrequentRenterPoints(int daysRented) {
         return daysRented > 1 ? 2 : 1;
     }
 }

@@ -23,4 +23,12 @@ public class MovieRegular extends Movie {
     double determineRentalAmount(int daysRented) {
         return daysRented > 2 ? (daysRented - 2.0) * AMOUNT : 2;
     }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    int calculateFrequentRenterPoints(int daysRented) {
+        return DEFAULT_RENTER_POINT;
+    }
 }
