@@ -38,7 +38,7 @@ public class Statement {
      * @return The built voucher in string format.
      */
     public String obtainVoucher() {
-        return obtainVoucherHeader() + obtainRentalDetail() + obtainTotals();
+        return String.format("%s%s%s", obtainVoucherHeader(), obtainRentalDetail(), obtainTotals());
     }
 
     /**
