@@ -33,7 +33,7 @@ public class CustomerTest {
         final int daysRented1 = 2;
         final int daysRented2 = 3;
         final int expectedResult = 4;
-        Customer customer = new Customer("Manuel");
+        Customer customer = new Customer("Andres");
         customer.addRental(new Rental(new Movie("Lord of the rings", priceCode), daysRented1));
         customer.addRental(new Rental(new Movie("The Hobbit", priceCode), daysRented2));
 
@@ -48,12 +48,12 @@ public class CustomerTest {
         final int priceCode = 1;
         final int daysRented1 = 2;
         final int daysRented2 = 3;
-        final String line1 = "Rental Record for Manuel\n";
+        final String line1 = "Rental Record for Pablo\n";
         final String line2 = "\tLord of the rings\t6.0\n";
         final String line3 = "\tThe Hobbit\t9.0\n";
         final String line4 = "Amount owed is 15.0\n";
         final String line5 = "You earned 4 frequent renter points";
-        Customer customer = new Customer("Manuel");
+        Customer customer = new Customer("Pablo");
         customer.addRental(new Rental(new Movie("Lord of the rings", priceCode), daysRented1));
         customer.addRental(new Rental(new Movie("The Hobbit", priceCode), daysRented2));
 

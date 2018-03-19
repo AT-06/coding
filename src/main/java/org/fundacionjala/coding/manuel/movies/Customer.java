@@ -1,15 +1,16 @@
 package org.fundacionjala.coding.manuel.movies;
 
 
-import java.util.Enumeration;
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * Created by Juan Manuel on 3/18/2018.
  */
 public class Customer {
     private String name;
-    private Vector rentals;
+    private List<Rental> rentals;
 
     /**
      * Constructor.
@@ -17,7 +18,7 @@ public class Customer {
      */
     public Customer(String name) {
         this.name = name;
-        rentals = new Vector();
+        rentals = new ArrayList<>();
     }
 
     /**
@@ -25,7 +26,7 @@ public class Customer {
      * @param arg .
      */
     public void addRental(Rental arg) {
-        rentals.addElement(arg);
+        rentals.add(arg);
     }
 
     /**
@@ -41,10 +42,8 @@ public class Customer {
      * @return result .
      */
     public String statement() {
-        Enumeration rentals = this.rentals.elements();
         String result = String.format("%s %s%s", "Rental Record for", getName(), "\n");
-        while (rentals.hasMoreElements()) {
-            Rental each = (Rental) rentals.nextElement();
+        for (Rental each : rentals) {
             //show figures for this rental
             result = result.concat(String.format("%s%s%s", "\t", each.getMovie().getTitle(), "\t"));
             result = result.concat(String.format("%s%s", String.valueOf(each.calculateAmountFromMovie()), "\n"));
@@ -62,9 +61,7 @@ public class Customer {
      */
     public double getTotalAmount() {
         double totalAmount = 0;
-        Enumeration rentals = this.rentals.elements();
-        while (rentals.hasMoreElements()) {
-            Rental each = (Rental) rentals.nextElement();
+        for (Rental each : rentals) {
             totalAmount += each.calculateAmountFromMovie();
         }
         return totalAmount;
@@ -77,9 +74,7 @@ public class Customer {
     public int getFrequentRenterPoints() {
         // add frequent renter points
         int frequentRenterPoints = 0;
-        Enumeration rentals = this.rentals.elements();
-        while (rentals.hasMoreElements()) {
-            Rental each = (Rental) rentals.nextElement();
+        for (Rental each : rentals) {
             frequentRenterPoints += each.calculateFrequentRenterPointsForMovie();
         }
         return frequentRenterPoints;
