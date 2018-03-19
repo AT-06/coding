@@ -12,21 +12,21 @@ public class Kata8 {
 
     public static final int CHECKSUM = 11;
     public static final int THREE = 3;
-    private static final Map<String, String> LIST = new HashMap<>();
+    private static final Map<String, String> NUMBERS_MAP = new HashMap<>();
     public static final int NUMBER = 9;
     public static final int LONG = 27;
 
     static {
-        LIST.put(" _ | ||_|", "0");
-        LIST.put("     |  |", "1");
-        LIST.put(" _  _||_ ", "2");
-        LIST.put(" _  _| _|", "3");
-        LIST.put("   |_|  |", "4");
-        LIST.put(" _ |_  _|", "5");
-        LIST.put(" _ |_ |_|", "6");
-        LIST.put(" _   |  |", "7");
-        LIST.put(" _ |_||_|", "8");
-        LIST.put(" _ |_| _|", "9");
+        NUMBERS_MAP.put(" _ | ||_|", "0");
+        NUMBERS_MAP.put("     |  |", "1");
+        NUMBERS_MAP.put(" _  _||_ ", "2");
+        NUMBERS_MAP.put(" _  _| _|", "3");
+        NUMBERS_MAP.put("   |_|  |", "4");
+        NUMBERS_MAP.put(" _ |_  _|", "5");
+        NUMBERS_MAP.put(" _ |_ |_|", "6");
+        NUMBERS_MAP.put(" _   |  |", "7");
+        NUMBERS_MAP.put(" _ |_||_|", "8");
+        NUMBERS_MAP.put(" _ |_| _|", "9");
     }
 
     /**
@@ -42,7 +42,7 @@ public class Kata8 {
             String digit = file1.substring(i, i + THREE)
                     .concat(file2.substring(i, i + THREE))
                     .concat(file3.substring(i, i + THREE));
-            digitSum.add(LIST.containsKey(digit) ? LIST.get(digit) : "?");
+            digitSum.add(NUMBERS_MAP.getOrDefault(digit, "?"));
         }
 
         return digitSum.toString();
@@ -56,14 +56,14 @@ public class Kata8 {
         if (serie.contains("?")) {
             return String.format("%s %s", serie, "ILL");
         }
-        return checkSumCheck(serie) ? serie : String.format("%s %s", serie, "ERR");
+        return isCheckSum(serie) ? serie : String.format("%s %s", serie, "ERR");
     }
 
     /**
      * @param serie A  string serie.
      * @return a checksum serie or not.
      */
-    public boolean checkSumCheck(String serie) {
+    public boolean isCheckSum(String serie) {
         int number = NUMBER;
         int sum = 0;
         for (int i = 0; i < serie.length(); i++) {

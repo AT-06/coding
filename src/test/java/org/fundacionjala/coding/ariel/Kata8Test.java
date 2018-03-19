@@ -102,7 +102,7 @@ public class Kata8Test {
     @Test
     public void testInvalidChecksum() {
 
-        assertFalse(katita.checkSumCheck("345812865"));
+        assertFalse(katita.isCheckSum("345812865"));
     }
 
     /**
@@ -111,6 +111,6 @@ public class Kata8Test {
      */
     @Test
     public void testValidChecksum() {
-        assertTrue(katita.checkSumCheck("123456789"));
+        assertTrue(katita.isCheckSum("123456789"));
     }
 }
