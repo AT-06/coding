@@ -17,7 +17,7 @@ public class ChildrenMovieTest {
     public void testCalculateAmountChildrenDaysRentedMoreThanThree() {
         final double expectedValue = 12.0;
         final int daysRented = 10;
-        Movie movie = new ChildrenMovie("Lego Movie", 2);
+        Movie movie = new ChildrenMovie("Lego Movie");
         assertEquals(expectedValue, movie.calculateAmount(daysRented), DELTA);
     }
 
@@ -27,7 +27,7 @@ public class ChildrenMovieTest {
     @Test
     public void testCalculateAmountChildrenDaysRentedLessThanThree() {
         final double expectedValue = 1.5;
-        Movie movie = new ChildrenMovie("Trolls", 2);
+        Movie movie = new ChildrenMovie("Trolls");
         assertEquals(expectedValue, movie.calculateAmount(DAYS_RENTED), DELTA);
     }
 }

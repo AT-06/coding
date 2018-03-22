@@ -19,8 +19,8 @@ public class CustomerTest {
         final int daysRented2 = 10;
         final double expectedResult = 20.5;
         Customer customer = new Customer("Manuel");
-        customer.addRental(new Rental(new RegularMovie("Titanic", 0), daysRented1));
-        customer.addRental(new Rental(new RegularMovie("The silent of the lambs", 0), daysRented2));
+        customer.addRental(new Rental(new RegularMovie("Titanic"), daysRented1));
+        customer.addRental(new Rental(new RegularMovie("The silent of the lambs"), daysRented2));
         assertEquals(expectedResult, customer.getTotalAmount(), DELTA);
     }
 
@@ -29,13 +29,12 @@ public class CustomerTest {
      */
     @Test
     public void testGetFrequentRenterPoints() {
-        final int priceCode = 1;
         final int daysRented1 = 2;
         final int daysRented2 = 3;
         final int expectedResult = 4;
         Customer customer = new Customer("Andres");
-        customer.addRental(new Rental(new NewReleaseMovie("Lord of the rings", priceCode), daysRented1));
-        customer.addRental(new Rental(new NewReleaseMovie("The Hobbit", priceCode), daysRented2));
+        customer.addRental(new Rental(new NewReleaseMovie("Lord of the rings"), daysRented1));
+        customer.addRental(new Rental(new NewReleaseMovie("The Hobbit"), daysRented2));
 
         assertEquals(expectedResult, customer.getFrequentRenterPoints(), DELTA);
     }
@@ -45,7 +44,6 @@ public class CustomerTest {
      */
     @Test
     public void testStatement() {
-        final int priceCode = 1;
         final int daysRented1 = 2;
         final int daysRented2 = 3;
         final String line1 = "Rental Record for Pablo\n";
@@ -54,8 +52,8 @@ public class CustomerTest {
         final String line4 = "Amount owed is 15.0\n";
         final String line5 = "You earned 4 frequent renter points";
         Customer customer = new Customer("Pablo");
-        customer.addRental(new Rental(new NewReleaseMovie("Lord of the rings", priceCode), daysRented1));
-        customer.addRental(new Rental(new NewReleaseMovie("The Hobbit", priceCode), daysRented2));
+        customer.addRental(new Rental(new NewReleaseMovie("Lord of the rings"), daysRented1));
+        customer.addRental(new Rental(new NewReleaseMovie("The Hobbit"), daysRented2));
 
         assertEquals(String.format("%s%s%s%s%s", line1, line2, line3, line4, line5), customer.statement());
     }

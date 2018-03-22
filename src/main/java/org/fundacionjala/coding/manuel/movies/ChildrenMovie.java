@@ -10,10 +10,9 @@ public class ChildrenMovie extends Movie {
     /**
      * Constructor.
      * @param title .
-     * @param priceCode .
      */
-    public ChildrenMovie(String title, int priceCode) {
-        super(title, priceCode);
+    public ChildrenMovie(String title) {
+        super(title);
     }
 
     /**

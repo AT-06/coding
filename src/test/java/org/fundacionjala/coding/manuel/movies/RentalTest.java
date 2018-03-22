@@ -16,7 +16,7 @@ public class RentalTest {
     @Test
     public void testCalculateAmountRegularMovieMoreThanTwoDaysRented() {
         final double expectedValue = 14.0;
-        Movie regularMovie = new RegularMovie("Batman", 0);
+        Movie regularMovie = new RegularMovie("Batman");
         Rental rental = new Rental(regularMovie, TEN);
         assertEquals(expectedValue, rental.calculateAmountFromMovie(), DELTA);
     }
@@ -27,7 +27,7 @@ public class RentalTest {
     @Test
     public void testCalculateAmountRegularMovieLessThanTwoDaysRented() {
         final double expectedValue = 2.0;
-        Movie regularMovie = new RegularMovie("Superman", 0);
+        Movie regularMovie = new RegularMovie("Superman");
         Rental rental = new Rental(regularMovie, 2);
         assertEquals(expectedValue, rental.calculateAmountFromMovie(), DELTA);
     }
@@ -39,7 +39,7 @@ public class RentalTest {
     public void testCalculateAmountRegularNewRelease() {
         final double expectedValue = 60.0;
         final int daysRented = 20;
-        Movie newReleaseMovie = new NewReleaseMovie("Infinity War", 1);
+        Movie newReleaseMovie = new NewReleaseMovie("Infinity War");
         Rental rental = new Rental(newReleaseMovie, daysRented);
         assertEquals(expectedValue, rental.calculateAmountFromMovie(), DELTA);
     }
@@ -51,7 +51,7 @@ public class RentalTest {
     public void testCalculateAmountRegularChildrenMoreThanThreeDaysRented() {
         final double expectedValue = 3.0;
         final int daysRented = 4;
-        Movie newChildrenMovie = new ChildrenMovie("Coco", 2);
+        Movie newChildrenMovie = new ChildrenMovie("Coco");
         Rental rental = new Rental(newChildrenMovie, daysRented);
         assertEquals(expectedValue, rental.calculateAmountFromMovie(), DELTA);
     }
@@ -63,7 +63,7 @@ public class RentalTest {
     public void testCalculateAmountRegularChildrenLessThanThreeDaysRented() {
         final double expectedValue = 1.5;
         final int daysRented = 3;
-        Movie newChildrenMovie = new ChildrenMovie("Ole", 2);
+        Movie newChildrenMovie = new ChildrenMovie("Ole");
         Rental rental = new Rental(newChildrenMovie, daysRented);
         assertEquals(expectedValue, rental.calculateAmountFromMovie(), DELTA);
     }
@@ -74,7 +74,7 @@ public class RentalTest {
     @Test
     public void testCalculateFrequentRenterPointsCase1() {
         final double expectedValue = 2.0;
-        Movie newNewReleaseMovie = new NewReleaseMovie("Pacific RIM", 1);
+        Movie newNewReleaseMovie = new NewReleaseMovie("Pacific RIM");
         Rental rental = new Rental(newNewReleaseMovie, TEN);
         assertEquals(expectedValue, rental.calculateFrequentRenterPointsForMovie(), DELTA);
     }
@@ -84,8 +84,8 @@ public class RentalTest {
      */
     @Test
     public void testCalculateFrequentRenterPointsCase2() {
-        final double expectedValue = 1.0;
-        Movie newRegularMovie = new NewReleaseMovie("Pacific RIM II", 0);
+        final double expectedValue = 2.0;
+        Movie newRegularMovie = new NewReleaseMovie("Pacific RIM II");
         Rental rental = new Rental(newRegularMovie, TEN);
         assertEquals(expectedValue, rental.calculateFrequentRenterPointsForMovie(), DELTA);
     }

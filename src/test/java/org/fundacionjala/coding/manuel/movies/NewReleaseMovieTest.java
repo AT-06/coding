@@ -17,7 +17,7 @@ public class NewReleaseMovieTest {
     public void testCalculateAmountNewRelease() {
         final double expectedValue = 24.0;
         final int daysRented = 8;
-        Movie movie = new NewReleaseMovie("Tom Raider", 1);
+        Movie movie = new NewReleaseMovie("Tom Raider");
         assertEquals(expectedValue, movie.calculateAmount(daysRented), DELTA);
     }
 
@@ -26,9 +26,16 @@ public class NewReleaseMovieTest {
      */
     @Test
     public void testCalculateFrequentRenterPointsNewReleaseAndDaysRented() {
-        Movie movie = new NewReleaseMovie("Game Night", 1);
+        Movie movie = new NewReleaseMovie("Game Night");
         assertEquals(2, movie.calculateFrequentRenterPoints(DAYS_RENTED));
     }
 
-
+    /**
+     * Seventh test.
+     */
+    @Test
+    public void testCalculateFrequentRenterPointsNewReleaseAndDaysRentedLower2() {
+        Movie movie = new NewReleaseMovie("Freddy vs Json");
+        assertEquals(1, movie.calculateFrequentRenterPoints(0));
+    }
 }

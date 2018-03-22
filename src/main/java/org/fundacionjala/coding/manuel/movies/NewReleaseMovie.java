@@ -8,10 +8,9 @@ public class NewReleaseMovie extends Movie {
     /**
      * Constructor.
      * @param title .
-     * @param priceCode .
      */
-    public NewReleaseMovie(String title, int priceCode) {
-        super(title, priceCode);
+    public NewReleaseMovie(String title) {
+        super(title);
     }
 
     /**
@@ -22,5 +21,10 @@ public class NewReleaseMovie extends Movie {
     @Override
     public double calculateAmount(int daysRented) {
         return Double.parseDouble(String.valueOf(daysRented)) * THREE;
+    }
+
+    @Override
+    public int calculateFrequentRenterPoints(int daysRented) {
+        return daysRented > 1 ? 2 : 1;
     }
 }

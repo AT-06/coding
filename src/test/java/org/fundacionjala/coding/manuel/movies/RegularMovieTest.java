@@ -17,7 +17,7 @@ public class RegularMovieTest {
     public void testCalculateAmountRegularDaysRentedMoreThanTwo() {
         final double expectedValue = 14.0;
         final int daysRented = 10;
-        Movie movie = new RegularMovie("Avatar", 0);
+        Movie movie = new RegularMovie("Avatar");
         assertEquals(expectedValue, movie.calculateAmount(daysRented), DELTA);
     }
 
@@ -28,7 +28,7 @@ public class RegularMovieTest {
     public void testCalculateAmountRegularDaysRentedLessThanTwo() {
         final int daysRented = 1;
         final double expectedValue = 2.0;
-        Movie movie = new RegularMovie("Bad Moms", 0);
+        Movie movie = new RegularMovie("Bad Moms");
         assertEquals(expectedValue, movie.calculateAmount(daysRented), DELTA);
     }
 
@@ -37,7 +37,7 @@ public class RegularMovieTest {
      */
     @Test
     public void testCalculateFrequentRenterPointsDaysRented() {
-        Movie movie = new RegularMovie("Hit and Run", 0);
+        Movie movie = new RegularMovie("Hit and Run");
         assertEquals(1, movie.calculateFrequentRenterPoints(DAYS_RENTED));
     }
 }

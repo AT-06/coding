@@ -9,10 +9,9 @@ public class RegularMovie extends Movie {
     /**
      * Constructor.
      * @param title .
-     * @param priceCode .
      */
-    public RegularMovie(String title, int priceCode) {
-        super(title, priceCode);
+    public RegularMovie(String title) {
+        super(title);
     }
 
     /**
