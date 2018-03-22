@@ -1,5 +1,6 @@
 package org.fundacionjala.coding.maria;
 
+
 import java.util.StringJoiner;
 
 /**
@@ -10,6 +11,7 @@ import java.util.StringJoiner;
 public class Kata1 {
     private static final int TAM = 5;
     private static final String BLANK_SPACE = " ";
+
 
     /**
      * @param words This is the sentence
