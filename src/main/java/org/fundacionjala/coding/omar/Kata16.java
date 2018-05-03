@@ -31,7 +31,7 @@ public class Kata16 {
     public static final String BLANK_SPACE = " ";
 
     /**
-     * @param str, String word.
+     * @param str String word.
      * @return result, reversed String word.
      */
     public static String reverseWords(String str) {
