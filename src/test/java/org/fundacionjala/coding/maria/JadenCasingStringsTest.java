@@ -7,7 +7,7 @@ import org.junit.Test;
 /**
  * Jaden_Casing_StringsTest contains test to the kata solution Jaden_Casing_StringsTest.
  */
-public class JadenCasingStringsTest { 
+public class JadenCasingStringsTest {
 
     private JadenCasingStrings jadenCase = new JadenCasingStrings();
 
@@ -16,8 +16,7 @@ public class JadenCasingStringsTest {
      */
     @Test
     public void test() {
-        String result = "toJadenCase doesn't return a valide JadenCase String! try again please :)";
-        assertEquals(result, jadenCase.toJadenCase("most trees are blue"), "Most Trees Are Blue");
+        assertEquals("Most Trees Are Blue", jadenCase.toJadenCase("most trees are blue"));
     }
     /**
      * second test with a null argument.
