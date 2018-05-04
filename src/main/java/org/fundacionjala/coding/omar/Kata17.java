@@ -16,7 +16,7 @@ package org.fundacionjala.coding.omar;
 /**
  * Write a function, which takes a non-negative integer (seconds) as input
  * and returns the time in a human-readable format (HH:MM:SS).
- * <p>
+ *
  * HH = hours, padded to 2 digits, range: 00 - 99.
  * MM = minutes, padded to 2 digits, range: 00 - 59.
  * SS = seconds, padded to 2 digits, range: 00 - 59.
@@ -33,6 +33,8 @@ public class Kata17 {
     private static final int NUMBER_100 = 100;
 
     /**
+     * Method to convert seconds to readable format.
+     *
      * @param inputSeconds input time in second format.
      * @return String, output time in readable format.
      */

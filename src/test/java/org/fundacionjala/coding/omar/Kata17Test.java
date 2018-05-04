@@ -20,7 +20,7 @@ import static org.junit.Assert.assertEquals;
 
 
 /**
- * Test to Kata17.
+ * Kata17Test contains test to the kata solution of Kata17.
  *
  * @author Omar Limbert Huanca Sanchez - AT-[06].
  * @version 1.0.
@@ -37,7 +37,7 @@ public class Kata17Test {
         kata = new Kata17();
     }
     /**
-     * Test rmake readable method.
+     * Test to makeReadable() method.
      */
     @Test
     public void testMakeReadable() {
