@@ -1,5 +1,5 @@
 /*
- * @(#)ReverseWords.java
+ * @(#)Kata16.java
  *
  * Copyright (c) 2018 Jala Foundation.
  * Address
@@ -34,7 +34,7 @@ public class Kata16 {
      * @param str String word.
      * @return result, reversed String word.
      */
-    public static String reverseWords(String str) {
+    public String reverseWords(String str) {
         List words = Arrays.asList(str.split(BLANK_SPACE));
         Collections.reverse(words);
         return String.join(BLANK_SPACE, words);
