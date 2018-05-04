@@ -12,12 +12,6 @@ package org.fundacionjala.coding.ariel;
 public class StrongNumber {
 
     /**
-     * The constructor.
-     */
-    public StrongNumber() {
-    }
-
-    /**
      * @param num An integer number.
      * @return if the number is STRONG OR Not Strong.
      */
