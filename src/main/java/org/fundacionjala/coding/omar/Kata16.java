@@ -28,7 +28,7 @@ import java.util.List;
  */
 public class Kata16 {
 
-    public static final String BLANK_SPACE = " ";
+    private static final String BLANK_SPACE = " ";
 
     /**
      * @param str String word.
