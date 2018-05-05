@@ -19,27 +19,17 @@ public class StrongNumber {
         String dig = String.valueOf(num);
         String[] digits = dig.split("");
         int sum = 0;
-        for (String digt : digits) {
-            sum += factorial(Integer.parseInt(digt));
+        for (String d : digits) {
+            sum += factorial(Integer.parseInt(d));
         }
-        if (sum == num) {
-            return "STRONG!!!!";
-        }
-        return "Not Strong !!";
+        return (sum == num) ? "STRONG!!!!" : "Not Strong !!";
     }
-
 
     /**
      * @param dig Integer number.
      * @return a facorial of the number.
      */
     private int factorial(int dig) {
-        if (dig != 1) {
-            return dig * factorial(dig - 1);
-        } else {
-            return 1;
-        }
+        return (dig != 1) ? dig * factorial(dig - 1) : 1;
     }
-
-
 }
