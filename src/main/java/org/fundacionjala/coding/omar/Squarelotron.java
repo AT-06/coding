@@ -21,11 +21,11 @@ package org.fundacionjala.coding.omar;
  */
 public class Squarelotron {
 
-    private int[][] squarelotron;
+    private int[][] squarelotronMatrix;
     private int size;
 
     /**
-     * Constructor to initialize squarelotron.
+     * Constructor to initialize squarelotronMatrix.
      *
      * @param sizeOfMatrix size of matrix.
      */
@@ -33,21 +33,21 @@ public class Squarelotron {
 
         // Initialize size of matrix.
         this.size = sizeOfMatrix;
-        this.squarelotron = new int[sizeOfMatrix][sizeOfMatrix];
+        this.squarelotronMatrix = new int[sizeOfMatrix][sizeOfMatrix];
 
         // Fill matrix with sizeOfMatrix.
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                squarelotron[i][j] = size * i + j + 1;
+                squarelotronMatrix[i][j] = size * i + j + 1;
             }
         }
     }
 
     /**
-     * Method to upsideDownFlip squarelotron.
+     * Method to upsideDownFlip squarelotronMatrix.
      *
      * @param ring integer value.
-     * @return squarelotronResult, new squarelotron updated.
+     * @return squarelotronResult, new squarelotronMatrix updated.
      */
     public Squarelotron upsideDownFlip(int ring) {
         Squarelotron squarelotronResult = new Squarelotron(this.size);
@@ -68,10 +68,10 @@ public class Squarelotron {
     }
 
     /**
-     * Method to mainDiagonalFlip squarelotron.
+     * Method to mainDiagonalFlip squarelotronMatrix.
      *
      * @param ring integer value.
-     * @return squarelotronResult, new squarelotron updated.
+     * @return squarelotronResult, new squarelotronMatrix updated.
      */
     public Squarelotron mainDiagonalFlip(int ring) {
         Squarelotron squarelotronResult = new Squarelotron(this.size);
@@ -92,8 +92,7 @@ public class Squarelotron {
      * @return int[][] , matrix updated.
      */
     public int[][] getSquarematrix() {
-        int[][] result = this.squarelotron;
-        return result;
+        return squarelotronMatrix;
     }
 
     /**
@@ -104,7 +103,7 @@ public class Squarelotron {
      * @param data integer value.
      */
     private void setData(int x, int y, int data) {
-        this.squarelotron[x][y] = data;
+        this.squarelotronMatrix[x][y] = data;
     }
 
     /**
@@ -115,6 +114,6 @@ public class Squarelotron {
      * @return int, data integer value.
      */
     private int getData(int x, int y) {
-        return this.squarelotron[x][y];
+        return this.squarelotronMatrix[x][y];
     }
 }
