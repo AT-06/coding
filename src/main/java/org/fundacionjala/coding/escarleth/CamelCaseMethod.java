@@ -17,12 +17,15 @@ public class CamelCaseMethod {
      * @return CamelCase Word.
      */
     public String camelCase(String words) {
-
-        return !words.isEmpty() ? Arrays.stream(words.split(" "))
-                .map(word -> word.length() > ONE ? word.substring(0, ONE).toUpperCase()
-                        .concat(word.substring(ONE)) : word.toUpperCase())
-                .collect(Collectors.joining()) : words;
+        if (!words.isEmpty()) {
+            return Arrays.stream(words.split(" "))
+                    .map(word -> word.length() > ONE ? word.substring(0, ONE).toUpperCase()
+                            .concat(word.substring(ONE)) : word.toUpperCase())
+                    .collect(Collectors.joining());
+        }
+        return words;
     }
 }
+
 
 
