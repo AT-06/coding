@@ -87,12 +87,46 @@ public class Squarelotron {
     }
 
     /**
+     * Method to rotateRight squarelotronMatrix.
+     *
+     * @param numberOfTurns integer value of number to turns.
+     */
+    void rotateRight(int numberOfTurns) {
+        int[][] result = new int[this.size][this.size];
+        while (Math.abs(numberOfTurns) > 0) {
+            for (int i = 0; i < this.size; i++) {
+                result[i] = this.squarelotronMatrix[i].clone();
+                for (int j = 0; j < this.size; j++) {
+                    if (numberOfTurns > 0) {
+                        result[i][j] = this.squarelotronMatrix[(this.size - 1) - j][i];
+                    } else if (numberOfTurns < 0) {
+                        result[i][j] = this.squarelotronMatrix[j][(this.size - 1) - i];
+                    }
+                }
+            }
+            numberOfTurns += numberOfTurns / (Math.abs(numberOfTurns) * -1);
+            cloneMatrix(result, this.squarelotronMatrix);
+        }
+    }
+    /**
+     * Method to cloneMatrix squarelotronMatrix.
+     *
+     * @param  matrixUpdated matrix updated.
+     * @param originalMatrix original matrix.
+     */
+    public void cloneMatrix(int[][] matrixUpdated, int[][] originalMatrix) {
+        for (int i = 0; i < this.size; i++) {
+            originalMatrix[i] = matrixUpdated[i].clone();
+        }
+    }
+
+    /**
      * Method to return matrix.
      *
      * @return int[][] , matrix updated.
      */
     public int[][] getSquarematrix() {
-        return squarelotronMatrix;
+        return this.squarelotronMatrix.clone();
     }
 
     /**
