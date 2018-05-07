@@ -4,6 +4,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;
 
+/**
+ * Kata17Test.java class for unit tests.
+ */
 public class Kata18Test {
     /**
      * Upside Down Flip Basic Test using Squarelotron with dimension two and ring one.
@@ -54,6 +57,19 @@ public class Kata18Test {
         final Kata18 squarelotron = new Kata18(dimension);
         final int[][] expectedMatrix = {{1, 2, 3, 4, 5}, {6, 7, 8, 9, 10}, {11, 12, 13, 14, 15},
                 {16, 17, 18, 19, 20}, {21, 22, 23, 24, 25}};
+        Kata18 result = squarelotron.upsideDownFlip(ringNumber);
+        assertArrayEquals(expectedMatrix, result.getSquarematrix());
+    }
+    /**
+     * Upside Down Flip Extended Test using Squarelotron with dimension five and ring two.
+     */
+    @Test
+    public void testUpsideDownFlipMatrixDimensionFiveRingTwo() {
+        final int ringNumber = 2;
+        final int dimension = 5;
+        final Kata18 squarelotron = new Kata18(dimension);
+        final int[][] expectedMatrix = {{1, 2, 3, 4, 5}, {6, 17, 18, 19, 10}, {11, 12, 13, 14, 15},
+                {16, 7, 8, 9, 20}, {21, 22, 23, 24, 25}};
         Kata18 result = squarelotron.upsideDownFlip(ringNumber);
         assertArrayEquals(expectedMatrix, result.getSquarematrix());
     }
