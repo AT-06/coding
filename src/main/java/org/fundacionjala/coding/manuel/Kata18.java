@@ -49,9 +49,7 @@ public class Kata18 {
      * @return the matrix.
      */
     public int[][] getSquarematrix() {
-        int[][] result;
-        result = this.squarelotron;
-        return result;
+        return this.squarelotron.clone();
     }
 
     /**
@@ -60,18 +58,18 @@ public class Kata18 {
      * @return the matrix fliped.
      */
     public Kata18 upsideDownFlip(int ringNumber) {
+        Kata18 result = new Kata18(this.size);
         int topLimit = this.size - ringNumber;
         int lowerLimit = (this.size - 1) - topLimit;
         for (int i = lowerLimit; i < this.size / 2; i++) {
             for (int j = lowerLimit; j <= topLimit; j++) {
                 if (i == lowerLimit || j == lowerLimit || j == topLimit) {
-                    int aux = this.squarelotron[i][j];
-                    this.squarelotron[i][j] = this.squarelotron[(i - (this.size - 1)) * (-1)][j];
-                    this.squarelotron[(i - (this.size - 1)) * (-1)][j] = aux;
+                    result.squarelotron[i][j] = this.squarelotron[(i - (this.size - 1)) * (-1)][j];
+                    result.squarelotron[(i - (this.size - 1)) * (-1)][j] = this.squarelotron[i][j];
                 }
             }
         }
-        return this;
+        return result;
     }
 
     /**
@@ -80,18 +78,18 @@ public class Kata18 {
      * @return the matrix fliped.
      */
     public Kata18 mainDiagonalFlip(int ringNumber) {
+        Kata18 result = new Kata18(this.size);
         int topLimit = this.size - ringNumber;
         int lowerLimit = (this.size - 1) - topLimit;
         for (int i = lowerLimit; i <= topLimit; i++) {
             for (int  j = lowerLimit; j <= topLimit; j++) {
                 if (j > i && (i == lowerLimit || j == topLimit)) {
-                    int aux = this.squarelotron[i][j];
-                    this.squarelotron[i][j] = this.squarelotron[j][i];
-                    this.squarelotron[j][i] = aux;
+                    result.squarelotron[i][j] = this.squarelotron[j][i];
+                    result.squarelotron[j][i] = this.squarelotron[i][j];
                 }
             }
         }
-        return this;
+        return result;
     }
 
     /**
