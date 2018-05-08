@@ -32,7 +32,7 @@ public class MaxProduct {
     public int adjacentElementsProduct(int[] ints) {
         int[] aux = new int[ints.length - 1];
         for (int i = 0; i < ints.length; i++) {
-            if (!(i == ints.length - 1)) {
+            if (i != ints.length - 1) {
                 aux[i] = ints[i] * ints[i + 1];
             }
         }
