@@ -72,7 +72,6 @@ public class KataMatrix {
         }
         return result;
     }
-
     /**
      * rotate the matrix right or left.
      * @param numberOfTurns in

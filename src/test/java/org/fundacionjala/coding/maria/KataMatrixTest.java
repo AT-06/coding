@@ -114,7 +114,6 @@ public class KataMatrixTest {
         squarelotron.rotateRight(numberOfTurns);
         assertArrayEquals(expectedMatrix, squarelotron.getSquarematrix());
     }
-
     /**
      * Rotate Clock Wise Test using Squarelotron with dimension four and zero number of turns.
      */
