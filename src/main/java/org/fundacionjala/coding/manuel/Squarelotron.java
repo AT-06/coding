@@ -104,7 +104,7 @@ public class Squarelotron {
                 for (int j = 0; j < this.size; j++) {
                     if (numberOfTurns > 0) {
                         result[i][j] = this.squarelotron[(this.size - 1) - j][i];
-                    } else if (numberOfTurns < 0) {
+                    } else {
                         result[i][j] = this.squarelotron[j][(this.size - 1) - i];
                     }
                 }
