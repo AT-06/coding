@@ -74,6 +74,63 @@ public class SquarelotronTest {
         assertArrayEquals(expectedMatrix, result.getSquarematrix());
     }
 
+
+    /**
+     * Upside Down Flip Extended Test using Squarelotron with dimension five and ring one.
+     */
+    @Test
+    public void testUpsideDownFlipMatrixDimensionFiveRingOne() {
+        final int ringNumber = 1;
+        final int dimension = 5;
+        final Squarelotron squarelotron = new Squarelotron(dimension);
+        final int[][] expectedMatrix = {{21, 22, 23, 24, 25}, {16, 7, 8, 9, 20}, {11, 12, 13, 14, 15},
+                {6, 17, 18, 19, 10}, {1, 2, 3, 4, 5}};
+        Squarelotron result = squarelotron.upsideDownFlip(ringNumber);
+        assertArrayEquals(expectedMatrix, result.getSquarematrix());
+    }
+
+    /**
+     * Upside Down Flip Extended Test using Squarelotron with dimension six and ring one.
+     */
+    @Test
+    public void testUpsideDownFlipMatrixDimensionSixRingOne() {
+        final int ringNumber = 1;
+        final int dimension = 6;
+        final Squarelotron squarelotron = new Squarelotron(dimension);
+        final int[][] expectedMatrix = {{31, 32, 33, 34, 35, 36}, {25, 8, 9, 10, 11, 30}, {19, 14, 15, 16, 17, 24},
+                {13, 20, 21, 22, 23, 18}, {7, 26, 27, 28, 29, 12}, {1, 2, 3, 4, 5, 6}};
+        Squarelotron result = squarelotron.upsideDownFlip(ringNumber);
+        assertArrayEquals(expectedMatrix, result.getSquarematrix());
+    }
+
+    /**
+     * Upside Down Flip Extended Test using Squarelotron with dimension six and ring two.
+     */
+    @Test
+    public void testUpsideDownFlipMatrixDimensionSixRingTwo() {
+        final int ringNumber = 2;
+        final int dimension = 6;
+        final Squarelotron squarelotron = new Squarelotron(dimension);
+        final int[][] expectedMatrix = {{1, 2, 3, 4, 5, 6}, {7, 26, 27, 28, 29, 12}, {13, 20, 15, 16, 23, 18},
+                {19, 14, 21, 22, 17, 24}, {25, 8, 9, 10, 11, 30}, {31, 32, 33, 34, 35, 36}};
+        Squarelotron result = squarelotron.upsideDownFlip(ringNumber);
+        assertArrayEquals(expectedMatrix, result.getSquarematrix());
+    }
+
+    /**
+     * Upside Down Flip Extended Test using Squarelotron with dimension six and ring three.
+     */
+    @Test
+    public void testUpsideDownFlipMatrixDimensionSixRingThree() {
+        final int ringNumber = 3;
+        final int dimension = 6;
+        final Squarelotron squarelotron = new Squarelotron(dimension);
+        final int[][] expectedMatrix = {{1, 2, 3, 4, 5, 6}, {7, 8, 9, 10, 11, 12}, {13, 14, 21, 22, 17, 18},
+                {19, 20, 15, 16, 23, 24}, {25, 26, 27, 28, 29, 30}, {31, 32, 33, 34, 35, 36}};
+        Squarelotron result = squarelotron.upsideDownFlip(ringNumber);
+        assertArrayEquals(expectedMatrix, result.getSquarematrix());
+    }
+
     /**
      * Main Diagonal Flip Test using Squarelotron with dimension four and ring one.
      */
@@ -164,5 +221,4 @@ public class SquarelotronTest {
         squarelotron.rotateRight(numberOfTurns);
         assertArrayEquals(expectedMatrix, squarelotron.getSquarematrix());
     }
-
 }

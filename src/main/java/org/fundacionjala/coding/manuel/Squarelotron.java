@@ -62,7 +62,7 @@ public class Squarelotron {
         int lowerLimit = ringNumber - 1;
         for (int i = lowerLimit; i < this.size / 2; i++) {
             for (int j = lowerLimit; j <= (this.size - ringNumber); j++) {
-                if (i == lowerLimit) {
+                if (i == lowerLimit || j == lowerLimit || j == this.size - ringNumber) {
                     result.matrix[i][j] = this.matrix[(i - (this.size - 1)) * (-1)][j];
                     result.matrix[(i - (this.size - 1)) * (-1)][j] = this.matrix[i][j];
                 }
