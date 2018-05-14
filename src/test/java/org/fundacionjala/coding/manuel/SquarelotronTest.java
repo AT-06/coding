@@ -7,7 +7,7 @@ import static org.junit.Assert.assertArrayEquals;
 /**
  * Kata17Test.java class for unit tests.
  */
-public class Kata18Test {
+public class SquarelotronTest {
     /**
      * Upside Down Flip Basic Test using Squarelotron with dimension two and ring one.
      */
@@ -15,9 +15,9 @@ public class Kata18Test {
     public void testUpsideDownFlipMatrixDimensionTwo() {
         final int ringNumber = 1;
         final int dimension = 2;
-        final Kata18 squarelotron = new Kata18(dimension);
+        final Squarelotron squarelotron = new Squarelotron(dimension);
         final int[][] expectedMatrix = {{3, 4}, {1, 2}};
-        Kata18 result = squarelotron.upsideDownFlip(ringNumber);
+        Squarelotron result = squarelotron.upsideDownFlip(ringNumber);
         assertArrayEquals(expectedMatrix, result.getSquarematrix());
     }
 
@@ -28,9 +28,9 @@ public class Kata18Test {
     public void testUpsideDownFlipMatrixDimensionThree() {
         final int ringNumber = 1;
         final int dimension = 3;
-        final Kata18 squarelotron = new Kata18(dimension);
+        final Squarelotron squarelotron = new Squarelotron(dimension);
         final int[][] expectedMatrix = {{7, 8, 9}, {4, 5, 6}, {1, 2, 3}};
-        Kata18 result = squarelotron.upsideDownFlip(ringNumber);
+        Squarelotron result = squarelotron.upsideDownFlip(ringNumber);
         assertArrayEquals(expectedMatrix, result.getSquarematrix());
     }
 
@@ -41,9 +41,9 @@ public class Kata18Test {
     public void testUpsideDownFlipMatrixDimensionFourRingTwo() {
         final int ringNumber = 2;
         final int dimension = 4;
-        final Kata18 squarelotron = new Kata18(dimension);
+        final Squarelotron squarelotron = new Squarelotron(dimension);
         final int[][] expectedMatrix = {{1, 2, 3, 4}, {5, 10, 11, 8}, {9, 6, 7, 12}, {13, 14, 15, 16}};
-        Kata18 result = squarelotron.upsideDownFlip(ringNumber);
+        Squarelotron result = squarelotron.upsideDownFlip(ringNumber);
         assertArrayEquals(expectedMatrix, result.getSquarematrix());
     }
 
@@ -54,10 +54,10 @@ public class Kata18Test {
     public void testUpsideDownFlipMatrixDimensionFiveRingThree() {
         final int ringNumber = 3;
         final int dimension = 5;
-        final Kata18 squarelotron = new Kata18(dimension);
+        final Squarelotron squarelotron = new Squarelotron(dimension);
         final int[][] expectedMatrix = {{1, 2, 3, 4, 5}, {6, 7, 8, 9, 10}, {11, 12, 13, 14, 15},
                 {16, 17, 18, 19, 20}, {21, 22, 23, 24, 25}};
-        Kata18 result = squarelotron.upsideDownFlip(ringNumber);
+        Squarelotron result = squarelotron.upsideDownFlip(ringNumber);
         assertArrayEquals(expectedMatrix, result.getSquarematrix());
     }
     /**
@@ -67,10 +67,10 @@ public class Kata18Test {
     public void testUpsideDownFlipMatrixDimensionFiveRingTwo() {
         final int ringNumber = 2;
         final int dimension = 5;
-        final Kata18 squarelotron = new Kata18(dimension);
+        final Squarelotron squarelotron = new Squarelotron(dimension);
         final int[][] expectedMatrix = {{1, 2, 3, 4, 5}, {6, 17, 18, 19, 10}, {11, 12, 13, 14, 15},
                 {16, 7, 8, 9, 20}, {21, 22, 23, 24, 25}};
-        Kata18 result = squarelotron.upsideDownFlip(ringNumber);
+        Squarelotron result = squarelotron.upsideDownFlip(ringNumber);
         assertArrayEquals(expectedMatrix, result.getSquarematrix());
     }
 
@@ -81,9 +81,9 @@ public class Kata18Test {
     public void testMainDiagonalFlipMatrixDimensionFourRingOne() {
         final int ringNumber = 1;
         final int dimension = 4;
-        final Kata18 squarelotron = new Kata18(dimension);
+        final Squarelotron squarelotron = new Squarelotron(dimension);
         final int[][] expectedMatrix = {{1, 5, 9, 13}, {2, 6, 7, 14}, {3, 10, 11, 15}, {4, 8, 12, 16}};
-        Kata18 result = squarelotron.mainDiagonalFlip(ringNumber);
+        Squarelotron result = squarelotron.mainDiagonalFlip(ringNumber);
         assertArrayEquals(expectedMatrix, result.getSquarematrix());
     }
 
@@ -94,9 +94,9 @@ public class Kata18Test {
     public void testMainDiagonalFlipMatrixDimensionFourRingTwo() {
         final int ringNumber = 2;
         final int dimension = 4;
-        final Kata18 squarelotron = new Kata18(dimension);
+        final Squarelotron squarelotron = new Squarelotron(dimension);
         final int[][] expectedMatrix = {{1, 2, 3, 4}, {5, 6, 10, 8}, {9, 7, 11, 12}, {13, 14, 15, 16}};
-        Kata18 result = squarelotron.mainDiagonalFlip(ringNumber);
+        Squarelotron result = squarelotron.mainDiagonalFlip(ringNumber);
         assertArrayEquals(expectedMatrix, result.getSquarematrix());
     }
 
@@ -107,7 +107,7 @@ public class Kata18Test {
     public void testRotateClockwise() {
         final int dimension = 4;
         final int numberOfTurns = 1;
-        final Kata18 squarelotron = new Kata18(dimension);
+        final Squarelotron squarelotron = new Squarelotron(dimension);
         final int[][] expectedMatrix = {{13, 9, 5, 1}, {14, 10, 6, 2}, {15, 11, 7, 3}, {16, 12, 8, 4}};
         squarelotron.rotateRight(numberOfTurns);
         assertArrayEquals(expectedMatrix, squarelotron.getSquarematrix());
@@ -120,7 +120,7 @@ public class Kata18Test {
     public void testRotateCounterClockwise() {
         final int dimension = 4;
         final int numberOfTurns = -2;
-        final Kata18 squarelotron = new Kata18(dimension);
+        final Squarelotron squarelotron = new Squarelotron(dimension);
         final int[][] expectedMatrix = {{16, 15, 14, 13}, {12, 11, 10, 9}, {8, 7, 6, 5}, {4, 3, 2, 1}};
         squarelotron.rotateRight(numberOfTurns);
         assertArrayEquals(expectedMatrix, squarelotron.getSquarematrix());
@@ -133,7 +133,7 @@ public class Kata18Test {
     public void testRotateClockwiseZeroTurns() {
         final int dimension = 4;
         final int numberOfTurns = 0;
-        final Kata18 squarelotron = new Kata18(dimension);
+        final Squarelotron squarelotron = new Squarelotron(dimension);
         final int[][] expectedMatrix = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
         squarelotron.rotateRight(numberOfTurns);
         assertArrayEquals(expectedMatrix, squarelotron.getSquarematrix());
@@ -146,7 +146,7 @@ public class Kata18Test {
     public void testRotateClockwiseEntireTurn() {
         final int dimension = 4;
         final int numberOfTurns = 4;
-        final Kata18 squarelotron = new Kata18(dimension);
+        final Squarelotron squarelotron = new Squarelotron(dimension);
         final int[][] expectedMatrix = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
         squarelotron.rotateRight(numberOfTurns);
         assertArrayEquals(expectedMatrix, squarelotron.getSquarematrix());
@@ -159,7 +159,7 @@ public class Kata18Test {
     public void testRotateCounterClockwiseEntireTurn() {
         final int dimension = 4;
         final int numberOfTurns = -4;
-        final Kata18 squarelotron = new Kata18(dimension);
+        final Squarelotron squarelotron = new Squarelotron(dimension);
         final int[][] expectedMatrix = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
         squarelotron.rotateRight(numberOfTurns);
         assertArrayEquals(expectedMatrix, squarelotron.getSquarematrix());

@@ -7,10 +7,10 @@
 package org.fundacionjala.coding.manuel;
 
 /**
- * Kata18.java
+ * Squarelotron.java
  * Class for kata 18.
  */
-public class Kata18 {
+public class Squarelotron {
 
     /**
      * Matrix attribute.*/
@@ -24,7 +24,7 @@ public class Kata18 {
      * Constructor.
      * @param dimension the size of the matrix.
      */
-    public Kata18(int dimension) {
+    public Squarelotron(int dimension) {
         this.size = dimension;
         this.squarelotron = fillMatrix(this.size);
     }
@@ -57,8 +57,8 @@ public class Kata18 {
      * @param ringNumber the ring to flip values.
      * @return the matrix fliped.
      */
-    public Kata18 upsideDownFlip(int ringNumber) {
-        Kata18 result = new Kata18(this.size);
+    public Squarelotron upsideDownFlip(int ringNumber) {
+        Squarelotron result = new Squarelotron(this.size);
         int topLimit = this.size - ringNumber;
         int lowerLimit = (this.size - 1) - topLimit;
         for (int i = lowerLimit; i < this.size / 2; i++) {
@@ -77,8 +77,8 @@ public class Kata18 {
      * @param ringNumber the ring to flip values.
      * @return the matrix fliped.
      */
-    public Kata18 mainDiagonalFlip(int ringNumber) {
-        Kata18 result = new Kata18(this.size);
+    public Squarelotron mainDiagonalFlip(int ringNumber) {
+        Squarelotron result = new Squarelotron(this.size);
         int topLimit = this.size - ringNumber;
         int lowerLimit = (this.size - 1) - topLimit;
         for (int i = lowerLimit; i <= topLimit; i++) {
