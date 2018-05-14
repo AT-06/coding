@@ -63,7 +63,7 @@ public class Squarelotron {
         int lowerLimit = (this.size - 1) - topLimit;
         for (int i = lowerLimit; i < this.size / 2; i++) {
             for (int j = lowerLimit; j <= topLimit; j++) {
-                if (i == lowerLimit || j == lowerLimit || j == topLimit) {
+                if (i == lowerLimit) {
                     result.squarelotron[i][j] = this.squarelotron[(i - (this.size - 1)) * (-1)][j];
                     result.squarelotron[(i - (this.size - 1)) * (-1)][j] = this.squarelotron[i][j];
                 }
