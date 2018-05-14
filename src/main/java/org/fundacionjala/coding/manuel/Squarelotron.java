@@ -35,13 +35,13 @@ public class Squarelotron {
      * @return the matrix with values.
      */
     public int[][] fillMatrix(int size) {
-        int[][] matrix = new int[size][size];
+        int[][] result = new int[size][size];
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                matrix[i][j] = size * i + j + 1;
+                result[i][j] = size * i + j + 1;
             }
         }
-        return matrix;
+        return result;
     }
 
     /**
@@ -59,10 +59,9 @@ public class Squarelotron {
      */
     public Squarelotron upsideDownFlip(int ringNumber) {
         Squarelotron result = new Squarelotron(this.size);
-        int topLimit = this.size - ringNumber;
-        int lowerLimit = (this.size - 1) - topLimit;
+        int lowerLimit = ringNumber - 1;
         for (int i = lowerLimit; i < this.size / 2; i++) {
-            for (int j = lowerLimit; j <= topLimit; j++) {
+            for (int j = lowerLimit; j <= (this.size - ringNumber); j++) {
                 if (i == lowerLimit) {
                     result.matrix[i][j] = this.matrix[(i - (this.size - 1)) * (-1)][j];
                     result.matrix[(i - (this.size - 1)) * (-1)][j] = this.matrix[i][j];
