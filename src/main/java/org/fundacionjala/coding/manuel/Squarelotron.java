@@ -14,7 +14,7 @@ public class Squarelotron {
 
     /**
      * Matrix attribute.*/
-    private int[][] squarelotron;
+    private int[][] matrix;
 
     /**
      * Matrix' size attribute.*/
@@ -26,7 +26,7 @@ public class Squarelotron {
      */
     public Squarelotron(int dimension) {
         this.size = dimension;
-        this.squarelotron = fillMatrix(this.size);
+        this.matrix = fillMatrix(this.size);
     }
 
     /**
@@ -49,7 +49,7 @@ public class Squarelotron {
      * @return the matrix.
      */
     public int[][] getSquarematrix() {
-        return this.squarelotron.clone();
+        return this.matrix.clone();
     }
 
     /**
@@ -64,8 +64,8 @@ public class Squarelotron {
         for (int i = lowerLimit; i < this.size / 2; i++) {
             for (int j = lowerLimit; j <= topLimit; j++) {
                 if (i == lowerLimit) {
-                    result.squarelotron[i][j] = this.squarelotron[(i - (this.size - 1)) * (-1)][j];
-                    result.squarelotron[(i - (this.size - 1)) * (-1)][j] = this.squarelotron[i][j];
+                    result.matrix[i][j] = this.matrix[(i - (this.size - 1)) * (-1)][j];
+                    result.matrix[(i - (this.size - 1)) * (-1)][j] = this.matrix[i][j];
                 }
             }
         }
@@ -84,8 +84,8 @@ public class Squarelotron {
         for (int i = lowerLimit; i <= topLimit; i++) {
             for (int  j = lowerLimit; j <= topLimit; j++) {
                 if (j > i && (i == lowerLimit || j == topLimit)) {
-                    result.squarelotron[i][j] = this.squarelotron[j][i];
-                    result.squarelotron[j][i] = this.squarelotron[i][j];
+                    result.matrix[i][j] = this.matrix[j][i];
+                    result.matrix[j][i] = this.matrix[i][j];
                 }
             }
         }
@@ -100,17 +100,17 @@ public class Squarelotron {
         int[][] result = new int[this.size][this.size];
         while (Math.abs(numberOfTurns) > 0) {
             for (int i = 0; i < this.size; i++) {
-                result[i] = this.squarelotron[i].clone();
+                result[i] = this.matrix[i].clone();
                 for (int j = 0; j < this.size; j++) {
                     if (numberOfTurns > 0) {
-                        result[i][j] = this.squarelotron[(this.size - 1) - j][i];
+                        result[i][j] = this.matrix[(this.size - 1) - j][i];
                     } else {
-                        result[i][j] = this.squarelotron[j][(this.size - 1) - i];
+                        result[i][j] = this.matrix[j][(this.size - 1) - i];
                     }
                 }
             }
             numberOfTurns += numberOfTurns / (Math.abs(numberOfTurns) * -1);
-            cloneMatrix(result, this.squarelotron);
+            cloneMatrix(result, this.matrix);
         }
     }
 
