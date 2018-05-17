@@ -1,5 +1,5 @@
 /*
- * @(#)Kata17.java
+ * @(#)HumanReadableTime.java
  *
  * Copyright (c) 2018 Jala Foundation.
  * Address
@@ -26,7 +26,7 @@ package org.fundacionjala.coding.omar;
  * @author Omar Limbert Huanca Sanchez - AT-[06].
  * @version 1.0.
  */
-public class Kata17 {
+public class HumanReadableTime {
 
     private static final int HOURS_TO_SECONDS = 3600;
     private static final int MINUTES_TO_SECONDS = 60;

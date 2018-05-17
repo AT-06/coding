@@ -20,21 +20,21 @@ import static org.junit.Assert.assertEquals;
 
 
 /**
- * Kata17Test contains test to the kata solution of Kata17.
+ * HumanReadableTimeTest contains test to the kata solution of HumanReadableTime.
  *
  * @author Omar Limbert Huanca Sanchez - AT-[06].
  * @version 1.0.
  */
-public class Kata17Test {
+public class HumanReadableTimeTest {
 
-    private Kata17 kata;
+    private HumanReadableTime kata;
     /**
      * init Kata.
      */
     @Before
     public void init() {
 
-        kata = new Kata17();
+        kata = new HumanReadableTime();
     }
     /**
      * Test to makeReadable() method.
