@@ -1,5 +1,5 @@
 /*
- * @(#)Kata16Test.java
+ * @(#)ReverseWordsTest.java
  *
  * Copyright (c) 2018 Jala Foundation.
  * Address
@@ -19,21 +19,21 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Test to Kata16.
+ * Test to ReverseWords.
  *
  * @author Omar Limbert Huanca Sanchez - AT-[06].
  * @version 1.0.
  */
-public class Kata16Test {
+public class ReverseWordsTest {
 
-    private Kata16 kata;
+    private ReverseWords kata;
     /**
      * init Kata.
      */
     @Before
     public void init() {
 
-        kata = new Kata16();
+        kata = new ReverseWords();
     }
     /**
      * Test reverse word method.

@@ -1,5 +1,5 @@
 /*
- * @(#)Kata16.java
+ * @(#)ReverseWords.java
  *
  * Copyright (c) 2018 Jala Foundation.
  * Address
@@ -26,7 +26,7 @@ import java.util.List;
  * @author Omar Limbert Huanca Sanchez - AT-[06].
  * @version 1.0.
  */
-public class Kata16 {
+public class ReverseWords {
 
     private static final String BLANK_SPACE = " ";
 
