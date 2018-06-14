@@ -82,7 +82,7 @@ public class CesarEncryption {
     private int getAsciiIndex(int ascii) {
         if (ascii > ASCII_MAX) {
             return ascii - DIFFERENCE;
-        } else if ((ascii < ASCII_MIN)) {
+        } else if (ascii < ASCII_MIN) {
             return ascii + DIFFERENCE;
         } else {
             return ascii;
