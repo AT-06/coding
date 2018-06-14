@@ -11,18 +11,12 @@ public final class CesarCrypto {
     private static final int ASCII_UPPER_PLUS = 91;
 
     /**
-     * Constructor.
-     */
-    private CesarCrypto() {
-    }
-
-    /**
      * Method to encode a text using Cesar algorithm.
      * @param text to encode.
      * @param key movements to make.
      * @return the text encoded.
      */
-    public static String encode(String text, int key) {
+    public String encode(String text, int key) {
         if (text == null || text.length() == 0) {
             return "";
         }
@@ -39,7 +33,7 @@ public final class CesarCrypto {
      * @param key the number of rotations to make.
      * @return the letter rotated.
      */
-    public static String rotateLetters(String word, int key) {
+    public String rotateLetters(String word, int key) {
         char[] letters = word.toCharArray();
         StringBuilder encriptedWord = new StringBuilder();
         for (char letter : letters) {
