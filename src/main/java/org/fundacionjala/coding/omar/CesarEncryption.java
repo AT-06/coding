@@ -80,10 +80,13 @@ public class CesarEncryption {
      * @return Integer, index of new ascii.
      */
     private int getAsciiIndex(int ascii) {
-        return ascii > ASCII_MAX
-                ? ascii - DIFFERENCE
-                : ascii < ASCII_MIN ? ascii + DIFFERENCE
-                : ascii;
+        if (ascii > ASCII_MAX) {
+            return ascii - DIFFERENCE;
+        } else if ((ascii < ASCII_MIN)) {
+            return ascii + DIFFERENCE;
+        } else {
+            return ascii;
+        }
     }
 }
 
