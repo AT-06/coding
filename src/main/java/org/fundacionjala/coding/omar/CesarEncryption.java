@@ -29,30 +29,30 @@ public class CesarEncryption {
     /**
      * Method to encode Message a string to new string.
      *
-     * @param message .
-     * @param key     .
-     * @return String , string already encodeMessage.
+     * @param message This is message to encode.
+     * @param key     This is key for encode.
+     * @return String , string already encode with Cesar Encryption.
      */
-    public String encodeMessage(String message, int key) {
+    public String encodeMessageWithCesarEncryption(String message, int key) {
         return message == null || message.trim().isEmpty()
                 ? ""
                 : Arrays.stream(message.split(""))
-                .map(letter -> String.valueOf(algorithm(letter, key, true)))
+                .map(letter -> String.valueOf(this.algorithm(letter, key)))
                 .collect(Collectors.joining());
     }
 
     /**
      * Method to decode Message a string to new string.
      *
-     * @param message .
-     * @param key     .
-     * @return String , string already encodeMessage.
+     * @param message This is message to decode.
+     * @param key     This is key for decode.
+     * @return String , string already encode with Cesar Encryption.
      */
-    public String decodeMessage(String message, int key) {
+    public String decodeMessageWithCesarEncryption(String message, int key) {
         return message == null || message.trim().isEmpty()
                 ? ""
                 : Arrays.stream(message.split(""))
-                .map(letter -> String.valueOf(algorithm(letter, key * -1, false)))
+                .map(letter -> String.valueOf(this.algorithm(letter, -key)))
                 .collect(Collectors.joining());
     }
 
@@ -61,28 +61,29 @@ public class CesarEncryption {
      *
      * @param letter letter to encode or decode.
      * @param key    key to encode or decode.
-     * @param type   is true to encode a letter, false to decode a letter.
      * @return char, letter already encode or decode.
      */
-    public char algorithm(String letter, int key, boolean type) {
-        int index = letter.charAt(0) + key;
-        char result;
-        if (type) {
-            if (index >= ASCII_MAX) {
-                result = (char) (index - DIFFERENCE);
-            } else {
+    public char algorithm(String letter, int key) {
+        int currentlyAscii = letter.charAt(0);
+        int finalAscii = this.getAsciiIndex(currentlyAscii + key);
 
-                result = (char) (index);
-            }
-        } else {
-            if (index <= ASCII_MIN) {
-                result = (char) (index + DIFFERENCE);
-            } else {
-                result = (char) (index);
-            }
-        }
-        return result;
+        return currentlyAscii >= ASCII_MIN && currentlyAscii <= ASCII_MAX
+                ? (char) finalAscii
+                : letter.charAt(0);
+
     }
 
+    /**
+     * Method to get ascii index.
+     *
+     * @param ascii ascii integer value.
+     * @return Integer, index of new ascii.
+     */
+    private int getAsciiIndex(int ascii) {
+        return ascii > ASCII_MAX
+                ? ascii - DIFFERENCE
+                : ascii < ASCII_MIN ? ascii + DIFFERENCE
+                : ascii;
+    }
 }
 

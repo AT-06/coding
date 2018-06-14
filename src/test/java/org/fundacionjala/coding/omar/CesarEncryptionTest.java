@@ -44,8 +44,8 @@ public class CesarEncryptionTest {
     public void testEncodeWithPositiveKey() {
         final int key1 = 3;
         final int key2 = 5;
-        assertEquals("KROD", enconde.encodeMessage("HOLA", key1));
-        assertEquals("ETWWT", enconde.encodeMessage("ZORRO", key2));
+        assertEquals("KROD", enconde.encodeMessageWithCesarEncryption("HOLA", key1));
+        assertEquals("ETWWT", enconde.encodeMessageWithCesarEncryption("ZORRO", key2));
     }
 
     /**
@@ -54,17 +54,27 @@ public class CesarEncryptionTest {
     @Test
     public void testEncodeWithNegativeKey() {
         final int key = -3;
-        assertEquals("HOLA", enconde.encodeMessage("KROD", key));
+        assertEquals("HOLA", enconde.encodeMessageWithCesarEncryption("KROD", key));
     }
 
     /**
      * Test to encode message with a key.
      */
     @Test
-    public void testEncondeWithBlankSpaceAndNullMessage() {
+    public void testEncodeWithBlankSpaceAndNullMessage() {
         final int key = 5;
-        assertEquals("", enconde.encodeMessage("", key));
-        assertEquals("", enconde.encodeMessage(null, key));
+        assertEquals("", enconde.encodeMessageWithCesarEncryption("", key));
+        assertEquals("", enconde.encodeMessageWithCesarEncryption(null, key));
+    }
+
+    /**
+     * Test to encode message with a key.
+     */
+    @Test
+    public void testEncodeWithSpecialCharactersAndBlankSpace() {
+        final int key = 3;
+        assertEquals("K_ROD", enconde.encodeMessageWithCesarEncryption("H_OLA", key));
+        assertEquals("KROD CRUUR", enconde.encodeMessageWithCesarEncryption("HOLA ZORRO", key));
     }
 
     /**
@@ -73,8 +83,18 @@ public class CesarEncryptionTest {
     @Test
     public void testDecodeWithPositiveKey() {
         final int key = 3;
-        assertEquals("X", enconde.decodeMessage("A", key));
-        assertEquals("W", enconde.decodeMessage("Z", key));
+        assertEquals("X", enconde.decodeMessageWithCesarEncryption("A", key));
+        assertEquals("W", enconde.decodeMessageWithCesarEncryption("Z", key));
+    }
+
+    /**
+     * Test to decode message with a key.
+     */
+    @Test
+    public void testDecodeWithNegativeKey() {
+        final int key = -3;
+        assertEquals("FKVG", enconde.decodeMessageWithCesarEncryption("CHSD", key));
+        assertEquals("CCGIV VGI", enconde.decodeMessageWithCesarEncryption("ZZDFS SDF", key));
     }
 
     /**
@@ -83,8 +103,18 @@ public class CesarEncryptionTest {
     @Test
     public void testDecodeWithBlankAndNullMessage() {
         final int key = 3;
-        assertEquals("", enconde.decodeMessage("", key));
-        assertEquals("", enconde.decodeMessage(null, key));
+        assertEquals("", enconde.decodeMessageWithCesarEncryption("", key));
+        assertEquals("", enconde.decodeMessageWithCesarEncryption(null, key));
+    }
+
+    /**
+     * Test to encode message with a key.
+     */
+    @Test
+    public void testDecodeWithSpecialCharactersAndBlankSpace() {
+        final int key = 3;
+        assertEquals("H_OLA", enconde.decodeMessageWithCesarEncryption("K_ROD", key));
+        assertEquals("HOLA ZORRO", enconde.decodeMessageWithCesarEncryption("KROD CRUUR", key));
     }
 }
 
