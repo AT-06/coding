@@ -7,6 +7,7 @@ import java.util.StringJoiner;
 public final class CesarCrypto {
 
     private static final int ASCII_LOWER = 64;
+    private static final int ASCII_LOWER_UNDER = 65;
     private static final int ASCII_UPPER = 90;
     private static final int ASCII_UPPER_PLUS = 91;
 
@@ -17,6 +18,26 @@ public final class CesarCrypto {
      * @return the text encoded.
      */
     public String encode(String text, int key) {
+        return coreCall(text, key);
+    }
+
+    /**
+     * Method to decode a text using Cesar algorithm.
+     * @param text to decode.
+     * @param key movements to make.
+     * @return the text encoded.
+     */
+    public String decode(String text, int key) {
+        return coreCall(text, -key);
+    }
+
+    /**
+     * Method to split text and call rotateLetters.
+     * @param text to decode or encode.
+     * @param key movements to make.
+     * @return the text encoded or decoded.
+     */
+    public String coreCall(String text, int key) {
         if (text == null || text.length() == 0) {
             return "";
         }
@@ -34,17 +55,30 @@ public final class CesarCrypto {
      * @return the letter rotated.
      */
     public String rotateLetters(String word, int key) {
-        char[] letters = word.toCharArray();
         StringBuilder encriptedWord = new StringBuilder();
-        for (char letter : letters) {
-            if ((int) letter > ASCII_LOWER && (int) letter < ASCII_UPPER_PLUS) {
-                int movements = (int) letter + key;
-                int asciiCode = movements > ASCII_UPPER ? (movements - ASCII_UPPER) + ASCII_LOWER  : movements;
-                encriptedWord.append((char) asciiCode);
+        for (int i = 0; i < word.length(); i++) {
+            if (word.charAt(i) > ASCII_LOWER && word.charAt(i) < ASCII_UPPER_PLUS) {
+                encriptedWord.append(String.valueOf(Character.toChars(determineNumberMovements(word.charAt(i), key))));
             } else {
-                encriptedWord.append(letter);
+                encriptedWord.append(word.charAt(i));
             }
         }
         return encriptedWord.toString();
+    }
+
+    /**
+     * Method to determine how many movements for letters.
+     * @param letter to move right or left.
+     * @param key the number of movements.
+     * @return the letter moved.
+     */
+    public int determineNumberMovements(char letter, int key) {
+        if (letter + key > ASCII_UPPER) {
+            return (letter + key - ASCII_UPPER) + ASCII_LOWER;
+        }
+        if (letter + key < ASCII_LOWER_UNDER) {
+            return ASCII_UPPER_PLUS - (ASCII_LOWER_UNDER - (letter + key));
+        }
+        return letter + key;
     }
 }

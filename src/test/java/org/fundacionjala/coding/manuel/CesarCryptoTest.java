@@ -55,4 +55,36 @@ public class CesarCryptoTest {
         assertEquals("KR_OD", cesarCrypto.encode("HO_LA", key));
         assertEquals("ETW;WT", cesarCrypto.encode("ZOR;RO", secondKey));
     }
+
+    /**
+     * Test decode method.
+     */
+    @Test
+    public void testDecode() {
+        final int firstKey = 3;
+        final int secondKey = 5;
+        assertEquals("HOLA", cesarCrypto.decode("KROD", firstKey));
+        assertEquals("ZORRO", cesarCrypto.decode("ETWWT", secondKey));
+    }
+
+    /**
+     * Test decode methods for null and empty values.
+     */
+    @Test
+    public void testDecodeNullAndEmpty() {
+        final int key = 0;
+        assertEquals("", cesarCrypto.decode(null, key));
+        assertEquals("", cesarCrypto.decode("", key));
+    }
+
+    /**
+     * Test decode method for special characters.
+     */
+    @Test
+    public void testDecodeSpecialCharacters() {
+        final int key = 3;
+        final int secondKey = 5;
+        assertEquals("HO_LA", cesarCrypto.decode("KR_OD", key));
+        assertEquals("ZOR;RO", cesarCrypto.decode("ETW;WT", secondKey));
+    }
 }
