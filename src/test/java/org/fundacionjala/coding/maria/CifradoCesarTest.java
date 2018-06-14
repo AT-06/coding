@@ -27,8 +27,8 @@ public class CifradoCesarTest {
      */
     @Test
     public void encodeWithPositive() {
-        String sentence = "KROD";
-        assertEquals(sentence, cesar.encode("HOLA", THREE));
+        String sentence = "KROD DEF C";
+        assertEquals(sentence, cesar.encode("HOLA ABC Z", THREE));
     }
 
     /**
@@ -36,8 +36,8 @@ public class CifradoCesarTest {
      */
     @Test
     public void encodeWithNegative() {
-        String sentence = "ZAB";
-        assertEquals(sentence, cesar.encode("ABC", NEGONE));
+        String sentence = "ZAB Y";
+        assertEquals(sentence, cesar.encode("ABC Z", NEGONE));
     }
 
     /**
@@ -49,12 +49,20 @@ public class CifradoCesarTest {
     }
 
     /**
+     * test to encode with empty string.
+     */
+    @Test
+    public void encodeWithEmpty() {
+        assertEquals("", cesar.encode("", ONE));
+    }
+
+    /**
      * test to decode with a positive key.
      */
     @Test
     public void decodeWithPositive() {
-        String sentence = "W";
-        assertEquals(sentence, cesar.decode("Z", THREE));
+        String sentence = "HOLA ABC";
+        assertEquals(sentence, cesar.decode("KROD DEF", THREE));
     }
 
     /**

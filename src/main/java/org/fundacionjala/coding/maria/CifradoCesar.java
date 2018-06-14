@@ -5,7 +5,7 @@ package org.fundacionjala.coding.maria;
  * kata cifrado cesar.
  */
 public class CifradoCesar {
-    private static final int A_POSITION = 64;
+    private static final int A_POSITION = 65;
     private static final int Z_POSITION = 90;
     private static final int ABC_SIZE = 26;
     /**
@@ -21,8 +21,7 @@ public class CifradoCesar {
         String[] letters = sentence.split("");
         char[] newSentence = new char[letters.length];
         for (int i = 0; i < letters.length; i++) {
-            char aux = letters[i].charAt(0);
-            newSentence[i] = (char) getPosition((int) aux, key);
+            newSentence[i] = (char) getPosition((int) letters[i].charAt(0), key);
         }
         return String.valueOf(newSentence);
     }
@@ -34,9 +33,6 @@ public class CifradoCesar {
      * @return a new String decode.
      */
     public String decode(String sentence, int key) {
-        if (sentence == null || sentence.length() == 0) {
-            return "";
-        }
         return encode(sentence, -key);
     }
 
@@ -47,24 +43,45 @@ public class CifradoCesar {
      * @return a new string.
      */
     public String vigenere(String clave, String menssaje) {
+        int[] positionClave = getArrayPositions(clave);
+        int keyPosition = 0;
         String[] lettersMessaje = menssaje.split("");
         char[] newMessaje = new char[menssaje.length()];
 
-        String[] lettersClave = clave.split("");
+        for (int i = 0; i < lettersMessaje.length; i++) {
+            char ascii = lettersMessaje[i].charAt(0);
+            newMessaje[i] = (char) getPosition((int) ascii, positionClave[keyPosition] - A_POSITION + 1);
+            keyPosition = addKeyPosition(keyPosition, ascii);
+            keyPosition = (clave.length() <= keyPosition) ? 0 : keyPosition;
+        }
+        return String.valueOf(newMessaje);
+    }
+
+    /**
+     * Method getArrayPositions get the positions of elements of key word.
+     * @param text String.
+     * @return array of int with the positions.
+     */
+    public int[] getArrayPositions(String text) {
+        String[] lettersClave = text.split("");
         int[] positionClave = new int[lettersClave.length];
         for (int i = 0; i < lettersClave.length; i++) {
             positionClave[i] = (int) lettersClave[i].charAt(0);
         }
-        int j = 0;
-        for (int i = 0; i < lettersMessaje.length; i++) {
-            char ascii = lettersMessaje[i].charAt(0);
-            j = j >=  clave.length() ? 0 : j;
-            newMessaje[i] = (char) getPosition((int) ascii, positionClave[j] - A_POSITION);
-            if ((int) ascii  > A_POSITION && (int) ascii <= Z_POSITION) {
-                j++;
-            }
+        return positionClave;
+    }
+
+    /**
+     * method addKeyPosition to get the new position of array clave.
+     * @param actual position.
+     * @param ascii letter.
+     * @return the actual position.
+     */
+    public int addKeyPosition(int actual, char ascii) {
+        if ((int) ascii  >= A_POSITION && (int) ascii <= Z_POSITION) {
+            actual++;
         }
-        return String.valueOf(newMessaje);
+        return actual;
     }
 
     /**
@@ -74,10 +91,10 @@ public class CifradoCesar {
      * @return a new int.
      */
     public int getPosition(int pos, int key) {
-        if (pos > A_POSITION && pos <= Z_POSITION) {
+        if (pos >= A_POSITION && pos <= Z_POSITION) {
             pos += key;
             pos = pos > Z_POSITION ? pos - ABC_SIZE : pos;
-            pos = pos < A_POSITION + 1 ? pos + ABC_SIZE : pos;
+            pos = pos < A_POSITION ? pos + ABC_SIZE : pos;
         }
         return pos;
     }
