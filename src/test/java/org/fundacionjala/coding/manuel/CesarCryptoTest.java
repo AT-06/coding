@@ -37,6 +37,8 @@ public class CesarCryptoTest {
     @Test
     public void testEncodeSpecialCharacters() {
         final int key = 3;
+        final int secondKey = 5;
         assertEquals("KR_OD", CesarCrypto.encode("HO_LA", key));
+        assertEquals("ETW;WT", CesarCrypto.encode("ZOR;RO", secondKey));
     }
 }
