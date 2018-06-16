@@ -66,7 +66,7 @@ public class CesarCryptoTest {
         final int firstKey = 3;
         final int secondKey = 5;
         assertEquals("HOLA", cesarCrypto.decode("KROD", firstKey));
-        assertEquals("ZORRO", cesarCrypto.decode("ETWWT", secondKey));
+        assertEquals(TEST_WORD, cesarCrypto.decode("ETWWT", secondKey));
     }
 
     /**
