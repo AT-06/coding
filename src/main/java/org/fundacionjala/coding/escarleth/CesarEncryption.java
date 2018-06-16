@@ -13,16 +13,17 @@ public class CesarEncryption {
      * @return aEncodeWord
      */
     public String encode(String cadToEncode, int key) {
-        if (cadToEncode != null && !cadToEncode.isEmpty()) {
-            StringBuilder cad = new StringBuilder();
-            key = key % ALPHABET_LENGTH;
-            for (int i = 0; i < cadToEncode.length(); i++) {
-                char character = Character.toUpperCase(cadToEncode.charAt(i));
-                cad.append(existInAlphabet(character) ? getLetterEncode(character, key) : character);
-            }
-            return cad.toString();
+        if (cadToEncode == null || cadToEncode.isEmpty()) {
+            return "";
         }
-        return "";
+        StringBuilder cad = new StringBuilder();
+        key = key % ALPHABET_LENGTH;
+        for (int i = 0; i < cadToEncode.length(); i++) {
+            char character = Character.toUpperCase(cadToEncode.charAt(i));
+            cad.append(existInAlphabet(character) ? getLetterEncode(character, key) : character);
+        }
+        return cad.toString();
+
     }
 
     /**
