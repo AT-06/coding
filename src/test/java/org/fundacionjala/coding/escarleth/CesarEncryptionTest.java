@@ -46,8 +46,8 @@ public class CesarEncryptionTest {
      */
     @Test
     public void testToEncodeWithSpecialCharacters() {
-        assertEquals("KRO?", cesarEncryption.encode("HOL?", KEY_3));
-        assertEquals("E+ WT", cesarEncryption.encode("Z+ ro", KEY_5));
+        assertEquals("[RO?", cesarEncryption.encode("[OL?", KEY_3));
+        assertEquals("E{ WT", cesarEncryption.encode("Z{ ro", KEY_5));
     }
 }
 
