@@ -1,13 +1,28 @@
 package org.fundacionjala.coding.daniel;
 
+import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
+/**
+ * Class for testing Caesar/Vigenere cipher methods.
+ */
 public class CaesarVigenereCipherTest {
 
-    CaesarVigenereCipher cvc = new CaesarVigenereCipher();
+    private CaesarVigenereCipher cipher;
 
+    /**
+     * Initialzes variable cipher.
+     */
+    @Before
+    public void setUp() {
+        cipher = new CaesarVigenereCipher();
+    }
+
+    /**
+     * Unit tests for Caesar encoding.
+     */
     @Test
     public void caesarEncodeTests() {
         final String a = "HOLA";
@@ -17,13 +32,17 @@ public class CaesarVigenereCipherTest {
         final String e = "";
         final String f = "K?O*";
         final String g = "H?L*";
-        assertEquals(c, cvc.caesarEncode(a, 3));
-        assertEquals(d, cvc.caesarEncode(b, 5));
-        assertEquals(e, cvc.caesarEncode(null, 3));
-        assertEquals(e, cvc.caesarEncode(e, 3));
-        assertEquals(f, cvc.caesarEncode(g, 3));
+        final int key1 = 3;
+        assertEquals(c, cipher.caesarEncode(a, key1));
+        final int key2 = 5;
+        assertEquals(d, cipher.caesarEncode(b, key2));
+        assertEquals(e, cipher.caesarEncode(e, key1));
+        assertEquals(f, cipher.caesarEncode(g, key1));
     }
 
+    /**
+     * Unit tests for Caesar decoding.
+     */
     @Test
     public void caesarDecodeTests() {
         final String a = "HOLA";
@@ -33,26 +52,43 @@ public class CaesarVigenereCipherTest {
         final String e = "";
         final String f = "K?O*";
         final String g = "H?L*";
-        assertEquals(a, cvc.caesarDecode(c, 3));
-        assertEquals(b, cvc.caesarDecode(d, 5));
-        assertEquals(e, cvc.caesarDecode(e, 3));
-        assertEquals(e, cvc.caesarDecode(null, 3));
-        assertEquals(g, cvc.caesarDecode(f, 3));
+        final int key1 = 3;
+        assertEquals(a, cipher.caesarDecode(c, key1));
+        final int key2 = 5;
+        assertEquals(b, cipher.caesarDecode(d, key2));
+        assertEquals(e, cipher.caesarDecode(e, key1));
+        assertEquals(g, cipher.caesarDecode(f, key1));
     }
 
+    /**
+     * Unit tests for Vigenere encoding.
+     */
     @Test
     public void vigenereEncodeTests() {
         final String key = "LIMON";
         final String text = "HOLA JALASOFT";
         final String message = "TXYP XMUNHCRC";
-        assertEquals(message, cvc.vigenereEncode(text,key));
+        final String key2 = "LIMON";
+        final String text2 = "HOLA JALASOF[";
+        final String message2 = "TXYP XMUNHCR[";
+        assertEquals(message, cipher.vigenereEncode(text, key));
+        assertEquals(message2, cipher.vigenereEncode(text2, key2));
     }
 
+    /**
+     * Unit tests for Vigenere decoding.
+     */
     @Test
     public void vigenereDecodeTests() {
-        final String key = "LIMON";
-        final String text = "HOLA JALASOFT";
-        final String message = "TXYP XMUNHCRC";
-        assertEquals(text, cvc.vigenereEncode(message,"NQMKL"));
+        final String key1 = "LIMON";
+        final String text1 = "HOLA JALASOFT";
+        final String message1 = "TXYP XMUNHCRC";
+        final String key2 = "LIMON";
+        final String text2 = "HOLA JALASOF[";
+        final String message2 = "TXYP XMUNHCR[";
+
+        assertEquals(text1, cipher.vigenereDecode(message1, key1));
+        assertEquals(text2, cipher.vigenereDecode(message2, key2));
+
     }
 }
