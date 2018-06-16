@@ -38,7 +38,7 @@ public class CesarEncryptionTest {
     }
 
     /**
-     * Test to encode message with a key.
+     * Test to encode message with positive key.
      */
     @Test
     public void testEncodeWithPositiveKey() {
@@ -49,7 +49,7 @@ public class CesarEncryptionTest {
     }
 
     /**
-     * Test to encode message with a key.
+     * Test to encode message with negative key.
      */
     @Test
     public void testEncodeWithNegativeKey() {
@@ -58,17 +58,25 @@ public class CesarEncryptionTest {
     }
 
     /**
-     * Test to encode message with a key.
+     * Test to encode message with empty message.
      */
     @Test
-    public void testEncodeWithBlankSpaceAndNullMessage() {
+    public void testEncodeWithEmptyMessage() {
         final int key = 5;
         assertEquals("", enconde.encodeMessageWithCesarEncryption("", key));
+    }
+
+    /**
+     * Test to encode message with null message.
+     */
+    @Test
+    public void testEncodeWithNullMessage() {
+        final int key = 5;
         assertEquals("", enconde.encodeMessageWithCesarEncryption(null, key));
     }
 
     /**
-     * Test to encode message with a key.
+     * Test to encode message with special characters and blank spaces.
      */
     @Test
     public void testEncodeWithSpecialCharactersAndBlankSpace() {
@@ -78,7 +86,7 @@ public class CesarEncryptionTest {
     }
 
     /**
-     * Test to decode message with a key.
+     * Test to decode message with positive key.
      */
     @Test
     public void testDecodeWithPositiveKey() {
@@ -88,7 +96,7 @@ public class CesarEncryptionTest {
     }
 
     /**
-     * Test to decode message with a key.
+     * Test to decode message with negative key.
      */
     @Test
     public void testDecodeWithNegativeKey() {
@@ -98,17 +106,25 @@ public class CesarEncryptionTest {
     }
 
     /**
-     * Test to decode message with a key.
+     * Test to decode message with empty message.
      */
     @Test
-    public void testDecodeWithBlankAndNullMessage() {
+    public void testDecodeWithEmptyMessage() {
         final int key = 3;
         assertEquals("", enconde.decodeMessageWithCesarEncryption("", key));
+    }
+
+    /**
+     * Test to decode message with null message.
+     */
+    @Test
+    public void testDecodeWithNullMessage() {
+        final int key = 3;
         assertEquals("", enconde.decodeMessageWithCesarEncryption(null, key));
     }
 
     /**
-     * Test to encode message with a key.
+     * Test to encode message with special character or blanks spaces.
      */
     @Test
     public void testDecodeWithSpecialCharactersAndBlankSpace() {
@@ -116,5 +132,70 @@ public class CesarEncryptionTest {
         assertEquals("H_OLA", enconde.decodeMessageWithCesarEncryption("K_ROD", key));
         assertEquals("HOLA ZORRO", enconde.decodeMessageWithCesarEncryption("KROD CRUUR", key));
     }
+
+    /**
+     * Test to encode with Vigenere Encryption and String key.
+     */
+    @Test
+    public void testEncodeVigenereEncryption() {
+        assertEquals("VJYPGAOG", enconde.encodeMessageWithVigenereEncryption("JALASOFT", "LIMON"));
+    }
+
+    /**
+     * Test to encode with Vigenere Encryption and String key with blank spaces.
+     */
+    @Test
+    public void testEncodeVigenereEncryptionWithBlankSpaces() {
+        assertEquals("TXYP XMUNHCRC", enconde.encodeMessageWithVigenereEncryption("HOLA JALASOFT", "LIMON"));
+    }
+
+    /**
+     * Test to encode with Vigenere Encryption and String key with empty message.
+     */
+    @Test
+    public void testEncodeVigenereEncryptionWithEmptyMessage() {
+        assertEquals("", enconde.encodeMessageWithVigenereEncryption("", "LIMON"));
+    }
+
+    /**
+     * Test to encode with Vigenere Encryption and String key with null message.
+     */
+    @Test
+    public void testEncodeVigenereEncryptionWithNullMessage() {
+        assertEquals("", enconde.encodeMessageWithVigenereEncryption(null, "LIMON"));
+    }
+
+    /**
+     * Test to decode with Vigenere Encryption and String key.
+     */
+    @Test
+    public void testDecodeVigenereEncryption() {
+        assertEquals("JALASOFT", enconde.decodeMessageWithVigenereEncryption("VJYPGAOG", "LIMON"));
+    }
+
+    /**
+     * Test to decode with Vigenere Encryption and String key and blank spaces.
+     */
+    @Test
+    public void testDecodeVigenereEncryptionWithBlankSpaces() {
+        assertEquals("HOLA JALASOFT", enconde.decodeMessageWithVigenereEncryption("TXYP XMUNHCRC", "LIMON"));
+    }
+
+    /**
+     * Test to decode with Vigenere Encryption and String key and empty message.
+     */
+    @Test
+    public void testDecodeVigenereEncryptionWithEmptyMessage() {
+        assertEquals("", enconde.decodeMessageWithVigenereEncryption("", "LIMON"));
+    }
+
+    /**
+     * Test to decode with Vigenere Encryption and String key and null message.
+     */
+    @Test
+    public void testDecodeVigenereEncryptionWithNullMessage() {
+        assertEquals("", enconde.decodeMessageWithVigenereEncryption(null, "LIMON"));
+    }
+
 }
 
