@@ -6,10 +6,9 @@ import java.util.StringJoiner;
  */
 public final class CesarCrypto {
 
-    private static final int ASCII_LOWER = 64;
-    private static final int ASCII_LOWER_UNDER = 65;
-    private static final int ASCII_UPPER = 90;
-    private static final int ASCII_UPPER_PLUS = 91;
+    private static final char ASCII_LOWER = 'A';
+    private static final char ASCII_UPPER = 'Z';
+    private static final int VALUE = 64;
 
     /**
      * Method to encode a text using Cesar algorithm.
@@ -57,7 +56,7 @@ public final class CesarCrypto {
     public String rotateLetters(String word, int key) {
         StringBuilder encriptedWord = new StringBuilder();
         for (int i = 0; i < word.length(); i++) {
-            if (word.charAt(i) > ASCII_LOWER && word.charAt(i) < ASCII_UPPER_PLUS) {
+            if (word.charAt(i) > ASCII_LOWER - 1 && word.charAt(i) < ASCII_UPPER + 1) {
                 encriptedWord.append(String.valueOf(Character.toChars(determineNumberMovements(word.charAt(i), key))));
             } else {
                 encriptedWord.append(word.charAt(i));
@@ -74,11 +73,37 @@ public final class CesarCrypto {
      */
     public int determineNumberMovements(char letter, int key) {
         if (letter + key > ASCII_UPPER) {
-            return (letter + key - ASCII_UPPER) + ASCII_LOWER;
+            return (letter + key - ASCII_UPPER) + (ASCII_LOWER - 1);
         }
-        if (letter + key < ASCII_LOWER_UNDER) {
-            return ASCII_UPPER_PLUS - (ASCII_LOWER_UNDER - (letter + key));
+        if (letter + key < ASCII_LOWER) {
+            return ASCII_UPPER + 1 - (ASCII_LOWER - (letter + key));
         }
         return letter + key;
+    }
+
+    /**
+     * Method to encode text with Vigenere.
+     * @param text to encode.
+     * @param key to encode.
+     * @return the text encrypted.
+     */
+    public String encodeVigenere(String text, String key) {
+        if (text == null || text.length() == 0) {
+            return "";
+        }
+        int j = 0;
+        StringJoiner encriptedText = new StringJoiner(" ");
+        for (String word : text.split(" ")) {
+            StringBuilder encriptedWord = new StringBuilder();
+            for (int i = 0; i < word.length(); i++, j++) {
+                if (j == key.length()) {
+                    j = 0;
+                }
+                int newValue = determineNumberMovements(word.charAt(i), key.charAt(j) - VALUE);
+                encriptedWord.append(String.valueOf(Character.toChars(newValue)));
+            }
+            encriptedText.add(encriptedWord);
+        }
+        return encriptedText.toString();
     }
 }

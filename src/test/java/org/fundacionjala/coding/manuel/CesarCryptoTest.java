@@ -87,4 +87,23 @@ public class CesarCryptoTest {
         assertEquals("HO_LA", cesarCrypto.decode("KR_OD", key));
         assertEquals("ZOR;RO", cesarCrypto.decode("ETW;WT", secondKey));
     }
+
+    /**
+     * Test Vigenere encode method.
+     */
+    @Test
+    public void testVigenereEncode() {
+        assertEquals("TXYP", cesarCrypto.encodeVigenere("HOLA", "LIMON"));
+        assertEquals("LXEGC", cesarCrypto.encodeVigenere("ZORRO", "LIMON"));
+        assertEquals("TXYP XMUNHCRC", cesarCrypto.encodeVigenere("HOLA JALASOFT", "LIMON"));
+    }
+
+    /**
+     * Test Vigenere encode method for null and empty texts.
+     */
+    @Test
+    public void testVigenereEncodeNullAndEmpty() {
+        assertEquals("", cesarCrypto.encodeVigenere(null, "LIMON"));
+        assertEquals("", cesarCrypto.encodeVigenere("", "LIMON"));
+    }
 }
