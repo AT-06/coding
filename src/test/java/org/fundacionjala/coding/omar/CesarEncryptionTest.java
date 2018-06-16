@@ -26,6 +26,7 @@ import static org.junit.Assert.assertEquals;
  */
 public class CesarEncryptionTest {
 
+    private static final String VIGENERE_KEY = "LIMON";
     private CesarEncryption enconde;
 
     /**
@@ -138,7 +139,7 @@ public class CesarEncryptionTest {
      */
     @Test
     public void testEncodeVigenereEncryption() {
-        assertEquals("VJYPGAOG", enconde.encodeMessageWithVigenereEncryption("JALASOFT", "LIMON"));
+        assertEquals("VJYPGAOG", enconde.encodeMessageWithVigenereEncryption("JALASOFT", VIGENERE_KEY));
     }
 
     /**
@@ -146,7 +147,7 @@ public class CesarEncryptionTest {
      */
     @Test
     public void testEncodeVigenereEncryptionWithBlankSpaces() {
-        assertEquals("TXYP XMUNHCRC", enconde.encodeMessageWithVigenereEncryption("HOLA JALASOFT", "LIMON"));
+        assertEquals("TXYP XMUNHCRC", enconde.encodeMessageWithVigenereEncryption("HOLA JALASOFT", VIGENERE_KEY));
     }
 
     /**
@@ -154,7 +155,7 @@ public class CesarEncryptionTest {
      */
     @Test
     public void testEncodeVigenereEncryptionWithEmptyMessage() {
-        assertEquals("", enconde.encodeMessageWithVigenereEncryption("", "LIMON"));
+        assertEquals("", enconde.encodeMessageWithVigenereEncryption("", VIGENERE_KEY));
     }
 
     /**
@@ -162,7 +163,7 @@ public class CesarEncryptionTest {
      */
     @Test
     public void testEncodeVigenereEncryptionWithNullMessage() {
-        assertEquals("", enconde.encodeMessageWithVigenereEncryption(null, "LIMON"));
+        assertEquals("", enconde.encodeMessageWithVigenereEncryption(null, VIGENERE_KEY));
     }
 
     /**
@@ -170,7 +171,7 @@ public class CesarEncryptionTest {
      */
     @Test
     public void testDecodeVigenereEncryption() {
-        assertEquals("JALASOFT", enconde.decodeMessageWithVigenereEncryption("VJYPGAOG", "LIMON"));
+        assertEquals("JALASOFT", enconde.decodeMessageWithVigenereEncryption("VJYPGAOG", VIGENERE_KEY));
     }
 
     /**
@@ -178,7 +179,7 @@ public class CesarEncryptionTest {
      */
     @Test
     public void testDecodeVigenereEncryptionWithBlankSpaces() {
-        assertEquals("HOLA JALASOFT", enconde.decodeMessageWithVigenereEncryption("TXYP XMUNHCRC", "LIMON"));
+        assertEquals("HOLA JALASOFT", enconde.decodeMessageWithVigenereEncryption("TXYP XMUNHCRC", VIGENERE_KEY));
     }
 
     /**
@@ -186,7 +187,7 @@ public class CesarEncryptionTest {
      */
     @Test
     public void testDecodeVigenereEncryptionWithEmptyMessage() {
-        assertEquals("", enconde.decodeMessageWithVigenereEncryption("", "LIMON"));
+        assertEquals("", enconde.decodeMessageWithVigenereEncryption("", VIGENERE_KEY));
     }
 
     /**
@@ -194,7 +195,7 @@ public class CesarEncryptionTest {
      */
     @Test
     public void testDecodeVigenereEncryptionWithNullMessage() {
-        assertEquals("", enconde.decodeMessageWithVigenereEncryption(null, "LIMON"));
+        assertEquals("", enconde.decodeMessageWithVigenereEncryption(null, VIGENERE_KEY));
     }
 
 }

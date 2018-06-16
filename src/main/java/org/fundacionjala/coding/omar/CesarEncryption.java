@@ -42,11 +42,12 @@ public class CesarEncryption {
      * @return String , string already encode with Cesar Encryption.
      */
     public String encodeMessageWithCesarEncryption(String message, int key) {
-        return message == null || message.trim().isEmpty()
-                ? ""
-                : Arrays.stream(message.split(""))
-                .map(letter -> this.algorithm(letter, key))
-                .collect(Collectors.joining());
+        if (!this.isInvalidMessage(message)) {
+            return Arrays.stream(message.split(""))
+                    .map(letter -> this.algorithm(letter, key))
+                    .collect(Collectors.joining());
+        }
+        return "";
     }
 
     /**
@@ -57,11 +58,13 @@ public class CesarEncryption {
      * @return String , string already encode with Cesar Encryption.
      */
     public String decodeMessageWithCesarEncryption(String message, int key) {
-        return message == null || message.trim().isEmpty()
-                ? ""
-                : Arrays.stream(message.split(""))
-                .map(letter -> this.algorithm(letter, -key))
-                .collect(Collectors.joining());
+
+        if (!this.isInvalidMessage(message)) {
+            return Arrays.stream(message.split(""))
+                    .map(letter -> this.algorithm(letter, -key))
+                    .collect(Collectors.joining());
+        }
+        return "";
     }
 
     /**
@@ -73,13 +76,14 @@ public class CesarEncryption {
      */
     public String encodeMessageWithVigenereEncryption(String message, String key) {
 
-        return message == null || message.trim().isEmpty()
-                ? ""
-                : Arrays.stream(message.split(""))
-                .map(letter -> this.isValidCharacter(letter)
-                        ? this.getLetterWithVigenereEncryption(letter, key, true)
-                        : letter)
-                .collect(Collectors.joining());
+        if (!this.isInvalidMessage(message)) {
+            return Arrays.stream(message.split(""))
+                    .map(letter -> this.isValidCharacter(letter)
+                            ? this.getLetterWithVigenereEncryption(letter, key, true)
+                            : letter)
+                    .collect(Collectors.joining());
+        }
+        return "";
     }
 
     /**
@@ -91,13 +95,24 @@ public class CesarEncryption {
      */
     public String decodeMessageWithVigenereEncryption(String message, String key) {
 
-        return message == null || message.trim().isEmpty()
-                ? ""
-                : Arrays.stream(message.split(""))
-                .map(letter -> this.isValidCharacter(letter)
-                        ? this.getLetterWithVigenereEncryption(letter, key, false)
-                        : letter)
-                .collect(Collectors.joining());
+        if (!this.isInvalidMessage(message)) {
+            return Arrays.stream(message.split(""))
+                    .map(letter -> this.isValidCharacter(letter)
+                            ? this.getLetterWithVigenereEncryption(letter, key, false)
+                            : letter)
+                    .collect(Collectors.joining());
+        }
+        return "";
+    }
+
+    /**
+     * Method to verify if the message is null or is empty.
+     *
+     * @param message Message to verify.
+     * @return boolean ,return true if is not valid message, return false if is valid message.
+     */
+    public boolean isInvalidMessage(String message) {
+        return message == null || message.trim().isEmpty();
     }
 
     /**
@@ -106,7 +121,7 @@ public class CesarEncryption {
      * @param letter         This is a letter to encode/decode.
      * @param key            This is a key with string value.
      * @param encodeOrDecode True if is Encode and False if is Decode process.
-     * @return String , string already encode with Vigenere Encryption..
+     * @return String , string already encode with Vigenere Encryption.
      */
     public String getLetterWithVigenereEncryption(String letter, String key, boolean encodeOrDecode) {
         String result;
