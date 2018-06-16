@@ -10,6 +10,7 @@ import static org.junit.Assert.assertEquals;
  */
 public class CaesarVigenereCipherTest {
 
+    private static final String KEY = "LIMON";
     private CaesarVigenereCipher cipher;
 
     /**
@@ -65,14 +66,12 @@ public class CaesarVigenereCipherTest {
      */
     @Test
     public void vigenereEncodeTests() {
-        final String key = "LIMON";
         final String text = "HOLA JALASOFT";
         final String message = "TXYP XMUNHCRC";
-        final String key2 = "LIMON";
         final String text2 = "HOLA JALASOF[";
         final String message2 = "TXYP XMUNHCR[";
-        assertEquals(message, cipher.vigenereEncode(text, key));
-        assertEquals(message2, cipher.vigenereEncode(text2, key2));
+        assertEquals(message, cipher.vigenereEncode(text, KEY));
+        assertEquals(message2, cipher.vigenereEncode(text2, KEY));
     }
 
     /**
@@ -80,15 +79,13 @@ public class CaesarVigenereCipherTest {
      */
     @Test
     public void vigenereDecodeTests() {
-        final String key1 = "LIMON";
         final String text1 = "HOLA JALASOFT";
         final String message1 = "TXYP XMUNHCRC";
-        final String key2 = "LIMON";
         final String text2 = "HOLA JALASOF[";
         final String message2 = "TXYP XMUNHCR[";
 
-        assertEquals(text1, cipher.vigenereDecode(message1, key1));
-        assertEquals(text2, cipher.vigenereDecode(message2, key2));
+        assertEquals(text1, cipher.vigenereDecode(message1, KEY));
+        assertEquals(text2, cipher.vigenereDecode(message2, KEY));
 
     }
 }

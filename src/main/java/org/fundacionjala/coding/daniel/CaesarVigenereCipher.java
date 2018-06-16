@@ -72,7 +72,8 @@ public class CaesarVigenereCipher {
     public String vigenereEncode(String text, final String key) {
         String message = "";
         text = text.toUpperCase();
-        for (int i = 0, j = 0; i < text.length(); i++) {
+        int j = 0;
+        for (int i = 0; i < text.length(); i++) {
             char currentChar = text.charAt(i);
             if (SPECIAL_CHARS.contains(String.valueOf(currentChar))) {
                 message = message.concat(String.valueOf(currentChar));
@@ -97,7 +98,8 @@ public class CaesarVigenereCipher {
     public String vigenereDecode(String message, final String key) {
         String text = "";
         message = message.toUpperCase();
-        for (int i = 0, j = 0; i < message.length(); i++) {
+        int j = 0;
+        for (int i = 0; i < message.length(); i++) {
             char currentChar = message.charAt(i);
             if (SPECIAL_CHARS.contains(String.valueOf(currentChar))) {
                 text = text.concat(String.valueOf(currentChar));
