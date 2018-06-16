@@ -14,6 +14,8 @@ public class CesarCryptoTest {
      * Object of the class to test.
      */
     private CesarCrypto cesarCrypto;
+    private static final String VIGENERE_KEY = "LIMON";
+    private static final String TEST_WORD = "ZORRO";
 
     /**
      * Method to init object.
@@ -31,7 +33,7 @@ public class CesarCryptoTest {
         final int firstKey = 3;
         final int secondKey = 5;
         assertEquals("KROD", cesarCrypto.encode("HOLA", firstKey));
-        assertEquals("ETWWT", cesarCrypto.encode("ZORRO", secondKey));
+        assertEquals("ETWWT", cesarCrypto.encode(TEST_WORD, secondKey));
     }
 
 
@@ -93,9 +95,9 @@ public class CesarCryptoTest {
      */
     @Test
     public void testVigenereEncode() {
-        assertEquals("TXYP", cesarCrypto.encodeVigenere("HOLA", "LIMON"));
-        assertEquals("LXEGC", cesarCrypto.encodeVigenere("ZORRO", "LIMON"));
-        assertEquals("TXYP XMUNHCRC", cesarCrypto.encodeVigenere("HOLA JALASOFT", "LIMON"));
+        assertEquals("TXYP", cesarCrypto.encodeVigenere("HOLA", VIGENERE_KEY));
+        assertEquals("LXEGC", cesarCrypto.encodeVigenere(TEST_WORD, VIGENERE_KEY));
+        assertEquals("TXYP XMUNHCRC", cesarCrypto.encodeVigenere("HOLA JALASOFT", VIGENERE_KEY));
     }
 
     /**
@@ -103,7 +105,7 @@ public class CesarCryptoTest {
      */
     @Test
     public void testVigenereEncodeNullAndEmpty() {
-        assertEquals("", cesarCrypto.encodeVigenere(null, "LIMON"));
-        assertEquals("", cesarCrypto.encodeVigenere("", "LIMON"));
+        assertEquals("", cesarCrypto.encodeVigenere(null, VIGENERE_KEY));
+        assertEquals("", cesarCrypto.encodeVigenere("", VIGENERE_KEY));
     }
 }
