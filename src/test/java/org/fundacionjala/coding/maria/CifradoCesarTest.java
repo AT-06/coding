@@ -117,4 +117,12 @@ public class CifradoCesarTest {
     public void vigenereDecode() {
         assertEquals(CASE1, cesar.vigenereDecode("LIMON", "TXYP XMUNHCRC"));
     }
+    /**
+     * test to vigenere method.
+     */
+    @Test
+    public void vigenereDecodeSpecialCharacters() {
+        assertEquals("_HOLA_JALASOFT*", cesar.vigenereDecode("LIMON", "_TXYP_XMUNHCRC*"));
+    }
+
 }
