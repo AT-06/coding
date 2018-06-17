@@ -150,7 +150,7 @@ public class CesarCipherTest {
         final int key2 = -5;
         assertEquals("FKVG", cesar.decode("CHSD", key1));
         assertEquals("CCGIV VGI", cesar.decode("ZZDFS SDF", key1));
-        assertEquals("MTQF", cesar.decode("HOLA",key2));
+        assertEquals("MTQF", cesar.decode("HOLA", key2));
     }
 
     /**
