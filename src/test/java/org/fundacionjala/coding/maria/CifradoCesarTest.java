@@ -13,6 +13,7 @@ public class CifradoCesarTest {
     private static final int THREE = 3;
     private static final int NEGONE = -1;
     private static final int ONE = 1;
+    private static final String CASE1 = "HOLA JALASOFT";
 
     /**
      * initialize cifrado cesar.
@@ -100,29 +101,13 @@ public class CifradoCesarTest {
     public void decodeWithNull() {
         assertEquals("", cesar.decode(null, ONE));
     }
-
-    /**
-     * test to vigenere method.
-     */
-    @Test
-    public void vigenereNullMessaje() {
-        assertEquals("", cesar.vigenereEncode("HOLA JALASOFT", null));
-    }
-
-    /**
-     * test to vigenere method.
-     */
-    @Test
-    public void vigenereNullEmpty() {
-        assertEquals("", cesar.vigenereEncode("HOLA JALASOFT", ""));
-    }
     /**
      * test to vigenere method.
      */
     @Test
     public void vigenereOneWord() {
         String sentence = "TXYP XMUNHCRC";
-        assertEquals(sentence, cesar.vigenereEncode("LIMON", "HOLA JALASOFT"));
+        assertEquals(sentence, cesar.vigenereEncode("LIMON", CASE1));
     }
 
     /**
@@ -130,7 +115,6 @@ public class CifradoCesarTest {
      */
     @Test
     public void vigenereDecode() {
-        String sentence = "HOLA JALASOFT";
-        assertEquals(sentence, cesar.vigenereDecode("LIMON", "TXYP XMUNHCRC"));
+        assertEquals(CASE1, cesar.vigenereDecode("LIMON", "TXYP XMUNHCRC"));
     }
 }
