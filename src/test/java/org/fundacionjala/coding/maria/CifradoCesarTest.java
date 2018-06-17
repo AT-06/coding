@@ -126,4 +126,19 @@ public class CifradoCesarTest {
         assertEquals("_HOLA_JALASOFT*", cesar.vigenereDecode(LIMON, "_TXYP_XMUNHCRC*"));
     }
 
+    /**
+     * test to vigenere method with null messaje.
+     */
+    @Test
+    public void vigenereDecodeNull() {
+        assertEquals("", cesar.vigenereDecode(LIMON, ""));
+    }
+    /**
+     * test to vigenere method with empty message.
+     */
+    @Test
+    public void vigenereDecodeEmpty() {
+        assertEquals("", cesar.vigenereDecode(LIMON, null));
+    }
+
 }
