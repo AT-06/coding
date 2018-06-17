@@ -98,20 +98,4 @@ public class VigenereEncryption extends Encryption {
         int index = letter + 1;
         return index - FIRST_LETTER;
     }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public String encodeMessage(String message, int key) {
-        return null;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public String decodeMessage(String message, int key) {
-        return null;
-    }
 }

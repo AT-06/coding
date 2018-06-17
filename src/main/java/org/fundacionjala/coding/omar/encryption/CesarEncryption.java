@@ -26,35 +26,14 @@ public class CesarEncryption extends Encryption {
      * {@inheritDoc}
      */
     @Override
-    public String encodeMessage(String message, int key) {
-        if (!this.isInvalidMessage(message)) {
-            return Arrays.stream(message.split(""))
-                    .map(letter -> this.getLetterWithAlgorithm(letter, key))
-                    .collect(Collectors.joining());
-        }
-        return "";
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public String decodeMessage(String message, int key) {
-
-        if (!this.isInvalidMessage(message)) {
-            return Arrays.stream(message.split(""))
-                    .map(letter -> this.getLetterWithAlgorithm(letter, -key))
-                    .collect(Collectors.joining());
-        }
-        return "";
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
     public String encodeMessage(String message, String key) {
-        return null;
+        int encodeKey = Integer.parseInt(key);
+        if (!this.isInvalidMessage(message)) {
+            return Arrays.stream(message.split(""))
+                    .map(letter -> this.getLetterWithAlgorithm(letter, encodeKey))
+                    .collect(Collectors.joining());
+        }
+        return "";
     }
 
     /**
@@ -62,7 +41,13 @@ public class CesarEncryption extends Encryption {
      */
     @Override
     public String decodeMessage(String message, String key) {
-        return null;
+        int encodeKey = Integer.parseInt(key);
+        if (!this.isInvalidMessage(message)) {
+            return Arrays.stream(message.split(""))
+                    .map(letter -> this.getLetterWithAlgorithm(letter, -encodeKey))
+                    .collect(Collectors.joining());
+        }
+        return "";
     }
 }
 

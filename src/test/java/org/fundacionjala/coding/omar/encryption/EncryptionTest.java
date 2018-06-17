@@ -45,8 +45,8 @@ public class EncryptionTest {
      */
     @Test
     public void testEncodeWithPositiveKey() {
-        final int key1 = 3;
-        final int key2 = 5;
+        final String key1 = "3";
+        final String key2 = "5";
         assertEquals("KROD", cesarEncryption.encodeMessage("HOLA", key1));
         assertEquals("ETWWT", cesarEncryption.encodeMessage("ZORRO", key2));
     }
@@ -56,7 +56,7 @@ public class EncryptionTest {
      */
     @Test
     public void testEncodeWithNegativeKey() {
-        final int key = -3;
+        final String key = "-3";
         assertEquals("HOLA", cesarEncryption.encodeMessage("KROD", key));
     }
 
@@ -65,7 +65,7 @@ public class EncryptionTest {
      */
     @Test
     public void testEncodeWithEmptyMessage() {
-        final int key = 5;
+        final String key = "5";
         assertEquals("", cesarEncryption.encodeMessage("", key));
     }
 
@@ -74,7 +74,7 @@ public class EncryptionTest {
      */
     @Test
     public void testEncodeWithNullMessage() {
-        final int key = 5;
+        final String key = "5";
         assertEquals("", cesarEncryption.encodeMessage(null, key));
     }
 
@@ -83,7 +83,7 @@ public class EncryptionTest {
      */
     @Test
     public void testEncodeWithSpecialCharactersAndBlankSpace() {
-        final int key = 3;
+        final String key = "3";
         assertEquals("K_ROD", cesarEncryption.encodeMessage("H_OLA", key));
         assertEquals("KROD CRUUR", cesarEncryption.encodeMessage("HOLA ZORRO", key));
     }
@@ -93,7 +93,7 @@ public class EncryptionTest {
      */
     @Test
     public void testDecodeWithPositiveKey() {
-        final int key = 3;
+        final String key = "3";
         assertEquals("X", cesarEncryption.decodeMessage("A", key));
         assertEquals("W", cesarEncryption.decodeMessage("Z", key));
     }
@@ -103,7 +103,7 @@ public class EncryptionTest {
      */
     @Test
     public void testDecodeWithNegativeKey() {
-        final int key = -3;
+        final String key = "-3";
         assertEquals("FKVG", cesarEncryption.decodeMessage("CHSD", key));
         assertEquals("CCGIV VGI", cesarEncryption.decodeMessage("ZZDFS SDF", key));
     }
@@ -113,7 +113,7 @@ public class EncryptionTest {
      */
     @Test
     public void testDecodeWithEmptyMessage() {
-        final int key = 3;
+        final String key = "3";
         assertEquals("", cesarEncryption.decodeMessage("", key));
     }
 
@@ -122,7 +122,7 @@ public class EncryptionTest {
      */
     @Test
     public void testDecodeWithNullMessage() {
-        final int key = 3;
+        final String key = "3";
         assertEquals("", cesarEncryption.decodeMessage(null, key));
     }
 
@@ -131,7 +131,7 @@ public class EncryptionTest {
      */
     @Test
     public void testDecodeWithSpecialCharactersAndBlankSpace() {
-        final int key = 3;
+        final String key = "3";
         assertEquals("H_OLA", cesarEncryption.decodeMessage("K_ROD", key));
         assertEquals("HOLA ZORRO", cesarEncryption.decodeMessage("KROD CRUUR", key));
     }
