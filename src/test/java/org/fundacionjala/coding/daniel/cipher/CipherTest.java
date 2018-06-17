@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.daniel;
+package org.fundacionjala.coding.daniel.cipher;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -8,17 +8,20 @@ import static org.junit.Assert.assertEquals;
 /**
  * Class for testing Caesar/Vigenere cipher methods.
  */
-public class CaesarVigenereCipherTest {
+public class CipherTest {
 
     private static final String KEY = "LIMON";
-    private CaesarVigenereCipher cipher;
+    private CaesarCipher caesarCipher;
+    private VigenereCipher vigenereCipher;
 
     /**
-     * Initialzes variable cipher.
+     * Initializes variables.
      */
     @Before
     public void setUp() {
-        cipher = new CaesarVigenereCipher();
+        final int caesarKey = 3;
+        caesarCipher = new CaesarCipher(caesarKey);
+        vigenereCipher = new VigenereCipher(KEY);
     }
 
     /**
@@ -33,12 +36,12 @@ public class CaesarVigenereCipherTest {
         final String e = "";
         final String f = "K?O*";
         final String g = "H?L*";
-        final int key1 = 3;
-        assertEquals(c, cipher.caesarEncode(a, key1));
+        assertEquals(c, caesarCipher.encode(a));
+        assertEquals(e, caesarCipher.encode(e));
+        assertEquals(f, caesarCipher.encode(g));
         final int key2 = 5;
-        assertEquals(d, cipher.caesarEncode(b, key2));
-        assertEquals(e, cipher.caesarEncode(e, key1));
-        assertEquals(f, cipher.caesarEncode(g, key1));
+        caesarCipher.setKey(key2);
+        assertEquals(d, caesarCipher.encode(b));
     }
 
     /**
@@ -53,12 +56,12 @@ public class CaesarVigenereCipherTest {
         final String e = "";
         final String f = "K?O*";
         final String g = "H?L*";
-        final int key1 = 3;
-        assertEquals(a, cipher.caesarDecode(c, key1));
+        assertEquals(a, caesarCipher.decode(c));
+        assertEquals(e, caesarCipher.decode(e));
+        assertEquals(g, caesarCipher.decode(f));
         final int key2 = 5;
-        assertEquals(b, cipher.caesarDecode(d, key2));
-        assertEquals(e, cipher.caesarDecode(e, key1));
-        assertEquals(g, cipher.caesarDecode(f, key1));
+        caesarCipher.setKey(key2);
+        assertEquals(b, caesarCipher.decode(d));
     }
 
     /**
@@ -70,8 +73,8 @@ public class CaesarVigenereCipherTest {
         final String message = "TXYP XMUNHCRC";
         final String text2 = "HOLA JALASOF[";
         final String message2 = "TXYP XMUNHCR[";
-        assertEquals(message, cipher.vigenereEncode(text, KEY));
-        assertEquals(message2, cipher.vigenereEncode(text2, KEY));
+        assertEquals(message, vigenereCipher.encode(text));
+        assertEquals(message2, vigenereCipher.encode(text2));
     }
 
     /**
@@ -84,8 +87,8 @@ public class CaesarVigenereCipherTest {
         final String text2 = "HOLA JALASOF[";
         final String message2 = "TXYP XMUNHCR[";
 
-        assertEquals(text1, cipher.vigenereDecode(message1, KEY));
-        assertEquals(text2, cipher.vigenereDecode(message2, KEY));
+        assertEquals(text1, vigenereCipher.decode(message1));
+        assertEquals(text2, vigenereCipher.decode(message2));
 
     }
 }
