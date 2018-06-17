@@ -79,4 +79,45 @@ public class CesarVigenereEncryptionTest {
         assertEquals("KAT?A", encryption.encodeAndDecodeMessage("RHA?H", KEY_NEGATIVE_7));
         assertEquals("P@ATA TA", encryption.encodeAndDecodeMessage("E@PIP IP", KEY_NEGATIVE_15));
     }
+
+    /**
+     * Test that check the Vigenere encode with special.
+     */
+    @Test
+    public void encodeVigenereMessage() {
+        assertEquals("TXYP XMUNHCRC", encryption.encodeVigenere("LIMON", "HOLA JALASOFT"));
+        assertEquals("UTXP AHSPD", encryption.encodeVigenere("MELON", "HOLA MUNDO"));
+        assertEquals("NTFU NT WWRDE ACVROYWY", encryption.encodeVigenere("TOMATE", "TEST TO CHECK VIGENERE"));
+
+    }
+
+    /**
+     * Test that check the Vigenere decode with special.
+     */
+    @Test
+    public void decodeVigenereMessage() {
+        assertEquals("HOLA JALASOFT", encryption.decodeVigenere("LIMON", "TXYP XMUNHCRC"));
+        assertEquals("HOLA MUNDO", encryption.decodeVigenere("MELON", "UTXP AHSPD"));
+        assertEquals("TEST TO CHECK VIGENERE", encryption.decodeVigenere("TOMATE", "NTFU NT WWRDE ACVROYWY"));
+    }
+
+    /**
+     * Test that check a null and empty input.
+     */
+    @Test
+    public void emptyTextEncodeVigenere() {
+        assertEquals("", encryption.encodeVigenere("HOLA", ""));
+        assertEquals("", encryption.encodeVigenere("MUNDO", null));
+    }
+
+    /**
+     * Test that check a null and empty input.
+     */
+    @Test
+    public void emptyTextDecodeVIgenere() {
+        assertEquals("", encryption.decodeVigenere("UTXP", ""));
+        assertEquals("", encryption.decodeVigenere("WWRDE", null));
+    }
+
+
 }

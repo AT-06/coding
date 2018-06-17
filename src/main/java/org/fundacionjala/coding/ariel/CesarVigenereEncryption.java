@@ -7,11 +7,11 @@ public class CesarVigenereEncryption {
     private String alfabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     /**
-     * Class return a message encoded.
+     * Class return a message encoded or decoded.
      *
-     * @param text text before to encode.
-     * @param key  the popsition in order to encode the message.
-     * @return a message encoded.
+     * @param text text before to encode or decode.
+     * @param key  the position in order to encode or decode the message.
+     * @return a message encoded or decoded.
      */
     public String encodeAndDecodeMessage(String text, int key) {
         if (null == text || text.isEmpty()) {
@@ -26,11 +26,67 @@ public class CesarVigenereEncryption {
     }
 
     /**
+     * This method encode vigenere a text.
+     *
+     * @param keyWord conditon in order to encode the text.
+     * @param text    Any Text.
+     * @return encode vigenere a text.
+     */
+    public String encodeVigenere(String keyWord, String text) {
+        if (null == text || text.isEmpty()) {
+            return "";
+        }
+        int i = 0;
+        StringBuilder messageVigenere = new StringBuilder();
+        String[] texts = text.split("");
+        for (String c : texts) {
+            if (alfabet.contains(c)) {
+                messageVigenere.append(changeChar(c, alfabet.indexOf(keyWord.charAt(i) + 1)));
+                i++;
+            } else {
+                messageVigenere.append(c);
+            }
+            if (i >= keyWord.length()) {
+                i = 0;
+            }
+        }
+        return messageVigenere.toString();
+    }
+
+    /**
+     * This method decode a vigenere message a text.
+     *
+     * @param keyWord conditon in order to decode the text.
+     * @param text    Any Text.
+     * @return decode a text.
+     */
+    public String decodeVigenere(String keyWord, String text) {
+        if (null == text || text.isEmpty()) {
+            return "";
+        }
+        int i = 0;
+        StringBuilder messageVigenere = new StringBuilder();
+        String[] texts = text.split("");
+        for (String c : texts) {
+            if (alfabet.contains(c)) {
+                messageVigenere.append(changeChar(c, -(alfabet.indexOf(keyWord.charAt(i) + 1))));
+                i++;
+            } else {
+                messageVigenere.append(c);
+            }
+            if (i >= keyWord.length()) {
+                i = 0;
+            }
+        }
+        return messageVigenere.toString();
+    }
+
+    /**
      * @param letter a letter.
-     * @param key    the popsition in order to encode the message.
+     * @param key    the position in order to encode or decode the message.
      * @return a char changed.
      */
-    public char changeChar(String letter, int key) {
+    private char changeChar(String letter, int key) {
         int range = alfabet.indexOf(letter) + key;
         int encodePosition = alfabet.length() - alfabet.indexOf(letter);
         int decodePosition = alfabet.length() + alfabet.indexOf(letter);
