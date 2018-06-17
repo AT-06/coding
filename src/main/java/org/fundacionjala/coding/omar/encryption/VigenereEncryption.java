@@ -82,11 +82,13 @@ public class VigenereEncryption extends Encryption {
         String result;
         int convertIndex = encodeOrDecode ? 1 : -1;
         if (indexVigenereKey < key.length()) {
-            result = this.getLetterWithAlgorithm(letter, convertIndex * this.getVigenereKey(key.charAt(indexVigenereKey)));
+            result = this.getLetterWithAlgorithm(
+                    letter, convertIndex * this.getVigenereKey(key.charAt(indexVigenereKey)));
             indexVigenereKey++;
         } else {
             indexVigenereKey = 0;
-            result = this.getLetterWithAlgorithm(letter, convertIndex * this.getVigenereKey(key.charAt(indexVigenereKey)));
+            result = this.getLetterWithAlgorithm(
+                    letter, convertIndex * this.getVigenereKey(key.charAt(indexVigenereKey)));
             indexVigenereKey++;
         }
         return result;

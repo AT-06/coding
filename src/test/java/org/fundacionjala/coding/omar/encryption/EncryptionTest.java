@@ -13,8 +13,6 @@
  */
 package org.fundacionjala.coding.omar.encryption;
 
-import org.fundacionjala.coding.omar.encryption.CesarEncryption;
-import org.fundacionjala.coding.omar.encryption.VigenereEncryption;
 import org.junit.Before;
 import org.junit.Test;
 
