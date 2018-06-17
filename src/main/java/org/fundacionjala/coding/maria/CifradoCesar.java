@@ -5,8 +5,8 @@ package org.fundacionjala.coding.maria;
  * kata cifrado cesar.
  */
 public class CifradoCesar {
-    private static final int A_POSITION = 65;
-    private static final int Z_POSITION = 90;
+    private static final char A_POSITION = 'A';
+    private static final char Z_POSITION = 'Z';
     private static final int ABC_SIZE = 26;
     /**
      * method encode to encode a string using a key.
@@ -52,7 +52,7 @@ public class CifradoCesar {
             char ascii = lettersMessaje[i].charAt(0);
             newMessaje[i] = (char) getPosition((int) ascii, positionClave[keyPosition] - A_POSITION + 1);
             keyPosition = addKeyPosition(keyPosition, ascii);
-            keyPosition = (clave.length() <= keyPosition) ? 0 : keyPosition;
+            keyPosition = clave.length() <= keyPosition ? 0 : keyPosition;
         }
         return String.valueOf(newMessaje);
     }
@@ -78,7 +78,7 @@ public class CifradoCesar {
      * @return the actual position.
      */
     public int addKeyPosition(int actual, char ascii) {
-        if ((int) ascii  >= A_POSITION && (int) ascii <= Z_POSITION) {
+        if (ascii  >= A_POSITION && ascii <= Z_POSITION) {
             actual++;
         }
         return actual;
