@@ -69,4 +69,24 @@ public class CesarCryptoTest {
         final int clave = 5;
         assertEquals("E?TWW|T", cesarCrypto.encode(texto, clave));
     }
+
+    /**
+     * Test for decode method.
+     */
+    @Test
+    public void testDecodeCesarCrypto1() {
+        String texto = "ETWWT";
+        final int clave = 5;
+        assertEquals("ZORRO", cesarCrypto.decode(texto, clave));
+    }
+
+    /**
+     * Test for decode method.
+     */
+    @Test
+    public void testDecodeCesarCrypto2() {
+        String texto = "KROD";
+        final int clave = 3;
+        assertEquals("HOLA", cesarCrypto.decode(texto, clave));
+    }
 }
