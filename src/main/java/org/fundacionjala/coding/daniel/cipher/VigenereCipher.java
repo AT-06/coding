@@ -93,13 +93,4 @@ public class VigenereCipher extends Cipher {
     public String getKey() {
         return key;
     }
-
-    /**
-     * Setter for key.
-     *
-     * @param key a new key.
-     */
-    public void setKey(String key) {
-        this.key = key;
-    }
 }
