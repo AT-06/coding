@@ -14,6 +14,7 @@ public class CifradoCesarTest {
     private static final int NEGONE = -1;
     private static final int ONE = 1;
     private static final String CASE1 = "HOLA JALASOFT";
+    private static final String LIMON = "LIMON";
 
     /**
      * initialize cifrado cesar.
@@ -107,7 +108,7 @@ public class CifradoCesarTest {
     @Test
     public void vigenereOneWord() {
         String sentence = "TXYP XMUNHCRC";
-        assertEquals(sentence, cesar.vigenereEncode("LIMON", CASE1));
+        assertEquals(sentence, cesar.vigenereEncode(LIMON, CASE1));
     }
 
     /**
@@ -115,14 +116,14 @@ public class CifradoCesarTest {
      */
     @Test
     public void vigenereDecode() {
-        assertEquals(CASE1, cesar.vigenereDecode("LIMON", "TXYP XMUNHCRC"));
+        assertEquals(CASE1, cesar.vigenereDecode(LIMON, "TXYP XMUNHCRC"));
     }
     /**
      * test to vigenere method.
      */
     @Test
     public void vigenereDecodeSpecialCharacters() {
-        assertEquals("_HOLA_JALASOFT*", cesar.vigenereDecode("LIMON", "_TXYP_XMUNHCRC*"));
+        assertEquals("_HOLA_JALASOFT*", cesar.vigenereDecode(LIMON, "_TXYP_XMUNHCRC*"));
     }
 
 }
