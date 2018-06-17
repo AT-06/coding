@@ -39,4 +39,34 @@ public class CesarCryptoTest {
         final int clave = 5;
         assertEquals("ETWWT", cesarCrypto.encode(texto, clave));
     }
+
+    /**
+     * Test for returning empty String.
+     */
+    @Test
+    public void testEncodeCesarCrypto3() {
+        String texto = "";
+        final int clave = 4;
+        assertEquals("", cesarCrypto.encode(texto, clave));
+    }
+
+    /**
+     * Test for returning empty String.
+     */
+    @Test
+    public void testEncodeCesarCrypto4() {
+        String texto = null;
+        final int clave = 4;
+        assertEquals("", cesarCrypto.encode(texto, clave));
+    }
+
+    /**
+     * Test for special character.
+     */
+    @Test
+    public void testEncodeCesarCrypto5() {
+        String texto = "Z?ORR|O";
+        final int clave = 5;
+        assertEquals("E?TWW|T", cesarCrypto.encode(texto, clave));
+    }
 }
