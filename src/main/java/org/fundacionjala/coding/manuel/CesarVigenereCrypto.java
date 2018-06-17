@@ -106,4 +106,30 @@ public final class CesarCrypto {
         }
         return encriptedText.toString();
     }
+
+    /**
+     * Method to decode text with Vigenere.
+     * @param text to encode.
+     * @param key to encode.
+     * @return the text encrypted.
+     */
+    public String decodeVigenere(String text, String key) {
+        if (text == null || text.length() == 0) {
+            return "";
+        }
+        int j = 0;
+        StringJoiner encriptedText = new StringJoiner(" ");
+        for (String word : text.split(" ")) {
+            StringBuilder encriptedWord = new StringBuilder();
+            for (int i = 0; i < word.length(); i++, j++) {
+                if (j == key.length()) {
+                    j = 0;
+                }
+                int newValue = determineNumberMovements(word.charAt(i), -(key.charAt(j) - VALUE));
+                encriptedWord.append(String.valueOf(Character.toChars(newValue)));
+            }
+            encriptedText.add(encriptedWord);
+        }
+        return encriptedText.toString();
+    }
 }
