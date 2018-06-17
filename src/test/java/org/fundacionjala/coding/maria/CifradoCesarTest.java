@@ -29,6 +29,15 @@ public class CifradoCesarTest {
     public void encodeWithPositive() {
         String sentence = "KROD DEF C";
         assertEquals(sentence, cesar.encode("HOLA ABC Z", THREE));
+        assertEquals("CRPELH", cesar.encode("ZOMBIE", THREE));
+    }
+
+    /**
+     * test to encode with special character .
+     */
+    @Test
+    public void encodeWithSpecialCharacter() {
+        assertEquals("K_ROD", cesar.encode("H_OLA", THREE));
     }
 
     /**
@@ -38,6 +47,16 @@ public class CifradoCesarTest {
     public void encodeWithNegative() {
         String sentence = "ZAB Y";
         assertEquals(sentence, cesar.encode("ABC Z", NEGONE));
+        assertEquals("X", cesar.encode("Y", NEGONE));
+    }
+
+    /**
+     * test to encode with negative key and special character.
+     */
+    @Test
+    public void encodeWithNegativeSpecialCharacter() {
+        assertEquals("ZAB_", cesar.encode("ABC_", NEGONE));
+        assertEquals("X_", cesar.encode("Y_", NEGONE));
     }
 
     /**
@@ -86,8 +105,32 @@ public class CifradoCesarTest {
      * test to vigenere method.
      */
     @Test
-    public void vigeneteOneWord() {
+    public void vigenereNullMessaje() {
+        assertEquals("", cesar.vigenereEncode("HOLA JALASOFT", null));
+    }
+
+    /**
+     * test to vigenere method.
+     */
+    @Test
+    public void vigenereNullEmpty() {
+        assertEquals("", cesar.vigenereEncode("HOLA JALASOFT", ""));
+    }
+    /**
+     * test to vigenere method.
+     */
+    @Test
+    public void vigenereOneWord() {
         String sentence = "TXYP XMUNHCRC";
-        assertEquals(sentence, cesar.vigenere("LIMON", "HOLA JALASOFT"));
+        assertEquals(sentence, cesar.vigenereEncode("LIMON", "HOLA JALASOFT"));
+    }
+
+    /**
+     * test to vigenere method.
+     */
+    @Test
+    public void vigenereDecode() {
+        String sentence = "HOLA JALASOFT";
+        assertEquals(sentence, cesar.vigenereDecode("LIMON", "TXYP XMUNHCRC"));
     }
 }
