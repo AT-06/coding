@@ -33,13 +33,10 @@ public class VigenereEncryption extends Encryption {
     }
 
     /**
-     * Method to encode Message with Vigenere Encryption.
-     *
-     * @param message This is message to encode with Vigenere Encryption.
-     * @param key     This is a key with string value.
-     * @return String , string already encode with Vigenere Encryption..
+     * {@inheritDoc}
      */
-    public String encodeMessageWithVigenereEncryption(String message, String key) {
+    @Override
+    public String encodeMessage(String message, String key) {
 
         if (!this.isInvalidMessage(message)) {
             return Arrays.stream(message.split(""))
@@ -52,13 +49,10 @@ public class VigenereEncryption extends Encryption {
     }
 
     /**
-     * Method to decode Message with Vigenere Encryption.
-     *
-     * @param message This is message to decode with Vigenere Encryption.
-     * @param key     This is a key with string value.
-     * @return String , string already encode with Vigenere Encryption..
+     * {@inheritDoc}
      */
-    public String decodeMessageWithVigenereEncryption(String message, String key) {
+    @Override
+    public String decodeMessage(String message, String key) {
 
         if (!this.isInvalidMessage(message)) {
             return Arrays.stream(message.split(""))
@@ -103,5 +97,21 @@ public class VigenereEncryption extends Encryption {
     private int getVigenereKey(char letter) {
         int index = letter + 1;
         return index - FIRST_LETTER;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String encodeMessage(String message, int key) {
+        return null;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String decodeMessage(String message, int key) {
+        return null;
     }
 }

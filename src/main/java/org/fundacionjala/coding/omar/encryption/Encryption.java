@@ -24,6 +24,40 @@ public abstract class Encryption {
     protected static final int DIFFERENCE = 26;
 
     /**
+     * Method to encode Message with Vigenere Encryption.
+     *
+     * @param message This is message to encode.
+     * @param key     This is key for encode.
+     * @return String , string already encode with Cesar Encryption.
+     */
+    public abstract String encodeMessage(String message, String key);
+    /**
+     * Method to decode Message with Vigenere Encryption.
+     *
+     * @param message This is message to decode.
+     * @param key     This is key for decode.
+     * @return String , string already decode with Cesar Encryption.
+     */
+    public abstract String decodeMessage(String message, String key);
+
+    /**
+     * Method to encode Message with Cesar Encryption.
+     *
+     * @param message This is message to encode.
+     * @param key     This is key for encode.
+     * @return String , string already encode with Cesar Encryption.
+     */
+    public abstract String encodeMessage(String message, int key);
+    /**
+     * Method to decode Message with Cesar Encryption.
+     *
+     * @param message This is message to decode.
+     * @param key     This is key for decode.
+     * @return String , string already decode with Cesar Encryption.
+     */
+    public abstract String decodeMessage(String message, int key);
+
+    /**
      * Method to verify if a letter exist on alphabet.
      *
      * @param letter This is a letter to encode/decode.

@@ -23,13 +23,10 @@ import java.util.stream.Collectors;
 public class CesarEncryption extends Encryption {
 
     /**
-     * Method to encode Message with Cesar Encryption.
-     *
-     * @param message This is message to encode.
-     * @param key     This is key for encode.
-     * @return String , string already encode with Cesar Encryption.
+     * {@inheritDoc}
      */
-    public String encodeMessageWithCesarEncryption(String message, int key) {
+    @Override
+    public String encodeMessage(String message, int key) {
         if (!this.isInvalidMessage(message)) {
             return Arrays.stream(message.split(""))
                     .map(letter -> this.getLetterWithAlgorithm(letter, key))
@@ -39,13 +36,10 @@ public class CesarEncryption extends Encryption {
     }
 
     /**
-     * Method to decode Message with Cesar Encryption.
-     *
-     * @param message This is message to decode.
-     * @param key     This is key for decode.
-     * @return String , string already encode with Cesar Encryption.
+     * {@inheritDoc}
      */
-    public String decodeMessageWithCesarEncryption(String message, int key) {
+    @Override
+    public String decodeMessage(String message, int key) {
 
         if (!this.isInvalidMessage(message)) {
             return Arrays.stream(message.split(""))
@@ -53,6 +47,22 @@ public class CesarEncryption extends Encryption {
                     .collect(Collectors.joining());
         }
         return "";
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String encodeMessage(String message, String key) {
+        return null;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String decodeMessage(String message, String key) {
+        return null;
     }
 }
 

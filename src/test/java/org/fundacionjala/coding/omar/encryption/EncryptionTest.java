@@ -47,8 +47,8 @@ public class EncryptionTest {
     public void testEncodeWithPositiveKey() {
         final int key1 = 3;
         final int key2 = 5;
-        assertEquals("KROD", cesarEncryption.encodeMessageWithCesarEncryption("HOLA", key1));
-        assertEquals("ETWWT", cesarEncryption.encodeMessageWithCesarEncryption("ZORRO", key2));
+        assertEquals("KROD", cesarEncryption.encodeMessage("HOLA", key1));
+        assertEquals("ETWWT", cesarEncryption.encodeMessage("ZORRO", key2));
     }
 
     /**
@@ -57,7 +57,7 @@ public class EncryptionTest {
     @Test
     public void testEncodeWithNegativeKey() {
         final int key = -3;
-        assertEquals("HOLA", cesarEncryption.encodeMessageWithCesarEncryption("KROD", key));
+        assertEquals("HOLA", cesarEncryption.encodeMessage("KROD", key));
     }
 
     /**
@@ -66,7 +66,7 @@ public class EncryptionTest {
     @Test
     public void testEncodeWithEmptyMessage() {
         final int key = 5;
-        assertEquals("", cesarEncryption.encodeMessageWithCesarEncryption("", key));
+        assertEquals("", cesarEncryption.encodeMessage("", key));
     }
 
     /**
@@ -75,7 +75,7 @@ public class EncryptionTest {
     @Test
     public void testEncodeWithNullMessage() {
         final int key = 5;
-        assertEquals("", cesarEncryption.encodeMessageWithCesarEncryption(null, key));
+        assertEquals("", cesarEncryption.encodeMessage(null, key));
     }
 
     /**
@@ -84,8 +84,8 @@ public class EncryptionTest {
     @Test
     public void testEncodeWithSpecialCharactersAndBlankSpace() {
         final int key = 3;
-        assertEquals("K_ROD", cesarEncryption.encodeMessageWithCesarEncryption("H_OLA", key));
-        assertEquals("KROD CRUUR", cesarEncryption.encodeMessageWithCesarEncryption("HOLA ZORRO", key));
+        assertEquals("K_ROD", cesarEncryption.encodeMessage("H_OLA", key));
+        assertEquals("KROD CRUUR", cesarEncryption.encodeMessage("HOLA ZORRO", key));
     }
 
     /**
@@ -94,8 +94,8 @@ public class EncryptionTest {
     @Test
     public void testDecodeWithPositiveKey() {
         final int key = 3;
-        assertEquals("X", cesarEncryption.decodeMessageWithCesarEncryption("A", key));
-        assertEquals("W", cesarEncryption.decodeMessageWithCesarEncryption("Z", key));
+        assertEquals("X", cesarEncryption.decodeMessage("A", key));
+        assertEquals("W", cesarEncryption.decodeMessage("Z", key));
     }
 
     /**
@@ -104,8 +104,8 @@ public class EncryptionTest {
     @Test
     public void testDecodeWithNegativeKey() {
         final int key = -3;
-        assertEquals("FKVG", cesarEncryption.decodeMessageWithCesarEncryption("CHSD", key));
-        assertEquals("CCGIV VGI", cesarEncryption.decodeMessageWithCesarEncryption("ZZDFS SDF", key));
+        assertEquals("FKVG", cesarEncryption.decodeMessage("CHSD", key));
+        assertEquals("CCGIV VGI", cesarEncryption.decodeMessage("ZZDFS SDF", key));
     }
 
     /**
@@ -114,7 +114,7 @@ public class EncryptionTest {
     @Test
     public void testDecodeWithEmptyMessage() {
         final int key = 3;
-        assertEquals("", cesarEncryption.decodeMessageWithCesarEncryption("", key));
+        assertEquals("", cesarEncryption.decodeMessage("", key));
     }
 
     /**
@@ -123,7 +123,7 @@ public class EncryptionTest {
     @Test
     public void testDecodeWithNullMessage() {
         final int key = 3;
-        assertEquals("", cesarEncryption.decodeMessageWithCesarEncryption(null, key));
+        assertEquals("", cesarEncryption.decodeMessage(null, key));
     }
 
     /**
@@ -132,8 +132,8 @@ public class EncryptionTest {
     @Test
     public void testDecodeWithSpecialCharactersAndBlankSpace() {
         final int key = 3;
-        assertEquals("H_OLA", cesarEncryption.decodeMessageWithCesarEncryption("K_ROD", key));
-        assertEquals("HOLA ZORRO", cesarEncryption.decodeMessageWithCesarEncryption("KROD CRUUR", key));
+        assertEquals("H_OLA", cesarEncryption.decodeMessage("K_ROD", key));
+        assertEquals("HOLA ZORRO", cesarEncryption.decodeMessage("KROD CRUUR", key));
     }
 
     /**
@@ -141,7 +141,7 @@ public class EncryptionTest {
      */
     @Test
     public void testEncodeVigenereEncryption() {
-        assertEquals("VJYPGAOG", vigenereEncryption.encodeMessageWithVigenereEncryption("JALASOFT", VIGENERE_KEY));
+        assertEquals("VJYPGAOG", vigenereEncryption.encodeMessage("JALASOFT", VIGENERE_KEY));
     }
 
     /**
@@ -150,7 +150,7 @@ public class EncryptionTest {
     @Test
     public void testEncodeVigenereEncryptionWithBlankSpaces() {
         assertEquals("TXYP XMUNHCRC",
-                vigenereEncryption.encodeMessageWithVigenereEncryption("HOLA JALASOFT", VIGENERE_KEY));
+                vigenereEncryption.encodeMessage("HOLA JALASOFT", VIGENERE_KEY));
     }
 
     /**
@@ -158,7 +158,7 @@ public class EncryptionTest {
      */
     @Test
     public void testEncodeVigenereEncryptionWithEmptyMessage() {
-        assertEquals("", vigenereEncryption.encodeMessageWithVigenereEncryption("", VIGENERE_KEY));
+        assertEquals("", vigenereEncryption.encodeMessage("", VIGENERE_KEY));
     }
 
     /**
@@ -166,7 +166,7 @@ public class EncryptionTest {
      */
     @Test
     public void testEncodeVigenereEncryptionWithNullMessage() {
-        assertEquals("", vigenereEncryption.encodeMessageWithVigenereEncryption(null, VIGENERE_KEY));
+        assertEquals("", vigenereEncryption.encodeMessage(null, VIGENERE_KEY));
     }
 
     /**
@@ -174,7 +174,7 @@ public class EncryptionTest {
      */
     @Test
     public void testDecodeVigenereEncryption() {
-        assertEquals("JALASOFT", vigenereEncryption.decodeMessageWithVigenereEncryption("VJYPGAOG", VIGENERE_KEY));
+        assertEquals("JALASOFT", vigenereEncryption.decodeMessage("VJYPGAOG", VIGENERE_KEY));
     }
 
     /**
@@ -183,7 +183,7 @@ public class EncryptionTest {
     @Test
     public void testDecodeVigenereEncryptionWithBlankSpaces() {
         assertEquals("HOLA JALASOFT",
-                vigenereEncryption.decodeMessageWithVigenereEncryption("TXYP XMUNHCRC", VIGENERE_KEY));
+                vigenereEncryption.decodeMessage("TXYP XMUNHCRC", VIGENERE_KEY));
     }
 
     /**
@@ -191,7 +191,7 @@ public class EncryptionTest {
      */
     @Test
     public void testDecodeVigenereEncryptionWithEmptyMessage() {
-        assertEquals("", vigenereEncryption.decodeMessageWithVigenereEncryption("", VIGENERE_KEY));
+        assertEquals("", vigenereEncryption.decodeMessage("", VIGENERE_KEY));
     }
 
     /**
@@ -199,7 +199,7 @@ public class EncryptionTest {
      */
     @Test
     public void testDecodeVigenereEncryptionWithNullMessage() {
-        assertEquals("", vigenereEncryption.decodeMessageWithVigenereEncryption(null, VIGENERE_KEY));
+        assertEquals("", vigenereEncryption.decodeMessage(null, VIGENERE_KEY));
     }
 
 }
