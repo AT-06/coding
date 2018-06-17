@@ -145,10 +145,12 @@ public class CesarCipherTest {
      *
      */
     @Test
-    public void testDecodeWithNegativeKey() {
-        final int key = -3;
-        assertEquals("ZEPA", cesar.encode("CHSD", key));
-        assertEquals("WWACP PAC", cesar.encode("ZZDFS SDF", key));
+    public void testDecodeWithNegativeKeys() {
+        final int key1 = -3;
+        final int key2 = -5;
+        assertEquals("FKVG", cesar.decode("CHSD", key1));
+        assertEquals("CCGIV VGI", cesar.decode("ZZDFS SDF", key1));
+        assertEquals("MTQF", cesar.decode("HOLA",key2));
     }
 
     /**
