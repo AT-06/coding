@@ -1,5 +1,5 @@
 /*
- * @(#)CesarEncryption.java
+ * @(#)VigenereEncryption.java
  *
  * Copyright (c) 2018 Jala Foundation.
  * Address
@@ -26,7 +26,6 @@ public class VigenereEncryption extends Encryption {
 
     /**
      * Constructor to initialize index for Vigenere Key.
-     *
      */
     public VigenereEncryption() {
         super();
