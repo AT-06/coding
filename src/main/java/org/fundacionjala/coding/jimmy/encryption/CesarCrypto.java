@@ -32,4 +32,13 @@ public class CesarCrypto extends Crypto {
         }
         return cipherText(objects[0].toString(), -Integer.parseInt(objects[1].toString()));
     }
+
+    /**
+     * @param objects are the parameters.
+     * @return null;
+     */
+    @Override
+    public String encodeDecode(Object... objects) {
+        return null;
+    }
 }

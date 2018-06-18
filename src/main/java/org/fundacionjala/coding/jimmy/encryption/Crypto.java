@@ -23,6 +23,14 @@ public abstract class Crypto {
     public abstract String decode(Object... objects);
 
     /**
+     * Encode and Decode abstract method.
+     *
+     * @param objects are the parameters.
+     * @return the cipher.
+     */
+    public abstract String encodeDecode(Object... objects);
+
+    /**
      * Main method for CesarCrypto.
      *
      * @param texto is the string to decrypt or encrypt.
@@ -110,29 +118,5 @@ public abstract class Crypto {
             }
         }
         return builder.toString();
-    }
-
-    /**
-     * Vigenere encode method.
-     *
-     * @param texto  is the text.
-     * @param clave  is the key.
-     * @param number is a positive number.
-     * @return the vigenere code encrypted.
-     */
-    public String encodeVigenere(String texto, String clave, int number) {
-        return coreVigenere(texto, clave, number);
-    }
-
-    /**
-     * Vigenere decode method.
-     *
-     * @param texto  is the text.
-     * @param clave  is the key.
-     * @param number is a negative number.
-     * @return the vigenere code decrypted.
-     */
-    public String decodeVigenere(String texto, String clave, int number) {
-        return coreVigenere(texto, clave, number);
     }
 }

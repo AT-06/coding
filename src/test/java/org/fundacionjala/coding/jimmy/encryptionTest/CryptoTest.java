@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.jimmy.encryptionTest;
+package org.fundacionjala.coding.jimmy.encryptiontest;
 
 import org.fundacionjala.coding.jimmy.encryption.CesarCrypto;
 import org.fundacionjala.coding.jimmy.encryption.VigenereCrypto;
@@ -103,7 +103,7 @@ public class CryptoTest {
     @Test
     public void testEncodeVigenereCrypto() {
         String texto = "HOLA JALASOFT";
-        assertEquals("TXYP XMUNHCRC", vigenereCrypto.encodeVigenere(texto, LIMON, POSITIVE));
+        assertEquals("TXYP XMUNHCRC", vigenereCrypto.encodeDecode(texto, LIMON, POSITIVE));
     }
 
     /**
@@ -112,7 +112,7 @@ public class CryptoTest {
     @Test
     public void testEncodeVigenereCryptoSpecialCharacter() {
         String texto = "HOL?A JALA|SOFT";
-        assertEquals("TXY?P XMUN|HCRC", vigenereCrypto.encodeVigenere(texto, LIMON, POSITIVE));
+        assertEquals("TXY?P XMUN|HCRC", vigenereCrypto.encodeDecode(texto, LIMON, POSITIVE));
     }
 
     /**
@@ -121,7 +121,7 @@ public class CryptoTest {
     @Test
     public void testDecodeVigenereCrypto() {
         String texto = "TXYP XMUNHCRC";
-        assertEquals("HOLA JALASOFT", vigenereCrypto.decodeVigenere(texto, LIMON, NEGATIVE));
+        assertEquals("HOLA JALASOFT", vigenereCrypto.encodeDecode(texto, LIMON, NEGATIVE));
     }
 
     /**
@@ -130,7 +130,7 @@ public class CryptoTest {
     @Test
     public void testDecodeVigenereCryptoEmptytext() {
         String texto = "";
-        assertEquals("", vigenereCrypto.encodeVigenere(texto, LIMON, POSITIVE));
+        assertEquals("", vigenereCrypto.encodeDecode(texto, LIMON, POSITIVE));
     }
 
     /**
@@ -139,6 +139,6 @@ public class CryptoTest {
     @Test
     public void testDecodeVigenereCryptoEmptytext2() {
         String texto = "";
-        assertEquals("", vigenereCrypto.decodeVigenere(texto, LIMON, NEGATIVE));
+        assertEquals("", vigenereCrypto.encodeDecode(texto, LIMON, NEGATIVE));
     }
 }

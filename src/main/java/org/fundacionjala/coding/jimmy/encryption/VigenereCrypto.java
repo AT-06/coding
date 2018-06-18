@@ -6,30 +6,34 @@ package org.fundacionjala.coding.jimmy.encryption;
 public class VigenereCrypto extends Crypto {
 
     /**
-     * Vigenere encode override.
-     *
      * @param objects are the parameters.
-     * @return the code cipher.
+     * @return null.
      */
     @Override
     public String encode(Object... objects) {
-        if (isEmptyOrNull(objects[0])) {
-            return "";
-        }
-        return coreVigenere(objects[0].toString(), objects[1].toString(), Integer.parseInt(objects[1].toString()));
+        return null;
     }
 
     /**
-     * Vigenere decode override.
+     * @param objects are the parameters.
+     * @return null.
+     */
+    @Override
+    public String decode(Object... objects) {
+        return null;
+    }
+
+    /**
+     * Vigenere enconde and decode override.
      *
      * @param objects are the parameters.
      * @return the code cipher.
      */
     @Override
-    public String decode(Object... objects) {
+    public String encodeDecode(Object... objects) {
         if (isEmptyOrNull(objects[0])) {
             return "";
         }
-        return coreVigenere(objects[0].toString(), objects[1].toString(), Integer.parseInt(objects[1].toString()));
+        return coreVigenere(objects[0].toString(), objects[1].toString(), Integer.parseInt(objects[2].toString()));
     }
 }
