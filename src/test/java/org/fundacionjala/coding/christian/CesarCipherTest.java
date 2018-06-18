@@ -14,12 +14,17 @@ public class CesarCipherTest {
      */
     private Cipher cesar;
 
+    private CipherVigenere vigenere;
+
+    private static final String VIGENERE_KEY = "LIMON";
+
     /**
      *
      */
     @Before
     public void setUp() {
         cesar = new Cipher();
+        vigenere = new CipherVigenere();
     }
 
     /**
@@ -161,5 +166,76 @@ public class CesarCipherTest {
         final int key = 3;
         assertEquals("", cesar.decode(null, key));
     }
+
+    /**
+     *
+     */
+    @Test
+    public void shouldVigenereEncodeDoNothingWithEmptyString() {
+        final int key = 3;
+        assertEquals("", vigenere.encode("", key));
+    }
+
+    /**
+     *
+     */
+    @Test
+    public void shouldVigenereDecodeDoNothingWithEmptyString() {
+        final int key = 3;
+        assertEquals("", vigenere.decode("", key));
+    }
+
+
+
+    /**
+     * Test to encode with Vigenere Encryption and String key.
+     */
+    @Test
+    public void testEncodeVigenereEncryption() {
+        assertEquals("UIXOFZNF", vigenere.vigenereEncode("JALASOFT", VIGENERE_KEY));
+    }
+
+
+    /**
+     *
+     */
+    @Test
+    public void testEncodeVigenereEncryptionWithEmptyMessage() {
+        assertEquals("", vigenere.vigenereEncode("", VIGENERE_KEY));
+    }
+
+    /**
+     *
+     */
+    @Test
+    public void testEncodeVigenereEncryptionWithNullMessage() {
+        assertEquals("", vigenere.vigenereEncode(null, VIGENERE_KEY));
+    }
+
+    /**
+     *
+     */
+    @Test
+    public void testDecodeVigenereEncryption() {
+        assertEquals("YSZMFDXH", vigenere.vigenereDecode("JALASOFT", VIGENERE_KEY));
+    }
+
+
+    /**
+     *
+     */
+    @Test
+    public void testDecodeVigenereEncryptionWithEmptyMessage() {
+        assertEquals("", vigenere.vigenereDecode("", VIGENERE_KEY));
+    }
+
+    /**
+     *
+     */
+    @Test
+    public void testDecodeVigenereEncryptionWithNullMessage() {
+        assertEquals("", vigenere.vigenereDecode(null, VIGENERE_KEY));
+    }
+
 
 }

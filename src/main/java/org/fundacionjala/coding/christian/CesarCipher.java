@@ -9,6 +9,8 @@ public abstract class CesarCipher {
      */
     static final int ALPHABET = 26;
 
+    static final String ALPHABET_VIGENERE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
     /**
      * @param message string.
      * @param key int.
@@ -22,8 +24,6 @@ public abstract class CesarCipher {
      * @return message encoded.
      */
     public abstract String encode(String message, int key);
-
-
 
 
 }

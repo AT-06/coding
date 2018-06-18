@@ -37,4 +37,6 @@ public class Cipher extends CesarCipher {
         }
         return encoded.toString();
     }
+
+
 }
