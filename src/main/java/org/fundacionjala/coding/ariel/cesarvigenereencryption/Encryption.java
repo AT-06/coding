@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.ariel.encryption;
+package org.fundacionjala.coding.ariel.cesarvigenereencryption;
 
 /**
  * Encryption class.
