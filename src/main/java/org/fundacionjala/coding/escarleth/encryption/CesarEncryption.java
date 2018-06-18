@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.escarleth.finalKata;
+package org.fundacionjala.coding.escarleth.encryption;
 
 /**
  * CifradoCesar is a class that contains methods to encode,decode.

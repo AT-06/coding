@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.escarleth.finalKata;
+package org.fundacionjala.coding.escarleth.encryption;
 
 import org.junit.Before;
 import org.junit.Test;

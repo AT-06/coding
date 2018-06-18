@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.escarleth.finalKata;
+package org.fundacionjala.coding.escarleth.encryption;
 
 /**
  * Encryption is a class that contains methods to return encode,decode letter and validators.
