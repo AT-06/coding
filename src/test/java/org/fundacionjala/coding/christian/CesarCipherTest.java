@@ -116,7 +116,7 @@ public class CesarCipherTest {
     @Test
     public void testEncodeWithNullMessage() {
         final int key = 5;
-        assertEquals("", cesar.decode(null, key));
+        assertEquals("", cesar.decode("", key));
         assertEquals("", cesar.decode(null, key));
     }
 
