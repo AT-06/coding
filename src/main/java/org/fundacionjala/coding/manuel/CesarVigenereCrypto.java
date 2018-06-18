@@ -2,37 +2,37 @@ package org.fundacionjala.coding.manuel;
 import java.util.StringJoiner;
 
 /**
- * CesarCrypto class.
+ * CesarVigenereCrypto class.
  */
-public final class CesarCrypto {
+public final class CesarVigenereCrypto {
 
     private static final char ASCII_LOWER = 'A';
     private static final char ASCII_UPPER = 'Z';
     private static final int VALUE = 64;
 
     /**
-     * Method to encode a text using Cesar algorithm.
-     * @param text to encode.
+     * Method to encodeCesar a text using Cesar algorithm.
+     * @param text to encodeCesar.
      * @param key movements to make.
      * @return the text encoded.
      */
-    public String encode(String text, int key) {
+    public String encodeCesar(String text, int key) {
         return coreCall(text, key);
     }
 
     /**
-     * Method to decode a text using Cesar algorithm.
-     * @param text to decode.
+     * Method to decodeCesar a text using Cesar algorithm.
+     * @param text to decodeCesar.
      * @param key movements to make.
      * @return the text encoded.
      */
-    public String decode(String text, int key) {
+    public String decodeCesar(String text, int key) {
         return coreCall(text, -key);
     }
 
     /**
      * Method to split text and call rotateLetters.
-     * @param text to decode or encode.
+     * @param text to decodeCesar or encodeCesar.
      * @param key movements to make.
      * @return the text encoded or decoded.
      */
@@ -40,11 +40,11 @@ public final class CesarCrypto {
         if (text == null || text.length() == 0) {
             return "";
         }
-        StringJoiner rotateLetters = new StringJoiner(" ");
+        StringJoiner lettersRotated = new StringJoiner(" ");
         for (String word : text.split(" ")) {
-            rotateLetters.add(rotateLetters(word, key));
+            lettersRotated.add(rotateLetters(word, key));
         }
-        return rotateLetters.toString();
+        return lettersRotated.toString();
     }
 
     /**
@@ -82,41 +82,39 @@ public final class CesarCrypto {
     }
 
     /**
-     * Method to encode text with Vigenere.
-     * @param text to encode.
+     * Method to encodeVigerene a text using Vigenere algorithm.
+     * @param text to encodeVigenere.
      * @param key to encode.
-     * @return the text encrypted.
+     * @return the text encoded.
      */
     public String encodeVigenere(String text, String key) {
         if (text == null || text.length() == 0) {
             return "";
         }
-        int j = 0;
-        StringJoiner encriptedText = new StringJoiner(" ");
-        for (String word : text.split(" ")) {
-            StringBuilder encriptedWord = new StringBuilder();
-            for (int i = 0; i < word.length(); i++, j++) {
-                if (j == key.length()) {
-                    j = 0;
-                }
-                int newValue = determineNumberMovements(word.charAt(i), key.charAt(j) - VALUE);
-                encriptedWord.append(String.valueOf(Character.toChars(newValue)));
-            }
-            encriptedText.add(encriptedWord);
-        }
-        return encriptedText.toString();
+        return vigenereCoreCall(text, key, 1);
     }
 
     /**
-     * Method to decode text with Vigenere.
-     * @param text to encode.
-     * @param key to encode.
-     * @return the text encrypted.
+     * Method to decodeVigenere a text using Vigenere algorithm.
+     * @param text to decodeVigenere.
+     * @param key to decode.
+     * @return the text encoded.
      */
     public String decodeVigenere(String text, String key) {
         if (text == null || text.length() == 0) {
             return "";
         }
+        return vigenereCoreCall(text, key, -1);
+    }
+
+    /**
+     * Method to encode or decode text with Vigenere depending on direction parameter.
+     * @param text to encode or decode.
+     * @param key to encode or decode.
+     * @param direction to move right or left.
+     * @return the text encrypted.
+     */
+    public String vigenereCoreCall(String text, String key, int direction) {
         int j = 0;
         StringJoiner encriptedText = new StringJoiner(" ");
         for (String word : text.split(" ")) {
@@ -125,7 +123,7 @@ public final class CesarCrypto {
                 if (j == key.length()) {
                     j = 0;
                 }
-                int newValue = determineNumberMovements(word.charAt(i), -(key.charAt(j) - VALUE));
+                int newValue = determineNumberMovements(word.charAt(i), (key.charAt(j) - VALUE) * direction);
                 encriptedWord.append(String.valueOf(Character.toChars(newValue)));
             }
             encriptedText.add(encriptedWord);
