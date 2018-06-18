@@ -141,4 +141,40 @@ public class CryptoTest {
         String texto = "";
         assertEquals("", vigenereCrypto.encodeDecode(texto, LIMON, NEGATIVE));
     }
+
+    /**
+     * Test coreVigenere.
+     */
+    @Test
+    public void testCesarEncodeNullEmpty() {
+        String texto = null;
+        assertEquals("", cesarCrypto.decode(texto, LIMON, NEGATIVE));
+    }
+
+    /**
+     * Test coreVigenere.
+     */
+    @Test
+    public void testCesarEncodeNullEmpty1() {
+        String texto = null;
+        assertEquals(null, cesarCrypto.encodeDecode(texto, LIMON, NEGATIVE));
+    }
+
+    /**
+     * Test vigenereCrypto encode.
+     */
+    @Test
+    public void testVingereEncodeNullEmpty() {
+        String texto = null;
+        assertEquals(null, vigenereCrypto.encode(texto, LIMON, NEGATIVE));
+    }
+
+    /**
+     * Test vigenereCrypto encode.
+     */
+    @Test
+    public void testVingereEncodeNullEmpty1() {
+        String texto = null;
+        assertEquals(null, vigenereCrypto.decode(texto, LIMON, NEGATIVE));
+    }
 }

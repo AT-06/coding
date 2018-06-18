@@ -86,9 +86,6 @@ public abstract class Crypto {
      * @return the code.
      */
     protected String coreVigenere(String texto, String clave, int number) {
-        if (isEmptyOrNull(texto)) {
-            return "";
-        }
         StringBuilder builder = new StringBuilder();
         int counter = 0;
         String[] textoSplitted = texto.split("");
