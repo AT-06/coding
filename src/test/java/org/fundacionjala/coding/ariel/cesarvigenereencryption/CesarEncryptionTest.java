@@ -49,7 +49,10 @@ public class CesarEncryptionTest {
     public void emptyText() {
         assertEquals("", cesarEncryption.encodeMessage("", "5"));
         assertEquals("", cesarEncryption.encodeMessage(null, "3"));
+        assertEquals("", cesarEncryption.decodeMessage(null, "3"));
+        assertEquals("", cesarEncryption.decodeMessage("", "5"));
     }
+
 
     /**
      * Test that check the decode.
