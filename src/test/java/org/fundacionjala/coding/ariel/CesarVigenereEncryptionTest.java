@@ -1,7 +1,7 @@
 package org.fundacionjala.coding.ariel;
 
-import org.fundacionjala.coding.ariel.CesarVigenereEncryption.CesarEncryption;
-import org.fundacionjala.coding.ariel.CesarVigenereEncryption.VigenereEncryption;
+import org.fundacionjala.coding.ariel.cesarvigenereencryption.CesarEncryption;
+import org.fundacionjala.coding.ariel.cesarvigenereencryption.VigenereEncryption;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,7 +16,7 @@ public class CesarVigenereEncryptionTest {
 
 
     /**
-     * Init the class CesarVigenereEncryption.
+     * Init the class cesarvigenereencryption.
      */
     @Before
     public void init() {
