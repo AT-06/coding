@@ -1,34 +1,29 @@
-package org.fundacionjala.coding.manuel;
+package org.fundacionjala.coding.manuel.encryptionAlgorithms;
+
 import java.util.StringJoiner;
 
 /**
- * CesarVigenereCrypto class.
+ * Class to encrypt texts.
  */
-public final class CesarVigenereCrypto {
+public abstract class Crypto {
 
     private static final char ASCII_LOWER = 'A';
     private static final char ASCII_UPPER = 'Z';
     private static final int VALUE = 64;
 
     /**
-     * Method to encodeCesar a text using Cesar algorithm.
-     * @param text to encodeCesar.
-     * @param key movements to make.
-     * @return the text encoded.
+     * Abstract method to encode text.
+     * @param objects to encode, can be a String and a int or two Strings.
+     * @return the text encrypted.
      */
-    public String encodeCesar(String text, int key) {
-        return coreCall(text, key);
-    }
+    public abstract String encode(Object... objects);
 
     /**
-     * Method to decodeCesar a text using Cesar algorithm.
-     * @param text to decodeCesar.
-     * @param key movements to make.
-     * @return the text encoded.
+     * Abstract method to decode text.
+     * @param objects to decode, can be a String and a int or two Strings.
+     * @return the text decoded.
      */
-    public String decodeCesar(String text, int key) {
-        return coreCall(text, -key);
-    }
+    public abstract String decode(Object... objects);
 
     /**
      * Method to split text and call rotateLetters.
@@ -37,9 +32,6 @@ public final class CesarVigenereCrypto {
      * @return the text encoded or decoded.
      */
     public String coreCall(String text, int key) {
-        if (text == null || text.length() == 0) {
-            return "";
-        }
         StringJoiner lettersRotated = new StringJoiner(" ");
         for (String word : text.split(" ")) {
             lettersRotated.add(rotateLetters(word, key));
@@ -79,32 +71,6 @@ public final class CesarVigenereCrypto {
             return ASCII_UPPER + 1 - (ASCII_LOWER - (letter + key));
         }
         return letter + key;
-    }
-
-    /**
-     * Method to encodeVigerene a text using Vigenere algorithm.
-     * @param text to encodeVigenere.
-     * @param key to encode.
-     * @return the text encoded.
-     */
-    public String encodeVigenere(String text, String key) {
-        if (text == null || text.length() == 0) {
-            return "";
-        }
-        return vigenereCoreCall(text, key, 1);
-    }
-
-    /**
-     * Method to decodeVigenere a text using Vigenere algorithm.
-     * @param text to decodeVigenere.
-     * @param key to decode.
-     * @return the text encoded.
-     */
-    public String decodeVigenere(String text, String key) {
-        if (text == null || text.length() == 0) {
-            return "";
-        }
-        return vigenereCoreCall(text, key, -1);
     }
 
     /**

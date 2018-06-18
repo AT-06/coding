@@ -1,5 +1,8 @@
 package org.fundacionjala.coding.manuel;
 
+import org.fundacionjala.coding.manuel.encryptionAlgorithms.Cesar;
+import org.fundacionjala.coding.manuel.encryptionAlgorithms.Crypto;
+import org.fundacionjala.coding.manuel.encryptionAlgorithms.Vigenere;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -11,9 +14,15 @@ import static org.junit.Assert.assertEquals;
 public class CesarVigenereCryptoTest {
 
     /**
-     * Object of the class to test.
+     * Object of the class Cesar.
      */
-    private CesarVigenereCrypto cesarVigenereCrypto;
+    private Crypto cesarCrypto;
+
+    /**
+     * Object of the class Vigenere.
+     */
+    private Crypto vigenereCrypto;
+
     private static final String VIGENERE_KEY = "LIMON";
     private static final String TEST_WORD = "ZORRO";
 
@@ -22,7 +31,8 @@ public class CesarVigenereCryptoTest {
      */
     @Before
     public void init() {
-        cesarVigenereCrypto = new CesarVigenereCrypto();
+        cesarCrypto = new Cesar();
+        vigenereCrypto = new Vigenere();
     }
 
     /**
@@ -32,8 +42,8 @@ public class CesarVigenereCryptoTest {
     public void testEncode() {
         final int firstKey = 3;
         final int secondKey = 5;
-        assertEquals("KROD", cesarVigenereCrypto.encodeCesar("HOLA", firstKey));
-        assertEquals("ETWWT", cesarVigenereCrypto.encodeCesar(TEST_WORD, secondKey));
+        assertEquals("KROD", cesarCrypto.encode("HOLA", firstKey));
+        assertEquals("ETWWT", cesarCrypto.encode(TEST_WORD, secondKey));
     }
 
 
@@ -43,8 +53,8 @@ public class CesarVigenereCryptoTest {
     @Test
     public void testEncodeNullAndEmpty() {
         final int key = 0;
-        assertEquals("", cesarVigenereCrypto.encodeCesar(null, key));
-        assertEquals("", cesarVigenereCrypto.encodeCesar("", key));
+        assertEquals("", cesarCrypto.encode(null, key));
+        assertEquals("", cesarCrypto.encode("", key));
     }
 
     /**
@@ -54,8 +64,8 @@ public class CesarVigenereCryptoTest {
     public void testEncodeSpecialCharacters() {
         final int key = 3;
         final int secondKey = 5;
-        assertEquals("KR_OD", cesarVigenereCrypto.encodeCesar("HO_LA", key));
-        assertEquals("ETW;WT", cesarVigenereCrypto.encodeCesar("ZOR;RO", secondKey));
+        assertEquals("KR_OD", cesarCrypto.encode("HO_LA", key));
+        assertEquals("ETW;WT", cesarCrypto.encode("ZOR;RO", secondKey));
     }
 
     /**
@@ -65,8 +75,8 @@ public class CesarVigenereCryptoTest {
     public void testDecode() {
         final int firstKey = 3;
         final int secondKey = 5;
-        assertEquals("HOLA", cesarVigenereCrypto.decodeCesar("KROD", firstKey));
-        assertEquals(TEST_WORD, cesarVigenereCrypto.decodeCesar("ETWWT", secondKey));
+        assertEquals("HOLA", cesarCrypto.decode("KROD", firstKey));
+        assertEquals(TEST_WORD, cesarCrypto.decode("ETWWT", secondKey));
     }
 
     /**
@@ -75,8 +85,8 @@ public class CesarVigenereCryptoTest {
     @Test
     public void testDecodeNullAndEmpty() {
         final int key = 0;
-        assertEquals("", cesarVigenereCrypto.decodeCesar(null, key));
-        assertEquals("", cesarVigenereCrypto.decodeCesar("", key));
+        assertEquals("", cesarCrypto.decode(null, key));
+        assertEquals("", cesarCrypto.decode("", key));
     }
 
     /**
@@ -86,8 +96,8 @@ public class CesarVigenereCryptoTest {
     public void testDecodeSpecialCharacters() {
         final int key = 3;
         final int secondKey = 5;
-        assertEquals("HO_LA", cesarVigenereCrypto.decodeCesar("KR_OD", key));
-        assertEquals("ZOR;RO", cesarVigenereCrypto.decodeCesar("ETW;WT", secondKey));
+        assertEquals("HO_LA", cesarCrypto.decode("KR_OD", key));
+        assertEquals("ZOR;RO", cesarCrypto.decode("ETW;WT", secondKey));
     }
 
     /**
@@ -95,9 +105,9 @@ public class CesarVigenereCryptoTest {
      */
     @Test
     public void testVigenereEncode() {
-        assertEquals("TXYP", cesarVigenereCrypto.encodeVigenere("HOLA", VIGENERE_KEY));
-        assertEquals("LXEGC", cesarVigenereCrypto.encodeVigenere(TEST_WORD, VIGENERE_KEY));
-        assertEquals("TXYP XMUNHCRC", cesarVigenereCrypto.encodeVigenere("HOLA JALASOFT", VIGENERE_KEY));
+        assertEquals("TXYP", vigenereCrypto.encode("HOLA", VIGENERE_KEY));
+        assertEquals("LXEGC", vigenereCrypto.encode(TEST_WORD, VIGENERE_KEY));
+        assertEquals("TXYP XMUNHCRC", vigenereCrypto.encode("HOLA JALASOFT", VIGENERE_KEY));
     }
 
     /**
@@ -105,8 +115,8 @@ public class CesarVigenereCryptoTest {
      */
     @Test
     public void testVigenereEncodeNullAndEmpty() {
-        assertEquals("", cesarVigenereCrypto.encodeVigenere(null, VIGENERE_KEY));
-        assertEquals("", cesarVigenereCrypto.encodeVigenere("", VIGENERE_KEY));
+        assertEquals("", vigenereCrypto.encode(null, VIGENERE_KEY));
+        assertEquals("", vigenereCrypto.encode("", VIGENERE_KEY));
     }
 
     /**
@@ -114,9 +124,9 @@ public class CesarVigenereCryptoTest {
      */
     @Test
     public void testVigenereDecode() {
-        assertEquals("HOLA", cesarVigenereCrypto.decodeVigenere("TXYP", VIGENERE_KEY));
-        assertEquals(TEST_WORD, cesarVigenereCrypto.decodeVigenere("LXEGC", VIGENERE_KEY));
-        assertEquals("HOLA JALASOFT", cesarVigenereCrypto.decodeVigenere("TXYP XMUNHCRC", VIGENERE_KEY));
+        assertEquals("HOLA", vigenereCrypto.decode("TXYP", VIGENERE_KEY));
+        assertEquals(TEST_WORD, vigenereCrypto.decode("LXEGC", VIGENERE_KEY));
+        assertEquals("HOLA JALASOFT", vigenereCrypto.decode("TXYP XMUNHCRC", VIGENERE_KEY));
     }
 
     /**
@@ -124,7 +134,7 @@ public class CesarVigenereCryptoTest {
      */
     @Test
     public void testVigenereDecodeNullAndEmpty() {
-        assertEquals("", cesarVigenereCrypto.decodeVigenere(null, VIGENERE_KEY));
-        assertEquals("", cesarVigenereCrypto.decodeVigenere("", VIGENERE_KEY));
+        assertEquals("", vigenereCrypto.decode(null, VIGENERE_KEY));
+        assertEquals("", vigenereCrypto.decode("", VIGENERE_KEY));
     }
 }
