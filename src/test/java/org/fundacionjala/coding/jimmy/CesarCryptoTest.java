@@ -12,6 +12,7 @@ public class CesarCryptoTest {
 
     private static final int POSITIVE = 1;
     private static final int NEGATIVE = -POSITIVE;
+    private static final String LIMON = "LIMON";
     private CesarCrypto cesarCrypto;
 
     /**
@@ -98,8 +99,7 @@ public class CesarCryptoTest {
     @Test
     public void testEncodeVigenereCrypto() {
         String texto = "HOLA JALASOFT";
-        final String clave = "LIMON";
-        assertEquals("TXYP XMUNHCRC", cesarCrypto.encodeVigenere(texto, clave, POSITIVE));
+        assertEquals("TXYP XMUNHCRC", cesarCrypto.encodeVigenere(texto, LIMON, POSITIVE));
     }
 
     /**
@@ -108,8 +108,7 @@ public class CesarCryptoTest {
     @Test
     public void testEncodeVigenereCryptoSpecialCharacter() {
         String texto = "HOL?A JALA|SOFT";
-        final String clave = "LIMON";
-        assertEquals("TXY?P XMUN|HCRC", cesarCrypto.encodeVigenere(texto, clave, POSITIVE));
+        assertEquals("TXY?P XMUN|HCRC", cesarCrypto.encodeVigenere(texto, LIMON, POSITIVE));
     }
 
     /**
@@ -118,8 +117,7 @@ public class CesarCryptoTest {
     @Test
     public void testDecodeVigenereCrypto() {
         String texto = "TXYP XMUNHCRC";
-        final String clave = "LIMON";
-        assertEquals("HOLA JALASOFT", cesarCrypto.decodeVigenere(texto, clave, NEGATIVE));
+        assertEquals("HOLA JALASOFT", cesarCrypto.decodeVigenere(texto, LIMON, NEGATIVE));
     }
 
     /**
@@ -128,8 +126,7 @@ public class CesarCryptoTest {
     @Test
     public void testDecodeVigenereCryptoEmptytext() {
         String texto = "";
-        final String clave = "LIMON";
-        assertEquals("", cesarCrypto.encodeVigenere(texto, clave, POSITIVE));
+        assertEquals("", cesarCrypto.encodeVigenere(texto, LIMON, POSITIVE));
     }
 
     /**
@@ -138,7 +135,6 @@ public class CesarCryptoTest {
     @Test
     public void testDecodeVigenereCryptoEmptytext2() {
         String texto = "";
-        final String clave = "LIMON";
-        assertEquals("", cesarCrypto.decodeVigenere(texto, clave, NEGATIVE));
+        assertEquals("", cesarCrypto.decodeVigenere(texto, LIMON, NEGATIVE));
     }
 }
