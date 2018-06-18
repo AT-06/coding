@@ -1,5 +1,7 @@
 package org.fundacionjala.coding.maria;
 
+import org.fundacionjala.coding.maria.cifrado.CifradoCesar;
+import org.fundacionjala.coding.maria.cifrado.CifradoVigenere;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,18 +12,20 @@ import static org.junit.Assert.assertEquals;
  */
 public class CifradoCesarTest {
     private CifradoCesar cesar;
-    private static final int THREE = 3;
-    private static final int NEGONE = -1;
-    private static final int ONE = 1;
+    private CifradoVigenere vigenere;
+    private static final Object THREE = 3;
+    private static final Object NEGONE = -1;
+    private static final Object ONE = 1;
     private static final String CASE1 = "HOLA JALASOFT";
     private static final String LIMON = "LIMON";
-
+    private static final Object CASE2 = null;
     /**
      * initialize cifrado cesar.
      */
     @Before
     public void initialize() {
         cesar = new CifradoCesar();
+        vigenere = new CifradoVigenere();
     }
 
     /**
@@ -108,7 +112,7 @@ public class CifradoCesarTest {
     @Test
     public void vigenereOneWord() {
         String sentence = "TXYP XMUNHCRC";
-        assertEquals(sentence, cesar.vigenereEncode(LIMON, CASE1));
+        assertEquals(sentence, vigenere.encode(LIMON, CASE1));
     }
 
     /**
@@ -116,14 +120,14 @@ public class CifradoCesarTest {
      */
     @Test
     public void vigenereDecode() {
-        assertEquals(CASE1, cesar.vigenereDecode(LIMON, "TXYP XMUNHCRC"));
+        assertEquals(CASE1, vigenere.decode(LIMON, "TXYP XMUNHCRC"));
     }
     /**
      * test to vigenere method.
      */
     @Test
     public void vigenereDecodeSpecialCharacters() {
-        assertEquals("_HOLA_JALASOFT*", cesar.vigenereDecode(LIMON, "_TXYP_XMUNHCRC*"));
+        assertEquals("_HOLA_JALASOFT*", vigenere.decode(LIMON, "_TXYP_XMUNHCRC*"));
     }
 
     /**
@@ -131,14 +135,30 @@ public class CifradoCesarTest {
      */
     @Test
     public void vigenereDecodeNull() {
-        assertEquals("", cesar.vigenereDecode(LIMON, ""));
+        assertEquals("", vigenere.decode(LIMON, ""));
+    }
+    /**
+     * test to vigenere method with null messaje.
+     */
+    @Test
+    public void vigenereEncodeNull() {
+        assertEquals("", vigenere.encode(LIMON, CASE2));
     }
     /**
      * test to vigenere method with empty message.
      */
     @Test
     public void vigenereDecodeEmpty() {
-        assertEquals("", cesar.vigenereDecode(LIMON, null));
+
+        assertEquals("", vigenere.decode(LIMON, CASE2));
+    }
+    /**
+     * test to vigenere method with empty message.
+     */
+    @Test
+    public void vigenereEncodeEmpty() {
+
+        assertEquals("", vigenere.encode(LIMON, ""));
     }
 
 }

@@ -1,58 +1,39 @@
-package org.fundacionjala.coding.maria;
-
+package org.fundacionjala.coding.maria.cifrado;
 
 /**
- * kata cifrado cesar.
+ * Method CifradoVigenere.
  */
-public class CifradoCesar {
+public class CifradoVigenere extends Cifrado {
     private static final char A_POSITION = 'A';
     private static final char Z_POSITION = 'Z';
-    private static final int ABC_SIZE = 26;
-    /**
-     * method encode to encode a string using a key.
-     * @param sentence string.
-     * @param key number.
-     * @return the encode string.
-     */
-    public String encode(String sentence, int key) {
-        if (sentence == null || sentence.length() == 0) {
-            return "";
-        }
-        String[] letters = sentence.split("");
-        char[] newSentence = new char[letters.length];
-        for (int i = 0; i < letters.length; i++) {
-            newSentence[i] = (char) getPosition((int) letters[i].charAt(0), key);
-        }
-        return String.valueOf(newSentence);
-    }
 
-    /**
-     * Method decode to decode an encode sentence.
-     * @param sentence String.
-     * @param key int.
-     * @return a new String decode.
-     */
-    public String decode(String sentence, int key) {
-        return encode(sentence, -key);
-    }
     /**
      * Method vigenere to use a key word.
      * @param key String.
      * @param message String.
      * @return a new string.
      */
-    public String vigenereEncode(String key, String message) {
-        return vigenereType(key, message, 1);
+    @Override
+    public String encode(String key, Object message) {
+        if (message == null || message.toString().length() == 0) {
+            return "";
+        }
+        return vigenereType(key, message.toString(), 1);
     }
+
 
     /**
      * Method vigenere to use a key word.
-     * @param clave String.
+     * @param key String.
      * @param message String.
      * @return a new string.
      */
-    public String vigenereDecode(String clave, String message) {
-        return vigenereType(clave, message, -1);
+    @Override
+    public String decode(String key, Object message) {
+        if (message == null || message.toString().length() == 0) {
+            return "";
+        }
+        return vigenereType(key, message.toString(), -1);
     }
     /**
      * Method vigenereType to send if is encode or decode to vigenere encoder.
@@ -62,9 +43,6 @@ public class CifradoCesar {
      * @return a new string.
      */
     public String vigenereType(String key, String message, int type) {
-        if (message == null || message.length() == 0) {
-            return "";
-        }
         int[] positionsKey = getArrayPositions(key);
         String[] lettersMessage = message.split("");
         return String.valueOf(vigenereEncoder(lettersMessage, positionsKey, message.length(), key.length(), type));
@@ -119,18 +97,4 @@ public class CifradoCesar {
         return actual;
     }
 
-    /**
-     * Method getPosition to get the new ascii position.
-     * @param pos int position.
-     * @param key int key.
-     * @return a new int.
-     */
-    public int getPosition(int pos, int key) {
-        if (pos >= A_POSITION && pos <= Z_POSITION) {
-            pos += key;
-            pos = pos > Z_POSITION ? pos - ABC_SIZE : pos;
-            pos = pos < A_POSITION ? pos + ABC_SIZE : pos;
-        }
-        return pos;
-    }
 }
