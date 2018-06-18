@@ -38,7 +38,7 @@ public class CesarCrypto {
      * @return the decrypted or encrypted code.
      */
     private String cipherText(final String texto, final int clave) {
-        if (texto == null || texto.isEmpty()) {
+        if (isEmptyOrNull(texto)) {
             return "";
         }
         StringBuilder builder = new StringBuilder();
@@ -49,6 +49,16 @@ public class CesarCrypto {
             builder.append(replaceVal);
         }
         return builder.toString();
+    }
+
+    /**
+     * Method wheter is empty or null.
+     *
+     * @param texto is the text.
+     * @return null or empty.
+     */
+    private boolean isEmptyOrNull(String texto) {
+        return texto == null || texto.isEmpty();
     }
 
     /**
@@ -68,5 +78,72 @@ public class CesarCrypto {
             replaceVal = ALPHABET.charAt(keyVal);
         }
         return replaceVal;
+    }
+
+    /**
+     * Core code for vigenere encrypt.
+     *
+     * @param texto  is the text.
+     * @param clave  is the key.
+     * @param number is a number wheter positive to encrypt, negative to decrypt.
+     * @return the code.
+     */
+    private String coreVigenere(String texto, String clave, int number) {
+        if (isEmptyOrNull(texto)) {
+            return "";
+        }
+        StringBuilder builder = new StringBuilder();
+        int counter = 0;
+        String[] textoSplitted = texto.split("");
+        return buildVigenere(clave, builder, counter, textoSplitted, number);
+    }
+
+    /**
+     * Builds the vigenere code.
+     *
+     * @param clave         is the key.
+     * @param builder       is the builder.
+     * @param counter       is a counter.
+     * @param textoSplitted is an array.
+     * @param number        is a number.
+     * @return code built.
+     */
+    private String buildVigenere(String clave, StringBuilder builder, int counter, String[] textoSplitted, int number) {
+        for (String chain : textoSplitted) {
+            if (ALPHABET.contains(chain)) {
+                builder.append(cipherText(chain, number * ALPHABET.indexOf(clave.charAt(counter) + 1)));
+                counter++;
+            } else {
+                builder.append(chain);
+            }
+            if (counter >= clave.length()) {
+                counter = 0;
+            }
+        }
+        return builder.toString();
+    }
+
+    /**
+     * Vigenere encode method.
+     *
+     * @param texto  is the text.
+     * @param clave  is the key.
+     * @param number is a positive number.
+     * @return the vigenere code encrypted.
+     */
+    public String encodeVigenere(String texto, String clave, int number) {
+        return coreVigenere(texto, clave, number);
+    }
+
+    /**
+     * Vigenere decode method.
+     *
+     * @param texto  is the text.
+     * @param clave  is the key.
+     * @param number is a negative number.
+     * @return the vigenere code decrypted.
+     */
+    public String decodeVigenere(String texto, String clave, int number) {
+        return coreVigenere(texto, clave, number);
     }
 }

@@ -10,6 +10,8 @@ import static org.junit.Assert.assertEquals;
  */
 public class CesarCryptoTest {
 
+    private static final int POSITIVE = 1;
+    private static final int NEGATIVE = -POSITIVE;
     private CesarCrypto cesarCrypto;
 
     /**
@@ -88,5 +90,55 @@ public class CesarCryptoTest {
         String texto = "KROD";
         final int clave = 3;
         assertEquals("HOLA", cesarCrypto.decode(texto, clave));
+    }
+
+    /**
+     * Test for vigenere encode method.
+     */
+    @Test
+    public void testEncodeVigenereCrypto() {
+        String texto = "HOLA JALASOFT";
+        final String clave = "LIMON";
+        assertEquals("TXYP XMUNHCRC", cesarCrypto.encodeVigenere(texto, clave, POSITIVE));
+    }
+
+    /**
+     * Test for vigenere encode method.
+     */
+    @Test
+    public void testEncodeVigenereCryptoSpecialCharacter() {
+        String texto = "HOL?A JALA|SOFT";
+        final String clave = "LIMON";
+        assertEquals("TXY?P XMUN|HCRC", cesarCrypto.encodeVigenere(texto, clave, POSITIVE));
+    }
+
+    /**
+     * Test for vigenere decode method.
+     */
+    @Test
+    public void testDecodeVigenereCrypto() {
+        String texto = "TXYP XMUNHCRC";
+        final String clave = "LIMON";
+        assertEquals("HOLA JALASOFT", cesarCrypto.decodeVigenere(texto, clave, NEGATIVE));
+    }
+
+    /**
+     * Test for returning empty String.
+     */
+    @Test
+    public void testDecodeVigenereCryptoEmptytext() {
+        String texto = "";
+        final String clave = "LIMON";
+        assertEquals("", cesarCrypto.encodeVigenere(texto, clave, POSITIVE));
+    }
+
+    /**
+     * Test for returning empty String.
+     */
+    @Test
+    public void testDecodeVigenereCryptoEmptytext2() {
+        String texto = "";
+        final String clave = "LIMON";
+        assertEquals("", cesarCrypto.decodeVigenere(texto, clave, NEGATIVE));
     }
 }
