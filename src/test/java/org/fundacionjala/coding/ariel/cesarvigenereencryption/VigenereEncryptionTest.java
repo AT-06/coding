@@ -3,8 +3,11 @@ package org.fundacionjala.coding.ariel.cesarvigenereencryption;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
+/**
+ * VigenereEncryptionTest class.
+ */
 public class VigenereEncryptionTest {
     private VigenereEncryption vigenereEncryption;
 
@@ -56,6 +59,4 @@ public class VigenereEncryptionTest {
         assertEquals("", vigenereEncryption.decodeMessage("", "UTXP"));
         assertEquals("", vigenereEncryption.decodeMessage(null, "WWRDE"));
     }
-
-
 }
