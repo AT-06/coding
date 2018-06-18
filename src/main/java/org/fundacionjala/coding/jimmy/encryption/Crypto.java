@@ -1,34 +1,26 @@
-package org.fundacionjala.coding.jimmy;
-
+package org.fundacionjala.coding.jimmy.encryption;
 
 /**
- * Class for developing the methods.
+ * Crypto abstract class.
  */
-public class CesarCrypto {
-
+public abstract class Crypto {
     private static final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     /**
-     * Encode method for CesarCrypto.
+     * Encode abstract method.
      *
-     * @param texto is the string to encryption.
-     * @param clave is the number for doing the encryption.
-     * @return the encrypted code.
+     * @param objects are the parameters.
+     * @return the cipher.
      */
-    public String encode(final String texto, final int clave) {
-        return cipherText(texto, clave);
-    }
+    public abstract String encode(Object... objects);
 
     /**
-     * Decode method for CesarCrypto.
+     * Decode abstract method.
      *
-     * @param texto is the string to decrypt.
-     * @param clave is the number for doing the decrypt.
-     * @return the decrypt code.
+     * @param objects are the parameters.
+     * @return the cipher.
      */
-    public String decode(final String texto, final int clave) {
-        return cipherText(texto, -clave);
-    }
+    public abstract String decode(Object... objects);
 
     /**
      * Main method for CesarCrypto.
@@ -37,10 +29,7 @@ public class CesarCrypto {
      * @param clave is the number for doing the decrypt or encrypt.
      * @return the decrypted or encrypted code.
      */
-    private String cipherText(final String texto, final int clave) {
-        if (isEmptyOrNull(texto)) {
-            return "";
-        }
+    protected String cipherText(final String texto, final int clave) {
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < texto.length(); i++) {
             char replaceVal = texto.charAt(i);
@@ -54,11 +43,11 @@ public class CesarCrypto {
     /**
      * Method wheter is empty or null.
      *
-     * @param texto is the text.
+     * @param objects is the text.
      * @return null or empty.
      */
-    private boolean isEmptyOrNull(String texto) {
-        return texto == null || texto.isEmpty();
+    protected boolean isEmptyOrNull(Object... objects) {
+        return objects[0] == null || objects[0].toString().isEmpty();
     }
 
     /**
@@ -88,7 +77,7 @@ public class CesarCrypto {
      * @param number is a number wheter positive to encrypt, negative to decrypt.
      * @return the code.
      */
-    private String coreVigenere(String texto, String clave, int number) {
+    protected String coreVigenere(String texto, String clave, int number) {
         if (isEmptyOrNull(texto)) {
             return "";
         }

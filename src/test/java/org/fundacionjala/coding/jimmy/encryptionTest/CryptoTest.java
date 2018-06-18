@@ -1,5 +1,7 @@
-package org.fundacionjala.coding.jimmy;
+package org.fundacionjala.coding.jimmy.encryptionTest;
 
+import org.fundacionjala.coding.jimmy.encryption.CesarCrypto;
+import org.fundacionjala.coding.jimmy.encryption.VigenereCrypto;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -8,12 +10,13 @@ import static org.junit.Assert.assertEquals;
 /**
  * Test class for testing the methods.
  */
-public class CesarCryptoTest {
+public class CryptoTest {
 
     private static final int POSITIVE = 1;
     private static final int NEGATIVE = -POSITIVE;
     private static final String LIMON = "LIMON";
     private CesarCrypto cesarCrypto;
+    private VigenereCrypto vigenereCrypto;
 
     /**
      * Initializes the class.
@@ -21,6 +24,7 @@ public class CesarCryptoTest {
     @Before
     public void initialize() {
         cesarCrypto = new CesarCrypto();
+        vigenereCrypto = new VigenereCrypto();
     }
 
     /**
@@ -99,7 +103,7 @@ public class CesarCryptoTest {
     @Test
     public void testEncodeVigenereCrypto() {
         String texto = "HOLA JALASOFT";
-        assertEquals("TXYP XMUNHCRC", cesarCrypto.encodeVigenere(texto, LIMON, POSITIVE));
+        assertEquals("TXYP XMUNHCRC", vigenereCrypto.encodeVigenere(texto, LIMON, POSITIVE));
     }
 
     /**
@@ -108,7 +112,7 @@ public class CesarCryptoTest {
     @Test
     public void testEncodeVigenereCryptoSpecialCharacter() {
         String texto = "HOL?A JALA|SOFT";
-        assertEquals("TXY?P XMUN|HCRC", cesarCrypto.encodeVigenere(texto, LIMON, POSITIVE));
+        assertEquals("TXY?P XMUN|HCRC", vigenereCrypto.encodeVigenere(texto, LIMON, POSITIVE));
     }
 
     /**
@@ -117,7 +121,7 @@ public class CesarCryptoTest {
     @Test
     public void testDecodeVigenereCrypto() {
         String texto = "TXYP XMUNHCRC";
-        assertEquals("HOLA JALASOFT", cesarCrypto.decodeVigenere(texto, LIMON, NEGATIVE));
+        assertEquals("HOLA JALASOFT", vigenereCrypto.decodeVigenere(texto, LIMON, NEGATIVE));
     }
 
     /**
@@ -126,7 +130,7 @@ public class CesarCryptoTest {
     @Test
     public void testDecodeVigenereCryptoEmptytext() {
         String texto = "";
-        assertEquals("", cesarCrypto.encodeVigenere(texto, LIMON, POSITIVE));
+        assertEquals("", vigenereCrypto.encodeVigenere(texto, LIMON, POSITIVE));
     }
 
     /**
@@ -135,6 +139,6 @@ public class CesarCryptoTest {
     @Test
     public void testDecodeVigenereCryptoEmptytext2() {
         String texto = "";
-        assertEquals("", cesarCrypto.decodeVigenere(texto, LIMON, NEGATIVE));
+        assertEquals("", vigenereCrypto.decodeVigenere(texto, LIMON, NEGATIVE));
     }
 }
