@@ -1,4 +1,4 @@
-package org.fundacionjala.coding.manuel.encryptionAlgorithms;
+package org.fundacionjala.coding.manuel.encryptionalgorithms;
 
 import java.util.StringJoiner;
 

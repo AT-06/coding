@@ -1,8 +1,8 @@
 package org.fundacionjala.coding.manuel;
 
-import org.fundacionjala.coding.manuel.encryptionAlgorithms.Cesar;
-import org.fundacionjala.coding.manuel.encryptionAlgorithms.Crypto;
-import org.fundacionjala.coding.manuel.encryptionAlgorithms.Vigenere;
+import org.fundacionjala.coding.manuel.encryptionalgorithms.Cesar;
+import org.fundacionjala.coding.manuel.encryptionalgorithms.Crypto;
+import org.fundacionjala.coding.manuel.encryptionalgorithms.Vigenere;
 import org.junit.Before;
 import org.junit.Test;
 
