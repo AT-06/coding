@@ -21,7 +21,7 @@ public class CesarEncryption extends Encryption {
         message = new StringBuilder();
         String[] texts = text.split("");
         for (String c : texts) {
-            message = alfabet.contains(c) ? message.append(encodeChar(c, key)) : message.append(c);
+            message.append(alfabet.contains(c) ? encodeChar(c, key) : c);
         }
         return message.toString();
     }
@@ -40,7 +40,7 @@ public class CesarEncryption extends Encryption {
         message = new StringBuilder();
         String[] texts = text.split("");
         for (String c : texts) {
-            message = alfabet.contains(c) ? message.append(decodeChar(c, key)) : message.append(c);
+            message.append(alfabet.contains(c) ? decodeChar(c, key) : c);
         }
         return message.toString();
     }
