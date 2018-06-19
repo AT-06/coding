@@ -24,20 +24,15 @@ import static org.junit.Assert.assertEquals;
  * @author Omar Limbert Huanca Sanchez - AT-[06].
  * @version 1.0.
  */
-public class EncryptionTest {
+public class CesarEncryptionTest {
 
-    private static final String VIGENERE_KEY = "LIMON";
     private CesarEncryption cesarEncryption;
-    private VigenereEncryption vigenereEncryption;
-
     /**
      * init Kata.
      */
     @Before
     public void init() {
-
         cesarEncryption = new CesarEncryption();
-        vigenereEncryption = new VigenereEncryption();
     }
 
     /**
@@ -135,72 +130,4 @@ public class EncryptionTest {
         assertEquals("H_OLA", cesarEncryption.decodeMessage("K_ROD", key));
         assertEquals("HOLA ZORRO", cesarEncryption.decodeMessage("KROD CRUUR", key));
     }
-
-    /**
-     * Test to encode with Vigenere Encryption and String key.
-     */
-    @Test
-    public void testEncodeVigenereEncryption() {
-        assertEquals("VJYPGAOG", vigenereEncryption.encodeMessage("JALASOFT", VIGENERE_KEY));
-    }
-
-    /**
-     * Test to encode with Vigenere Encryption and String key with blank spaces.
-     */
-    @Test
-    public void testEncodeVigenereEncryptionWithBlankSpaces() {
-        assertEquals("TXYP XMUNHCRC",
-                vigenereEncryption.encodeMessage("HOLA JALASOFT", VIGENERE_KEY));
-    }
-
-    /**
-     * Test to encode with Vigenere Encryption and String key with empty message.
-     */
-    @Test
-    public void testEncodeVigenereEncryptionWithEmptyMessage() {
-        assertEquals("", vigenereEncryption.encodeMessage("", VIGENERE_KEY));
-    }
-
-    /**
-     * Test to encode with Vigenere Encryption and String key with null message.
-     */
-    @Test
-    public void testEncodeVigenereEncryptionWithNullMessage() {
-        assertEquals("", vigenereEncryption.encodeMessage(null, VIGENERE_KEY));
-    }
-
-    /**
-     * Test to decode with Vigenere Encryption and String key.
-     */
-    @Test
-    public void testDecodeVigenereEncryption() {
-        assertEquals("JALASOFT", vigenereEncryption.decodeMessage("VJYPGAOG", VIGENERE_KEY));
-    }
-
-    /**
-     * Test to decode with Vigenere Encryption and String key and blank spaces.
-     */
-    @Test
-    public void testDecodeVigenereEncryptionWithBlankSpaces() {
-        assertEquals("HOLA JALASOFT",
-                vigenereEncryption.decodeMessage("TXYP XMUNHCRC", VIGENERE_KEY));
-    }
-
-    /**
-     * Test to decode with Vigenere Encryption and String key and empty message.
-     */
-    @Test
-    public void testDecodeVigenereEncryptionWithEmptyMessage() {
-        assertEquals("", vigenereEncryption.decodeMessage("", VIGENERE_KEY));
-    }
-
-    /**
-     * Test to decode with Vigenere Encryption and String key and null message.
-     */
-    @Test
-    public void testDecodeVigenereEncryptionWithNullMessage() {
-        assertEquals("", vigenereEncryption.decodeMessage(null, VIGENERE_KEY));
-    }
-
 }
-

@@ -25,14 +25,6 @@ public class VigenereEncryption extends Encryption {
     private int indexVigenereKey;
 
     /**
-     * Constructor to initialize index for Vigenere Key.
-     */
-    public VigenereEncryption() {
-        super();
-        indexVigenereKey = 0;
-    }
-
-    /**
      * {@inheritDoc}
      */
     @Override
