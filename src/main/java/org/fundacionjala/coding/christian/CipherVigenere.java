@@ -6,6 +6,26 @@ package org.fundacionjala.coding.christian;
 public class CipherVigenere extends CesarCipher {
 
     /**
+     * @param message string.
+     * @param key     int.
+     * @return message.
+     */
+    @Override
+    public String decode(String message, int key) {
+        return "";
+    }
+
+    /**
+     * @param message String.
+     * @param key     int.
+     * @return message.
+     */
+    @Override
+    public String encode(String message, int key) {
+        return "";
+    }
+
+    /**
      * @param message String.
      * @return String.
      */
@@ -13,7 +33,7 @@ public class CipherVigenere extends CesarCipher {
         message = message.replaceAll("\n", "");
         for (int i = 0; i < message.length(); i++) {
             int position = ALPHABET_VIGENERE.indexOf(message.charAt(i));
-            if (position == -1) {
+            if (position <= 0) {
                 message = message.replace(message.charAt(i), ' ');
             }
         }
@@ -62,23 +82,4 @@ public class CipherVigenere extends CesarCipher {
         return decrypted;
     }
 
-    /**
-     * @param message string.
-     * @param key     int.
-     * @return message.
-     */
-    @Override
-    public String decode(String message, int key) {
-        return "";
-    }
-
-    /**
-     * @param message String.
-     * @param key     int.
-     * @return message.
-     */
-    @Override
-    public String encode(String message, int key) {
-        return "";
-    }
 }
