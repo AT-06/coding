@@ -7,21 +7,20 @@ public class VigenereEncryption extends Encryption {
     private static final int VALUE_REST = 64;
 
     /**
-     * @param cadToEncode word to decode.
-     * @param key         the position to decode the letters.
-     * @return aDecodeWord
+     * {@inheritDoc}
      */
-    public String vigenereEncode(String cadToEncode, String key) {
+    @Override
+    public String encode(String cadToEncode, Object key) {
         if (!isInvalidWord(cadToEncode)) {
             StringBuilder cad = new StringBuilder();
             int cont = 0;
             for (int i = 0; i < cadToEncode.length(); i++) {
                 char character = cadToEncode.charAt(i);
-                if (cont == key.length()) {
+                if (cont == String.valueOf(key).length()) {
                     cont = 0;
                 }
                 if (existInAlphabet(character)) {
-                    cad.append(getLetterEncode(character, key.charAt(cont) - VALUE_REST));
+                    cad.append(getLetterEncode(character, String.valueOf(key).charAt(cont) - VALUE_REST));
                     cont++;
                 } else {
                     cad.append(character);
@@ -33,21 +32,20 @@ public class VigenereEncryption extends Encryption {
     }
 
     /**
-     * @param cadToEncode word to decode.
-     * @param key         the position to decode the letters.
-     * @return aDecodeWord
+     * {@inheritDoc}
      */
-    public String vigenereDecode(String cadToEncode, String key) {
+    @Override
+    public String decode(String cadToEncode, Object key) {
         if (!isInvalidWord(cadToEncode)) {
             StringBuilder cad = new StringBuilder();
             int cont = 0;
             for (int i = 0; i < cadToEncode.length(); i++) {
                 char character = cadToEncode.charAt(i);
-                if (cont == key.length()) {
+                if (cont == String.valueOf(key).length()) {
                     cont = 0;
                 }
                 if (existInAlphabet(character)) {
-                    cad.append(getLetterDecode(character, -(key.charAt(cont) - VALUE_REST)));
+                    cad.append(getLetterDecode(character, -(String.valueOf(key).charAt(cont) - VALUE_REST)));
                     cont++;
                 } else {
                     cad.append(character);

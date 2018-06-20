@@ -25,7 +25,7 @@ public class VigenereEncryptionTest {
      */
     @Test
     public void testToEncodeValidWord() {
-        assertEquals("TXYP XMUNHCRC", vigenereEncryption.vigenereEncode("HOLA JALASOFT", VIGENERE_KEY));
+        assertEquals("TXYP XMUNHCRC", vigenereEncryption.encode("HOLA JALASOFT", VIGENERE_KEY));
     }
 
     /**
@@ -33,8 +33,8 @@ public class VigenereEncryptionTest {
      */
     @Test
     public void testToEncodeEmptyWord() {
-        assertEquals("", vigenereEncryption.vigenereEncode(null, VIGENERE_KEY));
-        assertEquals("", vigenereEncryption.vigenereEncode("", VIGENERE_KEY));
+        assertEquals("", vigenereEncryption.encode(null, VIGENERE_KEY));
+        assertEquals("", vigenereEncryption.encode("", VIGENERE_KEY));
     }
 
     /**
@@ -42,8 +42,8 @@ public class VigenereEncryptionTest {
      */
     @Test
     public void testToEncodeWithSpecialCharacters() {
-        assertEquals("[AUN YOXJFDT?", vigenereEncryption.vigenereEncode("[OLA JALASOF?", VIGENERE_KEY));
-        assertEquals("VJYPGAO{", vigenereEncryption.vigenereEncode("JALASOF{", VIGENERE_KEY));
+        assertEquals("[AUN YOXJFDT?", vigenereEncryption.encode("[OLA JALASOF?", VIGENERE_KEY));
+        assertEquals("VJYPGAO{", vigenereEncryption.encode("JALASOF{", VIGENERE_KEY));
     }
 
     /**
@@ -51,7 +51,7 @@ public class VigenereEncryptionTest {
      */
     @Test
     public void testToDecodeValidWord() {
-        assertEquals("HOLA JALASOFT", vigenereEncryption.vigenereDecode("TXYP XMUNHCRC", VIGENERE_KEY));
+        assertEquals("HOLA JALASOFT", vigenereEncryption.decode("TXYP XMUNHCRC", VIGENERE_KEY));
     }
 
     /**
@@ -59,7 +59,7 @@ public class VigenereEncryptionTest {
      */
     @Test
     public void testToDecodeEmptyWord() {
-        assertEquals("", vigenereEncryption.vigenereDecode(null, VIGENERE_KEY));
-        assertEquals("", vigenereEncryption.vigenereDecode("", VIGENERE_KEY));
+        assertEquals("", vigenereEncryption.decode(null, VIGENERE_KEY));
+        assertEquals("", vigenereEncryption.decode("", VIGENERE_KEY));
     }
 }
