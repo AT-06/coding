@@ -6,13 +6,13 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Class for testing Caesar/Vigenere cipher methods.
+ * Class for testing Caesar cipher methods.
  */
-public class CipherTest {
+public class CaesarCipherTest {
 
-    private static final String KEY = "LIMON";
+
     private CaesarCipher caesarCipher;
-    private VigenereCipher vigenereCipher;
+
 
     /**
      * Initializes variables.
@@ -21,7 +21,6 @@ public class CipherTest {
     public void setUp() {
         final int caesarKey = 3;
         caesarCipher = new CaesarCipher(caesarKey);
-        vigenereCipher = new VigenereCipher(KEY);
     }
 
     /**
@@ -62,33 +61,5 @@ public class CipherTest {
         final int key2 = 5;
         caesarCipher.setKey(key2);
         assertEquals(b, caesarCipher.decode(d));
-    }
-
-    /**
-     * Unit tests for Vigenere encoding.
-     */
-    @Test
-    public void vigenereEncodeTests() {
-        final String text = "HOLA JALASOFT";
-        final String message = "TXYP XMUNHCRC";
-        final String text2 = "HOLA JALASOF[";
-        final String message2 = "TXYP XMUNHCR[";
-        assertEquals(message, vigenereCipher.encode(text));
-        assertEquals(message2, vigenereCipher.encode(text2));
-    }
-
-    /**
-     * Unit tests for Vigenere decoding.
-     */
-    @Test
-    public void vigenereDecodeTests() {
-        final String text1 = "HOLA JALASOFT";
-        final String message1 = "TXYP XMUNHCRC";
-        final String text2 = "HOLA JALASOF[";
-        final String message2 = "TXYP XMUNHCR[";
-
-        assertEquals(text1, vigenereCipher.decode(message1));
-        assertEquals(text2, vigenereCipher.decode(message2));
-
     }
 }

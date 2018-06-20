@@ -20,7 +20,7 @@ public class VigenereCipher extends Cipher {
      */
     @Override
     public String encode(String text) {
-        return vigenereEncode(text, getKey());
+        return vigenereEncode(text, key);
     }
 
     /**
@@ -28,7 +28,7 @@ public class VigenereCipher extends Cipher {
      */
     @Override
     public String decode(String message) {
-        return vigenereDecode(message, getKey());
+        return vigenereDecode(message, key);
     }
 
     /**
@@ -83,14 +83,5 @@ public class VigenereCipher extends Cipher {
             j = ++j % key.length();
         }
         return text;
-    }
-
-    /**
-     * Getter for key.
-     *
-     * @return the current key.
-     */
-    public String getKey() {
-        return key;
     }
 }

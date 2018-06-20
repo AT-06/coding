@@ -21,7 +21,7 @@ public class CaesarCipher extends Cipher {
      */
     @Override
     public String encode(String text) {
-        return caesarEncode(text, getKey());
+        return caesarEncode(text, key);
     }
 
     /**
@@ -29,7 +29,7 @@ public class CaesarCipher extends Cipher {
      */
     @Override
     public String decode(String message) {
-        return caesarDecode(message, getKey());
+        return caesarDecode(message, key);
     }
 
     /**
@@ -84,15 +84,6 @@ public class CaesarCipher extends Cipher {
             }
         }
         return text;
-    }
-
-    /**
-     * Getter for key.
-     *
-     * @return the current key.
-     */
-    public int getKey() {
-        return key;
     }
 
     /**
